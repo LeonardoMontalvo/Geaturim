@@ -1,6 +1,8 @@
 
 package Modelo;
 
+
+import com.toedter.calendar.JCalendar;
 import java.util.Date;
 
 /**
@@ -9,17 +11,17 @@ import java.util.Date;
  */
 public class Contrato {
    
-    private String Destino, NombreConductor;
+    private String Destino, NombreConductor, vehiculo;
     private Date fecha; 
-    private int Dias;
-    private Estado estado;
+    private int Dias, Asientos;
 
-    public Contrato(String Destino, String NombreConductor, Date fecha, int Dias, Estado estado) {
+    public Contrato(String Destino, String NombreConductor, String vehiculo, Date fecha, int Dias, int Asientos) {
         this.Destino = Destino;
         this.NombreConductor = NombreConductor;
+        this.vehiculo = vehiculo;
         this.fecha = fecha;
         this.Dias = Dias;
-        this.estado = estado;
+        this.Asientos = Asientos;
     }
 
     public String getDestino() {
@@ -38,6 +40,14 @@ public class Contrato {
         this.NombreConductor = NombreConductor;
     }
 
+    public String getVehiculo() {
+        return vehiculo;
+    }
+
+    public void setVehiculo(String vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
     public Date getFecha() {
         return fecha;
     }
@@ -54,21 +64,12 @@ public class Contrato {
         this.Dias = Dias;
     }
 
-    public Estado getEstado() {
-        return estado;
+    public int getAsientos() {
+        return Asientos;
     }
 
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
-    
-    
-     public enum Estado {
-        LIQUIDADO, SIN_LIQUIDAR
-    }
-     
-     
-  
-    
+    public void setAsientos(int Asientos) {
+        this.Asientos = Asientos;
+    }    
     
 }

@@ -7,14 +7,12 @@ package Modelo;
  */
 public class Usuario {
     
- private String nombre, contraseña;
+ private String nombre, contrasenia;
 
- 
-    public Usuario(String nombre, String contraseña) {
+    public Usuario(String nombre, String contrasenia) {
         this.nombre = nombre;
-        this.contraseña = contraseña;
+        this.contrasenia = contrasenia;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -24,12 +22,14 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
+
+ 
  
 }

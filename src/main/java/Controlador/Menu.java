@@ -4,9 +4,13 @@
  */
 package Controlador;
 
+import Modelo.Cliente;
+import Modelo.Contrato;
+import Modelo.Usuario;
 import com.toedter.calendar.JCalendar;
 import java.util.Date;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +23,10 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+            
+JCalendar jCalendar = new JCalendar();
+Date fechaSeleccionada = jCalendar.getDate();
+
     }    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -64,7 +72,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel41 = new javax.swing.JPanel();
         txtConductor1 = new javax.swing.JTextField();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        jTableContrato = new javax.swing.JTable();
         jInternalFrame2 = new javax.swing.JInternalFrame();
         jPanel15 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
@@ -94,7 +102,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jTableClientes = new javax.swing.JTable();
         jInternalFrame3 = new javax.swing.JInternalFrame();
         jPanel19 = new javax.swing.JPanel();
         jLabel61 = new javax.swing.JLabel();
@@ -109,7 +117,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel65 = new javax.swing.JLabel();
         jPanel46 = new javax.swing.JPanel();
         jPanel47 = new javax.swing.JPanel();
-        FeachaAbono = new com.toedter.calendar.JDateChooser();
+        Feachaabono = new com.toedter.calendar.JDateChooser();
         txtBanco = new javax.swing.JTextField();
         btnGuardarU4 = new javax.swing.JButton();
         btnEditarU4 = new javax.swing.JButton();
@@ -176,7 +184,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableUsuario = new javax.swing.JTable();
+        jInternalFrame6 = new javax.swing.JInternalFrame();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnContrato = new javax.swing.JButton();
@@ -186,6 +195,7 @@ public class Menu extends javax.swing.JFrame {
         btnUsuarios = new javax.swing.JButton();
         tipo = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
+        btnBusqueda = new javax.swing.JButton();
         jLabel38 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -436,7 +446,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(txtConductor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 60, 30));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        jTableContrato.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -447,7 +457,7 @@ public class Menu extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane5.setViewportView(jTable4);
+        jScrollPane5.setViewportView(jTableContrato);
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
@@ -701,7 +711,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel34.setText("Eliminar");
         jPanel15.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -712,7 +722,7 @@ public class Menu extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(jTableClientes);
 
         javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
         jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
@@ -867,8 +877,8 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel19.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
 
-        FeachaAbono.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel19.add(FeachaAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
+        Feachaabono.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.add(Feachaabono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
 
         txtBanco.setBackground(new java.awt.Color(204, 204, 204));
         txtBanco.setBorder(null);
@@ -1354,18 +1364,18 @@ public class Menu extends javax.swing.JFrame {
         jLabel22.setText("Eliminar");
         jPanel13.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTableUsuario);
 
         javax.swing.GroupLayout jInternalFrame4Layout = new javax.swing.GroupLayout(jInternalFrame4.getContentPane());
         jInternalFrame4.getContentPane().setLayout(jInternalFrame4Layout);
@@ -1387,6 +1397,21 @@ public class Menu extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("5", jInternalFrame4);
+
+        jInternalFrame6.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame6Layout = new javax.swing.GroupLayout(jInternalFrame6.getContentPane());
+        jInternalFrame6.getContentPane().setLayout(jInternalFrame6Layout);
+        jInternalFrame6Layout.setHorizontalGroup(
+            jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame6Layout.setVerticalGroup(
+            jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 523, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("6", jInternalFrame6);
 
         jDesktopPane1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 6, 1100, 590));
 
@@ -1467,6 +1492,18 @@ public class Menu extends javax.swing.JFrame {
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo.png"))); // NOI18N
 
+        btnBusqueda.setBackground(new java.awt.Color(153, 153, 153));
+        btnBusqueda.setForeground(new java.awt.Color(255, 255, 255));
+        btnBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lupa.png"))); // NOI18N
+        btnBusqueda.setText("Busquedas");
+        btnBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnBusqueda.setFocusable(false);
+        btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBusquedaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1484,6 +1521,7 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(btnBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1492,17 +1530,19 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(lblLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tipo)
-                .addGap(61, 61, 61)
+                .addGap(27, 27, 27)
                 .addComponent(btnContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(31, 31, 31)
                 .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(39, 39, 39)
                 .addComponent(btnAbono, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(36, 36, 36)
                 .addComponent(btnMantenimientos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(36, 36, 36)
                 .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(btnBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 700));
@@ -1597,7 +1637,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCorreo3ActionPerformed
 
     private void txtNombreUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreUActionPerformed
-        // TODO add your handling code here:
+       
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_txtNombreUActionPerformed
 
     private void txtKilometrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKilometrajeActionPerformed
@@ -1704,6 +1751,12 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNuevoU4ActionPerformed
 
+    private void btnBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaActionPerformed
+        
+        jTabbedPane1.setSelectedIndex(5);
+        
+    }//GEN-LAST:event_btnBusquedaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1789,14 +1842,62 @@ public void cargarImagenes() {
 
 
 
-JCalendar jCalendar = new JCalendar();
-Date fechaSeleccionada = jCalendar.getDate();
 
+
+
+                            /////////////////////////////////////////////////////////////////////////////////////// TABLAS //////////////////////////////////////////////////////////////////////////////////////
+
+ public void mostrarDatosUsuario (Usuario usuario) {
+     
+        DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+        
+        Object[] fila = new Object[3];
+
+        fila[0] = modelo.getRowCount() + 1;
+        fila[1] = usuario.getNombre();
+        fila[2] = usuario.getContrasenia();
+      
+        modelo.addRow(fila);
+    }
+ 
+ public void mostrarDatosClientes (Cliente cliente) {
+     
+        DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
+        
+        Object[] fila = new Object[6];
+
+        fila[0] = modelo.getRowCount() + 1;
+        fila[1] = cliente.getNombreCli();
+        fila[2] = cliente.getApellido();
+        fila[3] = cliente.getTelefono();
+        fila[4] = cliente.getCedula();
+        fila[5] = cliente.getDireccion();
+        modelo.addRow(fila);
+    }
+ 
+ 
+       /*  public void mostrarDatosContrato (Contrato contrato) {
+     
+        DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+        
+        Object[] fila = new Object[7];
+
+        fila[0] = modelo.getRowCount() + 1;
+        fila[1] = contrato.getFecha();
+        fila[2] = contrato.getVehiculo();
+        fila[3] = contrato.getAsientos();
+        fila[4] = contrato.getNombreConductor();
+        fila[5] = contrato.getDestino();
+        fila[6] = contrato.getDias();
+        modelo.addRow(fila);
+ 
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser FeachaAbono;
     private com.toedter.calendar.JDateChooser FeachaContrato;
     private com.toedter.calendar.JDateChooser FeachaMantenimiento;
+    private com.toedter.calendar.JDateChooser Feachaabono;
     private javax.swing.JButton btnAbono;
+    private javax.swing.JButton btnBusqueda;
     private javax.swing.JButton btnClientes;
     private javax.swing.JButton btnContrato;
     private javax.swing.JButton btnEditarCli;
@@ -1830,6 +1931,7 @@ Date fechaSeleccionada = jCalendar.getDate();
     private javax.swing.JInternalFrame jInternalFrame3;
     private javax.swing.JInternalFrame jInternalFrame4;
     private javax.swing.JInternalFrame jInternalFrame5;
+    private javax.swing.JInternalFrame jInternalFrame6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
@@ -1924,10 +2026,10 @@ Date fechaSeleccionada = jCalendar.getDate();
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTableClientes;
+    private javax.swing.JTable jTableContrato;
+    private javax.swing.JTable jTableUsuario;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
