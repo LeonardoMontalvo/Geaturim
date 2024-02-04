@@ -68,7 +68,6 @@ public class Login extends javax.swing.JFrame {
 
         btnIngresar1.setBackground(new java.awt.Color(0, 0, 0));
         btnIngresar1.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
-        btnIngresar1.setForeground(new java.awt.Color(0, 0, 0));
         btnIngresar1.setText("Ingresar");
         btnIngresar1.setBorderPainted(false);
         btnIngresar1.setContentAreaFilled(false);
@@ -84,9 +83,7 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel3.add(btnIngresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 210, 60));
 
-        txtcorreo1.setBackground(new java.awt.Color(255, 255, 255));
         txtcorreo1.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txtcorreo1.setForeground(new java.awt.Color(0, 0, 0));
         txtcorreo1.setBorder(null);
         txtcorreo1.setCaretColor(new java.awt.Color(153, 153, 153));
         txtcorreo1.addActionListener(new java.awt.event.ActionListener() {
@@ -96,9 +93,7 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel3.add(txtcorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 270, 40));
 
-        txtcontra1.setBackground(new java.awt.Color(255, 255, 255));
         txtcontra1.setFont(txtcontra1.getFont().deriveFont(txtcontra1.getFont().getSize()+7f));
-        txtcontra1.setForeground(new java.awt.Color(0, 0, 0));
         txtcontra1.setBorder(null);
         txtcontra1.setCaretColor(new java.awt.Color(153, 153, 153));
         txtcontra1.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +101,7 @@ public class Login extends javax.swing.JFrame {
                 txtcontra1ActionPerformed(evt);
             }
         });
-        jPanel3.add(txtcontra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 270, 36));
+        jPanel3.add(txtcontra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 270, 40));
 
         jSeparator3.setBackground(new java.awt.Color(153, 153, 153));
         jSeparator3.setForeground(new java.awt.Color(153, 153, 153));
@@ -116,15 +111,14 @@ public class Login extends javax.swing.JFrame {
         jSeparator4.setForeground(new java.awt.Color(153, 153, 153));
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 310, 10));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/arroba.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\arroba.png")); // NOI18N
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 48, 36));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/candado.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\candado.png")); // NOI18N
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 48, 42));
 
         jCheckBoxContra1.setBackground(new java.awt.Color(153, 153, 153));
         jCheckBoxContra1.setFont(new java.awt.Font("Eras Light ITC", 0, 14)); // NOI18N
-        jCheckBoxContra1.setForeground(new java.awt.Color(0, 0, 0));
         jCheckBoxContra1.setText("Mostrar contraseña");
         jCheckBoxContra1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jCheckBoxContra1.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +130,7 @@ public class Login extends javax.swing.JFrame {
 
         btnEliminarU3.setBackground(new java.awt.Color(9, 59, 221));
         btnEliminarU3.setForeground(new java.awt.Color(102, 153, 255));
-        btnEliminarU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
+        btnEliminarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarU3ActionPerformed(evt);
@@ -146,11 +140,11 @@ public class Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, -1, 600));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Logo.png")); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 180, 180));
 
         lblFondo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblFondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo Loggin.png"))); // NOI18N
+        lblFondo2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Fondo Loggin.png")); // NOI18N
         lblFondo2.setOpaque(true);
         getContentPane().add(lblFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -170, 800, 940));
 

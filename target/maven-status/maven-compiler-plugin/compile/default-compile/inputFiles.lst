@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Modelo\Cliente.java
 C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Modelo\Usuario.java
 C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Vista\Main.java
@@ -9,3 +10,14 @@ C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Modelo\Mantenimie
 C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Controlador\conexiom.java
 C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Controlador\Login.java
 C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Controlador\Menu.java
+=======
+C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Modelo\Vehiculo.java
+C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Vista\Main.java
+C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Controlador\Menu.java
+C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Modelo\Cliente.java
+C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Vista\Menu.java
+C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Modelo\Usuario.java
+C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Modelo\Abono.java
+C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Modelo\Mantenimiento.java
+C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Modelo\Contrato.java
+>>>>>>> Stashed changes

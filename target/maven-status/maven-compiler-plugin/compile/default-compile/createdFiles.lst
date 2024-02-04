@@ -1,18 +1,26 @@
 Vista\Main.class
+<<<<<<< Updated upstream
 Controlador\Login$1.class
+=======
+>>>>>>> Stashed changes
 Vista\Main$1.class
 Controlador\Menu$9.class
 Controlador\Menu$6.class
 Controlador\Menu.class
 Controlador\Menu$12.class
 Controlador\Menu$22.class
+<<<<<<< Updated upstream
 Controlador\Menu$32.class
 Controlador\Menu$42.class
 Controlador\Menu$15.class
 Controlador\Login$5.class
+=======
+Controlador\Menu$15.class
+>>>>>>> Stashed changes
 Controlador\Menu$25.class
 Controlador\Menu$35.class
 Controlador\Menu$2.class
+<<<<<<< Updated upstream
 Controlador\Menu$38.class
 Controlador\Menu$28.class
 Controlador\Login$2.class
@@ -27,10 +35,20 @@ Modelo\Vehiculo.class
 Controlador\conexiom.class
 Controlador\Menu$19.class
 Controlador\Menu$39.class
+=======
+Controlador\Menu$28.class
+Controlador\Menu$13.class
+Controlador\Menu$21.class
+Modelo\Usuario.class
+Controlador\Menu$16.class
+Modelo\Vehiculo.class
+Controlador\Menu$19.class
+>>>>>>> Stashed changes
 Controlador\Menu$3.class
 Controlador\Menu$24.class
 Controlador\Menu$4.class
 Controlador\Menu$27.class
+<<<<<<< Updated upstream
 Controlador\Menu$37.class
 Controlador\Login$6.class
 Controlador\Menu$17.class
@@ -47,14 +65,26 @@ Modelo\Contrato.class
 Controlador\Menu$18.class
 Controlador\Menu$31.class
 Controlador\Login.class
+=======
+Controlador\Menu$17.class
+Controlador\Menu$7.class
+Modelo\Cliente.class
+Controlador\Menu$10.class
+Controlador\Menu$20.class
+Modelo\Contrato.class
+Controlador\Menu$18.class
+>>>>>>> Stashed changes
 Modelo\Abono.class
 Controlador\Menu$11.class
 Controlador\Menu$23.class
 Controlador\Menu$26.class
 Controlador\Menu$5.class
 Controlador\Menu$1.class
+<<<<<<< Updated upstream
 Controlador\Menu$34.class
 Controlador\Login$4.class
+=======
+>>>>>>> Stashed changes
 Controlador\Menu$29.class
 Controlador\Menu$14.class
 Controlador\Menu$8.class

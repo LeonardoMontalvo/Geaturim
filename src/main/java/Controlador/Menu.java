@@ -40,39 +40,6 @@ Date fechaSeleccionada = jCalendar.getDate();
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jPanel16 = new javax.swing.JPanel();
-        jLabel52 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
-        txtVehiculo = new javax.swing.JTextField();
-        jLabel54 = new javax.swing.JLabel();
-        txtAsientos = new javax.swing.JTextField();
-        jLabel55 = new javax.swing.JLabel();
-        jPanel35 = new javax.swing.JPanel();
-        jPanel36 = new javax.swing.JPanel();
-        jPanel37 = new javax.swing.JPanel();
-        jPanel38 = new javax.swing.JPanel();
-        jLabel56 = new javax.swing.JLabel();
-        jPanel39 = new javax.swing.JPanel();
-        jPanel40 = new javax.swing.JPanel();
-        FeachaContrato = new com.toedter.calendar.JDateChooser();
-        txtConductor = new javax.swing.JTextField();
-        jLabel57 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        btnGuardarU3 = new javax.swing.JButton();
-        btnEditarU3 = new javax.swing.JButton();
-        btnEliminarU3 = new javax.swing.JButton();
-        btnNuevoU3 = new javax.swing.JButton();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        jLabel59 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
-        jPanel41 = new javax.swing.JPanel();
-        txtConductor1 = new javax.swing.JTextField();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTableContrato = new javax.swing.JTable();
         jInternalFrame2 = new javax.swing.JInternalFrame();
         jPanel15 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
@@ -117,7 +84,6 @@ Date fechaSeleccionada = jCalendar.getDate();
         jLabel65 = new javax.swing.JLabel();
         jPanel46 = new javax.swing.JPanel();
         jPanel47 = new javax.swing.JPanel();
-        Feachaabono = new com.toedter.calendar.JDateChooser();
         txtBanco = new javax.swing.JTextField();
         btnGuardarU4 = new javax.swing.JButton();
         btnEditarU4 = new javax.swing.JButton();
@@ -148,7 +114,6 @@ Date fechaSeleccionada = jCalendar.getDate();
         jLabel44 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
-        FeachaMantenimiento = new com.toedter.calendar.JDateChooser();
         btnGuardarM = new javax.swing.JButton();
         btnEditarM = new javax.swing.JButton();
         btnEliminarM = new javax.swing.JButton();
@@ -186,6 +151,38 @@ Date fechaSeleccionada = jCalendar.getDate();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableUsuario = new javax.swing.JTable();
         jInternalFrame6 = new javax.swing.JInternalFrame();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        txtVehiculo = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        txtAsientos = new javax.swing.JTextField();
+        jLabel55 = new javax.swing.JLabel();
+        jPanel35 = new javax.swing.JPanel();
+        jPanel36 = new javax.swing.JPanel();
+        jPanel37 = new javax.swing.JPanel();
+        jPanel38 = new javax.swing.JPanel();
+        jLabel56 = new javax.swing.JLabel();
+        jPanel39 = new javax.swing.JPanel();
+        jPanel40 = new javax.swing.JPanel();
+        txtConductor = new javax.swing.JTextField();
+        jLabel57 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        btnGuardarU3 = new javax.swing.JButton();
+        btnEditarU3 = new javax.swing.JButton();
+        btnEliminarU3 = new javax.swing.JButton();
+        btnNuevoU3 = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jPanel41 = new javax.swing.JPanel();
+        txtConductor1 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTableContrato = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnContrato = new javax.swing.JButton();
@@ -204,6 +201,915 @@ Date fechaSeleccionada = jCalendar.getDate();
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jInternalFrame2.setPreferredSize(new java.awt.Dimension(1110, 600));
+        jInternalFrame2.setVisible(true);
+
+        jPanel15.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel46.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel46.setText("Nombre");
+        jPanel15.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        jLabel47.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel47.setText("Apellido");
+        jPanel15.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jLabel48.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel48.setText("Telefono");
+        jPanel15.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+
+        txtTelefono.setBackground(new java.awt.Color(204, 204, 204));
+        txtTelefono.setBorder(null);
+        jPanel15.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 226, 30));
+
+        jLabel49.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel49.setText("Cedula");
+        jPanel15.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
+
+        jPanel28.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel15.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 226, 2));
+
+        jPanel29.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel15.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 226, 2));
+
+        jPanel30.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
+        jPanel30.setLayout(jPanel30Layout);
+        jPanel30Layout.setHorizontalGroup(
+            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel30Layout.setVerticalGroup(
+            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel15.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 226, 2));
+
+        jPanel31.setBackground(new java.awt.Color(0, 110, 255));
+
+        jLabel50.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel50.setText("CLIENTES");
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+        );
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel31Layout.createSequentialGroup()
+                .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel15.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 60));
+
+        jPanel32.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
+        jPanel32.setLayout(jPanel32Layout);
+        jPanel32Layout.setHorizontalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel32Layout.setVerticalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel15.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 226, 2));
+
+        jPanel33.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
+        jPanel33.setLayout(jPanel33Layout);
+        jPanel33Layout.setHorizontalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel33Layout.setVerticalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel15.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 226, 2));
+
+        txtCedula.setBackground(new java.awt.Color(204, 204, 204));
+        txtCedula.setBorder(null);
+        txtCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCedulaActionPerformed(evt);
+            }
+        });
+        jPanel15.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 226, 30));
+
+        txtApellidoC.setBackground(new java.awt.Color(204, 204, 204));
+        txtApellidoC.setBorder(null);
+        txtApellidoC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidoCActionPerformed(evt);
+            }
+        });
+        jPanel15.add(txtApellidoC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 226, 30));
+
+        txtNombreC.setBackground(new java.awt.Color(204, 204, 204));
+        txtNombreC.setBorder(null);
+        txtNombreC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreCActionPerformed(evt);
+            }
+        });
+        jPanel15.add(txtNombreC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 226, 30));
+
+        jLabel51.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel51.setText("Direccion");
+        jPanel15.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
+
+        jPanel34.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
+        jPanel34.setLayout(jPanel34Layout);
+        jPanel34Layout.setHorizontalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel34Layout.setVerticalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel15.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 226, 2));
+
+        txtDireccion.setBackground(new java.awt.Color(204, 204, 204));
+        txtDireccion.setBorder(null);
+        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDireccionActionPerformed(evt);
+            }
+        });
+        jPanel15.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 226, 30));
+
+        btnGuardarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
+        btnGuardarCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarCliActionPerformed(evt);
+            }
+        });
+        jPanel15.add(btnGuardarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+
+        btnEditarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarCliActionPerformed(evt);
+            }
+        });
+        jPanel15.add(btnEditarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
+
+        btnEliminarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarCliActionPerformed(evt);
+            }
+        });
+        jPanel15.add(btnEliminarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
+
+        btnNuevoCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoClienteActionPerformed(evt);
+            }
+        });
+        jPanel15.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
+
+        jLabel31.setText("Guardar");
+        jPanel15.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
+
+        jLabel32.setText("Editar");
+        jPanel15.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
+
+        jLabel33.setText("Nuevo");
+        jPanel15.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
+
+        jLabel34.setText("Eliminar");
+        jPanel15.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+
+        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTableClientes);
+
+        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
+        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
+        jInternalFrame2Layout.setHorizontalGroup(
+            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE))
+        );
+        jInternalFrame2Layout.setVerticalGroup(
+            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("1", jInternalFrame2);
+
+        jInternalFrame3.setVisible(true);
+
+        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel61.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel61.setText("Fecha");
+        jPanel19.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        jLabel62.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel62.setText("Valor");
+        jPanel19.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 163, -1, -1));
+
+        txtValor.setBackground(new java.awt.Color(204, 204, 204));
+        txtValor.setBorder(null);
+        txtValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtValorActionPerformed(evt);
+            }
+        });
+        jPanel19.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 226, 30));
+
+        jLabel63.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel63.setText("Monto");
+        jPanel19.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 219, -1, -1));
+
+        txtMonto.setBackground(new java.awt.Color(204, 204, 204));
+        txtMonto.setBorder(null);
+        jPanel19.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 243, 226, 30));
+
+        jPanel42.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
+        jPanel42.setLayout(jPanel42Layout);
+        jPanel42Layout.setHorizontalGroup(
+            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel42Layout.setVerticalGroup(
+            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 226, 2));
+
+        jPanel43.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
+        jPanel43.setLayout(jPanel43Layout);
+        jPanel43Layout.setHorizontalGroup(
+            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel43Layout.setVerticalGroup(
+            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
+
+        jPanel44.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
+        jPanel44.setLayout(jPanel44Layout);
+        jPanel44Layout.setHorizontalGroup(
+            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel44Layout.setVerticalGroup(
+            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 273, 226, 2));
+
+        jPanel45.setBackground(new java.awt.Color(0, 110, 255));
+
+        jLabel65.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel65.setText("ABONOS");
+
+        javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
+        jPanel45.setLayout(jPanel45Layout);
+        jPanel45Layout.setHorizontalGroup(
+            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel45Layout.createSequentialGroup()
+                .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel45Layout.setVerticalGroup(
+            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel45Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel65)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel19.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
+
+        jPanel46.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
+        jPanel46.setLayout(jPanel46Layout);
+        jPanel46Layout.setHorizontalGroup(
+            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel46Layout.setVerticalGroup(
+            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
+
+        jPanel47.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
+        jPanel47.setLayout(jPanel47Layout);
+        jPanel47Layout.setHorizontalGroup(
+            jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel47Layout.setVerticalGroup(
+            jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
+
+        txtBanco.setBackground(new java.awt.Color(204, 204, 204));
+        txtBanco.setBorder(null);
+        txtBanco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBancoActionPerformed(evt);
+            }
+        });
+        jPanel19.add(txtBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
+
+        btnGuardarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
+        btnGuardarU4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarU4ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(btnGuardarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+
+        btnEditarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarU4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarU4ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(btnEditarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
+
+        btnEliminarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarU4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarU4ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(btnEliminarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
+
+        btnNuevoU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoU4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoU4ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(btnNuevoU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
+
+        jLabel67.setText("Guardar");
+        jPanel19.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
+
+        jLabel68.setText("Editar");
+        jPanel19.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
+
+        jLabel69.setText("Nuevo");
+        jPanel19.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
+
+        jLabel70.setText("Eliminar");
+        jPanel19.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+
+        jLabel71.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel71.setText("Banco");
+        jPanel19.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+
+        jLabel72.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel72.setText("Comprobante");
+        jPanel19.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
+
+        txtComprobante.setBackground(new java.awt.Color(204, 204, 204));
+        txtComprobante.setBorder(null);
+        jPanel19.add(txtComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 226, 30));
+
+        jPanel50.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
+        jPanel50.setLayout(jPanel50Layout);
+        jPanel50Layout.setHorizontalGroup(
+            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel50Layout.setVerticalGroup(
+            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 226, 2));
+
+        jLabel73.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel73.setText("Estado");
+        jPanel19.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+
+        jCheckBoxLiquidado.setText("Liquidado");
+        jPanel19.add(jCheckBoxLiquidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
+
+        jCheckBoxSinLiquidar.setText("Sin Liquidar");
+        jPanel19.add(jCheckBoxSinLiquidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, -1, -1));
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane8.setViewportView(jTable5);
+
+        javax.swing.GroupLayout jInternalFrame3Layout = new javax.swing.GroupLayout(jInternalFrame3.getContentPane());
+        jInternalFrame3.getContentPane().setLayout(jInternalFrame3Layout);
+        jInternalFrame3Layout.setHorizontalGroup(
+            jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 8, Short.MAX_VALUE))
+        );
+        jInternalFrame3Layout.setVerticalGroup(
+            jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addComponent(jScrollPane8)
+        );
+
+        jTabbedPane1.addTab("2", jInternalFrame3);
+
+        jInternalFrame5.setVisible(true);
+
+        jPanel14.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel40.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel40.setText("Fecha");
+        jPanel14.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        jLabel41.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel41.setText("Kilometraje");
+        jPanel14.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+
+        txtKilometraje.setBackground(new java.awt.Color(204, 204, 204));
+        txtKilometraje.setBorder(null);
+        txtKilometraje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtKilometrajeActionPerformed(evt);
+            }
+        });
+        jPanel14.add(txtKilometraje, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 226, 30));
+
+        jLabel42.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel42.setText("Cambios de aceite");
+        jPanel14.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
+
+        jLabel43.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel43.setText("Cambios de filtro:");
+        jPanel14.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
+
+        jPanel22.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel14.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 226, 2));
+
+        jPanel24.setBackground(new java.awt.Color(0, 110, 255));
+
+        jLabel44.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel44.setText("BITACORA DE MANTENIMIENTO");
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel44)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel14.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
+
+        jPanel25.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel14.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 226, 2));
+
+        jPanel26.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel14.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
+
+        btnGuardarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
+        btnGuardarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarMActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnGuardarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+
+        btnEditarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarMActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnEditarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
+
+        btnEliminarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnEliminarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
+
+        btnNuevoM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoMActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnNuevoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
+
+        jLabel27.setText("Guardar");
+        jPanel14.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
+
+        jLabel28.setText("Editar");
+        jPanel14.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
+
+        jLabel29.setText("Nuevo");
+        jPanel14.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
+
+        jLabel30.setText("Eliminar");
+        jPanel14.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+
+        jTextArea2.setBackground(new java.awt.Color(187, 187, 187));
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setBorder(null);
+        jScrollPane6.setViewportView(jTextArea2);
+
+        jPanel14.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 230, -1));
+
+        jScrollPane7.setBackground(new java.awt.Color(187, 187, 187));
+
+        jTextArea3.setBackground(new java.awt.Color(187, 187, 187));
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jTextArea3.setBorder(null);
+        jScrollPane7.setViewportView(jTextArea3);
+
+        jPanel14.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 230, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jInternalFrame5Layout = new javax.swing.GroupLayout(jInternalFrame5.getContentPane());
+        jInternalFrame5.getContentPane().setLayout(jInternalFrame5Layout);
+        jInternalFrame5Layout.setHorizontalGroup(
+            jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame5Layout.createSequentialGroup()
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 379, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jInternalFrame5Layout.setVerticalGroup(
+            jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
+        );
+
+        jTabbedPane1.addTab("3", jInternalFrame5);
+
+        jInternalFrame4.setVisible(true);
+
+        jPanel13.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel36.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel36.setText("Contraseña");
+        jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+
+        jPanel17.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel13.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 226, 2));
+
+        jPanel18.setBackground(new java.awt.Color(0, 110, 255));
+
+        jLabel39.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setText("USUARIOS");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel39)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel13.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 60));
+
+        txtNombreU.setBackground(new java.awt.Color(204, 204, 204));
+        txtNombreU.setBorder(null);
+        txtNombreU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreUActionPerformed(evt);
+            }
+        });
+        jPanel13.add(txtNombreU, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 226, 30));
+
+        jLabel45.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel45.setText("Nombre");
+        jPanel13.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        jPanel27.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel13.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 226, -1));
+
+        txtCorreo3.setBackground(new java.awt.Color(204, 204, 204));
+        txtCorreo3.setBorder(null);
+        txtCorreo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorreo3ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(txtCorreo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 226, 30));
+
+        txtcontra.setBackground(new java.awt.Color(204, 204, 204));
+        txtcontra.setFont(txtcontra.getFont().deriveFont((float)12));
+        txtcontra.setBorder(null);
+        txtcontra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcontraActionPerformed(evt);
+            }
+        });
+        jPanel13.add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 230, 30));
+
+        jCheckBoxContra.setForeground(new java.awt.Color(60, 63, 65));
+        jCheckBoxContra.setText("Mostrar Contraseña");
+        jCheckBoxContra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxContraActionPerformed(evt);
+            }
+        });
+        jPanel13.add(jCheckBoxContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+
+        btnGuardarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
+        btnGuardarU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarUActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnGuardarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+
+        btnEditarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarUActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnEditarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
+
+        btnEliminarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarUActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnEliminarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
+
+        btnNuevoU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoUActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnNuevoU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
+
+        jLabel19.setText("Guardar");
+        jPanel13.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
+
+        jLabel20.setText("Editar");
+        jPanel13.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
+
+        jLabel21.setText("Nuevo");
+        jPanel13.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
+
+        jLabel22.setText("Eliminar");
+        jPanel13.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+
+        jTableUsuario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(jTableUsuario);
+
+        javax.swing.GroupLayout jInternalFrame4Layout = new javax.swing.GroupLayout(jInternalFrame4.getContentPane());
+        jInternalFrame4.getContentPane().setLayout(jInternalFrame4Layout);
+        jInternalFrame4Layout.setHorizontalGroup(
+            jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame4Layout.createSequentialGroup()
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
+                .addGap(12, 12, 12))
+        );
+        jInternalFrame4Layout.setVerticalGroup(
+            jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addGroup(jInternalFrame4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("4", jInternalFrame4);
+
+        jInternalFrame6.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame6Layout = new javax.swing.GroupLayout(jInternalFrame6.getContentPane());
+        jInternalFrame6.getContentPane().setLayout(jInternalFrame6Layout);
+        jInternalFrame6Layout.setHorizontalGroup(
+            jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1088, Short.MAX_VALUE)
+        );
+        jInternalFrame6Layout.setVerticalGroup(
+            jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 523, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("5", jInternalFrame6);
 
         jInternalFrame1.setVisible(true);
 
@@ -343,9 +1249,6 @@ Date fechaSeleccionada = jCalendar.getDate();
 
         jPanel16.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
 
-        FeachaContrato.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel16.add(FeachaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
-
         txtConductor.setBackground(new java.awt.Color(204, 204, 204));
         txtConductor.setBorder(null);
         txtConductor.addActionListener(new java.awt.event.ActionListener() {
@@ -368,7 +1271,7 @@ Date fechaSeleccionada = jCalendar.getDate();
 
         jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 230, 90));
 
-        btnGuardarU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
+        btnGuardarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
         btnGuardarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarU3ActionPerformed(evt);
@@ -376,7 +1279,7 @@ Date fechaSeleccionada = jCalendar.getDate();
         });
         jPanel16.add(btnGuardarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Modificar.png"))); // NOI18N
+        btnEditarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarU3ActionPerformed(evt);
@@ -384,7 +1287,7 @@ Date fechaSeleccionada = jCalendar.getDate();
         });
         jPanel16.add(btnEditarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
+        btnEliminarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarU3ActionPerformed(evt);
@@ -392,7 +1295,7 @@ Date fechaSeleccionada = jCalendar.getDate();
         });
         jPanel16.add(btnEliminarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
+        btnNuevoU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoU3ActionPerformed(evt);
@@ -400,19 +1303,15 @@ Date fechaSeleccionada = jCalendar.getDate();
         });
         jPanel16.add(btnNuevoU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
 
-        jLabel35.setForeground(new java.awt.Color(0, 0, 0));
         jLabel35.setText("Guardar");
         jPanel16.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
 
-        jLabel37.setForeground(new java.awt.Color(0, 0, 0));
         jLabel37.setText("Editar");
         jPanel16.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
 
-        jLabel58.setForeground(new java.awt.Color(0, 0, 0));
         jLabel58.setText("Nuevo");
         jPanel16.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
 
-        jLabel59.setForeground(new java.awt.Color(0, 0, 0));
         jLabel59.setText("Eliminar");
         jPanel16.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
 
@@ -437,7 +1336,6 @@ Date fechaSeleccionada = jCalendar.getDate();
         jPanel16.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 490, 60, 2));
 
         txtConductor1.setBackground(new java.awt.Color(204, 204, 204));
-        txtConductor1.setForeground(new java.awt.Color(0, 0, 0));
         txtConductor1.setBorder(null);
         txtConductor1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -477,943 +1375,9 @@ Date fechaSeleccionada = jCalendar.getDate();
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("1", jInternalFrame1);
+        jTabbedPane1.addTab("6", jInternalFrame1);
 
-        jInternalFrame2.setPreferredSize(new java.awt.Dimension(1110, 600));
-        jInternalFrame2.setVisible(true);
-
-        jPanel15.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel46.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel46.setText("Nombre");
-        jPanel15.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-
-        jLabel47.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel47.setText("Apellido");
-        jPanel15.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
-
-        jLabel48.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel48.setText("Telefono");
-        jPanel15.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
-
-        txtTelefono.setBackground(new java.awt.Color(204, 204, 204));
-        txtTelefono.setBorder(null);
-        jPanel15.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 226, 30));
-
-        jLabel49.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel49.setText("Cedula");
-        jPanel15.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
-
-        jPanel28.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
-        jPanel28.setLayout(jPanel28Layout);
-        jPanel28Layout.setHorizontalGroup(
-            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel28Layout.setVerticalGroup(
-            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel15.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 226, 2));
-
-        jPanel29.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
-        jPanel29.setLayout(jPanel29Layout);
-        jPanel29Layout.setHorizontalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel29Layout.setVerticalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel15.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 226, 2));
-
-        jPanel30.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
-        jPanel30.setLayout(jPanel30Layout);
-        jPanel30Layout.setHorizontalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel30Layout.setVerticalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel15.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 226, 2));
-
-        jPanel31.setBackground(new java.awt.Color(0, 110, 255));
-
-        jLabel50.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel50.setText("CLIENTES");
-
-        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
-        jPanel31.setLayout(jPanel31Layout);
-        jPanel31Layout.setHorizontalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
-        );
-        jPanel31Layout.setVerticalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel31Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel50)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        jPanel15.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 60));
-
-        jPanel32.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
-        jPanel32.setLayout(jPanel32Layout);
-        jPanel32Layout.setHorizontalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel32Layout.setVerticalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel15.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 226, 2));
-
-        jPanel33.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
-        jPanel33.setLayout(jPanel33Layout);
-        jPanel33Layout.setHorizontalGroup(
-            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel33Layout.setVerticalGroup(
-            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel15.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 226, 2));
-
-        txtCedula.setBackground(new java.awt.Color(204, 204, 204));
-        txtCedula.setBorder(null);
-        txtCedula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCedulaActionPerformed(evt);
-            }
-        });
-        jPanel15.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 226, 30));
-
-        txtApellidoC.setBackground(new java.awt.Color(204, 204, 204));
-        txtApellidoC.setBorder(null);
-        txtApellidoC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidoCActionPerformed(evt);
-            }
-        });
-        jPanel15.add(txtApellidoC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 226, 30));
-
-        txtNombreC.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombreC.setBorder(null);
-        txtNombreC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreCActionPerformed(evt);
-            }
-        });
-        jPanel15.add(txtNombreC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 226, 30));
-
-        jLabel51.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel51.setText("Direccion");
-        jPanel15.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
-
-        jPanel34.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
-        jPanel34.setLayout(jPanel34Layout);
-        jPanel34Layout.setHorizontalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel34Layout.setVerticalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel15.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 226, 2));
-
-        txtDireccion.setBackground(new java.awt.Color(204, 204, 204));
-        txtDireccion.setBorder(null);
-        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDireccionActionPerformed(evt);
-            }
-        });
-        jPanel15.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 226, 30));
-
-        btnGuardarCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
-        btnGuardarCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarCliActionPerformed(evt);
-            }
-        });
-        jPanel15.add(btnGuardarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
-
-        btnEditarCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Modificar.png"))); // NOI18N
-        btnEditarCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarCliActionPerformed(evt);
-            }
-        });
-        jPanel15.add(btnEditarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
-
-        btnEliminarCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
-        btnEliminarCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarCliActionPerformed(evt);
-            }
-        });
-        jPanel15.add(btnEliminarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
-
-        btnNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
-        btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoClienteActionPerformed(evt);
-            }
-        });
-        jPanel15.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
-
-        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel31.setText("Guardar");
-        jPanel15.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
-
-        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel32.setText("Editar");
-        jPanel15.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
-
-        jLabel33.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel33.setText("Nuevo");
-        jPanel15.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
-
-        jLabel34.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel34.setText("Eliminar");
-        jPanel15.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
-
-        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(jTableClientes);
-
-        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
-        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
-        jInternalFrame2Layout.setHorizontalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE))
-        );
-        jInternalFrame2Layout.setVerticalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("2", jInternalFrame2);
-
-        jInternalFrame3.setVisible(true);
-
-        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel61.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel61.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel61.setText("Fecha");
-        jPanel19.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-
-        jLabel62.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel62.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel62.setText("Valor");
-        jPanel19.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 163, -1, -1));
-
-        txtValor.setBackground(new java.awt.Color(204, 204, 204));
-        txtValor.setBorder(null);
-        txtValor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtValorActionPerformed(evt);
-            }
-        });
-        jPanel19.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 226, 30));
-
-        jLabel63.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel63.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel63.setText("Monto");
-        jPanel19.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 219, -1, -1));
-
-        txtMonto.setBackground(new java.awt.Color(204, 204, 204));
-        txtMonto.setBorder(null);
-        jPanel19.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 243, 226, 30));
-
-        jPanel42.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
-        jPanel42.setLayout(jPanel42Layout);
-        jPanel42Layout.setHorizontalGroup(
-            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel42Layout.setVerticalGroup(
-            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 226, 2));
-
-        jPanel43.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
-        jPanel43.setLayout(jPanel43Layout);
-        jPanel43Layout.setHorizontalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel43Layout.setVerticalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
-
-        jPanel44.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
-        jPanel44.setLayout(jPanel44Layout);
-        jPanel44Layout.setHorizontalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel44Layout.setVerticalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 273, 226, 2));
-
-        jPanel45.setBackground(new java.awt.Color(0, 110, 255));
-
-        jLabel65.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel65.setText("ABONOS");
-
-        javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
-        jPanel45.setLayout(jPanel45Layout);
-        jPanel45Layout.setHorizontalGroup(
-            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel45Layout.createSequentialGroup()
-                .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel45Layout.setVerticalGroup(
-            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel45Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel65)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        jPanel19.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
-
-        jPanel46.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
-        jPanel46.setLayout(jPanel46Layout);
-        jPanel46Layout.setHorizontalGroup(
-            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel46Layout.setVerticalGroup(
-            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
-
-        jPanel47.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
-        jPanel47.setLayout(jPanel47Layout);
-        jPanel47Layout.setHorizontalGroup(
-            jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel47Layout.setVerticalGroup(
-            jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
-
-        Feachaabono.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel19.add(Feachaabono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
-
-        txtBanco.setBackground(new java.awt.Color(204, 204, 204));
-        txtBanco.setBorder(null);
-        txtBanco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBancoActionPerformed(evt);
-            }
-        });
-        jPanel19.add(txtBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
-
-        btnGuardarU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
-        btnGuardarU4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarU4ActionPerformed(evt);
-            }
-        });
-        jPanel19.add(btnGuardarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
-
-        btnEditarU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Modificar.png"))); // NOI18N
-        btnEditarU4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarU4ActionPerformed(evt);
-            }
-        });
-        jPanel19.add(btnEditarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
-
-        btnEliminarU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
-        btnEliminarU4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarU4ActionPerformed(evt);
-            }
-        });
-        jPanel19.add(btnEliminarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
-
-        btnNuevoU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
-        btnNuevoU4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoU4ActionPerformed(evt);
-            }
-        });
-        jPanel19.add(btnNuevoU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
-
-        jLabel67.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel67.setText("Guardar");
-        jPanel19.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
-
-        jLabel68.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel68.setText("Editar");
-        jPanel19.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
-
-        jLabel69.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel69.setText("Nuevo");
-        jPanel19.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
-
-        jLabel70.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel70.setText("Eliminar");
-        jPanel19.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
-
-        jLabel71.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel71.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel71.setText("Banco");
-        jPanel19.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
-
-        jLabel72.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel72.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel72.setText("Comprobante");
-        jPanel19.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
-
-        txtComprobante.setBackground(new java.awt.Color(204, 204, 204));
-        txtComprobante.setBorder(null);
-        jPanel19.add(txtComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 226, 30));
-
-        jPanel50.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
-        jPanel50.setLayout(jPanel50Layout);
-        jPanel50Layout.setHorizontalGroup(
-            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel50Layout.setVerticalGroup(
-            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 226, 2));
-
-        jLabel73.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel73.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel73.setText("Estado");
-        jPanel19.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
-
-        jCheckBoxLiquidado.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBoxLiquidado.setText("Liquidado");
-        jPanel19.add(jCheckBoxLiquidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
-
-        jCheckBoxSinLiquidar.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBoxSinLiquidar.setText("Sin Liquidar");
-        jPanel19.add(jCheckBoxSinLiquidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, -1, -1));
-
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane8.setViewportView(jTable5);
-
-        javax.swing.GroupLayout jInternalFrame3Layout = new javax.swing.GroupLayout(jInternalFrame3.getContentPane());
-        jInternalFrame3.getContentPane().setLayout(jInternalFrame3Layout);
-        jInternalFrame3Layout.setHorizontalGroup(
-            jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame3Layout.createSequentialGroup()
-                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 8, Short.MAX_VALUE))
-        );
-        jInternalFrame3Layout.setVerticalGroup(
-            jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
-            .addComponent(jScrollPane8)
-        );
-
-        jTabbedPane1.addTab("3", jInternalFrame3);
-
-        jInternalFrame5.setVisible(true);
-
-        jPanel14.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel40.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel40.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel40.setText("Fecha");
-        jPanel14.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-
-        jLabel41.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel41.setText("Kilometraje");
-        jPanel14.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
-
-        txtKilometraje.setBackground(new java.awt.Color(204, 204, 204));
-        txtKilometraje.setBorder(null);
-        txtKilometraje.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKilometrajeActionPerformed(evt);
-            }
-        });
-        jPanel14.add(txtKilometraje, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 226, 30));
-
-        jLabel42.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel42.setText("Cambios de aceite");
-        jPanel14.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
-
-        jLabel43.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel43.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel43.setText("Cambios de filtro:");
-        jPanel14.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
-
-        jPanel22.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel14.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 226, 2));
-
-        jPanel24.setBackground(new java.awt.Color(0, 110, 255));
-
-        jLabel44.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel44.setText("BITACORA DE MANTENIMIENTO");
-
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel24Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel44)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        jPanel14.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
-
-        jPanel25.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
-        jPanel25.setLayout(jPanel25Layout);
-        jPanel25Layout.setHorizontalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel25Layout.setVerticalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel14.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 226, 2));
-
-        jPanel26.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
-        jPanel26.setLayout(jPanel26Layout);
-        jPanel26Layout.setHorizontalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel26Layout.setVerticalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel14.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
-
-        FeachaMantenimiento.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel14.add(FeachaMantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
-
-        btnGuardarM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
-        btnGuardarM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarMActionPerformed(evt);
-            }
-        });
-        jPanel14.add(btnGuardarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
-
-        btnEditarM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Modificar.png"))); // NOI18N
-        btnEditarM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarMActionPerformed(evt);
-            }
-        });
-        jPanel14.add(btnEditarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
-
-        btnEliminarM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
-        btnEliminarM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarMActionPerformed(evt);
-            }
-        });
-        jPanel14.add(btnEliminarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
-
-        btnNuevoM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
-        btnNuevoM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoMActionPerformed(evt);
-            }
-        });
-        jPanel14.add(btnNuevoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
-
-        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel27.setText("Guardar");
-        jPanel14.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
-
-        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel28.setText("Editar");
-        jPanel14.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
-
-        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel29.setText("Nuevo");
-        jPanel14.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
-
-        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel30.setText("Eliminar");
-        jPanel14.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
-
-        jTextArea2.setBackground(new java.awt.Color(187, 187, 187));
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setBorder(null);
-        jScrollPane6.setViewportView(jTextArea2);
-
-        jPanel14.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 230, -1));
-
-        jScrollPane7.setBackground(new java.awt.Color(187, 187, 187));
-
-        jTextArea3.setBackground(new java.awt.Color(187, 187, 187));
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jTextArea3.setBorder(null);
-        jScrollPane7.setViewportView(jTextArea3);
-
-        jPanel14.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 230, -1));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        javax.swing.GroupLayout jInternalFrame5Layout = new javax.swing.GroupLayout(jInternalFrame5.getContentPane());
-        jInternalFrame5.getContentPane().setLayout(jInternalFrame5Layout);
-        jInternalFrame5Layout.setHorizontalGroup(
-            jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame5Layout.createSequentialGroup()
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 379, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jInternalFrame5Layout.setVerticalGroup(
-            jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
-            .addComponent(jScrollPane1)
-        );
-
-        jTabbedPane1.addTab("4", jInternalFrame5);
-
-        jInternalFrame4.setVisible(true);
-
-        jPanel13.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel36.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel36.setText("Contraseña");
-        jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
-
-        jPanel17.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
-        jPanel17.setLayout(jPanel17Layout);
-        jPanel17Layout.setHorizontalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel17Layout.setVerticalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel13.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 226, 2));
-
-        jPanel18.setBackground(new java.awt.Color(0, 110, 255));
-
-        jLabel39.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel39.setText("USUARIOS");
-
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-        );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel18Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel39)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        jPanel13.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 60));
-
-        txtNombreU.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombreU.setBorder(null);
-        txtNombreU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreUActionPerformed(evt);
-            }
-        });
-        jPanel13.add(txtNombreU, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 226, 30));
-
-        jLabel45.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel45.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel45.setText("Nombre");
-        jPanel13.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-
-        jPanel27.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
-        jPanel27.setLayout(jPanel27Layout);
-        jPanel27Layout.setHorizontalGroup(
-            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel27Layout.setVerticalGroup(
-            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel13.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 226, -1));
-
-        txtCorreo3.setBackground(new java.awt.Color(204, 204, 204));
-        txtCorreo3.setBorder(null);
-        txtCorreo3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCorreo3ActionPerformed(evt);
-            }
-        });
-        jPanel13.add(txtCorreo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 226, 30));
-
-        txtcontra.setBackground(new java.awt.Color(204, 204, 204));
-        txtcontra.setFont(txtcontra.getFont().deriveFont((float)12));
-        txtcontra.setBorder(null);
-        txtcontra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcontraActionPerformed(evt);
-            }
-        });
-        jPanel13.add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 230, 30));
-
-        jCheckBoxContra.setForeground(new java.awt.Color(60, 63, 65));
-        jCheckBoxContra.setText("Mostrar Contraseña");
-        jCheckBoxContra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxContraActionPerformed(evt);
-            }
-        });
-        jPanel13.add(jCheckBoxContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
-
-        btnGuardarU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
-        btnGuardarU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarUActionPerformed(evt);
-            }
-        });
-        jPanel13.add(btnGuardarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
-
-        btnEditarU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Modificar.png"))); // NOI18N
-        btnEditarU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarUActionPerformed(evt);
-            }
-        });
-        jPanel13.add(btnEditarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
-
-        btnEliminarU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
-        btnEliminarU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarUActionPerformed(evt);
-            }
-        });
-        jPanel13.add(btnEliminarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
-
-        btnNuevoU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
-        btnNuevoU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoUActionPerformed(evt);
-            }
-        });
-        jPanel13.add(btnNuevoU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
-
-        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel19.setText("Guardar");
-        jPanel13.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
-
-        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel20.setText("Editar");
-        jPanel13.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
-
-        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel21.setText("Nuevo");
-        jPanel13.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
-
-        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel22.setText("Eliminar");
-        jPanel13.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
-
-        jTableUsuario.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane2.setViewportView(jTableUsuario);
-
-        javax.swing.GroupLayout jInternalFrame4Layout = new javax.swing.GroupLayout(jInternalFrame4.getContentPane());
-        jInternalFrame4.getContentPane().setLayout(jInternalFrame4Layout);
-        jInternalFrame4Layout.setHorizontalGroup(
-            jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame4Layout.createSequentialGroup()
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
-        );
-        jInternalFrame4Layout.setVerticalGroup(
-            jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
-            .addGroup(jInternalFrame4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("5", jInternalFrame4);
-
-        jInternalFrame6.setVisible(true);
-
-        javax.swing.GroupLayout jInternalFrame6Layout = new javax.swing.GroupLayout(jInternalFrame6.getContentPane());
-        jInternalFrame6.getContentPane().setLayout(jInternalFrame6Layout);
-        jInternalFrame6Layout.setHorizontalGroup(
-            jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jInternalFrame6Layout.setVerticalGroup(
-            jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("6", jInternalFrame6);
-
-        jDesktopPane1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 6, 1100, 590));
+        jDesktopPane1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 590));
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 1110, 600));
 
@@ -1424,7 +1388,7 @@ Date fechaSeleccionada = jCalendar.getDate();
 
         btnContrato.setBackground(new java.awt.Color(153, 153, 153));
         btnContrato.setForeground(new java.awt.Color(255, 255, 255));
-        btnContrato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/contract_icon_194172.png"))); // NOI18N
+        btnContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\contract_icon_194172.png")); // NOI18N
         btnContrato.setText("Contrato");
         btnContrato.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnContrato.setFocusable(false);
@@ -1436,7 +1400,7 @@ Date fechaSeleccionada = jCalendar.getDate();
 
         btnClientes.setBackground(new java.awt.Color(153, 153, 153));
         btnClientes.setForeground(new java.awt.Color(255, 255, 255));
-        btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Clientes.png"))); // NOI18N
+        btnClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Clientes.png")); // NOI18N
         btnClientes.setText("Clientes");
         btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnClientes.setFocusable(false);
@@ -1448,7 +1412,7 @@ Date fechaSeleccionada = jCalendar.getDate();
 
         btnAbono.setBackground(new java.awt.Color(153, 153, 153));
         btnAbono.setForeground(new java.awt.Color(255, 255, 255));
-        btnAbono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Carrito-de-compras.png"))); // NOI18N
+        btnAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Carrito-de-compras.png")); // NOI18N
         btnAbono.setText("Abono");
         btnAbono.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAbono.setFocusable(false);
@@ -1460,7 +1424,7 @@ Date fechaSeleccionada = jCalendar.getDate();
 
         btnMantenimientos.setBackground(new java.awt.Color(153, 153, 153));
         btnMantenimientos.setForeground(new java.awt.Color(255, 255, 255));
-        btnMantenimientos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mantenimiento.png"))); // NOI18N
+        btnMantenimientos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Mantenimiento.png")); // NOI18N
         btnMantenimientos.setText("Mantenimiento");
         btnMantenimientos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMantenimientos.setFocusable(false);
@@ -1478,7 +1442,7 @@ Date fechaSeleccionada = jCalendar.getDate();
 
         btnUsuarios.setBackground(new java.awt.Color(153, 153, 153));
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Usuario.png"))); // NOI18N
+        btnUsuarios.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Usuario.png")); // NOI18N
         btnUsuarios.setText("Usuarios");
         btnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnUsuarios.setFocusable(false);
@@ -1490,11 +1454,11 @@ Date fechaSeleccionada = jCalendar.getDate();
 
         tipo.setForeground(new java.awt.Color(255, 255, 255));
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Logo.png")); // NOI18N
 
         btnBusqueda.setBackground(new java.awt.Color(153, 153, 153));
         btnBusqueda.setForeground(new java.awt.Color(255, 255, 255));
-        btnBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lupa.png"))); // NOI18N
+        btnBusqueda.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Lupa.png")); // NOI18N
         btnBusqueda.setText("Busquedas");
         btnBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnBusqueda.setFocusable(false);
@@ -1557,6 +1521,7 @@ Date fechaSeleccionada = jCalendar.getDate();
     private void btnContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratoActionPerformed
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(0);
+       
     }//GEN-LAST:event_btnContratoActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
@@ -1566,38 +1531,26 @@ Date fechaSeleccionada = jCalendar.getDate();
 
     private void btnAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbonoActionPerformed
         //TODO add your handling code here:
-        //LimpiarTable();
-        //ListarProveedor();
+        
         jTabbedPane1.setSelectedIndex(2);
-        //btnEditarProveedor.setEnabled(true);
-        //btnEliminarProveedor.setEnabled(true);
-        //LimpiarProveedor();     
+            
     }//GEN-LAST:event_btnAbonoActionPerformed
 
     private void btnMantenimientosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientosMouseClicked
-        /*TODO add your handling code here:
-        cbxProveedorPro.removeAllItems();
-        llenarProveedor();
-        */
+       
     }//GEN-LAST:event_btnMantenimientosMouseClicked
 
     private void btnMantenimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantenimientosActionPerformed
-        // TODO add your handling code here:
-        //LimpiarTable();
-        //ListarProductos();
+       
         jTabbedPane1.setSelectedIndex(3);
-        //btnEditarpro.setEnabled(false);
-        //btnEliminarPro.setEnabled(false);
-        //btnGuardarpro.setEnabled(true);
-        //LimpiarProductos();
+        
         
     }//GEN-LAST:event_btnMantenimientosActionPerformed
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(4);
-        //LimpiarTable();
-        //ListarVentas();
+        
         
     }//GEN-LAST:event_btnUsuariosActionPerformed
 
@@ -1763,8 +1716,8 @@ Date fechaSeleccionada = jCalendar.getDate();
   public static void main(String args[]) {
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
-            Menu menu = new Menu();
-            menu.setVisible(true);
+           // Menu menu = new Menu();
+            new Menu().setVisible(true);
         }  
     });
 }
@@ -1816,9 +1769,6 @@ Date fechaSeleccionada = jCalendar.getDate();
  
 */
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser FeachaContrato;
-    private com.toedter.calendar.JDateChooser FeachaMantenimiento;
-    private com.toedter.calendar.JDateChooser Feachaabono;
     private javax.swing.JButton btnAbono;
     private javax.swing.JButton btnBusqueda;
     private javax.swing.JButton btnClientes;
