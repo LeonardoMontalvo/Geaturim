@@ -1,6 +1,7 @@
 
 package Modelo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -9,38 +10,51 @@ import java.util.Date;
  */
 public class Mantenimiento {
     
-    
-    private String Notas,Estado;
-    private Date Fecha;
+    private String CambiosDeAceite, CambiosDeFiltro;
+    private Date fecha;
+    private int Kilometraje;
 
-    public Mantenimiento(String Notas, String Estado, Date Fecha) {
-        this.Notas = Notas;
-        this.Estado = Estado;
-        this.Fecha = Fecha;
+     public String getFechaFormateada() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(this.fecha);
+    }
+    public Mantenimiento(String CambiosDeAceite, String CambiosDeFiltro, Date Fecha, int Kilometraje) {
+        this.CambiosDeAceite = CambiosDeAceite;
+        this.CambiosDeFiltro = CambiosDeFiltro;
+        this.fecha = Fecha;
+        this.Kilometraje = Kilometraje;
     }
 
-    public String getNotas() {
-        return Notas;
+    public String getCambiosDeAceite() {
+        return CambiosDeAceite;
     }
 
-    public void setNotas(String Notas) {
-        this.Notas = Notas;
+    public void setCambiosDeAceite(String CambiosDeAceite) {
+        this.CambiosDeAceite = CambiosDeAceite;
     }
 
-    public String getEstado() {
-        return Estado;
+    public String getCambiosDeFiltro() {
+        return CambiosDeFiltro;
     }
 
-    public void setEstado(String Estado) {
-        this.Estado = Estado;
+    public void setCambiosDeFiltro(String CambiosDeFiltro) {
+        this.CambiosDeFiltro = CambiosDeFiltro;
     }
 
     public Date getFecha() {
-        return Fecha;
+        return fecha;
     }
 
     public void setFecha(Date Fecha) {
-        this.Fecha = Fecha;
+        this.fecha = Fecha;
+    }
+
+    public int getKilometraje() {
+        return Kilometraje;
+    }
+
+    public void setKilometraje(int Kilometraje) {
+        this.Kilometraje = Kilometraje;
     }
     
     
