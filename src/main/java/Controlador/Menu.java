@@ -6,7 +6,9 @@ import Modelo.Contrato;
 import Modelo.Mantenimiento;
 import Modelo.Usuario;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,7 +20,7 @@ public class Menu extends javax.swing.JFrame {
     
     public Menu() {
         initComponents();
-
+        setModelo();
     }    
     
     
@@ -163,7 +165,7 @@ public class Menu extends javax.swing.JFrame {
         txtCorreo3 = new javax.swing.JTextField();
         txtcontra = new javax.swing.JPasswordField();
         jCheckBoxContra = new javax.swing.JCheckBox();
-        btnGuardarU = new javax.swing.JButton();
+        btnBuscarU = new javax.swing.JButton();
         btnEditarU = new javax.swing.JButton();
         btnEliminarU = new javax.swing.JButton();
         btnNuevoU = new javax.swing.JButton();
@@ -356,7 +358,7 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 230, 90));
 
-        btnGuardarU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
+        btnGuardarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
         btnGuardarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarU3ActionPerformed(evt);
@@ -364,7 +366,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(btnGuardarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Modificar.png"))); // NOI18N
+        btnEditarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarU3ActionPerformed(evt);
@@ -372,7 +374,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(btnEditarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
+        btnEliminarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarU3ActionPerformed(evt);
@@ -380,7 +382,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(btnEliminarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
+        btnNuevoU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoU3ActionPerformed(evt);
@@ -651,7 +653,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel15.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 226, 30));
 
-        btnGuardarCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
+        btnGuardarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
         btnGuardarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarCliActionPerformed(evt);
@@ -659,7 +661,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel15.add(btnGuardarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Modificar.png"))); // NOI18N
+        btnEditarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarCliActionPerformed(evt);
@@ -667,7 +669,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel15.add(btnEditarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
+        btnEliminarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarCliActionPerformed(evt);
@@ -675,7 +677,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel15.add(btnEliminarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
+        btnNuevoCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoClienteActionPerformed(evt);
@@ -882,7 +884,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(txtBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
 
-        btnGuardarU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
+        btnGuardarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
         btnGuardarU4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarU4ActionPerformed(evt);
@@ -890,7 +892,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(btnGuardarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Modificar.png"))); // NOI18N
+        btnEditarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarU4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarU4ActionPerformed(evt);
@@ -898,7 +900,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(btnEditarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
+        btnEliminarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarU4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarU4ActionPerformed(evt);
@@ -906,7 +908,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(btnEliminarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
+        btnNuevoU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoU4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoU4ActionPerformed(evt);
@@ -1113,7 +1115,7 @@ public class Menu extends javax.swing.JFrame {
         FeachaMantenimiento.setBackground(new java.awt.Color(204, 204, 204));
         jPanel14.add(FeachaMantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
 
-        btnGuardarM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
+        btnGuardarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
         btnGuardarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarMActionPerformed(evt);
@@ -1121,7 +1123,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel14.add(btnGuardarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Modificar.png"))); // NOI18N
+        btnEditarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarMActionPerformed(evt);
@@ -1129,7 +1131,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel14.add(btnEditarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
+        btnEliminarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarMActionPerformed(evt);
@@ -1137,7 +1139,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel14.add(btnEliminarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
+        btnNuevoM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoMActionPerformed(evt);
@@ -1314,15 +1316,15 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel13.add(jCheckBoxContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
-        btnGuardarU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
-        btnGuardarU.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Lupa.png")); // NOI18N
+        btnBuscarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarUActionPerformed(evt);
+                btnBuscarUActionPerformed(evt);
             }
         });
-        jPanel13.add(btnGuardarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+        jPanel13.add(btnBuscarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Modificar.png"))); // NOI18N
+        btnEditarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarUActionPerformed(evt);
@@ -1330,7 +1332,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel13.add(btnEditarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
+        btnEliminarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarUActionPerformed(evt);
@@ -1338,7 +1340,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel13.add(btnEliminarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
+        btnNuevoU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoUActionPerformed(evt);
@@ -1347,7 +1349,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel13.add(btnNuevoU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
 
         jLabel19.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel19.setText("Guardar");
+        jLabel19.setText("Buscar");
         jPanel13.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
 
         jLabel20.setForeground(new java.awt.Color(0, 0, 0));
@@ -1355,7 +1357,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel13.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
 
         jLabel21.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel21.setText("Nuevo");
+        jLabel21.setText("Agregar");
         jPanel13.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
 
         jLabel22.setForeground(new java.awt.Color(0, 0, 0));
@@ -1427,7 +1429,7 @@ public class Menu extends javax.swing.JFrame {
 
         btnContrato.setBackground(new java.awt.Color(153, 153, 153));
         btnContrato.setForeground(new java.awt.Color(255, 255, 255));
-        btnContrato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/contract_icon_194172.png"))); // NOI18N
+        btnContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\contract_icon_194172.png")); // NOI18N
         btnContrato.setText("Contrato");
         btnContrato.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnContrato.setFocusable(false);
@@ -1439,7 +1441,7 @@ public class Menu extends javax.swing.JFrame {
 
         btnClientes.setBackground(new java.awt.Color(153, 153, 153));
         btnClientes.setForeground(new java.awt.Color(255, 255, 255));
-        btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Clientes.png"))); // NOI18N
+        btnClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Clientes.png")); // NOI18N
         btnClientes.setText("Clientes");
         btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnClientes.setFocusable(false);
@@ -1451,7 +1453,7 @@ public class Menu extends javax.swing.JFrame {
 
         btnAbono.setBackground(new java.awt.Color(153, 153, 153));
         btnAbono.setForeground(new java.awt.Color(255, 255, 255));
-        btnAbono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Carrito-de-compras.png"))); // NOI18N
+        btnAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Carrito-de-compras.png")); // NOI18N
         btnAbono.setText("Abono");
         btnAbono.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAbono.setFocusable(false);
@@ -1463,7 +1465,7 @@ public class Menu extends javax.swing.JFrame {
 
         btnMantenimientos.setBackground(new java.awt.Color(153, 153, 153));
         btnMantenimientos.setForeground(new java.awt.Color(255, 255, 255));
-        btnMantenimientos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mantenimiento.png"))); // NOI18N
+        btnMantenimientos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Mantenimiento.png")); // NOI18N
         btnMantenimientos.setText("Mantenimiento");
         btnMantenimientos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMantenimientos.setFocusable(false);
@@ -1481,7 +1483,7 @@ public class Menu extends javax.swing.JFrame {
 
         btnUsuarios.setBackground(new java.awt.Color(153, 153, 153));
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Usuario.png"))); // NOI18N
+        btnUsuarios.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Usuario.png")); // NOI18N
         btnUsuarios.setText("Usuarios");
         btnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnUsuarios.setFocusable(false);
@@ -1493,11 +1495,11 @@ public class Menu extends javax.swing.JFrame {
 
         tipo.setForeground(new java.awt.Color(255, 255, 255));
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Logo.png")); // NOI18N
 
         btnBusqueda.setBackground(new java.awt.Color(153, 153, 153));
         btnBusqueda.setForeground(new java.awt.Color(255, 255, 255));
-        btnBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lupa.png"))); // NOI18N
+        btnBusqueda.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Lupa.png")); // NOI18N
         btnBusqueda.setText("Busquedas");
         btnBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnBusqueda.setFocusable(false);
@@ -1603,22 +1605,103 @@ public class Menu extends javax.swing.JFrame {
         //ListarVentas();
         
     }//GEN-LAST:event_btnUsuariosActionPerformed
+private static final int MAX_LENGTH = 50;
 
     private void btnNuevoUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoUActionPerformed
-        // TODO add your handling code here:
+     String nombre = txtNombreU.getText().trim();
+    String contrasenia = txtcontra.getText().trim();
+
+    if (nombre.isEmpty() || contrasenia.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
+    } else {
+        if (nombre.length() > MAX_LENGTH || contrasenia.length() > MAX_LENGTH) {
+            JOptionPane.showMessageDialog(null, "Nombre o contraseña demasiado largos");
+        } else {
+   
+            if (nombre.matches("^\\s*$") || contrasenia.matches("^\\s*$")) {
+                JOptionPane.showMessageDialog(null, "Nombre o contraseña inválidos");
+            } else {
+                Usuario uM = new Usuario(nombre, contrasenia);
+                UsuarioControlador uC = new UsuarioControlador();
+                uC.insertarUsuario(uM);
+                listaPersonas.add(uM);
+                setDatos(uM);
+            }
+        }
+    }
+
     }//GEN-LAST:event_btnNuevoUActionPerformed
 
     private void btnEliminarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUActionPerformed
-        // TODO add your handling code here:
+       int filaSeleccionada = jTableUsuario.getSelectedRow();
+
+    if (filaSeleccionada >= 0) {
+        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este usuario?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+            String nombre = modelo.getValueAt(filaSeleccionada, 1).toString();
+            String contrasenia = modelo.getValueAt(filaSeleccionada, 2).toString();
+            
+            UsuarioControlador usuarioControlador = new UsuarioControlador();
+            usuarioControlador.eliminarUsuario(nombre, contrasenia);
+            
+            modelo.removeRow(filaSeleccionada);
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
+    }
+
     }//GEN-LAST:event_btnEliminarUActionPerformed
 
     private void btnEditarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUActionPerformed
-        // TODO add your handling code here:
+        int filaSeleccionada = jTableUsuario.getSelectedRow();
+
+    if (filaSeleccionada >= 0) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+        String nombreAntiguo = modelo.getValueAt(filaSeleccionada, 1).toString();
+        String contraseniaAntigua = modelo.getValueAt(filaSeleccionada, 2).toString();
+
+        String nuevoNombre = txtNombreU.getText().trim();
+        String nuevaContrasenia = txtcontra.getText().trim();
+
+        if (nuevoNombre.isEmpty() || nuevaContrasenia.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese un nuevo nombre y contraseña");
+        } else {
+            UsuarioControlador usuarioControlador = new UsuarioControlador();
+            usuarioControlador.editarUsuario(nombreAntiguo, contraseniaAntigua, nuevoNombre, nuevaContrasenia);
+
+            modelo.setValueAt(nuevoNombre, filaSeleccionada, 1);
+            modelo.setValueAt(nuevaContrasenia, filaSeleccionada, 2);
+
+            JOptionPane.showMessageDialog(null, "Usuario editado con éxito");
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
+    }
     }//GEN-LAST:event_btnEditarUActionPerformed
 
-    private void btnGuardarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarUActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarUActionPerformed
+    private void btnBuscarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUActionPerformed
+  String nombreBuscado = txtNombreU.getText().trim();
+
+    if (!nombreBuscado.isEmpty()) {
+        UsuarioControlador usuarioControlador = new UsuarioControlador();
+        ArrayList<Object[]> resultados = usuarioControlador.buscarUsuarios(nombreBuscado);
+
+        DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+        modelo.setRowCount(0);
+
+        if (resultados != null) {
+            for (Object[] fila : resultados) {
+                modelo.addRow(fila);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al buscar usuarios por nombre");
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Ingrese un nombre para buscar");
+    }
+    }//GEN-LAST:event_btnBuscarUActionPerformed
 
     private void jCheckBoxContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxContraActionPerformed
 
@@ -1708,7 +1791,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarU3ActionPerformed
 
     private void btnEditarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarU3ActionPerformed
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_btnEditarU3ActionPerformed
 
     private void btnEliminarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarU3ActionPerformed
@@ -1753,6 +1836,7 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnBusquedaActionPerformed
 
+    
     private void jTableUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsuarioMouseClicked
      DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
      txtNombreU.setText((String )modelo.getValueAt(jTableUsuario.getSelectedRow(), 1));
@@ -1787,15 +1871,48 @@ public class Menu extends javax.swing.JFrame {
 }
 
                             /////////////////////////////////////////////////////////////////////////////////////// TABLAS //////////////////////////////////////////////////////////////////////////////////////
+  
+  
+    ArrayList<Usuario> listaPersonas = new ArrayList<>();
+    DefaultTableModel modelo = new DefaultTableModel();
+    
+               
+public void setModelo() {
+    String[] cabecera = {"Nro.", "Nombres", "Contraseñas"};
+    modelo.setColumnIdentifiers(cabecera);
 
- public void mostrarDatosUsuario (Usuario usuario) {
-        DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
-        Object[] fila = new Object[3];
-        fila[0] = modelo.getRowCount() + 1;
-        fila[1] = usuario.getNombre();
-        fila[2] = usuario.getContrasenia();
-        modelo.addRow(fila);
+    UsuarioControlador usuarioControlador = new UsuarioControlador();
+    ArrayList<Object[]> datos = usuarioControlador.datosUsuarios();
+
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modelo.addRow(fila);
+        }
     }
+
+    jTableUsuario.setModel(modelo);
+}
+
+   
+public void setDatos(Usuario usuario) {
+    DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+    Object[] fila = new Object[3];
+
+    fila[0] = modelo.getRowCount() + 1;
+    fila[1] = usuario.getNombre();
+    fila[2] = usuario.getContrasenia();
+
+    modelo.addRow(fila);
+    jTableUsuario.setModel(modelo); 
+
+
+    txtNombreU.setText("");
+    txtcontra.setText("");
+}
+
+
+ 
+ 
  
  public void mostrarDatosClientes (Cliente cliente) {
         DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();      
@@ -1867,6 +1984,7 @@ public class Menu extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser FeachaContrato;
     private com.toedter.calendar.JDateChooser FeachaMantenimiento;
     private javax.swing.JButton btnAbono;
+    private javax.swing.JButton btnBuscarU;
     private javax.swing.JButton btnBusqueda;
     private javax.swing.JButton btnClientes;
     private javax.swing.JButton btnContrato;
@@ -1882,7 +2000,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarU4;
     private javax.swing.JButton btnGuardarCli;
     private javax.swing.JButton btnGuardarM;
-    private javax.swing.JButton btnGuardarU;
     private javax.swing.JButton btnGuardarU3;
     private javax.swing.JButton btnGuardarU4;
     private javax.swing.JButton btnMantenimientos;
@@ -2023,5 +2140,26 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtVehiculo;
     private javax.swing.JPasswordField txtcontra;
     // End of variables declaration//GEN-END:variables
+
+                            /////////////////////////////////////////////////////////////////////////////////////// METODOS DE TABLAS //////////////////////////////////////////////////////////////////////////////////////
+    
+    private void limpiarTabla() {
+        int a = modelo.getRowCount() - 1;  
+        for (int i = a; i >= 0; i--) {
+            modelo.removeRow(i);
+        }
+    }
+
+     public void cargarUsuarios() {
+        UsuarioControlador usuarioControlador = new UsuarioControlador();
+        ArrayList<Object[]> datos = usuarioControlador.datosUsuarios();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modelo.addRow(fila);
+            }
+        }
+    }
+    
+
 }
 

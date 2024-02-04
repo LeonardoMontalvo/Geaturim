@@ -439,7 +439,7 @@
                     <Component class="javax.swing.JButton" name="btnGuardarU3">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/GuardarTodo.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\GuardarTodo.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -454,7 +454,7 @@
                     <Component class="javax.swing.JButton" name="btnEditarU3">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/Modificar.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Modificar.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -469,7 +469,7 @@
                     <Component class="javax.swing.JButton" name="btnEliminarU3">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/eliminar.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\eliminar.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -484,7 +484,7 @@
                     <Component class="javax.swing.JButton" name="btnNuevoU3">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/nuevo.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\nuevo.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1046,7 +1046,7 @@
                     <Component class="javax.swing.JButton" name="btnGuardarCli">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/GuardarTodo.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\GuardarTodo.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1061,7 +1061,7 @@
                     <Component class="javax.swing.JButton" name="btnEditarCli">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/Modificar.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Modificar.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1076,7 +1076,7 @@
                     <Component class="javax.swing.JButton" name="btnEliminarCli">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/eliminar.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\eliminar.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1091,7 +1091,7 @@
                     <Component class="javax.swing.JButton" name="btnNuevoCliente">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/nuevo.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\nuevo.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1510,7 +1510,7 @@
                     <Component class="javax.swing.JButton" name="btnGuardarU4">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/GuardarTodo.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\GuardarTodo.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1525,7 +1525,7 @@
                     <Component class="javax.swing.JButton" name="btnEditarU4">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/Modificar.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Modificar.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1540,7 +1540,7 @@
                     <Component class="javax.swing.JButton" name="btnEliminarU4">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/eliminar.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\eliminar.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1555,7 +1555,7 @@
                     <Component class="javax.swing.JButton" name="btnNuevoU4">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/nuevo.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\nuevo.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -2017,7 +2017,7 @@
                     <Component class="javax.swing.JButton" name="btnGuardarM">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/GuardarTodo.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\GuardarTodo.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -2032,7 +2032,7 @@
                     <Component class="javax.swing.JButton" name="btnEditarM">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/Modificar.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Modificar.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -2047,7 +2047,7 @@
                     <Component class="javax.swing.JButton" name="btnEliminarM">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/eliminar.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\eliminar.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -2062,7 +2062,7 @@
                     <Component class="javax.swing.JButton" name="btnNuevoM">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/nuevo.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\nuevo.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -2454,14 +2454,14 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JButton" name="btnGuardarU">
+                    <Component class="javax.swing.JButton" name="btnBuscarU">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/GuardarTodo.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Lupa.png"/>
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarUActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarUActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2472,7 +2472,7 @@
                     <Component class="javax.swing.JButton" name="btnEditarU">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/Modificar.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Modificar.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -2487,7 +2487,7 @@
                     <Component class="javax.swing.JButton" name="btnEliminarU">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/eliminar.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\eliminar.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -2502,7 +2502,7 @@
                     <Component class="javax.swing.JButton" name="btnNuevoU">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/nuevo.png"/>
+                          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\nuevo.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -2519,7 +2519,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Guardar"/>
+                        <Property name="text" type="java.lang.String" value="Buscar"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2545,7 +2545,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Nuevo"/>
+                        <Property name="text" type="java.lang.String" value="Agregar"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2701,7 +2701,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/contract_icon_194172.png"/>
+              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\contract_icon_194172.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Contrato"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2722,7 +2722,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/Clientes.png"/>
+              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Clientes.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Clientes"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2743,7 +2743,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/Carrito-de-compras.png"/>
+              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Carrito-de-compras.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Abono"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2764,7 +2764,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/Mantenimiento.png"/>
+              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Mantenimiento.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Mantenimiento"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2787,7 +2787,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/Usuario.png"/>
+              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Usuario.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Usuarios"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2809,7 +2809,7 @@
         <Component class="javax.swing.JLabel" name="lblLogo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/Logo.png"/>
+              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Logo.png"/>
             </Property>
           </Properties>
         </Component>
@@ -2822,7 +2822,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/Lupa.png"/>
+              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Lupa.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Busquedas"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">

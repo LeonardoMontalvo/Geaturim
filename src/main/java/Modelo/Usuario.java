@@ -14,6 +14,8 @@ public class Usuario {
         this.contrasenia = contrasenia;
     }
 
+
+
     public String getNombre() {
         return nombre;
     }

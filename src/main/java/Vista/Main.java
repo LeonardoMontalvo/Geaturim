@@ -4,6 +4,7 @@
  */
 package Vista;
 
+import Controlador.Login;
 import Controlador.Menu;
 
 /**
