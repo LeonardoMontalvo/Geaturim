@@ -4,6 +4,10 @@
  */
 package Controlador;
 
+import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
+
 
 
 /**
@@ -11,12 +15,15 @@ package Controlador;
  * @author Leo
  */
 public class Login extends javax.swing.JFrame {
+    private int tiempoLimite = 30;
+    private Timer timer;
 
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+         iniciarContador();  
     }
 
     @SuppressWarnings("unchecked")
@@ -28,8 +35,8 @@ public class Login extends javax.swing.JFrame {
         lblCorreoE1 = new javax.swing.JLabel();
         lblContraseña1 = new javax.swing.JLabel();
         btnIngresar1 = new javax.swing.JButton();
-        txtcorreo1 = new javax.swing.JTextField();
-        txtcontra1 = new javax.swing.JPasswordField();
+        txtNombre = new javax.swing.JTextField();
+        txtcontra = new javax.swing.JPasswordField();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
@@ -79,29 +86,29 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel3.add(btnIngresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 210, 60));
 
-        txtcorreo1.setBackground(new java.awt.Color(255, 255, 255));
-        txtcorreo1.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txtcorreo1.setForeground(new java.awt.Color(0, 0, 0));
-        txtcorreo1.setBorder(null);
-        txtcorreo1.setCaretColor(new java.awt.Color(153, 153, 153));
-        txtcorreo1.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.setBackground(new java.awt.Color(255, 255, 255));
+        txtNombre.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(0, 0, 0));
+        txtNombre.setBorder(null);
+        txtNombre.setCaretColor(new java.awt.Color(153, 153, 153));
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcorreo1ActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
-        jPanel3.add(txtcorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 270, 40));
+        jPanel3.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 270, 40));
 
-        txtcontra1.setBackground(new java.awt.Color(255, 255, 255));
-        txtcontra1.setFont(txtcontra1.getFont().deriveFont(txtcontra1.getFont().getSize()+7f));
-        txtcontra1.setForeground(new java.awt.Color(0, 0, 0));
-        txtcontra1.setBorder(null);
-        txtcontra1.setCaretColor(new java.awt.Color(153, 153, 153));
-        txtcontra1.addActionListener(new java.awt.event.ActionListener() {
+        txtcontra.setBackground(new java.awt.Color(255, 255, 255));
+        txtcontra.setFont(txtcontra.getFont().deriveFont(txtcontra.getFont().getSize()+7f));
+        txtcontra.setForeground(new java.awt.Color(0, 0, 0));
+        txtcontra.setBorder(null);
+        txtcontra.setCaretColor(new java.awt.Color(153, 153, 153));
+        txtcontra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcontra1ActionPerformed(evt);
+                txtcontraActionPerformed(evt);
             }
         });
-        jPanel3.add(txtcontra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 270, 36));
+        jPanel3.add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 270, 36));
 
         jSeparator3.setBackground(new java.awt.Color(153, 153, 153));
         jSeparator3.setForeground(new java.awt.Color(153, 153, 153));
@@ -152,23 +159,54 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+        private void iniciarContador() {
+        timer = new Timer(1000, (ActionEvent e) -> {
+            tiempoLimite--;
+            if (tiempoLimite <= 0) {
+                timer.stop();
+                JOptionPane.showMessageDialog(null, "Se ha agotado el tiempo para el registro");
+                System.exit(0);
+            }
+        });
+
+        timer.start();
+    }
+        
+        public void validar() {
+        String nombre = txtNombre.getText().trim();
+        String contrasenia = new String(txtcontra.getPassword()).trim();
+
+        if (!nombre.isEmpty() && !contrasenia.isEmpty()) {
+            LoginControlador usuarioControlador = new LoginControlador();
+            if (usuarioControlador.autenticarUsuario(nombre, contrasenia)) {
+                timer.stop();
+
+                this.dispose();
+                Menu ventanaPrincipal = new Menu();
+                ventanaPrincipal.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Nombre de usuario o contraseña incorrectos");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
+        }
+    }
     
     private void btnIngresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresar1ActionPerformed
-        // TODO add your handling code here:
+        validar();
     }//GEN-LAST:event_btnIngresar1ActionPerformed
 
-    private void txtcorreo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcorreo1ActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcorreo1ActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     private void jCheckBoxContra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxContra1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxContra1ActionPerformed
 
-    private void txtcontra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontra1ActionPerformed
+    private void txtcontraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcontra1ActionPerformed
+    }//GEN-LAST:event_txtcontraActionPerformed
 
     private void btnEliminarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarU3ActionPerformed
          System.exit(0);
@@ -230,7 +268,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lblCorreoE1;
     private javax.swing.JLabel lblFondo2;
     private javax.swing.JLabel lblInisiarS1;
-    private javax.swing.JPasswordField txtcontra1;
-    private javax.swing.JTextField txtcorreo1;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JPasswordField txtcontra;
     // End of variables declaration//GEN-END:variables
 }

@@ -186,6 +186,7 @@ public class Menu extends javax.swing.JFrame {
         tipo = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         btnBusqueda = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1499,8 +1500,8 @@ public class Menu extends javax.swing.JFrame {
 
         btnBusqueda.setBackground(new java.awt.Color(153, 153, 153));
         btnBusqueda.setForeground(new java.awt.Color(255, 255, 255));
-        btnBusqueda.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Lupa.png")); // NOI18N
-        btnBusqueda.setText("Busquedas");
+        btnBusqueda.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\bus.png")); // NOI18N
+        btnBusqueda.setText("Vehiculos");
         btnBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnBusqueda.setFocusable(false);
         btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
@@ -1552,9 +1553,30 @@ public class Menu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 700));
 
+        jPanel2.setBackground(new java.awt.Color(0, 110, 255));
+
         jLabel38.setFont(new java.awt.Font("Yu Gothic Light", 3, 36)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setText("Sistema de parque Automotor ");
-        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 30, -1, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(325, Short.MAX_VALUE)
+                .addComponent(jLabel38)
+                .addGap(289, 289, 289))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(jLabel38)
+                .addGap(20, 20, 20))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 1110, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -2077,6 +2099,7 @@ public void setDatos(Usuario usuario) {
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
