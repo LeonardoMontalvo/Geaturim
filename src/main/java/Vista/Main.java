@@ -2,7 +2,6 @@
 package Vista;
 
 import Controlador.Login;
-import Controlador.Menu;
 
 /**
  *
@@ -16,7 +15,7 @@ public class Main {
             public void run() {
                 Login menu = new Login();
                 menu.setVisible(true);
-            }
+             }
         });
     }
 }

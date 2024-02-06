@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Controlador;
 
 import java.awt.event.ActionEvent;
@@ -146,7 +143,7 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel3.add(btnEliminarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 40, 35));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, -1, 600));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, -1, 600));
 
         jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Logo.png")); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 180, 180));
@@ -173,8 +170,9 @@ public class Login extends javax.swing.JFrame {
     }
         
         public void validar() {
-        String nombre = txtNombre.getText().trim();
-        String contrasenia = new String(txtcontra.getPassword()).trim();
+        String nombre = txtNombre.getText();
+        String contrasenia = new String(txtcontra.getPassword());
+
 
         if (!nombre.isEmpty() && !contrasenia.isEmpty()) {
             LoginControlador usuarioControlador = new LoginControlador();
@@ -201,7 +199,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void jCheckBoxContra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxContra1ActionPerformed
-        // TODO add your handling code here:
+               if ( jCheckBoxContra1.isSelected()) {
+
+            txtcontra.setEchoChar((char) 0);
+        } else {
+
+            txtcontra.setEchoChar('•');
+        }
     }//GEN-LAST:event_jCheckBoxContra1ActionPerformed
 
     private void txtcontraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontraActionPerformed

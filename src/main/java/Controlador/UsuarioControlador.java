@@ -38,7 +38,7 @@ public class UsuarioControlador {
                 ejecutar = (PreparedStatement) conectar.prepareCall(sql);
                 var resultado = ejecutar.executeUpdate();
                 if (resultado > 0) {
-                    JOptionPane.showMessageDialog(null, "Persona Creada con Éxito");                
+                    JOptionPane.showMessageDialog(null, "Usuario Creado con Éxito");                
                     ejecutar.close();
                 } else {
                     JOptionPane.showMessageDialog(null, "Revise los Datos ingresados");
@@ -103,17 +103,17 @@ public ArrayList<Object[]> buscarUsuarios(String nombreBuscado) {
 
         ResultSet rs = cs.executeQuery();
 
-        int cont = 1; // Inicializar el contador
+        int cont = 1; 
 
         while (rs.next()) {
-            Object[] obUsuario = new Object[3]; // Cambiar a 3 elementos
+            Object[] obUsuario = new Object[3]; 
             obUsuario[0] = cont;
             obUsuario[1] = rs.getObject("NOMBRE");
             obUsuario[2] = rs.getObject("CONTRASENA");
 
             listaObject.add(obUsuario);
 
-            cont++; // Incrementar el contador
+            cont++;
         }
 
         cs.close();

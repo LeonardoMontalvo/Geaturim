@@ -21,6 +21,8 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         setModelo();
+        setModeloCli();
+       
     }    
     
     
@@ -176,6 +178,35 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableUsuario = new javax.swing.JTable();
         jInternalFrame6 = new javax.swing.JInternalFrame();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        txtNombreProp = new javax.swing.JTextField();
+        jLabel74 = new javax.swing.JLabel();
+        txtNumPlaca = new javax.swing.JTextField();
+        jPanel48 = new javax.swing.JPanel();
+        jPanel49 = new javax.swing.JPanel();
+        jPanel51 = new javax.swing.JPanel();
+        jPanel52 = new javax.swing.JPanel();
+        jLabel75 = new javax.swing.JLabel();
+        jPanel53 = new javax.swing.JPanel();
+        jPanel54 = new javax.swing.JPanel();
+        FeachaFabricacion = new com.toedter.calendar.JDateChooser();
+        txtNumAcientos = new javax.swing.JTextField();
+        btnGuardarU5 = new javax.swing.JButton();
+        btnEditarU5 = new javax.swing.JButton();
+        btnEliminarU5 = new javax.swing.JButton();
+        btnNuevoU5 = new javax.swing.JButton();
+        jLabel76 = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        txtKilometrajeTotal = new javax.swing.JTextField();
+        jPanel55 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTableVehiculo = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnContrato = new javax.swing.JButton();
@@ -1193,6 +1224,11 @@ public class Menu extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTableMantenimiento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableMantenimientoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableMantenimiento);
 
         javax.swing.GroupLayout jInternalFrame5Layout = new javax.swing.GroupLayout(jInternalFrame5.getContentPane());
@@ -1406,15 +1442,260 @@ public class Menu extends javax.swing.JFrame {
 
         jInternalFrame6.setVisible(true);
 
+        jPanel20.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel64.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel64.setText("Fecha de Fabricacion");
+        jPanel20.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        jLabel66.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel66.setText("Nombre  de Propietario");
+        jPanel20.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 163, -1, -1));
+
+        txtNombreProp.setBackground(new java.awt.Color(204, 204, 204));
+        txtNombreProp.setBorder(null);
+        txtNombreProp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombrePropActionPerformed(evt);
+            }
+        });
+        jPanel20.add(txtNombreProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 226, 30));
+
+        jLabel74.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel74.setText("Numero de Placa");
+        jPanel20.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 219, -1, -1));
+
+        txtNumPlaca.setBackground(new java.awt.Color(204, 204, 204));
+        txtNumPlaca.setBorder(null);
+        jPanel20.add(txtNumPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 243, 226, 30));
+
+        jPanel48.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel48Layout = new javax.swing.GroupLayout(jPanel48);
+        jPanel48.setLayout(jPanel48Layout);
+        jPanel48Layout.setHorizontalGroup(
+            jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel48Layout.setVerticalGroup(
+            jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel20.add(jPanel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 226, 2));
+
+        jPanel49.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
+        jPanel49.setLayout(jPanel49Layout);
+        jPanel49Layout.setHorizontalGroup(
+            jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel49Layout.setVerticalGroup(
+            jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel20.add(jPanel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
+
+        jPanel51.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel51Layout = new javax.swing.GroupLayout(jPanel51);
+        jPanel51.setLayout(jPanel51Layout);
+        jPanel51Layout.setHorizontalGroup(
+            jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel51Layout.setVerticalGroup(
+            jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel20.add(jPanel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 273, 226, 2));
+
+        jPanel52.setBackground(new java.awt.Color(0, 110, 255));
+
+        jLabel75.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel75.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel75.setText("Vehiculo");
+
+        javax.swing.GroupLayout jPanel52Layout = new javax.swing.GroupLayout(jPanel52);
+        jPanel52.setLayout(jPanel52Layout);
+        jPanel52Layout.setHorizontalGroup(
+            jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel52Layout.createSequentialGroup()
+                .addComponent(jLabel75, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel52Layout.setVerticalGroup(
+            jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel52Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel75)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel20.add(jPanel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
+
+        jPanel53.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel53Layout = new javax.swing.GroupLayout(jPanel53);
+        jPanel53.setLayout(jPanel53Layout);
+        jPanel53Layout.setHorizontalGroup(
+            jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel53Layout.setVerticalGroup(
+            jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel20.add(jPanel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
+
+        jPanel54.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel54Layout = new javax.swing.GroupLayout(jPanel54);
+        jPanel54.setLayout(jPanel54Layout);
+        jPanel54Layout.setHorizontalGroup(
+            jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel54Layout.setVerticalGroup(
+            jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel20.add(jPanel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
+
+        FeachaFabricacion.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel20.add(FeachaFabricacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
+
+        txtNumAcientos.setBackground(new java.awt.Color(204, 204, 204));
+        txtNumAcientos.setBorder(null);
+        txtNumAcientos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumAcientosActionPerformed(evt);
+            }
+        });
+        jPanel20.add(txtNumAcientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
+
+        btnGuardarU5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
+        btnGuardarU5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarU5ActionPerformed(evt);
+            }
+        });
+        jPanel20.add(btnGuardarU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+
+        btnEditarU5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarU5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarU5ActionPerformed(evt);
+            }
+        });
+        jPanel20.add(btnEditarU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
+
+        btnEliminarU5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarU5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarU5ActionPerformed(evt);
+            }
+        });
+        jPanel20.add(btnEliminarU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
+
+        btnNuevoU5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoU5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoU5ActionPerformed(evt);
+            }
+        });
+        jPanel20.add(btnNuevoU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
+
+        jLabel76.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel76.setText("Guardar");
+        jPanel20.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
+
+        jLabel77.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel77.setText("Editar");
+        jPanel20.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
+
+        jLabel78.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel78.setText("Nuevo");
+        jPanel20.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
+
+        jLabel79.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel79.setText("Eliminar");
+        jPanel20.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+
+        jLabel80.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel80.setText("Numero de Acientos");
+        jPanel20.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+
+        jLabel81.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel81.setText("Kilometraje");
+        jPanel20.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
+
+        txtKilometrajeTotal.setBackground(new java.awt.Color(204, 204, 204));
+        txtKilometrajeTotal.setBorder(null);
+        jPanel20.add(txtKilometrajeTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 226, 30));
+
+        jPanel55.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel55Layout = new javax.swing.GroupLayout(jPanel55);
+        jPanel55.setLayout(jPanel55Layout);
+        jPanel55Layout.setHorizontalGroup(
+            jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel55Layout.setVerticalGroup(
+            jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel20.add(jPanel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 226, 2));
+
+        jTableVehiculo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTableVehiculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableVehiculoMouseClicked(evt);
+            }
+        });
+        jScrollPane9.setViewportView(jTableVehiculo);
+
         javax.swing.GroupLayout jInternalFrame6Layout = new javax.swing.GroupLayout(jInternalFrame6.getContentPane());
         jInternalFrame6.getContentPane().setLayout(jInternalFrame6Layout);
         jInternalFrame6Layout.setHorizontalGroup(
             jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jInternalFrame6Layout.createSequentialGroup()
+                .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE))
         );
         jInternalFrame6Layout.setVerticalGroup(
             jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame6Layout.createSequentialGroup()
+                .addGroup(jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("6", jInternalFrame6);
@@ -1589,6 +1870,9 @@ public class Menu extends javax.swing.JFrame {
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
 
         jTabbedPane1.setSelectedIndex(1);       
+        limpiarTablaClientes();
+        modeloClientes();
+        
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbonoActionPerformed
@@ -1621,17 +1905,17 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMantenimientosActionPerformed
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
-        // TODO add your handling code here:
+        
         jTabbedPane1.setSelectedIndex(4);
-        //LimpiarTable();
-        //ListarVentas();
+       limpiarTablaUsuario();
+       modeloUsuario();
         
     }//GEN-LAST:event_btnUsuariosActionPerformed
 private static final int MAX_LENGTH = 50;
 
     private void btnNuevoUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoUActionPerformed
-     String nombre = txtNombreU.getText().trim();
-    String contrasenia = txtcontra.getText().trim();
+     String nombre = txtNombreU.getText();
+    String contrasenia = txtcontra.getText();
 
     if (nombre.isEmpty() || contrasenia.isEmpty()) {
         JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
@@ -1684,8 +1968,8 @@ private static final int MAX_LENGTH = 50;
         String nombreAntiguo = modelo.getValueAt(filaSeleccionada, 1).toString();
         String contraseniaAntigua = modelo.getValueAt(filaSeleccionada, 2).toString();
 
-        String nuevoNombre = txtNombreU.getText().trim();
-        String nuevaContrasenia = txtcontra.getText().trim();
+        String nuevoNombre = txtNombreU.getText();
+        String nuevaContrasenia = txtcontra.getText();
 
         if (nuevoNombre.isEmpty() || nuevaContrasenia.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese un nuevo nombre y contraseña");
@@ -1695,8 +1979,6 @@ private static final int MAX_LENGTH = 50;
 
             modelo.setValueAt(nuevoNombre, filaSeleccionada, 1);
             modelo.setValueAt(nuevaContrasenia, filaSeleccionada, 2);
-
-            JOptionPane.showMessageDialog(null, "Usuario editado con éxito");
         }
     } else {
         JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
@@ -1704,7 +1986,7 @@ private static final int MAX_LENGTH = 50;
     }//GEN-LAST:event_btnEditarUActionPerformed
 
     private void btnBuscarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUActionPerformed
-  String nombreBuscado = txtNombreU.getText().trim();
+  String nombreBuscado = txtNombreU.getText();
 
     if (!nombreBuscado.isEmpty()) {
         UsuarioControlador usuarioControlador = new UsuarioControlador();
@@ -1797,15 +2079,91 @@ private static final int MAX_LENGTH = 50;
     }//GEN-LAST:event_btnGuardarCliActionPerformed
 
     private void btnEditarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCliActionPerformed
-        // TODO add your handling code here:
+       
+ int filaSeleccionada = jTableClientes.getSelectedRow();
+
+    if (filaSeleccionada >= 0) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
+        String nombreAntiguo = modelo.getValueAt(filaSeleccionada, 1).toString();
+        String apellidoAntiguo = modelo.getValueAt(filaSeleccionada, 2).toString();
+        String telefonoAntiguo = modelo.getValueAt(filaSeleccionada, 3).toString();
+        String cedulaAntigua = modelo.getValueAt(filaSeleccionada, 4).toString();
+        String direccionAntigua = modelo.getValueAt(filaSeleccionada, 5).toString();
+
+        String nuevoNombre = txtNombreC.getText(); 
+        String nuevoApellido = txtApellidoC.getText(); 
+        String nuevoTelefono = txtTelefono.getText(); 
+        String nuevaCedula = txtCedula.getText(); 
+        String nuevaDireccion = txtDireccion.getText();
+
+         if (nuevoNombre.isEmpty() || nuevoApellido.isEmpty() || nuevoTelefono.isEmpty() || nuevaCedula.isEmpty() || nuevaDireccion.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese nuevos valores para todos los campos");
+        } else {
+            ClienteControlador clienteControlador = new ClienteControlador();
+            clienteControlador.editarCliente(nombreAntiguo, apellidoAntiguo, telefonoAntiguo, cedulaAntigua, direccionAntigua, nuevoNombre, nuevoApellido, nuevoTelefono, nuevaCedula, nuevaDireccion);
+
+            modelo.setValueAt(nuevoNombre, filaSeleccionada, 1);
+            modelo.setValueAt(nuevoApellido, filaSeleccionada, 2);
+            modelo.setValueAt(nuevoTelefono, filaSeleccionada, 3);
+            modelo.setValueAt(nuevaCedula, filaSeleccionada, 4);
+            modelo.setValueAt(nuevaDireccion, filaSeleccionada, 5);
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
+    }
     }//GEN-LAST:event_btnEditarCliActionPerformed
 
     private void btnEliminarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCliActionPerformed
-        // TODO add your handling code here:
+                                   
+    int filaSeleccionada = jTableClientes.getSelectedRow();
+
+    if (filaSeleccionada >= 0) {
+        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este cliente?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
+            String nombre = modelo.getValueAt(filaSeleccionada, 1).toString();
+            String apellido = modelo.getValueAt(filaSeleccionada, 2).toString();
+            String telefono = modelo.getValueAt(filaSeleccionada, 3).toString();
+            String cedula = modelo.getValueAt(filaSeleccionada, 4).toString();
+            String direccion = modelo.getValueAt(filaSeleccionada, 5).toString();
+            
+            ClienteControlador clienteControlador = new ClienteControlador();
+            clienteControlador.eliminarCliente(nombre, apellido, telefono, cedula, direccion);
+            
+            modelo.removeRow(filaSeleccionada);
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
+    }
     }//GEN-LAST:event_btnEliminarCliActionPerformed
 
     private void btnNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoClienteActionPerformed
-        // TODO add your handling code here:
+       
+        String nombre = txtNombreC.getText();
+        String apellido = txtApellidoC.getText();
+        String telefono = txtTelefono.getText();
+        String cedula = txtCedula.getText();
+        String direccion = txtDireccion.getText();
+
+        if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || cedula.isEmpty() || direccion.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
+        } else {
+            if (nombre.length() > MAX_LENGTH || apellido.length() > MAX_LENGTH || telefono.length() > MAX_LENGTH || cedula.length() > MAX_LENGTH || direccion.length() > MAX_LENGTH) {
+                JOptionPane.showMessageDialog(null, "Alguno de los campos es demasiado largo");
+            } else {
+                if (nombre.matches("^\\s*$") || apellido.matches("^\\s*$") || telefono.matches("^\\s*$") || cedula.matches("^\\s*$") || direccion.matches("^\\s*$")) {
+                    JOptionPane.showMessageDialog(null, "Alguno de los campos es inválido");
+                } else {
+                    Cliente nuevoCliente = new Cliente(nombre, apellido, telefono, cedula, direccion);
+                    ClienteControlador clienteControlador = new ClienteControlador();
+                    
+                    clienteControlador.insertarClientes(nuevoCliente);
+                    listaClientes.add(nuevoCliente);
+                    mostrarDatosClientes(nuevoCliente);
+                }
+            }
+        }
     }//GEN-LAST:event_btnNuevoClienteActionPerformed
 
     private void btnGuardarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarU3ActionPerformed
@@ -1856,6 +2214,7 @@ private static final int MAX_LENGTH = 50;
         
         jTabbedPane1.setSelectedIndex(5);
         
+        
     }//GEN-LAST:event_btnBusquedaActionPerformed
 
     
@@ -1879,6 +2238,41 @@ private static final int MAX_LENGTH = 50;
 
     }//GEN-LAST:event_jCheckBoxLiquidadoActionPerformed
 
+    private void txtNombrePropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePropActionPerformed
+    }//GEN-LAST:event_txtNombrePropActionPerformed
+
+    private void txtNumAcientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumAcientosActionPerformed
+    }//GEN-LAST:event_txtNumAcientosActionPerformed
+
+    private void btnGuardarU5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarU5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarU5ActionPerformed
+
+    private void btnEditarU5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarU5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarU5ActionPerformed
+
+    private void btnEliminarU5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarU5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarU5ActionPerformed
+
+    private void btnNuevoU5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoU5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevoU5ActionPerformed
+
+    private void jTableVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableVehiculoMouseClicked
+       DefaultTableModel modelo = (DefaultTableModel)   jTableVehiculo.getModel();
+       // FeachaFabricacion.setText(( modelo.getValueAt( jTableVehiculo.getSelectedRow(), 1.toString());
+        txtNombreProp.setText((String) modelo.getValueAt( jTableVehiculo.getSelectedRow(), 2));
+        txtNumPlaca.setText((String) modelo.getValueAt( jTableVehiculo.getSelectedRow(), 3));
+        txtNumAcientos.setText((String) modelo.getValueAt( jTableVehiculo.getSelectedRow(), 4).toString());
+        txtKilometrajeTotal.setText(modelo.getValueAt(jTableVehiculo.getSelectedRow(), 3).toString());
+    }//GEN-LAST:event_jTableVehiculoMouseClicked
+
+    private void jTableMantenimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMantenimientoMouseClicked
+    
+    }//GEN-LAST:event_jTableMantenimientoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1892,27 +2286,33 @@ private static final int MAX_LENGTH = 50;
     });
 }
 
-                            /////////////////////////////////////////////////////////////////////////////////////// TABLAS //////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////// TABLA de USUARIOS //////////////////////////////////////////////////////////////////////////////////////
   
   
-    ArrayList<Usuario> listaPersonas = new ArrayList<>();
-    DefaultTableModel modelo = new DefaultTableModel();
+    private ArrayList<Usuario> listaPersonas = new ArrayList<>();
+    private DefaultTableModel modeloUsuario = new DefaultTableModel();
+    
+    
+     private ArrayList<Cliente> listaClientes = new ArrayList<>();
+    private DefaultTableModel modeloClientes = new DefaultTableModel();
+
+
     
                
 public void setModelo() {
     String[] cabecera = {"Nro.", "Nombres", "Contraseñas"};
-    modelo.setColumnIdentifiers(cabecera);
+    modeloUsuario.setColumnIdentifiers(cabecera);
 
     UsuarioControlador usuarioControlador = new UsuarioControlador();
     ArrayList<Object[]> datos = usuarioControlador.datosUsuarios();
 
     if (datos != null) {
         for (Object[] fila : datos) {
-            modelo.addRow(fila);
+            modeloUsuario.addRow(fila);
         }
     }
 
-    jTableUsuario.setModel(modelo);
+    jTableUsuario.setModel(modeloUsuario);
 }
 
    
@@ -1933,9 +2333,28 @@ public void setDatos(Usuario usuario) {
 }
 
 
- 
- 
- 
+/////////////////////////////////////////////////////////////////////////////////////// TABLA de Clientes //////////////////////////////////////////////////////////////////////////////////////
+
+
+public void setModeloCli() {
+    String[] cabecera = {"Nro.", "Nombres", "Apellidos", "Telefonos", " Cedulas", "Direcciones"};
+    modeloClientes.setColumnIdentifiers(cabecera);
+
+    ClienteControlador usuarioControlador = new ClienteControlador();
+    ArrayList<Object[]> datos = usuarioControlador.datosCliente();
+
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modeloClientes.addRow(fila);
+        }
+    }
+
+    jTableClientes.setModel(modeloClientes);
+}
+
+
+
+
  public void mostrarDatosClientes (Cliente cliente) {
         DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();      
         Object[] fila = new Object[6];
@@ -1949,6 +2368,11 @@ public void setDatos(Usuario usuario) {
         modelo.addRow(fila);
     }
       
+ 
+ 
+ /////////////////////////////////////////////////////////////////////////////////////// TABLA de USUARIOS //////////////////////////////////////////////////////////////////////////////////////
+ 
+ 
  public void mostrarDatosContrato(Contrato contrato) {
      DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
      Object[] fila = new Object[7];
@@ -2004,6 +2428,7 @@ public void setDatos(Usuario usuario) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser FeachaAbono;
     private com.toedter.calendar.JDateChooser FeachaContrato;
+    private com.toedter.calendar.JDateChooser FeachaFabricacion;
     private com.toedter.calendar.JDateChooser FeachaMantenimiento;
     private javax.swing.JButton btnAbono;
     private javax.swing.JButton btnBuscarU;
@@ -2015,21 +2440,25 @@ public void setDatos(Usuario usuario) {
     private javax.swing.JButton btnEditarU;
     private javax.swing.JButton btnEditarU3;
     private javax.swing.JButton btnEditarU4;
+    private javax.swing.JButton btnEditarU5;
     private javax.swing.JButton btnEliminarCli;
     private javax.swing.JButton btnEliminarM;
     private javax.swing.JButton btnEliminarU;
     private javax.swing.JButton btnEliminarU3;
     private javax.swing.JButton btnEliminarU4;
+    private javax.swing.JButton btnEliminarU5;
     private javax.swing.JButton btnGuardarCli;
     private javax.swing.JButton btnGuardarM;
     private javax.swing.JButton btnGuardarU3;
     private javax.swing.JButton btnGuardarU4;
+    private javax.swing.JButton btnGuardarU5;
     private javax.swing.JButton btnMantenimientos;
     private javax.swing.JButton btnNuevoCliente;
     private javax.swing.JButton btnNuevoM;
     private javax.swing.JButton btnNuevoU;
     private javax.swing.JButton btnNuevoU3;
     private javax.swing.JButton btnNuevoU4;
+    private javax.swing.JButton btnNuevoU5;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JCheckBox jCheckBoxContra;
     private javax.swing.JCheckBox jCheckBoxLiquidado;
@@ -2083,7 +2512,9 @@ public void setDatos(Usuario usuario) {
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
@@ -2091,6 +2522,14 @@ public void setDatos(Usuario usuario) {
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -2100,6 +2539,7 @@ public void setDatos(Usuario usuario) {
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
@@ -2125,7 +2565,14 @@ public void setDatos(Usuario usuario) {
     private javax.swing.JPanel jPanel45;
     private javax.swing.JPanel jPanel46;
     private javax.swing.JPanel jPanel47;
+    private javax.swing.JPanel jPanel48;
+    private javax.swing.JPanel jPanel49;
     private javax.swing.JPanel jPanel50;
+    private javax.swing.JPanel jPanel51;
+    private javax.swing.JPanel jPanel52;
+    private javax.swing.JPanel jPanel53;
+    private javax.swing.JPanel jPanel54;
+    private javax.swing.JPanel jPanel55;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2134,12 +2581,14 @@ public void setDatos(Usuario usuario) {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTableAbono;
     private javax.swing.JTable jTableClientes;
     private javax.swing.JTable jTableContrato;
     private javax.swing.JTable jTableMantenimiento;
     private javax.swing.JTable jTableUsuario;
+    private javax.swing.JTable jTableVehiculo;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel lblLogo;
@@ -2155,9 +2604,13 @@ public void setDatos(Usuario usuario) {
     private javax.swing.JTextField txtCorreo3;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtKilometraje;
+    private javax.swing.JTextField txtKilometrajeTotal;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtNombreC;
+    private javax.swing.JTextField txtNombreProp;
     private javax.swing.JTextField txtNombreU;
+    private javax.swing.JTextField txtNumAcientos;
+    private javax.swing.JTextField txtNumPlaca;
     private javax.swing.JTextField txtTelefono;
     private javax.swing.JTextField txtValor;
     private javax.swing.JTextField txtVehiculo;
@@ -2166,23 +2619,125 @@ public void setDatos(Usuario usuario) {
 
                             /////////////////////////////////////////////////////////////////////////////////////// METODOS DE TABLAS //////////////////////////////////////////////////////////////////////////////////////
     
-    private void limpiarTabla() {
-        int a = modelo.getRowCount() - 1;  
+    
+    
+    
+ ///////////////////////////////////////////////////////////////TABLA USUARIO//////////////////////////////////////////////////////////////////////////////////
+    
+    public void limpiarTablaUsuario() {
+        int a = modeloUsuario.getRowCount() - 1;  
         for (int i = a; i >= 0; i--) {
-            modelo.removeRow(i);
+            modeloUsuario.removeRow(i);
         }
     }
 
-     public void cargarUsuarios() {
+     public void modeloUsuario() {
         UsuarioControlador usuarioControlador = new UsuarioControlador();
         ArrayList<Object[]> datos = usuarioControlador.datosUsuarios();
         if (datos != null) {
             for (Object[] fila : datos) {
-                modelo.addRow(fila);
+                modeloUsuario.addRow(fila);
             }
         }
     }
-    
+     
+ ///////////////////////////////////////////////////////////////TABLA CLIENTE//////////////////////////////////////////////////////////////////////////////////
+
+    public void limpiarTablaClientes() {
+        int a = modeloUsuario.getRowCount() - 1;  
+        for (int i = a; i >= 0; i--) {
+            modeloClientes.removeRow(i);
+        }
+    }
+
+     public void modeloClientes() {
+        ClienteControlador clienteControlador = new ClienteControlador();
+        ArrayList<Object[]> datos = clienteControlador.datosCliente();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloClientes.addRow(fila);
+            }
+        }
+    }
+
+ ///////////////////////////////////////////////////////////////TABLA VEHICULO////////////////////////////////////////////////////////////////////////////////// 
+   
+//      public void limpiarTablaVehiculo() {
+//        int a = modeloVehiculo.getRowCount() - 1;  
+//        for (int i = a; i >= 0; i--) {
+//            modeloVehiculo.removeRow(i);
+//        }
+//    }
+//
+//     public void modeloVehiculo() {
+//        VehiculoControlador vehiculoControlador = new VehiculoControlador();
+//        ArrayList<Object[]> datos = vehiculoControlador.datosVehiculos();
+//        if (datos != null) {
+//            for (Object[] fila : datos) {
+//                modeloVehiculo.addRow(fila);
+//            }
+//        }
+//    }
+     
+ ///////////////////////////////////////////////////////////////TABLA MANTENIMIENTO////////////////////////////////////////////////////////////////////////////////// 
+
+//    
+//      public void limpiarTablaMantenimiento() {
+//        int a = modeloMantenimiento.getRowCount() - 1;  
+//        for (int i = a; i >= 0; i--) {
+//            modeloMantenimiento.removeRow(i);
+//        }
+//    }
+//
+//     public void modeloMantenimiento() {
+//        MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
+//        ArrayList<Object[]> datos = mantenimientoControlador.datosMantenimiento();
+//        if (datos != null) {
+//            for (Object[] fila : datos) {
+//                modeloMantenimiento.addRow(fila);
+//            }
+//        }
+//    }
+//     
+///////////////////////////////////////////////////////////////TABLA CONTRATOS////////////////////////////////////////////////////////////////////////////////// 
+     
+//     public void limpiarTablaContrato() {
+//        int a = modeloContrato.getRowCount() - 1;  
+//        for (int i = a; i >= 0; i--) {
+//            modeloContrato.removeRow(i);
+//        }
+//    }
+//
+//     public void modeloContrato() {
+//        ContratoControlador contratoControlador = new ContratoControlador();
+//        ArrayList<Object[]> datos = contratoControlador.datosContrato();
+//        if (datos != null) {
+//            for (Object[] fila : datos) {
+//                modeloContrato.addRow(fila);
+//            }
+//        }
+//    }
+     
+ ///////////////////////////////////////////////////////////////TABLA  ABONOS////////////////////////////////////////////////////////////////////////////////// 
+ 
+     
+//     public void limpiarTablaAbonos() {
+//        int a = modeloAbonos.getRowCount() - 1;  
+//        for (int i = a; i >= 0; i--) {
+//            modeloAbonos.removeRow(i);
+//        }
+//    }
+//
+//     public void modeloAbonos() {
+//        AbonosControlador abonosControlador = new AbonosControlador();
+//        ArrayList<Object[]> datos = abonosControlador.datosAbonos();
+//        if (datos != null) {
+//            for (Object[] fila : datos) {
+//                modeloAbonos.addRow(fila);
+//            }
+//        }
+//    }
+
 
 }
 
