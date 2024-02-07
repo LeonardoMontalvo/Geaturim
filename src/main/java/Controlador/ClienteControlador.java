@@ -127,5 +127,42 @@ public void editarCliente(String nombreAntiguo, String apellidoAntiguo, String t
     }
 }
     
+        /////////////////////////////////////////////////////////////////////////////////////// BUSCAR CLIENTE ///////////////////////////////////////////////////////////////////////////////////////
+
+public ArrayList<Object[]> buscarClientePorCedula(String cedula) {
+    ArrayList<Object[]> listaObject = new ArrayList<>();
+
+    try {
+        String sql = "CALL BuscarClientePorCedula(?)";
+        CallableStatement cs = conectar.prepareCall(sql);
+        cs.setString(1, cedula);
+
+        ResultSet rs = cs.executeQuery();
+
+        int cont = 1; 
+
+        while (rs.next()) {
+            Object[] obCliente = new Object[6]; 
+            obCliente[0] = cont;
+            obCliente[1] = rs.getObject("NOMBRE");
+            obCliente[2] = rs.getObject("APELLIDO");
+            obCliente[3] = rs.getObject("TELEFONO");
+            obCliente[4] = rs.getObject("CEDULA");
+            obCliente[5] = rs.getObject("DIRECCION");
+
+            listaObject.add(obCliente);
+
+            cont++;
+        }
+
+        cs.close();
+        return listaObject;
+    } catch (SQLException e) {
+        System.out.println("Error al buscar cliente por número de cédula: " + e.getMessage());
+    }
+
+    return null;
+}
+
     
 }

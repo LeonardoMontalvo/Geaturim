@@ -2,6 +2,7 @@
 package Vista;
 
 import Controlador.Login;
+import Controlador.Menu;
 
 /**
  *
@@ -13,7 +14,7 @@ public class Main {
  public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Login menu = new Login();
+                Menu menu = new Menu();
                 menu.setVisible(true);
              }
         });

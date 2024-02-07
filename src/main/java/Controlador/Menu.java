@@ -5,11 +5,18 @@ import Modelo.Cliente;
 import Modelo.Contrato;
 import Modelo.Mantenimiento;
 import Modelo.Usuario;
+import Modelo.Vehiculo;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.util.Date;
+
+
+
+
+
 
 /**
  *
@@ -22,9 +29,13 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         setModelo();
         setModeloCli();
+        setModeloVehiculos();
        
     }    
-    
+    private static final int MAX_LENGTH = 50;
+        private static final int MAX_PLACA_LENGTH = 12;
+
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -85,7 +96,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel51 = new javax.swing.JLabel();
         jPanel34 = new javax.swing.JPanel();
         txtDireccion = new javax.swing.JTextField();
-        btnGuardarCli = new javax.swing.JButton();
+        btnBuscarClientes = new javax.swing.JButton();
         btnEditarCli = new javax.swing.JButton();
         btnEliminarCli = new javax.swing.JButton();
         btnNuevoCliente = new javax.swing.JButton();
@@ -192,11 +203,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel53 = new javax.swing.JPanel();
         jPanel54 = new javax.swing.JPanel();
         FeachaFabricacion = new com.toedter.calendar.JDateChooser();
-        txtNumAcientos = new javax.swing.JTextField();
-        btnGuardarU5 = new javax.swing.JButton();
-        btnEditarU5 = new javax.swing.JButton();
-        btnEliminarU5 = new javax.swing.JButton();
-        btnNuevoU5 = new javax.swing.JButton();
+        txtNumAsientos = new javax.swing.JTextField();
+        btnBuscarVehiculo = new javax.swing.JButton();
+        btnEditarVehiculo = new javax.swing.JButton();
+        btnEliminarVehiculo = new javax.swing.JButton();
+        btnNuevoVehiculo = new javax.swing.JButton();
         jLabel76 = new javax.swing.JLabel();
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
@@ -216,7 +227,7 @@ public class Menu extends javax.swing.JFrame {
         btnUsuarios = new javax.swing.JButton();
         tipo = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
-        btnBusqueda = new javax.swing.JButton();
+        btnVehiculos = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
 
@@ -685,13 +696,13 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel15.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 226, 30));
 
-        btnGuardarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
-        btnGuardarCli.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Lupa.png")); // NOI18N
+        btnBuscarClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarCliActionPerformed(evt);
+                btnBuscarClientesActionPerformed(evt);
             }
         });
-        jPanel15.add(btnGuardarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+        jPanel15.add(btnBuscarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
         btnEditarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarCli.addActionListener(new java.awt.event.ActionListener() {
@@ -718,7 +729,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel15.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
 
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel31.setText("Guardar");
+        jLabel31.setText("Buscar");
         jPanel15.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
 
         jLabel32.setForeground(new java.awt.Color(0, 0, 0));
@@ -1576,49 +1587,49 @@ public class Menu extends javax.swing.JFrame {
         FeachaFabricacion.setBackground(new java.awt.Color(204, 204, 204));
         jPanel20.add(FeachaFabricacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
 
-        txtNumAcientos.setBackground(new java.awt.Color(204, 204, 204));
-        txtNumAcientos.setBorder(null);
-        txtNumAcientos.addActionListener(new java.awt.event.ActionListener() {
+        txtNumAsientos.setBackground(new java.awt.Color(204, 204, 204));
+        txtNumAsientos.setBorder(null);
+        txtNumAsientos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumAcientosActionPerformed(evt);
+                txtNumAsientosActionPerformed(evt);
             }
         });
-        jPanel20.add(txtNumAcientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
+        jPanel20.add(txtNumAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
 
-        btnGuardarU5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
-        btnGuardarU5.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Lupa.png")); // NOI18N
+        btnBuscarVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarU5ActionPerformed(evt);
+                btnBuscarVehiculoActionPerformed(evt);
             }
         });
-        jPanel20.add(btnGuardarU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+        jPanel20.add(btnBuscarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarU5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
-        btnEditarU5.addActionListener(new java.awt.event.ActionListener() {
+        btnEditarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarU5ActionPerformed(evt);
+                btnEditarVehiculoActionPerformed(evt);
             }
         });
-        jPanel20.add(btnEditarU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
+        jPanel20.add(btnEditarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarU5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
-        btnEliminarU5.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarU5ActionPerformed(evt);
+                btnEliminarVehiculoActionPerformed(evt);
             }
         });
-        jPanel20.add(btnEliminarU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
+        jPanel20.add(btnEliminarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoU5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
-        btnNuevoU5.addActionListener(new java.awt.event.ActionListener() {
+        btnNuevoVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoU5ActionPerformed(evt);
+                btnNuevoVehiculoActionPerformed(evt);
             }
         });
-        jPanel20.add(btnNuevoU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
+        jPanel20.add(btnNuevoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
 
         jLabel76.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel76.setText("Guardar");
+        jLabel76.setText("Buscar");
         jPanel20.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
 
         jLabel77.setForeground(new java.awt.Color(0, 0, 0));
@@ -1635,7 +1646,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel80.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel80.setText("Numero de Acientos");
+        jLabel80.setText("Numero de Asientos");
         jPanel20.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
         jLabel81.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -1779,15 +1790,15 @@ public class Menu extends javax.swing.JFrame {
 
         lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Logo.png")); // NOI18N
 
-        btnBusqueda.setBackground(new java.awt.Color(153, 153, 153));
-        btnBusqueda.setForeground(new java.awt.Color(255, 255, 255));
-        btnBusqueda.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\bus.png")); // NOI18N
-        btnBusqueda.setText("Vehiculos");
-        btnBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnBusqueda.setFocusable(false);
-        btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
+        btnVehiculos.setBackground(new java.awt.Color(153, 153, 153));
+        btnVehiculos.setForeground(new java.awt.Color(255, 255, 255));
+        btnVehiculos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\bus.png")); // NOI18N
+        btnVehiculos.setText("Vehiculos");
+        btnVehiculos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnVehiculos.setFocusable(false);
+        btnVehiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBusquedaActionPerformed(evt);
+                btnVehiculosActionPerformed(evt);
             }
         });
 
@@ -1808,7 +1819,7 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addComponent(btnBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnVehiculos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1828,7 +1839,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(btnBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnVehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
 
@@ -1911,7 +1922,6 @@ public class Menu extends javax.swing.JFrame {
        modeloUsuario();
         
     }//GEN-LAST:event_btnUsuariosActionPerformed
-private static final int MAX_LENGTH = 50;
 
     private void btnNuevoUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoUActionPerformed
      String nombre = txtNombreU.getText();
@@ -2074,9 +2084,28 @@ private static final int MAX_LENGTH = 50;
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNuevoMActionPerformed
 
-    private void btnGuardarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCliActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarCliActionPerformed
+    private void btnBuscarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClientesActionPerformed
+      String CedulaBuscada = txtCedula.getText();
+
+    if (!CedulaBuscada.isEmpty()) {
+        ClienteControlador clienteControlador = new ClienteControlador();
+        ArrayList<Object[]> resultados = clienteControlador.buscarClientePorCedula(CedulaBuscada);
+
+        DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
+        modelo.setRowCount(0);
+
+        if (resultados != null) {
+            for (Object[] fila : resultados) {
+                modelo.addRow(fila);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al buscar el Cliente por su Cedula");
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Ingrese la Cedula para buscar");
+    }  
+    
+    }//GEN-LAST:event_btnBuscarClientesActionPerformed
 
     private void btnEditarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCliActionPerformed
        
@@ -2210,12 +2239,12 @@ private static final int MAX_LENGTH = 50;
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNuevoU4ActionPerformed
 
-    private void btnBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaActionPerformed
-        
-        jTabbedPane1.setSelectedIndex(5);
-        
-        
-    }//GEN-LAST:event_btnBusquedaActionPerformed
+    private void btnVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehiculosActionPerformed
+
+      jTabbedPane1.setSelectedIndex(5);
+       limpiarTablaVehiculo();
+       modeloVehiculo();
+    }//GEN-LAST:event_btnVehiculosActionPerformed
 
     
     private void jTableUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsuarioMouseClicked
@@ -2241,32 +2270,138 @@ private static final int MAX_LENGTH = 50;
     private void txtNombrePropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePropActionPerformed
     }//GEN-LAST:event_txtNombrePropActionPerformed
 
-    private void txtNumAcientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumAcientosActionPerformed
-    }//GEN-LAST:event_txtNumAcientosActionPerformed
+    private void txtNumAsientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumAsientosActionPerformed
+    }//GEN-LAST:event_txtNumAsientosActionPerformed
 
-    private void btnGuardarU5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarU5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarU5ActionPerformed
+    private void btnBuscarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarVehiculoActionPerformed
+   String PlacaBuscada = txtNumPlaca.getText();
 
-    private void btnEditarU5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarU5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarU5ActionPerformed
+    if (!PlacaBuscada.isEmpty()) {
+        VehiculoControlador vehiculoControlador = new VehiculoControlador();
+        ArrayList<Object[]> resultados = vehiculoControlador.buscarVehiculos(PlacaBuscada);
 
-    private void btnEliminarU5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarU5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarU5ActionPerformed
+        DefaultTableModel modelo = (DefaultTableModel) jTableVehiculo.getModel();
+        modelo.setRowCount(0);
 
-    private void btnNuevoU5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoU5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNuevoU5ActionPerformed
+        if (resultados != null) {
+            for (Object[] fila : resultados) {
+                modelo.addRow(fila);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al buscar el Vehiculo por su Placa");
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Ingrese la placa  para buscar");
+    }  
+    
+    }//GEN-LAST:event_btnBuscarVehiculoActionPerformed
+
+    private void btnEditarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarVehiculoActionPerformed
+        String numPlacaAntiguo = txtNumPlaca.getText();
+        String numPlacaNuevo = txtNumPlaca.getText();
+        String nombrePropietario = txtNombreProp.getText();
+        String strNumAsientos = txtNumAsientos.getText();
+        String strKilometraje = txtKilometrajeTotal.getText();
+        Date fechaFabricacion = FeachaFabricacion.getDate();
+
+        if (numPlacaNuevo.isEmpty() || nombrePropietario.isEmpty() || fechaFabricacion == null) {
+            JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int numAsientos, kilometraje;
+        try {
+            numAsientos = Integer.parseInt(strNumAsientos);
+            kilometraje = Integer.parseInt(strKilometraje);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Los campos de número de asientos y kilometraje deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (numAsientos <= 0) {
+            JOptionPane.showMessageDialog(this, "El número de asientos debe ser mayor que cero.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (kilometraje < 0) {
+            JOptionPane.showMessageDialog(this, "El kilometraje debe ser un número positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        Vehiculo vehiculo = new Vehiculo(numPlacaNuevo, nombrePropietario, numAsientos, kilometraje, fechaFabricacion);
+        VehiculoControlador controlador = new VehiculoControlador();
+        controlador.editarVehiculo(vehiculo, numPlacaAntiguo);
+        limpiarCamposVehiculos();
+        actualizarTablaVehiculos();
+
+    }//GEN-LAST:event_btnEditarVehiculoActionPerformed
+
+    private void btnEliminarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarVehiculoActionPerformed
+        int filaSeleccionada = jTableVehiculo.getSelectedRow();
+
+        if (filaSeleccionada >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este vehículo?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                DefaultTableModel modelo = (DefaultTableModel) jTableVehiculo.getModel();
+                String numPlaca = modelo.getValueAt(filaSeleccionada, 1).toString();
+
+                VehiculoControlador vehiculoControlador = new VehiculoControlador();
+                vehiculoControlador.eliminarVehiculo(numPlaca);
+
+                modelo.removeRow(filaSeleccionada);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
+        }
+
+    }//GEN-LAST:event_btnEliminarVehiculoActionPerformed
+
+    private void btnNuevoVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoVehiculoActionPerformed
+          String numPlaca = txtNumPlaca.getText();
+    String nombrePropietario = txtNombreProp.getText();
+    String strNumAsientos = txtNumAsientos.getText();
+    String strKilometraje = txtKilometrajeTotal.getText();
+    Date fechaFabricacion = FeachaFabricacion.getDate();
+
+    if (numPlaca.isEmpty() || nombrePropietario.isEmpty() || fechaFabricacion == null) {
+        JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    int numAsientos, kilometraje;
+    try {
+        numAsientos = Integer.parseInt(strNumAsientos);
+        kilometraje = Integer.parseInt(strKilometraje);
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Los campos de número de asientos y kilometraje deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    if (numAsientos <= 0 || kilometraje < 0) {
+        JOptionPane.showMessageDialog(this, "El número de asientos debe ser mayor que cero y el kilometraje debe ser un número positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    Vehiculo vehiculo = new Vehiculo(numPlaca, nombrePropietario, numAsientos, kilometraje, fechaFabricacion);
+    VehiculoControlador controlador = new VehiculoControlador();
+    
+    controlador.agregarVehiculo(vehiculo);
+    limpiarCamposVehiculos();
+    actualizarTablaVehiculos();
+
+    }//GEN-LAST:event_btnNuevoVehiculoActionPerformed
 
     private void jTableVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableVehiculoMouseClicked
-       DefaultTableModel modelo = (DefaultTableModel)   jTableVehiculo.getModel();
-       // FeachaFabricacion.setText(( modelo.getValueAt( jTableVehiculo.getSelectedRow(), 1.toString());
-        txtNombreProp.setText((String) modelo.getValueAt( jTableVehiculo.getSelectedRow(), 2));
-        txtNumPlaca.setText((String) modelo.getValueAt( jTableVehiculo.getSelectedRow(), 3));
-        txtNumAcientos.setText((String) modelo.getValueAt( jTableVehiculo.getSelectedRow(), 4).toString());
+        DefaultTableModel modelo = (DefaultTableModel) jTableVehiculo.getModel();
+        txtNumPlaca.setText((String) modelo.getValueAt(jTableVehiculo.getSelectedRow(), 1));
+        txtNumAsientos.setText((String) modelo.getValueAt(jTableVehiculo.getSelectedRow(), 2).toString());
         txtKilometrajeTotal.setText(modelo.getValueAt(jTableVehiculo.getSelectedRow(), 3).toString());
+        txtNombreProp.setText((String) modelo.getValueAt(jTableVehiculo.getSelectedRow(), 4));
+
+        try {
+            String fechaStr = (String) modelo.getValueAt(jTableVehiculo.getSelectedRow(), 5);
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Date fechaFabricacion = sdf.parse(fechaStr);
+            FeachaFabricacion.setDate(fechaFabricacion);
+        } catch (ParseException ex) {
+            System.out.println("Error al parsear la fecha: " + ex.getMessage());
+        }
     }//GEN-LAST:event_jTableVehiculoMouseClicked
 
     private void jTableMantenimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMantenimientoMouseClicked
@@ -2292,13 +2427,7 @@ private static final int MAX_LENGTH = 50;
     private ArrayList<Usuario> listaPersonas = new ArrayList<>();
     private DefaultTableModel modeloUsuario = new DefaultTableModel();
     
-    
-     private ArrayList<Cliente> listaClientes = new ArrayList<>();
-    private DefaultTableModel modeloClientes = new DefaultTableModel();
-
-
-    
-               
+              
 public void setModelo() {
     String[] cabecera = {"Nro.", "Nombres", "Contraseñas"};
     modeloUsuario.setColumnIdentifiers(cabecera);
@@ -2335,6 +2464,8 @@ public void setDatos(Usuario usuario) {
 
 /////////////////////////////////////////////////////////////////////////////////////// TABLA de Clientes //////////////////////////////////////////////////////////////////////////////////////
 
+    private ArrayList<Cliente> listaClientes = new ArrayList<>();
+    private DefaultTableModel modeloClientes = new DefaultTableModel();
 
 public void setModeloCli() {
     String[] cabecera = {"Nro.", "Nombres", "Apellidos", "Telefonos", " Cedulas", "Direcciones"};
@@ -2370,15 +2501,47 @@ public void setModeloCli() {
       
  
  
- /////////////////////////////////////////////////////////////////////////////////////// TABLA de USUARIOS //////////////////////////////////////////////////////////////////////////////////////
- 
- 
+/////////////////////////////////////////////////////////////////////////////////////// TABLA de VEHICULOS //////////////////////////////////////////////////////////////////////////////////////
+   
+    private ArrayList<Vehiculo> ListarVehiculos = new ArrayList<>();
+    private DefaultTableModel modeloVehiculos = new DefaultTableModel();
+
+    public void setModeloVehiculos() {
+        String[] cabecera = {"Nro.", "Nro. Placa", "Nro. Asientos", "Kilometraje", "Propietario", "Año de Fabricacion"};
+    modeloVehiculos.setColumnIdentifiers(cabecera);
+
+    VehiculoControlador vehiculoControlador = new VehiculoControlador();
+    ArrayList<Object[]> datos = vehiculoControlador.datosVehiculo();
+
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modeloVehiculos.addRow(fila);
+        }
+    }
+
+    jTableVehiculo.setModel(modeloVehiculos);
+    }
+
+    public void mostrarDatosVehiculos(Vehiculo vehiculo) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableVehiculo.getModel();
+        Object[] fila = new Object[6];
+
+        fila[0] = modelo.getRowCount() + 1;
+        fila[1] = vehiculo.getNumPlaca();
+        fila[2] = vehiculo.getNumAsientos();
+        fila[3] = vehiculo.getKilometraje();
+        fila[4] = vehiculo.getNombrePropietario();
+        fila[5] = vehiculo.getAñoFabricacion();
+        modelo.addRow(fila);
+    }
+
+
+ /////////////////////////////////////////////////////////////////////////////////////// TABLA de CONTRATOS //////////////////////////////////////////////////////////////////////////////////////
+
  public void mostrarDatosContrato(Contrato contrato) {
      DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
      Object[] fila = new Object[7];
      
-     Date fechaContrato = FeachaContrato.getDate();
-     contrato.setFecha(fechaContrato);
     
      fila[0] = modelo.getRowCount() + 1;
      fila[1] = contrato.getFechaFormateada();
@@ -2395,8 +2558,8 @@ public void setModeloCli() {
     DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
     Object[] fila = new Object[8];  
 
-    Date fechaAbono = FeachaAbono.getDate();
-    abono.setFecha(fechaAbono);
+  //  Date fechaAbono = FeachaAbono.getDate();
+    //abono.setFecha(fechaAbono);
 
     fila[0] = modelo.getRowCount() + 1;
     fila[1] = abono.getFechaFormateada();
@@ -2413,8 +2576,8 @@ public void setModeloCli() {
      DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
     Object[] fila = new Object[4];  
     
-     Date fechaAbono = FeachaAbono.getDate();
-     mantenimiento.setFecha(fechaAbono);
+//   Date fechaAbono = FeachaAbono.getDate();
+    // mantenimiento.setFecha(fechaAbono);
      fila[0] = modelo.getRowCount() + 1;
      fila[1] = mantenimiento.getFechaFormateada();
      fila[2] = mantenimiento.getKilometraje();
@@ -2431,8 +2594,9 @@ public void setModeloCli() {
     private com.toedter.calendar.JDateChooser FeachaFabricacion;
     private com.toedter.calendar.JDateChooser FeachaMantenimiento;
     private javax.swing.JButton btnAbono;
+    private javax.swing.JButton btnBuscarClientes;
     private javax.swing.JButton btnBuscarU;
-    private javax.swing.JButton btnBusqueda;
+    private javax.swing.JButton btnBuscarVehiculo;
     private javax.swing.JButton btnClientes;
     private javax.swing.JButton btnContrato;
     private javax.swing.JButton btnEditarCli;
@@ -2440,26 +2604,25 @@ public void setModeloCli() {
     private javax.swing.JButton btnEditarU;
     private javax.swing.JButton btnEditarU3;
     private javax.swing.JButton btnEditarU4;
-    private javax.swing.JButton btnEditarU5;
+    private javax.swing.JButton btnEditarVehiculo;
     private javax.swing.JButton btnEliminarCli;
     private javax.swing.JButton btnEliminarM;
     private javax.swing.JButton btnEliminarU;
     private javax.swing.JButton btnEliminarU3;
     private javax.swing.JButton btnEliminarU4;
-    private javax.swing.JButton btnEliminarU5;
-    private javax.swing.JButton btnGuardarCli;
+    private javax.swing.JButton btnEliminarVehiculo;
     private javax.swing.JButton btnGuardarM;
     private javax.swing.JButton btnGuardarU3;
     private javax.swing.JButton btnGuardarU4;
-    private javax.swing.JButton btnGuardarU5;
     private javax.swing.JButton btnMantenimientos;
     private javax.swing.JButton btnNuevoCliente;
     private javax.swing.JButton btnNuevoM;
     private javax.swing.JButton btnNuevoU;
     private javax.swing.JButton btnNuevoU3;
     private javax.swing.JButton btnNuevoU4;
-    private javax.swing.JButton btnNuevoU5;
+    private javax.swing.JButton btnNuevoVehiculo;
     private javax.swing.JButton btnUsuarios;
+    private javax.swing.JButton btnVehiculos;
     private javax.swing.JCheckBox jCheckBoxContra;
     private javax.swing.JCheckBox jCheckBoxLiquidado;
     private javax.swing.JCheckBox jCheckBoxSinLiquidar;
@@ -2609,7 +2772,7 @@ public void setModeloCli() {
     private javax.swing.JTextField txtNombreC;
     private javax.swing.JTextField txtNombreProp;
     private javax.swing.JTextField txtNombreU;
-    private javax.swing.JTextField txtNumAcientos;
+    private javax.swing.JTextField txtNumAsientos;
     private javax.swing.JTextField txtNumPlaca;
     private javax.swing.JTextField txtTelefono;
     private javax.swing.JTextField txtValor;
@@ -2662,22 +2825,45 @@ public void setModeloCli() {
 
  ///////////////////////////////////////////////////////////////TABLA VEHICULO////////////////////////////////////////////////////////////////////////////////// 
    
-//      public void limpiarTablaVehiculo() {
-//        int a = modeloVehiculo.getRowCount() - 1;  
-//        for (int i = a; i >= 0; i--) {
-//            modeloVehiculo.removeRow(i);
-//        }
-//    }
-//
-//     public void modeloVehiculo() {
-//        VehiculoControlador vehiculoControlador = new VehiculoControlador();
-//        ArrayList<Object[]> datos = vehiculoControlador.datosVehiculos();
-//        if (datos != null) {
-//            for (Object[] fila : datos) {
-//                modeloVehiculo.addRow(fila);
-//            }
-//        }
-//    }
+      public void limpiarTablaVehiculo() {
+        int a = modeloVehiculos.getRowCount() - 1;  
+        for (int i = a; i >= 0; i--) {
+            modeloVehiculos.removeRow(i);
+        }
+    }
+
+     public void modeloVehiculo() {
+        VehiculoControlador vehiculoControlador = new VehiculoControlador();
+        ArrayList<Object[]> datos = vehiculoControlador.datosVehiculo();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloVehiculos.addRow(fila);
+            }
+        }
+    }
+     
+     
+     
+     private void actualizarTablaVehiculos() {
+    DefaultTableModel modelo = (DefaultTableModel) jTableVehiculo.getModel();
+    modelo.setRowCount(0); 
+    VehiculoControlador controlador = new VehiculoControlador();
+    ArrayList<Object[]> datos = controlador.datosVehiculo();
+    
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modelo.addRow(fila); 
+        }
+    }
+}
+
+private void limpiarCamposVehiculos() {
+    txtNumPlaca.setText("");
+    txtNombreProp.setText("");
+    txtNumAsientos.setText("");
+    txtKilometrajeTotal.setText("");
+    FeachaFabricacion.setDate(null);
+}
      
  ///////////////////////////////////////////////////////////////TABLA MANTENIMIENTO////////////////////////////////////////////////////////////////////////////////// 
 

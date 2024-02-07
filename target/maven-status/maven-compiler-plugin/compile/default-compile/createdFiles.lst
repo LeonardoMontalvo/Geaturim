@@ -1,6 +1,4 @@
-Vista\Main.class
 Controlador\Login$1.class
-Vista\Main$1.class
 Controlador\Menu$9.class
 Controlador\Menu$6.class
 Controlador\Menu.class
@@ -24,7 +22,6 @@ Controlador\Menu$16.class
 Controlador\Menu$36.class
 Modelo\Mantenimiento.class
 Modelo\Vehiculo.class
-Controlador\conexiom.class
 Controlador\Menu$19.class
 Controlador\Menu$39.class
 Controlador\Menu$3.class
