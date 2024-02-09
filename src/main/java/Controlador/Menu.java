@@ -172,20 +172,24 @@ public class Menu extends javax.swing.JFrame {
         jPanel17 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
-        txtNombreU = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jPanel27 = new javax.swing.JPanel();
-        txtCorreo3 = new javax.swing.JTextField();
         txtcontra = new javax.swing.JPasswordField();
         jCheckBoxContra = new javax.swing.JCheckBox();
         btnBuscarU = new javax.swing.JButton();
         btnEditarU = new javax.swing.JButton();
         btnEliminarU = new javax.swing.JButton();
-        btnNuevoU = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        btnNuevoU = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        btnLimpriarTabla = new javax.swing.JButton();
+        btnListartablas = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        txtNombreU = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableUsuario = new javax.swing.JTable();
         jInternalFrame6 = new javax.swing.JInternalFrame();
@@ -218,6 +222,16 @@ public class Menu extends javax.swing.JFrame {
         jPanel55 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTableVehiculo = new javax.swing.JTable();
+        jInternalFrame7 = new javax.swing.JInternalFrame();
+        jPanel23 = new javax.swing.JPanel();
+        jPanel59 = new javax.swing.JPanel();
+        jLabel85 = new javax.swing.JLabel();
+        btnContratoH = new javax.swing.JButton();
+        btnClientesH = new javax.swing.JButton();
+        btnAbonoH = new javax.swing.JButton();
+        btnMantenimientosH = new javax.swing.JButton();
+        btnUsuariosH = new javax.swing.JButton();
+        btnVehiculosH = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnContrato = new javax.swing.JButton();
@@ -228,6 +242,7 @@ public class Menu extends javax.swing.JFrame {
         tipo = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         btnVehiculos = new javax.swing.JButton();
+        btnHistorial = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
 
@@ -401,7 +416,7 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 230, 90));
 
-        btnGuardarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
+        btnGuardarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\GuardarTodo.png")); // NOI18N
         btnGuardarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarU3ActionPerformed(evt);
@@ -409,7 +424,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(btnGuardarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarU3ActionPerformed(evt);
@@ -417,7 +432,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(btnEditarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarU3ActionPerformed(evt);
@@ -425,7 +440,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(btnEliminarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoU3ActionPerformed(evt);
@@ -499,15 +514,14 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("1", jInternalFrame1);
@@ -696,53 +710,53 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel15.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 226, 30));
 
-        btnBuscarClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Lupa.png")); // NOI18N
+        btnBuscarClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
         btnBuscarClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarClientesActionPerformed(evt);
             }
         });
-        jPanel15.add(btnBuscarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+        jPanel15.add(btnBuscarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 40, 35));
 
-        btnEditarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarCliActionPerformed(evt);
             }
         });
-        jPanel15.add(btnEditarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
+        jPanel15.add(btnEditarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 40, 40));
 
-        btnEliminarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarCliActionPerformed(evt);
             }
         });
-        jPanel15.add(btnEliminarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
+        jPanel15.add(btnEliminarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 40, 35));
 
-        btnNuevoCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoClienteActionPerformed(evt);
             }
         });
-        jPanel15.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
+        jPanel15.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 40, 35));
 
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Buscar");
-        jPanel15.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
+        jPanel15.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 70, -1));
 
         jLabel32.setForeground(new java.awt.Color(0, 0, 0));
         jLabel32.setText("Editar");
-        jPanel15.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
+        jPanel15.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 40, -1));
 
         jLabel33.setForeground(new java.awt.Color(0, 0, 0));
         jLabel33.setText("Nuevo");
-        jPanel15.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
+        jPanel15.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 60, -1));
 
         jLabel34.setForeground(new java.awt.Color(0, 0, 0));
         jLabel34.setText("Eliminar");
-        jPanel15.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+        jPanel15.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, 60, -1));
 
         jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -769,11 +783,11 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jInternalFrame2Layout.createSequentialGroup()
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE))
         );
         jInternalFrame2Layout.setVerticalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
             .addGroup(jInternalFrame2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane3)
@@ -927,7 +941,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(txtBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
 
-        btnGuardarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
+        btnGuardarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\GuardarTodo.png")); // NOI18N
         btnGuardarU4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarU4ActionPerformed(evt);
@@ -935,7 +949,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(btnGuardarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarU4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarU4ActionPerformed(evt);
@@ -943,7 +957,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(btnEditarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarU4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarU4ActionPerformed(evt);
@@ -951,7 +965,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(btnEliminarU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoU4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoU4ActionPerformed(evt);
@@ -1043,11 +1057,11 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 8, Short.MAX_VALUE))
+                .addGap(0, 18, Short.MAX_VALUE))
         );
         jInternalFrame3Layout.setVerticalGroup(
             jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
             .addComponent(jScrollPane8)
         );
 
@@ -1158,7 +1172,7 @@ public class Menu extends javax.swing.JFrame {
         FeachaMantenimiento.setBackground(new java.awt.Color(204, 204, 204));
         jPanel14.add(FeachaMantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
 
-        btnGuardarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\GuardarTodo.png")); // NOI18N
+        btnGuardarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\GuardarTodo.png")); // NOI18N
         btnGuardarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarMActionPerformed(evt);
@@ -1166,7 +1180,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel14.add(btnGuardarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarMActionPerformed(evt);
@@ -1174,7 +1188,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel14.add(btnEditarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarMActionPerformed(evt);
@@ -1182,7 +1196,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel14.add(btnEliminarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoMActionPerformed(evt);
@@ -1247,13 +1261,13 @@ public class Menu extends javax.swing.JFrame {
         jInternalFrame5Layout.setHorizontalGroup(
             jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame5Layout.createSequentialGroup()
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 379, Short.MAX_VALUE)
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 389, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jInternalFrame5Layout.setVerticalGroup(
             jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
             .addComponent(jScrollPane1)
         );
 
@@ -1275,7 +1289,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1295,7 +1309,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1306,15 +1320,6 @@ public class Menu extends javax.swing.JFrame {
         );
 
         jPanel13.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 60));
-
-        txtNombreU.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombreU.setBorder(null);
-        txtNombreU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreUActionPerformed(evt);
-            }
-        });
-        jPanel13.add(txtNombreU, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 226, 30));
 
         jLabel45.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(0, 0, 255));
@@ -1327,23 +1332,14 @@ public class Menu extends javax.swing.JFrame {
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel13.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 226, -1));
-
-        txtCorreo3.setBackground(new java.awt.Color(204, 204, 204));
-        txtCorreo3.setBorder(null);
-        txtCorreo3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCorreo3ActionPerformed(evt);
-            }
-        });
-        jPanel13.add(txtCorreo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 226, 30));
 
         txtcontra.setBackground(new java.awt.Color(204, 204, 204));
         txtcontra.setFont(txtcontra.getFont().deriveFont((float)12));
@@ -1364,7 +1360,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel13.add(jCheckBoxContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
-        btnBuscarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Lupa.png")); // NOI18N
+        btnBuscarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
         btnBuscarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarUActionPerformed(evt);
@@ -1372,7 +1368,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel13.add(btnBuscarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarUActionPerformed(evt);
@@ -1380,21 +1376,13 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel13.add(btnEditarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarUActionPerformed(evt);
             }
         });
         jPanel13.add(btnEliminarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
-
-        btnNuevoU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
-        btnNuevoU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoUActionPerformed(evt);
-            }
-        });
-        jPanel13.add(btnNuevoU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
 
         jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("Buscar");
@@ -1404,13 +1392,69 @@ public class Menu extends javax.swing.JFrame {
         jLabel20.setText("Editar");
         jPanel13.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
 
-        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel21.setText("Agregar");
-        jPanel13.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
-
         jLabel22.setForeground(new java.awt.Color(0, 0, 0));
         jLabel22.setText("Eliminar");
         jPanel13.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+
+        btnNuevoU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoUActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnNuevoU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
+
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel23.setText("Agregar");
+        jPanel13.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
+
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("Limpiar Datos");
+        jPanel13.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 90, -1));
+
+        btnLimpriarTabla.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Limpiar.png")); // NOI18N
+        btnLimpriarTabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpriarTablaActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnLimpriarTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 40, 40));
+
+        btnListartablas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Listado.png")); // NOI18N
+        btnListartablas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListartablasActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnListartablas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 40, 40));
+
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel24.setText("Ver tabla");
+        jPanel13.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 60, -1));
+
+        jPanel21.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel13.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 226, 2));
+
+        txtNombreU.setBackground(new java.awt.Color(204, 204, 204));
+        txtNombreU.setBorder(null);
+        txtNombreU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreUActionPerformed(evt);
+            }
+        });
+        jPanel13.add(txtNombreU, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 226, 30));
 
         jTableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1437,16 +1481,12 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jInternalFrame4Layout.createSequentialGroup()
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE))
         );
         jInternalFrame4Layout.setVerticalGroup(
             jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
-            .addGroup(jInternalFrame4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jTabbedPane1.addTab("5", jInternalFrame4);
@@ -1596,7 +1636,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel20.add(txtNumAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
 
-        btnBuscarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Lupa.png")); // NOI18N
+        btnBuscarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
         btnBuscarVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarVehiculoActionPerformed(evt);
@@ -1604,7 +1644,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel20.add(btnBuscarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
-        btnEditarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarVehiculoActionPerformed(evt);
@@ -1612,7 +1652,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel20.add(btnEditarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarVehiculoActionPerformed(evt);
@@ -1620,7 +1660,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel20.add(btnEliminarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
-        btnNuevoVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoVehiculoActionPerformed(evt);
@@ -1698,22 +1738,151 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jInternalFrame6Layout.createSequentialGroup()
                 .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE))
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE))
         );
         jInternalFrame6Layout.setVerticalGroup(
             jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame6Layout.createSequentialGroup()
                 .addGroup(jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
                     .addComponent(jScrollPane9))
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("6", jInternalFrame6);
 
-        jDesktopPane1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 6, 1100, 590));
+        jInternalFrame7.setVisible(true);
 
-        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 1110, 600));
+        jPanel23.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel59.setBackground(new java.awt.Color(0, 110, 255));
+
+        jLabel85.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel85.setText("Historial");
+
+        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
+        jPanel59.setLayout(jPanel59Layout);
+        jPanel59Layout.setHorizontalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel59Layout.createSequentialGroup()
+                .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
+        );
+        jPanel59Layout.setVerticalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel59Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel85)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel23.add(jPanel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 60));
+
+        btnContratoH.setBackground(new java.awt.Color(153, 153, 153));
+        btnContratoH.setForeground(new java.awt.Color(255, 255, 255));
+        btnContratoH.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\contract_icon_194172.png")); // NOI18N
+        btnContratoH.setText("Contrato");
+        btnContratoH.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnContratoH.setFocusable(false);
+        btnContratoH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContratoHActionPerformed(evt);
+            }
+        });
+        jPanel23.add(btnContratoH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, -1));
+
+        btnClientesH.setBackground(new java.awt.Color(153, 153, 153));
+        btnClientesH.setForeground(new java.awt.Color(255, 255, 255));
+        btnClientesH.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Clientes.png")); // NOI18N
+        btnClientesH.setText("Clientes");
+        btnClientesH.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnClientesH.setFocusable(false);
+        btnClientesH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesHActionPerformed(evt);
+            }
+        });
+        jPanel23.add(btnClientesH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 180, -1));
+
+        btnAbonoH.setBackground(new java.awt.Color(153, 153, 153));
+        btnAbonoH.setForeground(new java.awt.Color(255, 255, 255));
+        btnAbonoH.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Carrito-de-compras.png")); // NOI18N
+        btnAbonoH.setText("Abono");
+        btnAbonoH.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAbonoH.setFocusable(false);
+        btnAbonoH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAbonoHActionPerformed(evt);
+            }
+        });
+        jPanel23.add(btnAbonoH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 180, -1));
+
+        btnMantenimientosH.setBackground(new java.awt.Color(153, 153, 153));
+        btnMantenimientosH.setForeground(new java.awt.Color(255, 255, 255));
+        btnMantenimientosH.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Mantenimiento.png")); // NOI18N
+        btnMantenimientosH.setText("Mantenimiento");
+        btnMantenimientosH.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnMantenimientosH.setFocusable(false);
+        btnMantenimientosH.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        btnMantenimientosH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMantenimientosHMouseClicked(evt);
+            }
+        });
+        btnMantenimientosH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMantenimientosHActionPerformed(evt);
+            }
+        });
+        jPanel23.add(btnMantenimientosH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 180, -1));
+
+        btnUsuariosH.setBackground(new java.awt.Color(153, 153, 153));
+        btnUsuariosH.setForeground(new java.awt.Color(255, 255, 255));
+        btnUsuariosH.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Usuario.png")); // NOI18N
+        btnUsuariosH.setText("Usuarios");
+        btnUsuariosH.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnUsuariosH.setFocusable(false);
+        btnUsuariosH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuariosHActionPerformed(evt);
+            }
+        });
+        jPanel23.add(btnUsuariosH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 180, 40));
+
+        btnVehiculosH.setBackground(new java.awt.Color(153, 153, 153));
+        btnVehiculosH.setForeground(new java.awt.Color(255, 255, 255));
+        btnVehiculosH.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\bus.png")); // NOI18N
+        btnVehiculosH.setText("Vehiculos");
+        btnVehiculosH.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnVehiculosH.setFocusable(false);
+        btnVehiculosH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVehiculosHActionPerformed(evt);
+            }
+        });
+        jPanel23.add(btnVehiculosH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 180, 40));
+
+        javax.swing.GroupLayout jInternalFrame7Layout = new javax.swing.GroupLayout(jInternalFrame7.getContentPane());
+        jInternalFrame7.getContentPane().setLayout(jInternalFrame7Layout);
+        jInternalFrame7Layout.setHorizontalGroup(
+            jInternalFrame7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame7Layout.createSequentialGroup()
+                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 914, Short.MAX_VALUE))
+        );
+        jInternalFrame7Layout.setVerticalGroup(
+            jInternalFrame7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("7", jInternalFrame7);
+
+        jDesktopPane1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 670));
+
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 1110, -1));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, -1));
@@ -1722,7 +1891,7 @@ public class Menu extends javax.swing.JFrame {
 
         btnContrato.setBackground(new java.awt.Color(153, 153, 153));
         btnContrato.setForeground(new java.awt.Color(255, 255, 255));
-        btnContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\contract_icon_194172.png")); // NOI18N
+        btnContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\contract_icon_194172.png")); // NOI18N
         btnContrato.setText("Contrato");
         btnContrato.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnContrato.setFocusable(false);
@@ -1734,7 +1903,7 @@ public class Menu extends javax.swing.JFrame {
 
         btnClientes.setBackground(new java.awt.Color(153, 153, 153));
         btnClientes.setForeground(new java.awt.Color(255, 255, 255));
-        btnClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Clientes.png")); // NOI18N
+        btnClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Clientes.png")); // NOI18N
         btnClientes.setText("Clientes");
         btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnClientes.setFocusable(false);
@@ -1746,7 +1915,7 @@ public class Menu extends javax.swing.JFrame {
 
         btnAbono.setBackground(new java.awt.Color(153, 153, 153));
         btnAbono.setForeground(new java.awt.Color(255, 255, 255));
-        btnAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Carrito-de-compras.png")); // NOI18N
+        btnAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Carrito-de-compras.png")); // NOI18N
         btnAbono.setText("Abono");
         btnAbono.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAbono.setFocusable(false);
@@ -1758,7 +1927,7 @@ public class Menu extends javax.swing.JFrame {
 
         btnMantenimientos.setBackground(new java.awt.Color(153, 153, 153));
         btnMantenimientos.setForeground(new java.awt.Color(255, 255, 255));
-        btnMantenimientos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Mantenimiento.png")); // NOI18N
+        btnMantenimientos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Mantenimiento.png")); // NOI18N
         btnMantenimientos.setText("Mantenimiento");
         btnMantenimientos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMantenimientos.setFocusable(false);
@@ -1776,7 +1945,7 @@ public class Menu extends javax.swing.JFrame {
 
         btnUsuarios.setBackground(new java.awt.Color(153, 153, 153));
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        btnUsuarios.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Usuario.png")); // NOI18N
+        btnUsuarios.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Usuario.png")); // NOI18N
         btnUsuarios.setText("Usuarios");
         btnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnUsuarios.setFocusable(false);
@@ -1788,11 +1957,11 @@ public class Menu extends javax.swing.JFrame {
 
         tipo.setForeground(new java.awt.Color(255, 255, 255));
 
-        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Logo.png")); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Logo.png")); // NOI18N
 
         btnVehiculos.setBackground(new java.awt.Color(153, 153, 153));
         btnVehiculos.setForeground(new java.awt.Color(255, 255, 255));
-        btnVehiculos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\bus.png")); // NOI18N
+        btnVehiculos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\bus.png")); // NOI18N
         btnVehiculos.setText("Vehiculos");
         btnVehiculos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnVehiculos.setFocusable(false);
@@ -1802,13 +1971,25 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        btnHistorial.setBackground(new java.awt.Color(153, 153, 153));
+        btnHistorial.setForeground(new java.awt.Color(255, 255, 255));
+        btnHistorial.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Historial.png")); // NOI18N
+        btnHistorial.setText("Historial");
+        btnHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnHistorial.setFocusable(false);
+        btnHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistorialActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnAbono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnMantenimientos, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(btnMantenimientos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnContrato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1816,10 +1997,14 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(tipo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnHistorial, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVehiculos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addComponent(btnVehiculos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1838,12 +2023,14 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(btnMantenimientos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(btnVehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(btnVehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 700));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 770));
 
         jPanel2.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -1922,31 +2109,6 @@ public class Menu extends javax.swing.JFrame {
        modeloUsuario();
         
     }//GEN-LAST:event_btnUsuariosActionPerformed
-
-    private void btnNuevoUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoUActionPerformed
-     String nombre = txtNombreU.getText();
-    String contrasenia = txtcontra.getText();
-
-    if (nombre.isEmpty() || contrasenia.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
-    } else {
-        if (nombre.length() > MAX_LENGTH || contrasenia.length() > MAX_LENGTH) {
-            JOptionPane.showMessageDialog(null, "Nombre o contraseña demasiado largos");
-        } else {
-   
-            if (nombre.matches("^\\s*$") || contrasenia.matches("^\\s*$")) {
-                JOptionPane.showMessageDialog(null, "Nombre o contraseña inválidos");
-            } else {
-                Usuario uM = new Usuario(nombre, contrasenia);
-                UsuarioControlador uC = new UsuarioControlador();
-                uC.insertarUsuario(uM);
-                listaPersonas.add(uM);
-                setDatos(uM);
-            }
-        }
-    }
-
-    }//GEN-LAST:event_btnNuevoUActionPerformed
 
     private void btnEliminarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUActionPerformed
        int filaSeleccionada = jTableUsuario.getSelectedRow();
@@ -2031,14 +2193,6 @@ public class Menu extends javax.swing.JFrame {
     private void txtcontraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcontraActionPerformed
-
-    private void txtCorreo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreo3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCorreo3ActionPerformed
-
-    private void txtNombreUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreUActionPerformed
-
-    }//GEN-LAST:event_txtNombreUActionPerformed
 
     private void txtKilometrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKilometrajeActionPerformed
         // TODO add your handling code here:
@@ -2408,6 +2562,76 @@ public class Menu extends javax.swing.JFrame {
     
     }//GEN-LAST:event_jTableMantenimientoMouseClicked
 
+    private void btnNuevoUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoUActionPerformed
+         String nombre = txtNombreU.getText();
+    String contrasenia = txtcontra.getText();
+
+    if (nombre.isEmpty() || contrasenia.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
+    } else {
+        if (nombre.length() > MAX_LENGTH || contrasenia.length() > MAX_LENGTH) {
+            JOptionPane.showMessageDialog(null, "Nombre o contraseña demasiado largos");
+        } else {
+   
+            if (nombre.matches("^\\s*$") || contrasenia.matches("^\\s*$")) {
+                JOptionPane.showMessageDialog(null, "Nombre o contraseña inválidos");
+            } else {
+                Usuario uM = new Usuario(nombre, contrasenia);
+                UsuarioControlador uC = new UsuarioControlador();
+                uC.insertarUsuario(uM);
+                listaPersonas.add(uM);
+                setDatos(uM);
+            }
+        }
+    }
+    }//GEN-LAST:event_btnNuevoUActionPerformed
+
+    private void btnLimpriarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpriarTablaActionPerformed
+    txtNombreU.setText("");
+    txtcontra.setText("");
+    }//GEN-LAST:event_btnLimpriarTablaActionPerformed
+
+    private void btnListartablasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListartablasActionPerformed
+        actualizarTablaUsuarios();
+    }//GEN-LAST:event_btnListartablasActionPerformed
+
+    private void txtNombreUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreUActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreUActionPerformed
+
+    private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
+            jTabbedPane1.setSelectedIndex(6);
+
+    }//GEN-LAST:event_btnHistorialActionPerformed
+
+    private void btnContratoHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratoHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnContratoHActionPerformed
+
+    private void btnClientesHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClientesHActionPerformed
+
+    private void btnAbonoHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbonoHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAbonoHActionPerformed
+
+    private void btnMantenimientosHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientosHMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMantenimientosHMouseClicked
+
+    private void btnMantenimientosHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantenimientosHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMantenimientosHActionPerformed
+
+    private void btnUsuariosHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUsuariosHActionPerformed
+
+    private void btnVehiculosHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehiculosHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVehiculosHActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2594,11 +2818,14 @@ public void setModeloCli() {
     private com.toedter.calendar.JDateChooser FeachaFabricacion;
     private com.toedter.calendar.JDateChooser FeachaMantenimiento;
     private javax.swing.JButton btnAbono;
+    private javax.swing.JButton btnAbonoH;
     private javax.swing.JButton btnBuscarClientes;
     private javax.swing.JButton btnBuscarU;
     private javax.swing.JButton btnBuscarVehiculo;
     private javax.swing.JButton btnClientes;
+    private javax.swing.JButton btnClientesH;
     private javax.swing.JButton btnContrato;
+    private javax.swing.JButton btnContratoH;
     private javax.swing.JButton btnEditarCli;
     private javax.swing.JButton btnEditarM;
     private javax.swing.JButton btnEditarU;
@@ -2614,7 +2841,11 @@ public void setModeloCli() {
     private javax.swing.JButton btnGuardarM;
     private javax.swing.JButton btnGuardarU3;
     private javax.swing.JButton btnGuardarU4;
+    private javax.swing.JButton btnHistorial;
+    private javax.swing.JButton btnLimpriarTabla;
+    private javax.swing.JButton btnListartablas;
     private javax.swing.JButton btnMantenimientos;
+    private javax.swing.JButton btnMantenimientosH;
     private javax.swing.JButton btnNuevoCliente;
     private javax.swing.JButton btnNuevoM;
     private javax.swing.JButton btnNuevoU;
@@ -2622,7 +2853,9 @@ public void setModeloCli() {
     private javax.swing.JButton btnNuevoU4;
     private javax.swing.JButton btnNuevoVehiculo;
     private javax.swing.JButton btnUsuarios;
+    private javax.swing.JButton btnUsuariosH;
     private javax.swing.JButton btnVehiculos;
+    private javax.swing.JButton btnVehiculosH;
     private javax.swing.JCheckBox jCheckBoxContra;
     private javax.swing.JCheckBox jCheckBoxLiquidado;
     private javax.swing.JCheckBox jCheckBoxSinLiquidar;
@@ -2633,11 +2866,14 @@ public void setModeloCli() {
     private javax.swing.JInternalFrame jInternalFrame4;
     private javax.swing.JInternalFrame jInternalFrame5;
     private javax.swing.JInternalFrame jInternalFrame6;
+    private javax.swing.JInternalFrame jInternalFrame7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -2693,6 +2929,7 @@ public void setModeloCli() {
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel85;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -2703,7 +2940,9 @@ public void setModeloCli() {
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
@@ -2736,6 +2975,7 @@ public void setModeloCli() {
     private javax.swing.JPanel jPanel53;
     private javax.swing.JPanel jPanel54;
     private javax.swing.JPanel jPanel55;
+    private javax.swing.JPanel jPanel59;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2764,7 +3004,6 @@ public void setModeloCli() {
     private javax.swing.JTextField txtComprobante;
     private javax.swing.JTextField txtConductor;
     private javax.swing.JTextField txtConductor1;
-    private javax.swing.JTextField txtCorreo3;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtKilometraje;
     private javax.swing.JTextField txtKilometrajeTotal;
@@ -2803,6 +3042,20 @@ public void setModeloCli() {
             }
         }
     }
+         private void actualizarTablaUsuarios() {
+    DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+    modelo.setRowCount(0); 
+    UsuarioControlador controlador = new UsuarioControlador();
+    ArrayList<Object[]> datos = controlador.datosUsuarios();
+    
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modelo.addRow(fila); 
+        }
+    }
+}
+
+     
      
  ///////////////////////////////////////////////////////////////TABLA CLIENTE//////////////////////////////////////////////////////////////////////////////////
 

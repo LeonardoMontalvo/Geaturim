@@ -39,7 +39,6 @@ public class Login extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jCheckBoxContra1 = new javax.swing.JCheckBox();
-        btnEliminarU3 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         lblFondo2 = new javax.swing.JLabel();
 
@@ -115,10 +114,10 @@ public class Login extends javax.swing.JFrame {
         jSeparator4.setForeground(new java.awt.Color(153, 153, 153));
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 310, 10));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\arroba.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\arroba.png")); // NOI18N
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 48, 36));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\candado.png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\candado.png")); // NOI18N
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 48, 42));
 
         jCheckBoxContra1.setBackground(new java.awt.Color(153, 153, 153));
@@ -133,23 +132,13 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel3.add(jCheckBoxContra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 160, -1));
 
-        btnEliminarU3.setBackground(new java.awt.Color(9, 59, 221));
-        btnEliminarU3.setForeground(new java.awt.Color(102, 153, 255));
-        btnEliminarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
-        btnEliminarU3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarU3ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btnEliminarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 40, 35));
-
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, -1, 600));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Logo.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Logo.png")); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 180, 180));
 
         lblFondo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblFondo2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Fondo Loggin.png")); // NOI18N
+        lblFondo2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Fondo Loggin.png")); // NOI18N
         lblFondo2.setOpaque(true);
         getContentPane().add(lblFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
@@ -212,10 +201,6 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcontraActionPerformed
 
-    private void btnEliminarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarU3ActionPerformed
-         System.exit(0);
-    }//GEN-LAST:event_btnEliminarU3ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -259,7 +244,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEliminarU3;
     private javax.swing.JButton btnIngresar1;
     private javax.swing.JCheckBox jCheckBoxContra1;
     private javax.swing.JLabel jLabel10;

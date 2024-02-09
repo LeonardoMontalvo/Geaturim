@@ -210,7 +210,7 @@
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\arroba.png"/>
+              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\arroba.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -222,7 +222,7 @@
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\candado.png"/>
+              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\candado.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -256,33 +256,12 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="btnEliminarU3">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="dd" green="3b" red="9" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="66" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\eliminar.png"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarU3ActionPerformed"/>
-          </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="320" y="10" width="40" height="35"/>
-            </Constraint>
-          </Constraints>
-        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Logo.png"/>
+          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Logo.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -295,7 +274,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Fondo Loggin.png"/>
+          <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Fondo Loggin.png"/>
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
