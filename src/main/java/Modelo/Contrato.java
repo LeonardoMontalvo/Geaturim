@@ -21,7 +21,7 @@ public class Contrato {
         return sdf.format(this.fecha);
     }
 
-    public Contrato(String idvehiculoc, String idcliente, String Destino, String NombreConductor, int vehiculo, Date fecha, int Dias, int Asientos) {
+    public Contrato(String idvehiculoc, String idcliente, String Destino, Date fecha, String NombreConductor, int Dias, int Asientos, int vehiculo) {
         this.idvehiculoc = idvehiculoc;
         this.idcliente = idcliente;
         this.Destino = Destino;

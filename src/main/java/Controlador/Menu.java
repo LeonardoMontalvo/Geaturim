@@ -114,7 +114,7 @@ public class Menu extends javax.swing.JFrame {
         txtConductor = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtDestino = new javax.swing.JTextArea();
         btnGuardarU3 = new javax.swing.JButton();
         btnEditarU3 = new javax.swing.JButton();
         btnEliminarU3 = new javax.swing.JButton();
@@ -125,14 +125,14 @@ public class Menu extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jPanel41 = new javax.swing.JPanel();
-        txtConductor1 = new javax.swing.JTextField();
+        txtNumV = new javax.swing.JTextField();
         jPanel56 = new javax.swing.JPanel();
         jPanel57 = new javax.swing.JPanel();
         cbbCliente = new javax.swing.JComboBox<>();
         cbbPlacas = new javax.swing.JComboBox<>();
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
-        txtConductor2 = new javax.swing.JTextField();
+        txtDias = new javax.swing.JTextField();
         jPanel37 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTableContrato = new javax.swing.JTable();
@@ -414,11 +414,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel57.setText("Destino");
         jPanel16.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
 
-        jTextArea1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(null);
-        jScrollPane4.setViewportView(jTextArea1);
+        txtDestino.setBackground(new java.awt.Color(204, 204, 204));
+        txtDestino.setColumns(20);
+        txtDestino.setRows(5);
+        txtDestino.setBorder(null);
+        jScrollPane4.setViewportView(txtDestino);
 
         jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 230, 60));
 
@@ -486,14 +486,14 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel16.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 492, 50, 0));
 
-        txtConductor1.setBackground(new java.awt.Color(204, 204, 204));
-        txtConductor1.setBorder(null);
-        txtConductor1.addActionListener(new java.awt.event.ActionListener() {
+        txtNumV.setBackground(new java.awt.Color(204, 204, 204));
+        txtNumV.setBorder(null);
+        txtNumV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConductor1ActionPerformed(evt);
+                txtNumVActionPerformed(evt);
             }
         });
-        jPanel16.add(txtConductor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 50, 30));
+        jPanel16.add(txtNumV, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 50, 30));
 
         jPanel56.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -544,14 +544,14 @@ public class Menu extends javax.swing.JFrame {
         jLabel84.setText("Dias");
         jPanel16.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
 
-        txtConductor2.setBackground(new java.awt.Color(204, 204, 204));
-        txtConductor2.setBorder(null);
-        txtConductor2.addActionListener(new java.awt.event.ActionListener() {
+        txtDias.setBackground(new java.awt.Color(204, 204, 204));
+        txtDias.setBorder(null);
+        txtDias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConductor2ActionPerformed(evt);
+                txtDiasActionPerformed(evt);
             }
         });
-        jPanel16.add(txtConductor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 50, 30));
+        jPanel16.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 50, 30));
 
         jPanel37.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -2376,11 +2376,68 @@ if (cambiosAceite.isEmpty() || cambiosFiltro.isEmpty() || fecha == null) {
 
     private void btnNuevoU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoU3ActionPerformed
         // TODO add your handling code here:
+        
+       String placaVehiculo = cbbPlacas.getSelectedItem().toString();
+       String cedulaCliente = cbbCliente.getSelectedItem().toString();
+       String destinoContrato = txtDestino.getText();
+       Date fechaContrato = FeachaContrato.getDate();
+       String nomConductor = txtConductor.getText();
+       int diasContrato = Integer.parseInt(txtDias.getText());
+       int asientosContrato = Integer.parseInt(txtAsientos.getText());
+       int vehiculoContrato = Integer.parseInt(txtNumV.getText());
+
+       if (destinoContrato.isEmpty() || fechaContrato == null || nomConductor.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+       return;
+    }
+        
+    boolean existePlaca = false;
+    for (int i = 0; i < cbbPlacas.getItemCount(); i++) {
+        if (placaVehiculo.equals(cbbPlacas.getItemAt(i))) {
+        existePlaca = true;
+        break;
+        }
+    }
+
+    if (!existePlaca) {
+    cbbPlacas.addItem(placaVehiculo);
+    }
+
+    boolean existeCedula = false;
+    for (int i = 0; i < cbbCliente.getItemCount(); i++) {
+        if (cedulaCliente.equals(cbbCliente.getItemAt(i))) {
+        existeCedula = true;
+        break;
+        }
+    }
+
+    if (!existeCedula) {
+    cbbCliente.addItem(cedulaCliente);
+    }
+
+    
+    Contrato contrato = new Contrato(placaVehiculo, cedulaCliente, destinoContrato, fechaContrato, nomConductor, diasContrato, asientosContrato, vehiculoContrato);
+
+     try {
+   
+    ContratoControlador controladorContrato = new ContratoControlador();
+    controladorContrato.agregarContrato(contrato);
+
+    
+     this.limpiarTablaContrato();
+     this.actualizarTablaContratos();
+
+    JOptionPane.showMessageDialog(this, "Contrato creado con éxito");
+} catch (NumberFormatException ex) {
+    JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido para días, asientos y vehículo del contrato.", "Error", JOptionPane.ERROR_MESSAGE);
+} catch (Exception ex) {
+    JOptionPane.showMessageDialog(this, "Error al agregar contrato: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+}
     }//GEN-LAST:event_btnNuevoU3ActionPerformed
 
-    private void txtConductor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConductor1ActionPerformed
+    private void txtNumVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumVActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConductor1ActionPerformed
+    }//GEN-LAST:event_txtNumVActionPerformed
 
     private void txtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorActionPerformed
         // TODO add your handling code here:
@@ -2593,9 +2650,9 @@ txtKilometraje.setText(String.valueOf((int) modelo.getValueAt(jTableMantenimient
         
     }//GEN-LAST:event_jInternalFrame6AncestorAdded
 
-    private void txtConductor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConductor2ActionPerformed
+    private void txtDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConductor2ActionPerformed
+    }//GEN-LAST:event_txtDiasActionPerformed
 
     private void cbbClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbClienteActionPerformed
         // TODO add your handling code here:
@@ -3008,7 +3065,6 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JTable jTableMantenimiento;
     private javax.swing.JTable jTableUsuario;
     private javax.swing.JTable jTableVehiculo;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel tipo;
     private javax.swing.JTextField txtApellidoC;
@@ -3019,9 +3075,9 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtComprobante;
     private javax.swing.JTextField txtConductor;
-    private javax.swing.JTextField txtConductor1;
-    private javax.swing.JTextField txtConductor2;
     private javax.swing.JTextField txtCorreo3;
+    private javax.swing.JTextArea txtDestino;
+    private javax.swing.JTextField txtDias;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtKilometraje;
     private javax.swing.JTextField txtKilometrajeTotal;
@@ -3031,6 +3087,7 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JTextField txtNombreU;
     private javax.swing.JTextField txtNumAsientos;
     private javax.swing.JTextField txtNumPlaca;
+    private javax.swing.JTextField txtNumV;
     private javax.swing.JTextField txtTelefono;
     private javax.swing.JTextField txtValor;
     private javax.swing.JPasswordField txtcontra;
@@ -3164,22 +3221,35 @@ private void limpiarCamposMantenimiento() {
 }
 ///////////////////////////////////////////////////////////////TABLA CONTRATOS////////////////////////////////////////////////////////////////////////////////// 
      
-//     public void limpiarTablaContrato() {
-//        int a = modeloContrato.getRowCount() - 1;  
-//        for (int i = a; i >= 0; i--) {
-//            modeloContrato.removeRow(i);
-//        }
-//    }
-//
-//     public void modeloContrato() {
-//        ContratoControlador contratoControlador = new ContratoControlador();
-//        ArrayList<Object[]> datos = contratoControlador.datosContrato();
-//        if (datos != null) {
-//            for (Object[] fila : datos) {
-//                modeloContrato.addRow(fila);
-//            }
-//        }
-//    }
+     public void limpiarTablaContrato() {
+        int a = modeloContratos.getRowCount() - 1;  
+       for (int i = a; i >= 0; i--) {
+            modeloContratos.removeRow(i);
+        }
+    }
+     
+      private void actualizarTablaContratos() {
+    DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+    modelo.setRowCount(0); 
+    ContratoControlador controlador = new ContratoControlador();
+    ArrayList<Object[]> datos = controlador.datosContratosPorPlacaYCliente();
+    
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modelo.addRow(fila); 
+        }
+    }
+}
+
+     public void modeloContrato() {
+        ContratoControlador contratoControlador = new ContratoControlador();
+        ArrayList<Object[]> datos = contratoControlador.datosContratosPorPlacaYCliente();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloContratos.addRow(fila);
+            }
+        }
+    }
      
  ///////////////////////////////////////////////////////////////TABLA  ABONOS////////////////////////////////////////////////////////////////////////////////// 
  

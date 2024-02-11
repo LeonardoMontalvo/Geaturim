@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -99,4 +100,31 @@ public class ContratoControlador {
         }
         return placas;
     }
+    //////////////////////////////////////////////////////////////////CREAR CONTRATO/////////////////////////////////////////////////////////////////////////
+    
+    public void agregarContrato(Contrato contrato) {
+    try {
+        String sql = "CALL CrearContrato(?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        ejecutar = conectar.prepareStatement(sql);
+        ejecutar.setString(1, contrato.getIdvehiculoc());
+        ejecutar.setString(2, contrato.getIdcliente());
+        ejecutar.setString(3, contrato.getDestino());
+        ejecutar.setDate(4, new java.sql.Date(contrato.getFecha().getTime()));
+        ejecutar.setString(5, contrato.getNombreConductor());
+        ejecutar.setInt(6, contrato.getDias());
+        ejecutar.setInt(7, contrato.getAsientos());
+        ejecutar.setInt(8, contrato.getVehiculo());
+        
+        ejecutar.executeUpdate();
+        ejecutar.close();
+        System.out.println("Contrato creado con éxito");              
+    } catch (SQLException e) {
+        System.out.println("Error al agregar contrato: " + e.getMessage());
+    }
+}
+    ///////////////////////////////////////////////////////////////MODIFICAR CONTRATO////////////////////////////////////////////////////////////////////////////////
+
+    
+
 }
