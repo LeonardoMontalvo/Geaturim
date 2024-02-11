@@ -191,4 +191,19 @@ public class ContratoControlador {
 
     return null;
 }
+    ////////////////////////////////////////////////////////////////////ELIMINAR CONTRATO/////////////////////////////////////////////////////////////////77
+
+     public void eliminarContrato(int idContrato) {
+    try {
+        String sql = "CALL EliminarContrato(?)";
+        PreparedStatement ps = conectar.prepareStatement(sql);
+        ps.setInt(1, idContrato);
+        ps.executeUpdate();
+        ps.close();
+        
+        System.out.println("Contrato eliminado con éxito.");
+    } catch (SQLException e) {
+        System.out.println("Error al eliminar contrato: " + e.getMessage());
+    }
+}
 }

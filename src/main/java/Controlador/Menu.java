@@ -2439,6 +2439,23 @@ if (filaSeleccionada >= 0) {
 
     private void btnEliminarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarU3ActionPerformed
         // TODO add your handling code here:
+        int filaSeleccionada = jTableContrato.getSelectedRow();
+
+if (filaSeleccionada >= 0) {
+    int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este contrato?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+
+    if (confirmacion == JOptionPane.YES_OPTION) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+        int idContrato = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString()); 
+
+        ContratoControlador contratoControlador = new ContratoControlador();
+        contratoControlador.eliminarContrato(idContrato);
+
+        modelo.removeRow(filaSeleccionada);
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
+}
     }//GEN-LAST:event_btnEliminarU3ActionPerformed
 
     private void btnNuevoU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoU3ActionPerformed
