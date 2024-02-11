@@ -2118,7 +2118,24 @@ if (filaSeleccionada >= 0) {
     private void btnEliminarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMActionPerformed
         // TODO add your handling code here:
         
-       ////
+      
+ int filaSeleccionada = jTableMantenimiento.getSelectedRow();
+
+if (filaSeleccionada >= 0) {
+    int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este mantenimiento?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+
+    if (confirmacion == JOptionPane.YES_OPTION) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
+        int idMantenimiento = (int) modelo.getValueAt(filaSeleccionada, 0); 
+
+        MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
+        mantenimientoControlador.eliminarMantenimiento(idMantenimiento);
+
+        modelo.removeRow(filaSeleccionada);
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
+}
     }//GEN-LAST:event_btnEliminarMActionPerformed
 
     private void btnNuevoMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoMActionPerformed

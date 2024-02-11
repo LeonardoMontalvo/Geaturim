@@ -2,7 +2,7 @@
 package Controlador;
 
 
-import Modelo.ListaVehiculos;
+
 import Modelo.Vehiculo;
 import java.beans.Statement;
 import java.sql.CallableStatement;
