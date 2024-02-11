@@ -10,8 +10,9 @@ import java.util.Date;
  * @author Leo
  */
 public class Contrato {
-   
-    private String Destino, NombreConductor, vehiculo;
+    private String idvehiculoc , idcliente;
+    private String Destino, NombreConductor;
+    private int vehiculo;
     private Date fecha; 
     private int Dias, Asientos; 
 
@@ -19,15 +20,35 @@ public class Contrato {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(this.fecha);
     }
-        
-    public Contrato(String Destino, String NombreConductor, String vehiculo, Date fecha, int Dias, int Asientos) {
-       this.Destino = Destino;
+
+    public Contrato(String idvehiculoc, String idcliente, String Destino, String NombreConductor, int vehiculo, Date fecha, int Dias, int Asientos) {
+        this.idvehiculoc = idvehiculoc;
+        this.idcliente = idcliente;
+        this.Destino = Destino;
         this.NombreConductor = NombreConductor;
         this.vehiculo = vehiculo;
         this.fecha = fecha;
         this.Dias = Dias;
         this.Asientos = Asientos;
     }
+
+    public String getIdvehiculoc() {
+        return idvehiculoc;
+    }
+
+    public void setIdvehiculoc(String idvehiculoc) {
+        this.idvehiculoc = idvehiculoc;
+    }
+
+    public String getIdcliente() {
+        return idcliente;
+    }
+
+    public void setIdcliente(String idcliente) {
+        this.idcliente = idcliente;
+    }
+        
+    
 
     public String getDestino() {
         return Destino;
@@ -45,11 +66,11 @@ public class Contrato {
         this.NombreConductor = NombreConductor;
     }
 
-    public String getVehiculo() {
+    public int getVehiculo() {
         return vehiculo;
     }
 
-    public void setVehiculo(String vehiculo) {
+    public void setVehiculo(int vehiculo) {
         this.vehiculo = vehiculo;
     }
 

@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 
 
@@ -36,21 +37,57 @@ public class Menu extends javax.swing.JFrame {
         setModeloVehiculos();
         mostrarListaPlacas();
         setModeloMantenimientos();
-       
+        setModeloContratos();
+        mostrarListaPlacasVehiculo();
+        mostrarListaClientesCedula();
     }    
     private static final int MAX_LENGTH = 50;
         private static final int MAX_PLACA_LENGTH = 12;
 
-    // Método para mostrar la lista de placas en el JComboBox
+    
     public void mostrarListaPlacas() {
         VehiculoControlador controlador = new VehiculoControlador();
-        // Obtener la lista de placas de vehículos desde el controlador
         java.util.List<String> listaPlacas = controlador.obtenerListaPlacasVehiculos();
-        // Limpiar el JComboBox
         comboBoxPlacas.removeAllItems();
-        // Agregar cada placa al JComboBox
         for (String placa : listaPlacas) {
             comboBoxPlacas.addItem(placa);
+            
+            comboBoxPlacas.setEditable(true);
+    
+    // Obtener el editor del JComboBox y configurarlo para usar un JTextField
+    JComboBox<String> combo = (JComboBox<String>) comboBoxPlacas;
+    JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
+        }
+    }
+    
+    public void mostrarListaPlacasVehiculo() {
+        VehiculoControlador controlador = new VehiculoControlador();
+        java.util.List<String> listaPlacas = controlador.obtenerListaPlacasVehiculos();
+        cbbPlacas.removeAllItems();
+        for (String placa : listaPlacas) {
+            cbbPlacas.addItem(placa);
+            
+            cbbPlacas.setEditable(true);
+    
+    // Obtener el editor del JComboBox y configurarlo para usar un JTextField
+    JComboBox<String> combo = (JComboBox<String>) cbbPlacas;
+    JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
+        }
+    }
+    
+    
+    public void mostrarListaClientesCedula() {
+        ContratoControlador controladorr = new ContratoControlador();
+        java.util.List<String> listaClinetes = controladorr.obtenerListaClientesCedula();
+        cbbCliente.removeAllItems();
+        for (String listaClinete : listaClinetes) {
+            cbbCliente.addItem(listaClinete);
+            
+            cbbCliente.setEditable(true);
+    
+    // Obtener el editor del JComboBox y configurarlo para usar un JTextField
+    JComboBox<String> combo = (JComboBox<String>) cbbCliente;
+    JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
         }
     }
 
@@ -65,16 +102,13 @@ public class Menu extends javax.swing.JFrame {
         jPanel16 = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        txtVehiculo = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
         txtAsientos = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
         jPanel35 = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
-        jPanel37 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
         jLabel56 = new javax.swing.JLabel();
-        jPanel39 = new javax.swing.JPanel();
         jPanel40 = new javax.swing.JPanel();
         FeachaContrato = new com.toedter.calendar.JDateChooser();
         txtConductor = new javax.swing.JTextField();
@@ -92,6 +126,14 @@ public class Menu extends javax.swing.JFrame {
         jLabel60 = new javax.swing.JLabel();
         jPanel41 = new javax.swing.JPanel();
         txtConductor1 = new javax.swing.JTextField();
+        jPanel56 = new javax.swing.JPanel();
+        jPanel57 = new javax.swing.JPanel();
+        cbbCliente = new javax.swing.JComboBox<>();
+        cbbPlacas = new javax.swing.JComboBox<>();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        txtConductor2 = new javax.swing.JTextField();
+        jPanel37 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTableContrato = new javax.swing.JTable();
         jInternalFrame2 = new javax.swing.JInternalFrame();
@@ -264,35 +306,26 @@ public class Menu extends javax.swing.JFrame {
         jLabel52.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(0, 0, 255));
         jLabel52.setText("Fecha");
-        jPanel16.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jPanel16.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         jLabel53.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel53.setText("Vehiculo");
-        jPanel16.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 163, -1, -1));
-
-        txtVehiculo.setBackground(new java.awt.Color(204, 204, 204));
-        txtVehiculo.setBorder(null);
-        txtVehiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtVehiculoActionPerformed(evt);
-            }
-        });
-        jPanel16.add(txtVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 226, 30));
+        jLabel53.setText("Placa Vehiculo");
+        jPanel16.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         jLabel54.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel54.setForeground(new java.awt.Color(0, 0, 255));
         jLabel54.setText("Asientos");
-        jPanel16.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 219, -1, -1));
+        jPanel16.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
         txtAsientos.setBackground(new java.awt.Color(204, 204, 204));
         txtAsientos.setBorder(null);
-        jPanel16.add(txtAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 243, 226, 30));
+        jPanel16.add(txtAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 226, 20));
 
         jLabel55.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel55.setText("Dias");
-        jPanel16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
+        jLabel55.setText("Nro Vehiculo");
+        jPanel16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, -1, -1));
 
         jPanel35.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -307,7 +340,7 @@ public class Menu extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel16.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 226, 2));
+        jPanel16.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 226, -1));
 
         jPanel36.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -322,22 +355,7 @@ public class Menu extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel16.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
-
-        jPanel37.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
-        jPanel37.setLayout(jPanel37Layout);
-        jPanel37Layout.setHorizontalGroup(
-            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel37Layout.setVerticalGroup(
-            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel16.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 273, 226, 2));
+        jPanel16.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 226, 2));
 
         jPanel38.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -364,21 +382,6 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel16.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
 
-        jPanel39.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
-        jPanel39.setLayout(jPanel39Layout);
-        jPanel39Layout.setHorizontalGroup(
-            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel39Layout.setVerticalGroup(
-            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel16.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
-
         jPanel40.setBackground(new java.awt.Color(0, 110, 255));
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
@@ -392,10 +395,10 @@ public class Menu extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel16.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
+        jPanel16.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 226, -1));
 
         FeachaContrato.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel16.add(FeachaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
+        jPanel16.add(FeachaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 210, 30));
 
         txtConductor.setBackground(new java.awt.Color(204, 204, 204));
         txtConductor.setBorder(null);
@@ -404,12 +407,12 @@ public class Menu extends javax.swing.JFrame {
                 txtConductorActionPerformed(evt);
             }
         });
-        jPanel16.add(txtConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
+        jPanel16.add(txtConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 226, 30));
 
         jLabel57.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel57.setForeground(new java.awt.Color(0, 0, 255));
         jLabel57.setText("Destino");
-        jPanel16.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+        jPanel16.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
 
         jTextArea1.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea1.setColumns(20);
@@ -417,7 +420,7 @@ public class Menu extends javax.swing.JFrame {
         jTextArea1.setBorder(null);
         jScrollPane4.setViewportView(jTextArea1);
 
-        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 230, 90));
+        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 230, 60));
 
         btnGuardarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resources\\Imagenes\\Lupa.png")); // NOI18N
         btnGuardarU3.addActionListener(new java.awt.event.ActionListener() {
@@ -466,7 +469,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel60.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(0, 0, 255));
         jLabel60.setText("Conductor");
-        jPanel16.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+        jPanel16.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         jPanel41.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -474,14 +477,14 @@ public class Menu extends javax.swing.JFrame {
         jPanel41.setLayout(jPanel41Layout);
         jPanel41Layout.setHorizontalGroup(
             jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
         jPanel41Layout.setVerticalGroup(
             jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jPanel16.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 490, 60, 2));
+        jPanel16.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 492, 50, 0));
 
         txtConductor1.setBackground(new java.awt.Color(204, 204, 204));
         txtConductor1.setBorder(null);
@@ -490,7 +493,80 @@ public class Menu extends javax.swing.JFrame {
                 txtConductor1ActionPerformed(evt);
             }
         });
-        jPanel16.add(txtConductor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 60, 30));
+        jPanel16.add(txtConductor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 50, 30));
+
+        jPanel56.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel56Layout = new javax.swing.GroupLayout(jPanel56);
+        jPanel56.setLayout(jPanel56Layout);
+        jPanel56Layout.setHorizontalGroup(
+            jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel56Layout.setVerticalGroup(
+            jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel16.add(jPanel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 226, -1));
+
+        jPanel57.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel57Layout = new javax.swing.GroupLayout(jPanel57);
+        jPanel57.setLayout(jPanel57Layout);
+        jPanel57Layout.setHorizontalGroup(
+            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel57Layout.setVerticalGroup(
+            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel16.add(jPanel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 226, 2));
+
+        cbbCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbbClienteActionPerformed(evt);
+            }
+        });
+        jPanel16.add(cbbCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 220, 30));
+
+        jPanel16.add(cbbPlacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 222, 220, 30));
+
+        jLabel83.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel83.setText("Cliente");
+        jPanel16.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        jLabel84.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel84.setText("Dias");
+        jPanel16.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
+
+        txtConductor2.setBackground(new java.awt.Color(204, 204, 204));
+        txtConductor2.setBorder(null);
+        txtConductor2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConductor2ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(txtConductor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 50, 30));
+
+        jPanel37.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
+        jPanel37.setLayout(jPanel37Layout);
+        jPanel37Layout.setHorizontalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel37Layout.setVerticalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel16.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 226, -1));
 
         jTableContrato.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -516,11 +592,10 @@ public class Menu extends javax.swing.JFrame {
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("1", jInternalFrame1);
@@ -755,10 +830,7 @@ public class Menu extends javax.swing.JFrame {
 
         jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
@@ -2039,10 +2111,6 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCedulaActionPerformed
 
-    private void txtVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVehiculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtVehiculoActionPerformed
-
     private void txtConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConductorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtConductorActionPerformed
@@ -2525,6 +2593,16 @@ txtKilometraje.setText(String.valueOf((int) modelo.getValueAt(jTableMantenimient
         
     }//GEN-LAST:event_jInternalFrame6AncestorAdded
 
+    private void txtConductor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConductor2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConductor2ActionPerformed
+
+    private void cbbClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbClienteActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_cbbClienteActionPerformed
+   
+
     /**
      * @param args the command line arguments
      */
@@ -2655,22 +2733,44 @@ public void setModeloCli() {
 
  /////////////////////////////////////////////////////////////////////////////////////// TABLA de CONTRATOS //////////////////////////////////////////////////////////////////////////////////////
 
- public void mostrarDatosContrato(Contrato contrato) {
+    private ArrayList<Contrato> listaContratos = new ArrayList<>();
+private DefaultTableModel modeloContratos = new DefaultTableModel();
+
+public void setModeloContratos() {
+    String[] cabecera = {"Nro", "Placa Vehiculo", "Cedula", "Destino", "Fecha", "Conductor" , "Dias" , "Nro°Asientos" , "Nro° Vehiculo"};
+    modeloContratos.setColumnIdentifiers(cabecera);
+
+    ContratoControlador ContratoControlador= new ContratoControlador();
+    ArrayList<Object[]> datos = ContratoControlador.datosContratosPorPlacaYCliente();
+
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modeloContratos.addRow(fila);
+        }
+    }
+
+    jTableContrato.setModel(modeloContratos);
+}
+
+    
+    public void mostrarDatosContrato(Contrato contrato) {
      DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
-     Object[] fila = new Object[7];
+     Object[] fila = new Object[9];
      
     
      fila[0] = modelo.getRowCount() + 1;
-     fila[1] = contrato.getFechaFormateada();
-     fila[2] = contrato.getVehiculo();
-     fila[3] = contrato.getAsientos();
-     fila[4] = contrato.getNombreConductor();
-     fila[5] = contrato.getDestino();
+     fila[1] = contrato.getIdvehiculoc();
+     fila[2] = contrato.getIdcliente();
+     fila[3] = contrato.getDestino();
+     fila[4] = contrato.getFecha();
+     fila[5] = contrato.getNombreConductor();
      fila[6] = contrato.getDias();
+     fila[7] = contrato.getAsientos();
+     fila[8] = contrato.getVehiculo();
      modelo.addRow(fila);
      
 }
- 
+ /////////////////////////////////////////////////////////////////////////////TABLA DE ABONOS///////////////////////////////////////////////////////////////////////
  public void mostrarDatosAbono(Abono abono) {
     DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
     Object[] fila = new Object[8];  
@@ -2709,7 +2809,7 @@ public void setModeloCli() {
  private ArrayList<Mantenimiento> listaMantenimientos = new ArrayList<>();
 private DefaultTableModel modeloMantenimientos = new DefaultTableModel();
 
-public void setModeloMantenimientos() {
+    public void setModeloMantenimientos() {
     String[] cabecera = {"Nro", "Placa Vehiculo", "Cambios Aceite", "Cambios Filtro", "Fecha", "Kilometraje"};
     modeloMantenimientos.setColumnIdentifiers(cabecera);
 
@@ -2774,6 +2874,8 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JButton btnNuevoVehiculo;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JButton btnVehiculos;
+    private javax.swing.JComboBox<String> cbbCliente;
+    private javax.swing.JComboBox<String> cbbPlacas;
     private javax.swing.JComboBox<String> comboBoxPlacas;
     private javax.swing.JCheckBox jCheckBoxContra;
     private javax.swing.JCheckBox jCheckBoxLiquidado;
@@ -2846,6 +2948,8 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -2870,7 +2974,6 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
-    private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
@@ -2887,6 +2990,8 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JPanel jPanel53;
     private javax.swing.JPanel jPanel54;
     private javax.swing.JPanel jPanel55;
+    private javax.swing.JPanel jPanel56;
+    private javax.swing.JPanel jPanel57;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2915,6 +3020,7 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JTextField txtComprobante;
     private javax.swing.JTextField txtConductor;
     private javax.swing.JTextField txtConductor1;
+    private javax.swing.JTextField txtConductor2;
     private javax.swing.JTextField txtCorreo3;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtKilometraje;
@@ -2927,7 +3033,6 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JTextField txtNumPlaca;
     private javax.swing.JTextField txtTelefono;
     private javax.swing.JTextField txtValor;
-    private javax.swing.JTextField txtVehiculo;
     private javax.swing.JPasswordField txtcontra;
     // End of variables declaration//GEN-END:variables
 
