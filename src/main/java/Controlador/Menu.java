@@ -2053,6 +2053,47 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnEditarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarMActionPerformed
         // TODO add your handling code here:
+          int filaSeleccionada = jTableMantenimiento.getSelectedRow();
+
+if (filaSeleccionada >= 0) {
+    DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
+    String placaAntigua = modelo.getValueAt(filaSeleccionada, 1).toString();
+    String cambiosAceiteAntiguos = modelo.getValueAt(filaSeleccionada, 2).toString();
+    String cambiosFiltroAntiguos = modelo.getValueAt(filaSeleccionada, 3).toString();
+    Date fechaAntigua = (Date) modelo.getValueAt(filaSeleccionada, 4);
+    int kilometrajeAntiguo = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 5).toString());
+
+    // Obtener los nuevos valores de los campos de texto y el combobox
+    String nuevaPlaca = comboBoxPlacas.getSelectedItem().toString();
+    String nuevosCambiosAceite = txtAreaAceite.getText();
+    String nuevosCambiosFiltro = txtCambioFiltro.getText();
+    Date nuevaFecha = FeachaMantenimiento.getDate();
+    int nuevoKilometraje = Integer.parseInt(txtKilometraje.getText());
+
+    // Validar que todos los campos estén llenos
+    if (nuevaPlaca.isEmpty() || nuevosCambiosAceite.isEmpty() || nuevosCambiosFiltro.isEmpty() || nuevaFecha == null) {
+        JOptionPane.showMessageDialog(null, "Ingrese valores para todos los campos.");
+    } else {
+        // Crear una instancia de Mantenimiento con los valores antiguos y nuevos
+        Mantenimiento mantenimientoAntiguo = new Mantenimiento(placaAntigua, cambiosAceiteAntiguos, cambiosFiltroAntiguos, fechaAntigua, kilometrajeAntiguo);
+        Mantenimiento mantenimientoNuevo = new Mantenimiento(nuevaPlaca, nuevosCambiosAceite, nuevosCambiosFiltro, nuevaFecha, nuevoKilometraje);
+
+        // Llamar al controlador para editar el mantenimiento
+        MantenimientoControlador controlador = new MantenimientoControlador();
+        controlador.editarMantenimiento(mantenimientoNuevo, placaAntigua);
+
+        // Actualizar la tabla
+        modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
+        modelo.setValueAt(nuevosCambiosAceite, filaSeleccionada, 2);
+        modelo.setValueAt(nuevosCambiosFiltro, filaSeleccionada, 3);
+        modelo.setValueAt(nuevaFecha, filaSeleccionada, 4);
+        modelo.setValueAt(nuevoKilometraje, filaSeleccionada, 5);
+
+        JOptionPane.showMessageDialog(null, "Mantenimiento editado con éxito.");
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Seleccione una fila para editar.");
+}
     }//GEN-LAST:event_btnEditarMActionPerformed
 
     private void btnEliminarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMActionPerformed
@@ -2425,7 +2466,15 @@ if (cambiosAceite.isEmpty() || cambiosFiltro.isEmpty() || fecha == null) {
     }//GEN-LAST:event_jTableVehiculoMouseClicked
 
     private void jTableMantenimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMantenimientoMouseClicked
-    
+    ///////////////////////////
+    DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
+comboBoxPlacas.setSelectedItem((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 1));
+txtAreaAceite.setText((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 2));
+txtCambioFiltro.setText((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 3));
+Date fecha = (Date) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 4); // Si la fecha está almacenada como tipo Date
+FeachaMantenimiento.setDate(fecha);
+txtKilometraje.setText((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 5));
+  
     }//GEN-LAST:event_jTableMantenimientoMouseClicked
 
     private void comboBoxPlacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPlacasActionPerformed
