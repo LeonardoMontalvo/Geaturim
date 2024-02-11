@@ -2209,22 +2209,22 @@ if (filaSeleccionada >= 0) {
     private void btnNuevoMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoMActionPerformed
         // TODO add your handling code here:
         String cambiosAceite = txtAreaAceite.getText();
-String cambiosFiltro = txtCambioFiltro.getText();
-Date fecha = FeachaMantenimiento.getDate();
+        String cambiosFiltro = txtCambioFiltro.getText();
+        Date fecha = FeachaMantenimiento.getDate();
 
-if (cambiosAceite.isEmpty() || cambiosFiltro.isEmpty() || fecha == null) {
-    JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
-    return;
-}
+        if (cambiosAceite.isEmpty() || cambiosFiltro.isEmpty() || fecha == null) {
+        JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+        }
 
-  // Obtener lista de placas de vehículos
-  MantenimientoControlador controlador = new MantenimientoControlador();
-  List<String> placas = controlador.obtenerListaPlacasVehiculos();
+  
+        MantenimientoControlador controlador = new MantenimientoControlador();
+        List<String> placas = controlador.obtenerListaPlacasVehiculos();
 
-  // Llenar ComboBox con las placas obtenidas
-  for (String placa : placas) {
-    comboBoxPlacas.addItem(placa);
-  }
+  
+        for (String placa : placas) {
+        comboBoxPlacas.addItem(placa);
+        }
 
    int kilometraje;
    try {
@@ -2234,16 +2234,12 @@ if (cambiosAceite.isEmpty() || cambiosFiltro.isEmpty() || fecha == null) {
         return;
     }
 
-    // Obtener la placa seleccionada del ComboBox
     String placaVehiculo = comboBoxPlacas.getSelectedItem().toString();
 
-    // Crear un objeto Mantenimiento con los datos ingresados
     Mantenimiento mantenimiento = new Mantenimiento(placaVehiculo, cambiosAceite, cambiosFiltro, fecha, kilometraje);
 
-    // Agregar el mantenimiento usando el controlador
     controlador.agregarMantenimiento(mantenimiento);
 
-    // Limpiar la tabla de mantenimientos y actualizarla
     this.limpiarTablaMantenimiento();
     this.actualizarTablaMantenimientos();
 } catch (NumberFormatException ex) {
@@ -2367,7 +2363,59 @@ if (cambiosAceite.isEmpty() || cambiosFiltro.isEmpty() || fecha == null) {
     }//GEN-LAST:event_btnGuardarU3ActionPerformed
 
     private void btnEditarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarU3ActionPerformed
+             int filaSeleccionada = jTableContrato.getSelectedRow();
+
+if (filaSeleccionada >= 0) {
+    DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
     
+    // Obtener los valores antiguos de la fila seleccionada
+    int contratoId = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
+    String placaAntigua = modelo.getValueAt(filaSeleccionada, 1).toString();
+    String cedulaClienteAntigua = modelo.getValueAt(filaSeleccionada, 2).toString();
+    String destinoAntiguo = modelo.getValueAt(filaSeleccionada, 3).toString();
+    Date fechaAntigua = (Date) modelo.getValueAt(filaSeleccionada, 4);
+    String conductorAntiguo = modelo.getValueAt(filaSeleccionada, 5).toString();
+    int diasAntiguos = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 6).toString());
+    int asientosAntiguos = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 7).toString());
+    int vehiculoAntiguo = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 8).toString());
+
+    // Obtener los nuevos valores de los campos de texto y el combobox
+    String nuevaPlaca = cbbPlacas.getSelectedItem().toString();
+    String nuevaCedulaCliente = cbbCliente.getSelectedItem().toString();
+    String nuevoDestino = txtDestino.getText();
+    Date nuevaFecha = FeachaContrato.getDate();
+    String nuevoConductor = txtConductor.getText();
+    int nuevosDias = Integer.parseInt(txtDias.getText());
+    int nuevosAsientos = Integer.parseInt(txtAsientos.getText());
+    int nuevoVehiculo = Integer.parseInt(txtNumV.getText());
+
+    // Validar que se hayan ingresado valores para los campos obligatorios
+    if (nuevaPlaca.isEmpty() || nuevaCedulaCliente.isEmpty() || nuevoDestino.isEmpty() || nuevaFecha == null || nuevoConductor.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Ingrese valores para todos los campos obligatorios.");
+    } else {
+        // Crear una instancia de Contrato con los valores antiguos y nuevos
+        Contrato contratoAntiguo = new Contrato(placaAntigua, cedulaClienteAntigua, destinoAntiguo, fechaAntigua, conductorAntiguo, diasAntiguos, asientosAntiguos, vehiculoAntiguo);
+        Contrato contratoNuevo = new Contrato(nuevaPlaca, nuevaCedulaCliente, nuevoDestino, nuevaFecha, nuevoConductor, nuevosDias, nuevosAsientos, nuevoVehiculo);
+
+        // Llamar al controlador para editar el contrato
+        ContratoControlador controlador = new ContratoControlador();
+        controlador.actualizarContrato(contratoNuevo, contratoId);
+
+        // Actualizar la tabla
+        modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
+        modelo.setValueAt(nuevaCedulaCliente, filaSeleccionada, 2);
+        modelo.setValueAt(nuevoDestino, filaSeleccionada, 3);
+        modelo.setValueAt(nuevaFecha, filaSeleccionada, 4);
+        modelo.setValueAt(nuevoConductor, filaSeleccionada, 5);
+        modelo.setValueAt(nuevosDias, filaSeleccionada, 6);
+        modelo.setValueAt(nuevosAsientos, filaSeleccionada, 7);
+        modelo.setValueAt(nuevoVehiculo, filaSeleccionada, 8);
+
+        JOptionPane.showMessageDialog(null, "Contrato editado con éxito.");
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Seleccione una fila para editar.");
+}
     }//GEN-LAST:event_btnEditarU3ActionPerformed
 
     private void btnEliminarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarU3ActionPerformed

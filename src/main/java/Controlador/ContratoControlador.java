@@ -125,6 +125,30 @@ public class ContratoControlador {
 }
     ///////////////////////////////////////////////////////////////MODIFICAR CONTRATO////////////////////////////////////////////////////////////////////////////////
 
-    
+    public void actualizarContrato(Contrato contrato, int contratoId) {
+    String sql = "CALL ModificarContrato(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    try (Connection conectar = parametros.conectar(); PreparedStatement ps = conectar.prepareStatement(sql)) {
+        ps.setInt(1, contratoId);
+        ps.setString(2, contrato.getIdvehiculoc());
+        ps.setString(3, contrato.getIdcliente());
+        ps.setString(4, contrato.getDestino());
+        ps.setDate(5, new java.sql.Date(contrato.getFecha().getTime()));
+        ps.setString(6, contrato.getNombreConductor());
+        ps.setInt(7, contrato.getDias());
+        ps.setInt(8, contrato.getAsientos());
+        ps.setInt(9, contrato.getVehiculo());
+        
+        int resultado = ps.executeUpdate();
+        if (resultado > 0) {
+            System.out.println("Contrato actualizado con éxito");
+            //JOptionPane.showMessageDialog(null, "Contrato actualizado con éxito");
+        } else {
+            System.out.println("Error al actualizar contrato");
+            //JOptionPane.showMessageDialog(null, "Error al actualizar contrato");
+        }
+    } catch (SQLException e) {
+        System.out.println("Error al actualizar contrato: " + e.getMessage());
+    }
+}
 
 }
