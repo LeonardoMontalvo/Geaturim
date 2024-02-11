@@ -193,11 +193,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\arroba.png"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="40" y="230" width="48" height="36"/>
@@ -205,11 +200,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\candado.png"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="40" y="320" width="48" height="42"/>
@@ -247,7 +237,7 @@
               <Color blue="ff" green="99" red="66" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\eliminar.png"/>
+              <Image iconType="2" name="C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\resources\Imagenes\candado.png"/>
             </Property>
           </Properties>
           <Events>
@@ -255,7 +245,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="320" y="10" width="40" height="35"/>
+              <AbsoluteConstraints x="310" y="10" width="40" height="35"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -264,7 +254,7 @@
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Logo.png"/>
+          <Image iconType="2" name="C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\resources\Imagenes\Logo.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -277,7 +267,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\java\Imagenes\Fondo Loggin.png"/>
+          <Image iconType="2" name="C:\Users\Sarita\Documents\NetBeansProjects\Geaturim\src\main\resources\Imagenes\Fondo Loggin.png"/>
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>

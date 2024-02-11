@@ -1,6 +1,7 @@
 
 package Modelo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -8,40 +9,65 @@ import java.util.Date;
  * @author Leo
  */
 public class Mantenimiento {
-    
-    
-    private String Notas,Estado;
-    private Date Fecha;
+    private String idvehiculo;
+    private String CambiosDeAceite, CambiosDeFiltro;
+    private Date fecha;
+    private int Kilometraje;
 
-    public Mantenimiento(String Notas, String Estado, Date Fecha) {
-        this.Notas = Notas;
-        this.Estado = Estado;
-        this.Fecha = Fecha;
+     public String getFechaFormateada() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(this.fecha);
     }
 
-    public String getNotas() {
-        return Notas;
+    public Mantenimiento(String idvehiculo, String CambiosDeAceite, String CambiosDeFiltro, Date fecha, int Kilometraje) {
+        this.idvehiculo = idvehiculo;
+        this.CambiosDeAceite = CambiosDeAceite;
+        this.CambiosDeFiltro = CambiosDeFiltro;
+        this.fecha = fecha;
+        this.Kilometraje = Kilometraje;
     }
 
-    public void setNotas(String Notas) {
-        this.Notas = Notas;
+    public String getIdvehiculo() {
+        return idvehiculo;
     }
 
-    public String getEstado() {
-        return Estado;
+    public void setIdvehiculo(String idvehiculo) {
+        this.idvehiculo = idvehiculo;
     }
 
-    public void setEstado(String Estado) {
-        this.Estado = Estado;
+
+    public String getCambiosDeAceite() {
+        return CambiosDeAceite;
+    }
+
+    public void setCambiosDeAceite(String CambiosDeAceite) {
+        this.CambiosDeAceite = CambiosDeAceite;
+    }
+
+    public String getCambiosDeFiltro() {
+        return CambiosDeFiltro;
+    }
+
+    public void setCambiosDeFiltro(String CambiosDeFiltro) {
+        this.CambiosDeFiltro = CambiosDeFiltro;
     }
 
     public Date getFecha() {
-        return Fecha;
+        return fecha;
     }
 
-    public void setFecha(Date Fecha) {
-        this.Fecha = Fecha;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
+
+    public int getKilometraje() {
+        return Kilometraje;
+    }
+
+    public void setKilometraje(int Kilometraje) {
+        this.Kilometraje = Kilometraje;
+    }
+    
     
     
     

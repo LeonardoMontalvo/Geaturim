@@ -2,7 +2,7 @@
 package Modelo;
 
 
-import com.toedter.calendar.JCalendar;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -13,10 +13,15 @@ public class Contrato {
    
     private String Destino, NombreConductor, vehiculo;
     private Date fecha; 
-    private int Dias, Asientos;
+    private int Dias, Asientos; 
 
+     public String getFechaFormateada() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(this.fecha);
+    }
+        
     public Contrato(String Destino, String NombreConductor, String vehiculo, Date fecha, int Dias, int Asientos) {
-        this.Destino = Destino;
+       this.Destino = Destino;
         this.NombreConductor = NombreConductor;
         this.vehiculo = vehiculo;
         this.fecha = fecha;

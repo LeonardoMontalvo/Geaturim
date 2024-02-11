@@ -110,11 +110,7 @@ public class Login extends javax.swing.JFrame {
         jSeparator4.setBackground(new java.awt.Color(153, 153, 153));
         jSeparator4.setForeground(new java.awt.Color(153, 153, 153));
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 310, 10));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\arroba.png")); // NOI18N
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 48, 36));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\candado.png")); // NOI18N
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 48, 42));
 
         jCheckBoxContra1.setBackground(new java.awt.Color(153, 153, 153));
@@ -130,21 +126,21 @@ public class Login extends javax.swing.JFrame {
 
         btnEliminarU3.setBackground(new java.awt.Color(9, 59, 221));
         btnEliminarU3.setForeground(new java.awt.Color(102, 153, 255));
-        btnEliminarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resources\\Imagenes\\candado.png")); // NOI18N
         btnEliminarU3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarU3ActionPerformed(evt);
             }
         });
-        jPanel3.add(btnEliminarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 40, 35));
+        jPanel3.add(btnEliminarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 40, 35));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, -1, 600));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Logo.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resources\\Imagenes\\Logo.png")); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 180, 180));
 
         lblFondo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblFondo2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\java\\Imagenes\\Fondo Loggin.png")); // NOI18N
+        lblFondo2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resources\\Imagenes\\Fondo Loggin.png")); // NOI18N
         lblFondo2.setOpaque(true);
         getContentPane().add(lblFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -170, 800, 940));
 
