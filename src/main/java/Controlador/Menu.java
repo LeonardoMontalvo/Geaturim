@@ -1163,7 +1163,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel14.add(btnNuevoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
 
-        jLabel27.setText("Guardar");
+        jLabel27.setText("Buscar");
         jPanel14.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
 
         jLabel28.setText("Editar");
@@ -2049,6 +2049,25 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnGuardarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarMActionPerformed
         // TODO add your handling code here:
+        String placaBuscada = comboBoxPlacas.getSelectedItem().toString(); 
+
+if (!placaBuscada.isEmpty()) {
+    MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
+    ArrayList<Object[]> resultados = mantenimientoControlador.buscarMantenimientosPorPlaca(placaBuscada);
+
+    DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
+    modelo.setRowCount(0);
+
+    if (resultados != null) {
+        for (Object[] fila : resultados) {
+            modelo.addRow(fila);
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Error al buscar los mantenimientos por placa");
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Seleccione una placa para buscar los mantenimientos");
+}
     }//GEN-LAST:event_btnGuardarMActionPerformed
 
     private void btnEditarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarMActionPerformed
@@ -2098,6 +2117,8 @@ if (filaSeleccionada >= 0) {
 
     private void btnEliminarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMActionPerformed
         // TODO add your handling code here:
+        
+       ////
     }//GEN-LAST:event_btnEliminarMActionPerformed
 
     private void btnNuevoMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoMActionPerformed
@@ -2471,9 +2492,9 @@ if (cambiosAceite.isEmpty() || cambiosFiltro.isEmpty() || fecha == null) {
 comboBoxPlacas.setSelectedItem((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 1));
 txtAreaAceite.setText((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 2));
 txtCambioFiltro.setText((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 3));
-Date fecha = (Date) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 4); // Si la fecha está almacenada como tipo Date
+Date fecha = (Date) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 4); 
 FeachaMantenimiento.setDate(fecha);
-txtKilometraje.setText((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 5));
+txtKilometraje.setText(String.valueOf((int) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 5)));
   
     }//GEN-LAST:event_jTableMantenimientoMouseClicked
 

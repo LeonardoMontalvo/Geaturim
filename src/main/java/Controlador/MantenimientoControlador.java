@@ -5,6 +5,7 @@
 package Controlador;
 
 import Modelo.Mantenimiento;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -124,10 +125,57 @@ public class MantenimientoControlador {
             System.out.println("Error al editar mantenimiento: " + e.getMessage());
         }
     }
+    //////////////////////////////////////////////////////////////////BUSCAR MANTENIMIENTO POR PLACA//////////////////////////////////////////////////////////////////////////////
     
+    public ArrayList<Object[]> buscarMantenimientosPorPlaca(String numPlaca) {
+    ArrayList<Object[]> listaMantenimientos = new ArrayList<>();
+
+    try {
+        String sql = "CALL BuscarMantenimientoPorPlaca(?)";
+        CallableStatement cs = conectar.prepareCall(sql);
+        cs.setString(1, numPlaca);
+
+        ResultSet rs = cs.executeQuery();
+
+        int cont = 1; 
+
+        while (rs.next()) {
+            Object[] obMantenimiento = new Object[6]; 
+            obMantenimiento[0] = cont;
+            obMantenimiento[1] = rs.getObject("NUMPLACA");
+            obMantenimiento[2] = rs.getObject("CAMBIOSACEITE");
+            obMantenimiento[3] = rs.getObject("CAMBIOSFILTRO");
+            obMantenimiento[4] = rs.getObject("FECHA");
+            obMantenimiento[5] = rs.getObject("KILOMETRAJE");
+
+            listaMantenimientos.add(obMantenimiento);
+
+            cont++;
+        }
+
+        cs.close();
+        return listaMantenimientos;
+    } catch (SQLException e) {
+        System.out.println("Error al buscar mantenimientos por número de placa: " + e.getMessage());
+    }
+
+    return null;
+}
+   //////////////////////////////////////////////////////////////////////ELIMINAR MANTENIMIENTO//////////////////////////////////////////////////////////////////////////// 
     
-    
-    
+    public void eliminarMantenimiento(int idMantenimiento) {
+    try {
+        String sql = "CALL EliminarMantenimiento(?)";
+        PreparedStatement ps = conectar.prepareStatement(sql);
+        ps.setInt(1, idMantenimiento);
+        ps.executeUpdate();
+        ps.close();
+        
+        System.out.println("Mantenimiento eliminado con éxito.");
+    } catch (SQLException e) {
+        System.out.println("Error al eliminar mantenimiento: " + e.getMessage());
+    }
+}
     
     
     
