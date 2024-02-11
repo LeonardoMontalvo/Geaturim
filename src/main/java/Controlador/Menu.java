@@ -454,7 +454,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(btnNuevoU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
 
-        jLabel35.setText("Guardar");
+        jLabel35.setText("Buscar");
         jPanel16.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
 
         jLabel37.setText("Editar");
@@ -2360,6 +2360,25 @@ if (filaSeleccionada >= 0) {
 
     private void btnGuardarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarU3ActionPerformed
         // TODO add your handling code here:
+        String cedulaCliente = cbbCliente.getSelectedItem().toString();
+
+if (!cedulaCliente.isEmpty()) {
+    ContratoControlador contratoControlador = new ContratoControlador();
+    ArrayList<Object[]> resultados = contratoControlador.buscarContratosPorCedula(cedulaCliente);
+
+    DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+    modelo.setRowCount(0);
+
+    if (resultados != null) {
+        for (Object[] fila : resultados) {
+            modelo.addRow(fila);
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Error al buscar contratos por la cédula del cliente");
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Seleccione o ingrese la cédula del cliente para buscar");
+}
     }//GEN-LAST:event_btnGuardarU3ActionPerformed
 
     private void btnEditarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarU3ActionPerformed
@@ -2368,7 +2387,7 @@ if (filaSeleccionada >= 0) {
 if (filaSeleccionada >= 0) {
     DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
     
-    // Obtener los valores antiguos de la fila seleccionada
+    
     int contratoId = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
     String placaAntigua = modelo.getValueAt(filaSeleccionada, 1).toString();
     String cedulaClienteAntigua = modelo.getValueAt(filaSeleccionada, 2).toString();
@@ -2379,7 +2398,7 @@ if (filaSeleccionada >= 0) {
     int asientosAntiguos = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 7).toString());
     int vehiculoAntiguo = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 8).toString());
 
-    // Obtener los nuevos valores de los campos de texto y el combobox
+    
     String nuevaPlaca = cbbPlacas.getSelectedItem().toString();
     String nuevaCedulaCliente = cbbCliente.getSelectedItem().toString();
     String nuevoDestino = txtDestino.getText();
@@ -2389,19 +2408,19 @@ if (filaSeleccionada >= 0) {
     int nuevosAsientos = Integer.parseInt(txtAsientos.getText());
     int nuevoVehiculo = Integer.parseInt(txtNumV.getText());
 
-    // Validar que se hayan ingresado valores para los campos obligatorios
+    
     if (nuevaPlaca.isEmpty() || nuevaCedulaCliente.isEmpty() || nuevoDestino.isEmpty() || nuevaFecha == null || nuevoConductor.isEmpty()) {
         JOptionPane.showMessageDialog(null, "Ingrese valores para todos los campos obligatorios.");
     } else {
-        // Crear una instancia de Contrato con los valores antiguos y nuevos
+        
         Contrato contratoAntiguo = new Contrato(placaAntigua, cedulaClienteAntigua, destinoAntiguo, fechaAntigua, conductorAntiguo, diasAntiguos, asientosAntiguos, vehiculoAntiguo);
         Contrato contratoNuevo = new Contrato(nuevaPlaca, nuevaCedulaCliente, nuevoDestino, nuevaFecha, nuevoConductor, nuevosDias, nuevosAsientos, nuevoVehiculo);
 
-        // Llamar al controlador para editar el contrato
+        
         ContratoControlador controlador = new ContratoControlador();
         controlador.actualizarContrato(contratoNuevo, contratoId);
 
-        // Actualizar la tabla
+       
         modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
         modelo.setValueAt(nuevaCedulaCliente, filaSeleccionada, 2);
         modelo.setValueAt(nuevoDestino, filaSeleccionada, 3);

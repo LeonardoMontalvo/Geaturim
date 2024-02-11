@@ -150,5 +150,45 @@ public class ContratoControlador {
         System.out.println("Error al actualizar contrato: " + e.getMessage());
     }
 }
+    
+    /////////////////////////////////////////////////////////////////////BUSCAR CONTRATO POR CEDULA/////////////////////////////////////////////////////////////
 
+    
+    public ArrayList<Object[]> buscarContratosPorCedula(String cedulaCliente) {
+    ArrayList<Object[]> listaContratos = new ArrayList<>();
+
+    try {
+        String sql = "CALL BuscarContratoPorCedula(?)";
+        CallableStatement cs = conectar.prepareCall(sql);
+        cs.setString(1, cedulaCliente);
+
+        ResultSet rs = cs.executeQuery();
+
+        int cont = 1; 
+
+        while (rs.next()) {
+            Object[] obContrato = new Object[9]; 
+            obContrato[0] = cont;
+            obContrato[1] = rs.getObject("NUMPLACA");
+            obContrato[2] = rs.getObject("CEDULA");
+            obContrato[3] = rs.getObject("DESTINO");
+            obContrato[4] = rs.getObject("FECHA");
+            obContrato[5] = rs.getObject("NOMCONDUCTOR");
+            obContrato[6] = rs.getObject("DIAS");
+            obContrato[7] = rs.getObject("ASIENTOS");
+            obContrato[8] = rs.getObject("VEHICULO");
+
+            listaContratos.add(obContrato);
+
+            cont++;
+        }
+
+        cs.close();
+        return listaContratos;
+    } catch (SQLException e) {
+        System.out.println("Error al buscar contratos por cédula: " + e.getMessage());
+    }
+
+    return null;
+}
 }
