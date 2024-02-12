@@ -68,8 +68,7 @@ public class Menu extends javax.swing.JFrame {
             cbbPlacas.addItem(placa);
             
             cbbPlacas.setEditable(true);
-    
-    // Obtener el editor del JComboBox y configurarlo para usar un JTextField
+   
     JComboBox<String> combo = (JComboBox<String>) cbbPlacas;
     JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
         }
@@ -85,7 +84,6 @@ public class Menu extends javax.swing.JFrame {
             
             cbbCliente.setEditable(true);
     
-    // Obtener el editor del JComboBox y configurarlo para usar un JTextField
     JComboBox<String> combo = (JComboBox<String>) cbbCliente;
     JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
         }
@@ -96,6 +94,11 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jInternalFrame1 = new javax.swing.JInternalFrame();
@@ -260,6 +263,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel51 = new javax.swing.JPanel();
         jPanel52 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
+        jInternalFrame7 = new javax.swing.JInternalFrame();
         jPanel53 = new javax.swing.JPanel();
         jPanel54 = new javax.swing.JPanel();
         FeachaFabricacion = new com.toedter.calendar.JDateChooser();
@@ -290,6 +294,13 @@ public class Menu extends javax.swing.JFrame {
         btnVehiculos = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -579,6 +590,11 @@ public class Menu extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTableContrato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableContratoMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(jTableContrato);
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
@@ -1040,7 +1056,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(btnNuevoU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
 
-        jLabel67.setText("Guardar");
+        jLabel67.setText("Buscar");
         jPanel19.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
 
         jLabel68.setText("Editar");
@@ -1594,23 +1610,43 @@ public class Menu extends javax.swing.JFrame {
         jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel75.setText("Vehiculo");
 
+        jInternalFrame7.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame7Layout = new javax.swing.GroupLayout(jInternalFrame7.getContentPane());
+        jInternalFrame7.getContentPane().setLayout(jInternalFrame7Layout);
+        jInternalFrame7Layout.setHorizontalGroup(
+            jInternalFrame7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 362, Short.MAX_VALUE)
+        );
+        jInternalFrame7Layout.setVerticalGroup(
+            jInternalFrame7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel52Layout = new javax.swing.GroupLayout(jPanel52);
         jPanel52.setLayout(jPanel52Layout);
         jPanel52Layout.setHorizontalGroup(
             jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel52Layout.createSequentialGroup()
-                .addComponent(jLabel75, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel52Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel52Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jInternalFrame7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel75, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
         jPanel52Layout.setVerticalGroup(
             jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel52Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
+                .addComponent(jInternalFrame7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel75)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        jPanel20.add(jPanel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
+        jPanel20.add(jPanel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 80));
 
         jPanel53.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -2150,26 +2186,26 @@ if (filaSeleccionada >= 0) {
     Date fechaAntigua = (Date) modelo.getValueAt(filaSeleccionada, 4);
     int kilometrajeAntiguo = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 5).toString());
 
-    // Obtener los nuevos valores de los campos de texto y el combobox
+    
     String nuevaPlaca = comboBoxPlacas.getSelectedItem().toString();
     String nuevosCambiosAceite = txtAreaAceite.getText();
     String nuevosCambiosFiltro = txtCambioFiltro.getText();
     Date nuevaFecha = FeachaMantenimiento.getDate();
     int nuevoKilometraje = Integer.parseInt(txtKilometraje.getText());
 
-    // Validar que todos los campos estén llenos
+    
     if (nuevaPlaca.isEmpty() || nuevosCambiosAceite.isEmpty() || nuevosCambiosFiltro.isEmpty() || nuevaFecha == null) {
         JOptionPane.showMessageDialog(null, "Ingrese valores para todos los campos.");
     } else {
-        // Crear una instancia de Mantenimiento con los valores antiguos y nuevos
+        
         Mantenimiento mantenimientoAntiguo = new Mantenimiento(placaAntigua, cambiosAceiteAntiguos, cambiosFiltroAntiguos, fechaAntigua, kilometrajeAntiguo);
         Mantenimiento mantenimientoNuevo = new Mantenimiento(nuevaPlaca, nuevosCambiosAceite, nuevosCambiosFiltro, nuevaFecha, nuevoKilometraje);
 
-        // Llamar al controlador para editar el mantenimiento
+        
         MantenimientoControlador controlador = new MantenimientoControlador();
         controlador.editarMantenimiento(mantenimientoNuevo, placaAntigua);
 
-        // Actualizar la tabla
+        
         modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
         modelo.setValueAt(nuevosCambiosAceite, filaSeleccionada, 2);
         modelo.setValueAt(nuevosCambiosFiltro, filaSeleccionada, 3);
@@ -2382,25 +2418,18 @@ if (!cedulaCliente.isEmpty()) {
     }//GEN-LAST:event_btnGuardarU3ActionPerformed
 
     private void btnEditarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarU3ActionPerformed
-             int filaSeleccionada = jTableContrato.getSelectedRow();
+         int filaSeleccionada = jTableContrato.getSelectedRow();
 
 if (filaSeleccionada >= 0) {
     DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
-    
-    
-    int contratoId = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
-    String placaAntigua = modelo.getValueAt(filaSeleccionada, 1).toString();
-    String cedulaClienteAntigua = modelo.getValueAt(filaSeleccionada, 2).toString();
-    String destinoAntiguo = modelo.getValueAt(filaSeleccionada, 3).toString();
-    Date fechaAntigua = (Date) modelo.getValueAt(filaSeleccionada, 4);
-    String conductorAntiguo = modelo.getValueAt(filaSeleccionada, 5).toString();
-    int diasAntiguos = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 6).toString());
-    int asientosAntiguos = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 7).toString());
-    int vehiculoAntiguo = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 8).toString());
 
-    
+   
+    int contratoId = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString()); 
+
     String nuevaPlaca = cbbPlacas.getSelectedItem().toString();
     String nuevaCedulaCliente = cbbCliente.getSelectedItem().toString();
+
+    // Obtener los valores ingresados en los JTextField
     String nuevoDestino = txtDestino.getText();
     Date nuevaFecha = FeachaContrato.getDate();
     String nuevoConductor = txtConductor.getText();
@@ -2408,30 +2437,21 @@ if (filaSeleccionada >= 0) {
     int nuevosAsientos = Integer.parseInt(txtAsientos.getText());
     int nuevoVehiculo = Integer.parseInt(txtNumV.getText());
 
-    
-    if (nuevaPlaca.isEmpty() || nuevaCedulaCliente.isEmpty() || nuevoDestino.isEmpty() || nuevaFecha == null || nuevoConductor.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Ingrese valores para todos los campos obligatorios.");
-    } else {
-        
-        Contrato contratoAntiguo = new Contrato(placaAntigua, cedulaClienteAntigua, destinoAntiguo, fechaAntigua, conductorAntiguo, diasAntiguos, asientosAntiguos, vehiculoAntiguo);
-        Contrato contratoNuevo = new Contrato(nuevaPlaca, nuevaCedulaCliente, nuevoDestino, nuevaFecha, nuevoConductor, nuevosDias, nuevosAsientos, nuevoVehiculo);
+    Contrato contrato = new Contrato(nuevaPlaca, nuevaCedulaCliente, nuevoDestino, nuevaFecha, nuevoConductor, nuevosDias, nuevosAsientos, nuevoVehiculo);
 
-        
-        ContratoControlador controlador = new ContratoControlador();
-        controlador.actualizarContrato(contratoNuevo, contratoId);
+    ContratoControlador controlador = new ContratoControlador();
+    controlador.actualizarContrato(contrato,contratoId);
 
-       
-        modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
-        modelo.setValueAt(nuevaCedulaCliente, filaSeleccionada, 2);
-        modelo.setValueAt(nuevoDestino, filaSeleccionada, 3);
-        modelo.setValueAt(nuevaFecha, filaSeleccionada, 4);
-        modelo.setValueAt(nuevoConductor, filaSeleccionada, 5);
-        modelo.setValueAt(nuevosDias, filaSeleccionada, 6);
-        modelo.setValueAt(nuevosAsientos, filaSeleccionada, 7);
-        modelo.setValueAt(nuevoVehiculo, filaSeleccionada, 8);
+    modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
+    modelo.setValueAt(nuevaCedulaCliente, filaSeleccionada, 2);
+    modelo.setValueAt(nuevoDestino, filaSeleccionada, 3);
+    modelo.setValueAt(nuevaFecha, filaSeleccionada, 4);
+    modelo.setValueAt(nuevoConductor, filaSeleccionada, 5);
+    modelo.setValueAt(nuevosDias, filaSeleccionada, 6);
+    modelo.setValueAt(nuevosAsientos, filaSeleccionada, 7);
+    modelo.setValueAt(nuevoVehiculo, filaSeleccionada, 8);
 
-        JOptionPane.showMessageDialog(null, "Contrato editado con éxito.");
-    }
+    JOptionPane.showMessageDialog(null, "Contrato editado con éxito.");
 } else {
     JOptionPane.showMessageDialog(null, "Seleccione una fila para editar.");
 }
@@ -2462,61 +2482,42 @@ if (filaSeleccionada >= 0) {
         // TODO add your handling code here:
         
        String placaVehiculo = cbbPlacas.getSelectedItem().toString();
-       String cedulaCliente = cbbCliente.getSelectedItem().toString();
-       String destinoContrato = txtDestino.getText();
-       Date fechaContrato = FeachaContrato.getDate();
-       String nomConductor = txtConductor.getText();
-       int diasContrato = Integer.parseInt(txtDias.getText());
-       int asientosContrato = Integer.parseInt(txtAsientos.getText());
-       int vehiculoContrato = Integer.parseInt(txtNumV.getText());
+String cedulaCliente = cbbCliente.getSelectedItem().toString();
+String destinoContrato = txtDestino.getText();
+Date fechaContrato = FeachaContrato.getDate();
+String nomConductor = txtConductor.getText();
+int diasContrato;
+int asientosContrato;
+int vehiculoContrato;
 
-       if (destinoContrato.isEmpty() || fechaContrato == null || nomConductor.isEmpty()) {
-       JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
-       return;
+try {
+    diasContrato = Integer.parseInt(txtDias.getText());
+    asientosContrato = Integer.parseInt(txtAsientos.getText());
+    vehiculoContrato = Integer.parseInt(txtNumV.getText());
+
+    if (diasContrato < 0 || asientosContrato < 0 || vehiculoContrato < 0) {
+        JOptionPane.showMessageDialog(this, "Los campos de días, asientos y vehículo deben ser números positivos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
     }
-        
-    boolean existePlaca = false;
-    for (int i = 0; i < cbbPlacas.getItemCount(); i++) {
-        if (placaVehiculo.equals(cbbPlacas.getItemAt(i))) {
-        existePlaca = true;
-        break;
-        }
-    }
-
-    if (!existePlaca) {
-    cbbPlacas.addItem(placaVehiculo);
-    }
-
-    boolean existeCedula = false;
-    for (int i = 0; i < cbbCliente.getItemCount(); i++) {
-        if (cedulaCliente.equals(cbbCliente.getItemAt(i))) {
-        existeCedula = true;
-        break;
-        }
-    }
-
-    if (!existeCedula) {
-    cbbCliente.addItem(cedulaCliente);
-    }
-
-    
-    Contrato contrato = new Contrato(placaVehiculo, cedulaCliente, destinoContrato, fechaContrato, nomConductor, diasContrato, asientosContrato, vehiculoContrato);
-
-     try {
-   
-    ContratoControlador controladorContrato = new ContratoControlador();
-    controladorContrato.agregarContrato(contrato);
-
-    
-     this.limpiarTablaContrato();
-     this.actualizarTablaContratos();
-
-    JOptionPane.showMessageDialog(this, "Contrato creado con éxito");
 } catch (NumberFormatException ex) {
-    JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido para días, asientos y vehículo del contrato.", "Error", JOptionPane.ERROR_MESSAGE);
-} catch (Exception ex) {
-    JOptionPane.showMessageDialog(this, "Error al agregar contrato: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    JOptionPane.showMessageDialog(this, "Los campos de días, asientos y vehículo deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+    return;
 }
+
+if (placaVehiculo.isEmpty() || cedulaCliente.isEmpty() || destinoContrato.isEmpty() || fechaContrato == null || nomConductor.isEmpty()) {
+    JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+    return;
+}
+
+Contrato contrato = new Contrato(placaVehiculo, cedulaCliente, destinoContrato, fechaContrato, nomConductor, diasContrato, asientosContrato, vehiculoContrato);
+
+ContratoControlador controladorContrato = new ContratoControlador();
+controladorContrato.agregarContrato(contrato);
+
+this.limpiarTablaContrato();
+this.actualizarTablaContratos();
+
+JOptionPane.showMessageDialog(this, "Contrato creado con éxito.");
     }//GEN-LAST:event_btnNuevoU3ActionPerformed
 
     private void txtNumVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumVActionPerformed
@@ -2704,7 +2705,7 @@ if (filaSeleccionada >= 0) {
 
         try {
             String fechaStr = (String) modelo.getValueAt(jTableVehiculo.getSelectedRow(), 5);
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Date fechaFabricacion = sdf.parse(fechaStr);
             FeachaFabricacion.setDate(fechaFabricacion);
         } catch (ParseException ex) {
@@ -2742,6 +2743,11 @@ txtKilometraje.setText(String.valueOf((int) modelo.getValueAt(jTableMantenimient
         // TODO add your handling code here:
        
     }//GEN-LAST:event_cbbClienteActionPerformed
+
+    private void jTableContratoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableContratoMouseClicked
+        // TODO add your handling code here:
+      /////////////////////////////////////////////////////
+    }//GEN-LAST:event_jTableContratoMouseClicked
    
 
     /**
@@ -3020,6 +3026,7 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JComboBox<String> comboBoxPlacas;
     private javax.swing.JCheckBox jCheckBoxContra;
     private javax.swing.JCheckBox jCheckBoxLiquidado;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBox jCheckBoxSinLiquidar;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jInternalFrame1;
@@ -3028,6 +3035,7 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JInternalFrame jInternalFrame4;
     private javax.swing.JInternalFrame jInternalFrame5;
     private javax.swing.JInternalFrame jInternalFrame6;
+    private javax.swing.JInternalFrame jInternalFrame7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
@@ -3091,6 +3099,8 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -3133,6 +3143,8 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JPanel jPanel55;
     private javax.swing.JPanel jPanel56;
     private javax.swing.JPanel jPanel57;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
