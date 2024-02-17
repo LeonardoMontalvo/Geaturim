@@ -10,7 +10,7 @@ import java.util.Date;
  */
 public class Abono {
 
-    private double Valor, Monto;
+  private double Valor, Monto;
     private Date fecha; 
     private String BancosComp, Banco;
      private boolean liquidado, SinLiquidar;

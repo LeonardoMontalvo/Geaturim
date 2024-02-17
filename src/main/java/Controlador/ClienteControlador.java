@@ -107,11 +107,17 @@ public class ClienteControlador {
     
         /////////////////////////////////////////////////////////////////////////////////////// EDITAR CLIENTE ///////////////////////////////////////////////////////////////////////////////////////
 
-    
-public void editarCliente(String nombreAntiguo, String apellidoAntiguo, String telefonoAntiguo, String cedulaAntigua, String direccionAntigua, String nombreNuevo,String apellidoNuevo, String telefonoNuevo, String cedulaNueva, String direccionNueva ) {
+    public void editarCliente(String cedulaAntigua, String nombreNuevo, String apellidoNuevo, String telefonoNuevo, String cedulaNueva, String direccionNueva) {
     try {
-        String sql = "CALL EditarCliente('" + nombreAntiguo + "', '" + apellidoAntiguo + "', '" + telefonoAntiguo + "', '" + cedulaAntigua + "', '" + direccionAntigua + "', '" + nombreNuevo + "', '" + apellidoNuevo + "', '" + telefonoNuevo + "', '" + cedulaNueva + "', '" + direccionNueva + "')";
+        String sql = "CALL EditarClientePorCedula(?, ?, ?, ?, ?, ?)";
         CallableStatement cs = conectar.prepareCall(sql);
+        
+        cs.setString(1, cedulaAntigua);
+        cs.setString(2, nombreNuevo);
+        cs.setString(3, apellidoNuevo);
+        cs.setString(4, telefonoNuevo);
+        cs.setString(5, cedulaNueva);
+        cs.setString(6, direccionNueva);
 
         int resultado = cs.executeUpdate();
 
@@ -126,7 +132,7 @@ public void editarCliente(String nombreAntiguo, String apellidoAntiguo, String t
         System.out.println("Error al editar usuario: " + e.getMessage());
     }
 }
-    
+
         /////////////////////////////////////////////////////////////////////////////////////// BUSCAR CLIENTE ///////////////////////////////////////////////////////////////////////////////////////
 
 public ArrayList<Object[]> buscarClientePorCedula(String cedula) {

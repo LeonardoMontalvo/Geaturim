@@ -9,7 +9,8 @@ import java.util.Date;
  * @author Leo
  */
 public class Mantenimiento {
-    
+    private String idvehiculo;
+    private int idMantenimiento;
     private String CambiosDeAceite, CambiosDeFiltro;
     private Date fecha;
     private int Kilometraje;
@@ -18,11 +19,30 @@ public class Mantenimiento {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(this.fecha);
     }
-    public Mantenimiento(String CambiosDeAceite, String CambiosDeFiltro, Date Fecha, int Kilometraje) {
+
+    public Mantenimiento(String idvehiculo, int idMantenimiento, String CambiosDeAceite, String CambiosDeFiltro, Date fecha, int Kilometraje) {
+        this.idvehiculo = idvehiculo;
+        this.idMantenimiento = idMantenimiento;
         this.CambiosDeAceite = CambiosDeAceite;
         this.CambiosDeFiltro = CambiosDeFiltro;
-        this.fecha = Fecha;
+        this.fecha = fecha;
         this.Kilometraje = Kilometraje;
+    }
+
+    public String getIdvehiculo() {
+        return idvehiculo;
+    }
+
+    public void setIdvehiculo(String idvehiculo) {
+        this.idvehiculo = idvehiculo;
+    }
+
+    public int getIdMantenimiento() {
+        return idMantenimiento;
+    }
+
+    public void setIdMantenimiento(int idMantenimiento) {
+        this.idMantenimiento = idMantenimiento;
     }
 
     public String getCambiosDeAceite() {
@@ -45,8 +65,8 @@ public class Mantenimiento {
         return fecha;
     }
 
-    public void setFecha(Date Fecha) {
-        this.fecha = Fecha;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public int getKilometraje() {
@@ -56,7 +76,5 @@ public class Mantenimiento {
     public void setKilometraje(int Kilometraje) {
         this.Kilometraje = Kilometraje;
     }
-    
-    
-    
+
 }

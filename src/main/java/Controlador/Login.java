@@ -56,13 +56,13 @@ public class Login extends javax.swing.JFrame {
 
         lblCorreoE1.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
         lblCorreoE1.setForeground(new java.awt.Color(255, 255, 255));
-        lblCorreoE1.setText("CORREO ELECTRÓNICO");
+        lblCorreoE1.setText("Nombre:");
         jPanel3.add(lblCorreoE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
         lblContraseña1.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
         lblContraseña1.setForeground(new java.awt.Color(255, 255, 255));
         lblContraseña1.setText("CONTRASEÑA");
-        jPanel3.add(lblContraseña1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, -1));
+        jPanel3.add(lblContraseña1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         btnIngresar1.setBackground(new java.awt.Color(0, 0, 0));
         btnIngresar1.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N

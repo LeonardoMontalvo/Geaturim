@@ -10,14 +10,9 @@ import java.util.Date;
 public class Vehiculo {
     
     
-   private String
-           NumPlaca,
-           NombrePropietario;
-   private int 
-           NumAsientos,
-           Kilometraje;
-   private Date 
-           AñoFabricacion;
+   private String NumPlaca,NombrePropietario;
+   private int NumAsientos,Kilometraje;
+   private Date AñoFabricacion;
 
     public Vehiculo(String NumPlaca, String NombrePropietario, int NumAsientos, int Kilometraje, Date AñoFabricacion) {
         this.NumPlaca = NumPlaca;
@@ -66,6 +61,6 @@ public class Vehiculo {
     public void setAñoFabricacion(Date AñoFabricacion) {
         this.AñoFabricacion = AñoFabricacion;
     }
-   
+
    
 }

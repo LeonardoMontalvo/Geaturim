@@ -2,7 +2,9 @@
 package Controlador;
 
 
+
 import Modelo.Vehiculo;
+import java.beans.Statement;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 
@@ -36,6 +39,8 @@ public class VehiculoControlador {
     }
 
     
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////// datosVehiculo ///////////////////////////////////////////////////////////////////////////////////////
   
@@ -124,7 +129,7 @@ public void editarVehiculo(Vehiculo vehiculo, String numPlacaAntiguo) {
         int resultado = ps.executeUpdate();
 
         if (resultado > 0) {
-            JOptionPane.showMessageDialog(null, "Vehículo editado con éxito");
+            
         } else {
             JOptionPane.showMessageDialog(null, "Error al editar vehículo");
         }
@@ -132,6 +137,7 @@ public void editarVehiculo(Vehiculo vehiculo, String numPlacaAntiguo) {
         System.out.println("Error al editar vehículo: " + e.getMessage());
     }
 }
+
 
     /////////////////////////////////////////////////////////////////////////////////////// BUSCAR  VEHICULO ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -168,7 +174,56 @@ public ArrayList<Object[]> buscarVehiculos(String numPlaca) {
     }
 
     return null;
+
+    
 }
 
+ public List<String> obtenerListaPlacasVehiculos() {
+        List<String> listaPlacas = new ArrayList<>();
+        try {
+            String sql = "SELECT NUMPLACA FROM VEHICULO";
+            ejecutar = conectar.prepareStatement(sql);
+            ResultSet rs = ejecutar.executeQuery();
+            while (rs.next()) {
+                String numPlaca = rs.getString("NUMPLACA");
+                listaPlacas.add(numPlaca);
+            }
+            ejecutar.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listaPlacas;
+    }
+ 
+ 
+    public Vehiculo obtenerVehiculoPorPlaca(String numPlaca) {
+        Vehiculo vehiculo = null;
+        try {
+            String sql = "CALL BuscarVehiculoPorPlaca(?)";
+            CallableStatement cs = conectar.prepareCall(sql);
+            cs.setString(1, numPlaca);
+
+            ResultSet rs = cs.executeQuery();
+
+            if (rs.next()) {
+                vehiculo = new Vehiculo(
+                        rs.getString("NUMPLACA"),
+                        rs.getString("NOMBREPROPIETARIO"),
+                        rs.getInt("NUMASIENTOS"),
+                        rs.getInt("KILOMETRAJE"),
+                        rs.getDate("ANOFABRICACION")
+                );
+            }
+
+            cs.close();
+        } catch (SQLException e) {
+            System.out.println("Error al buscar vehículo por número de placa: " + e.getMessage());
+        }
+
+        return vehiculo;
+    }
+
+    
+    
 
 }
