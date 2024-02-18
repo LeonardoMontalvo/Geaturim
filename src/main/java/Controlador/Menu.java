@@ -15,6 +15,9 @@ import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import Controlador.VehiculoControlador;
+import Modelo.Pdfs;
+import java.awt.Desktop;
+import java.io.File;
 
 
 
@@ -216,7 +219,7 @@ public class Menu extends javax.swing.JFrame {
         btnNuevoM = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
+        PDF = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         txtCambioFiltro = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -225,6 +228,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel82 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        btnPDF = new javax.swing.JButton();
+        jLabel55 = new javax.swing.JLabel();
         jInternalFrame4 = new javax.swing.JInternalFrame();
         jPanel13 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
@@ -1295,9 +1300,9 @@ public class Menu extends javax.swing.JFrame {
         jLabel28.setText("Editar");
         jPanel14.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
 
-        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel30.setText("Eliminar");
-        jPanel14.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+        PDF.setForeground(new java.awt.Color(0, 0, 0));
+        PDF.setText("PDF : ");
+        jPanel14.add(PDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, 60, -1));
 
         txtCambioFiltro.setBackground(new java.awt.Color(187, 187, 187));
         txtCambioFiltro.setColumns(20);
@@ -1337,6 +1342,19 @@ public class Menu extends javax.swing.JFrame {
         jLabel26.setText("Editar");
         jPanel14.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
 
+        btnPDF.setBackground(new java.awt.Color(187, 187, 187));
+        btnPDF.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\PDF.png")); // NOI18N
+        btnPDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPDFActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 40, 40));
+
+        jLabel55.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel55.setText("Eliminar");
+        jPanel14.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+
         javax.swing.GroupLayout jInternalFrame5Layout = new javax.swing.GroupLayout(jInternalFrame5.getContentPane());
         jInternalFrame5.getContentPane().setLayout(jInternalFrame5Layout);
         jInternalFrame5Layout.setHorizontalGroup(
@@ -1349,7 +1367,7 @@ public class Menu extends javax.swing.JFrame {
         jInternalFrame5Layout.setVerticalGroup(
             jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
-            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("4", jInternalFrame5);
@@ -1835,7 +1853,6 @@ public class Menu extends javax.swing.JFrame {
         jInternalFrame7.setVisible(true);
 
         jPanel23.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel59.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -1850,7 +1867,7 @@ public class Menu extends javax.swing.JFrame {
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel59Layout.createSequentialGroup()
                 .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 19, Short.MAX_VALUE))
         );
         jPanel59Layout.setVerticalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1859,8 +1876,6 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel85)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
-
-        jPanel23.add(jPanel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 60));
 
         btnContratoH.setBackground(new java.awt.Color(153, 153, 153));
         btnContratoH.setForeground(new java.awt.Color(255, 255, 255));
@@ -1873,7 +1888,6 @@ public class Menu extends javax.swing.JFrame {
                 btnContratoHActionPerformed(evt);
             }
         });
-        jPanel23.add(btnContratoH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, -1));
 
         btnAbonoH.setBackground(new java.awt.Color(153, 153, 153));
         btnAbonoH.setForeground(new java.awt.Color(255, 255, 255));
@@ -1886,7 +1900,6 @@ public class Menu extends javax.swing.JFrame {
                 btnAbonoHActionPerformed(evt);
             }
         });
-        jPanel23.add(btnAbonoH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 180, -1));
 
         btnMantenimientosH.setBackground(new java.awt.Color(153, 153, 153));
         btnMantenimientosH.setForeground(new java.awt.Color(255, 255, 255));
@@ -1905,7 +1918,6 @@ public class Menu extends javax.swing.JFrame {
                 btnMantenimientosHActionPerformed(evt);
             }
         });
-        jPanel23.add(btnMantenimientosH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 180, -1));
 
         btnVehiculosH.setBackground(new java.awt.Color(153, 153, 153));
         btnVehiculosH.setForeground(new java.awt.Color(255, 255, 255));
@@ -1918,15 +1930,38 @@ public class Menu extends javax.swing.JFrame {
                 btnVehiculosHActionPerformed(evt);
             }
         });
-        jPanel23.add(btnVehiculosH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 180, 40));
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnContratoH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAbonoH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnMantenimientosH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnVehiculosH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(btnContratoH)
+                .addGap(70, 70, 70)
+                .addComponent(btnAbonoH)
+                .addGap(70, 70, 70)
+                .addComponent(btnMantenimientosH)
+                .addGap(70, 70, 70)
+                .addComponent(btnVehiculosH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout jInternalFrame7Layout = new javax.swing.GroupLayout(jInternalFrame7.getContentPane());
         jInternalFrame7.getContentPane().setLayout(jInternalFrame7Layout);
         jInternalFrame7Layout.setHorizontalGroup(
             jInternalFrame7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame7Layout.createSequentialGroup()
-                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 914, Short.MAX_VALUE))
+                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 895, Short.MAX_VALUE))
         );
         jInternalFrame7Layout.setVerticalGroup(
             jInternalFrame7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2908,6 +2943,41 @@ int filaSeleccionada = jTableMantenimiento.getSelectedRow();
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAsientosActionPerformed
 
+    private void btnPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFActionPerformed
+
+    String[] opciones = {"Crear PDF", "Abrir PDF"};
+    int opcionSeleccionada = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+
+    if (opcionSeleccionada == 0) {
+
+        String fileName = "reporte Mantenimientos.pdf";
+        String titulo = "Reporte de Mantenimientos";
+        Pdfs.generarPDF(jTableMantenimiento, fileName, titulo);
+    } else if (opcionSeleccionada == 1) {
+        try {
+            String fileName = "reporte Mantenimientos.pdf";
+            File file = new File(fileName);
+
+          
+            if (!Desktop.isDesktopSupported()) {
+                JOptionPane.showMessageDialog(null, "El sistema no soporta la apertura automática de archivos.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            Desktop desktop = Desktop.getDesktop();
+
+            if (file.exists() && file.isFile()) {
+                desktop.open(file); 
+            } else {
+                JOptionPane.showMessageDialog(null, "El archivo PDF no existe o no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir el archivo PDF: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    }//GEN-LAST:event_btnPDFActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3141,6 +3211,7 @@ public void mostrarDatosContrato(Contrato contrato) {
     private com.toedter.calendar.JDateChooser FeachaContrato;
     private com.toedter.calendar.JDateChooser FeachaFabricacion;
     private com.toedter.calendar.JDateChooser FeachaMantenimiento;
+    private javax.swing.JLabel PDF;
     private javax.swing.JButton btnAbono;
     private javax.swing.JButton btnAbonoH;
     private javax.swing.JButton btnBuscarClientes;
@@ -3175,6 +3246,7 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JButton btnNuevoM;
     private javax.swing.JButton btnNuevoU;
     private javax.swing.JButton btnNuevoVehiculo;
+    private javax.swing.JButton btnPDF;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JButton btnVehiculos;
     private javax.swing.JButton btnVehiculosH;
@@ -3203,7 +3275,6 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -3228,6 +3299,7 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
