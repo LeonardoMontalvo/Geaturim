@@ -6,6 +6,7 @@ import Modelo.Contrato;
 import Modelo.Mantenimiento;
 import Modelo.Usuario;
 import Modelo.Vehiculo;
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class Menu extends javax.swing.JFrame {
         setModeloContratos();
         mostrarListaPlacasVehiculo();
         mostrarListaClientesCedula();
+        setModeloAbonos();
     }    
     private static final int MAX_LENGTH = 50;
         private static final int MAX_PLACA_LENGTH = 12;
@@ -137,6 +139,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel84 = new javax.swing.JLabel();
         txtDias = new javax.swing.JTextField();
         jPanel37 = new javax.swing.JPanel();
+        jPanel39 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTableContrato = new javax.swing.JTable();
         jInternalFrame2 = new javax.swing.JInternalFrame();
@@ -177,11 +180,10 @@ public class Menu extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         txtMonto = new javax.swing.JTextField();
         jPanel42 = new javax.swing.JPanel();
-        jPanel43 = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
         jPanel45 = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
-        jPanel46 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
         jPanel47 = new javax.swing.JPanel();
         FeachaAbono = new com.toedter.calendar.JDateChooser();
         txtBanco = new javax.swing.JTextField();
@@ -198,8 +200,17 @@ public class Menu extends javax.swing.JFrame {
         txtComprobante = new javax.swing.JTextField();
         jPanel50 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
-        jCheckBoxLiquidado = new javax.swing.JCheckBox();
+        jcheckboxLiquidado = new javax.swing.JCheckBox();
         jCheckBoxSinLiquidar = new javax.swing.JCheckBox();
+        jPanel58 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        lblConductor = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblCedula = new javax.swing.JLabel();
+        lblCedulas = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblDestino = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTableAbono = new javax.swing.JTable();
         jInternalFrame5 = new javax.swing.JInternalFrame();
@@ -331,7 +342,7 @@ public class Menu extends javax.swing.JFrame {
 
         txtAsientos.setBackground(new java.awt.Color(204, 204, 204));
         txtAsientos.setBorder(null);
-        jPanel16.add(txtAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 226, 20));
+        jPanel16.add(txtAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 220, 20));
 
         jLabel55.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(0, 0, 255));
@@ -380,15 +391,16 @@ public class Menu extends javax.swing.JFrame {
         jPanel38Layout.setHorizontalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel38Layout.createSequentialGroup()
-                .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(89, 89, 89)
+                .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel38Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel56)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(0, 21, Short.MAX_VALUE))
         );
 
         jPanel16.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
@@ -512,14 +524,14 @@ public class Menu extends javax.swing.JFrame {
         jPanel56.setLayout(jPanel56Layout);
         jPanel56Layout.setHorizontalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
+            .addGap(0, 220, Short.MAX_VALUE)
         );
         jPanel56Layout.setVerticalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jPanel16.add(jPanel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 226, -1));
+        jPanel16.add(jPanel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 312, 220, 0));
 
         jPanel57.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -578,6 +590,21 @@ public class Menu extends javax.swing.JFrame {
         );
 
         jPanel16.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 226, -1));
+
+        jPanel39.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
+        jPanel39.setLayout(jPanel39Layout);
+        jPanel39Layout.setHorizontalGroup(
+            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel39Layout.setVerticalGroup(
+            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel16.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         jTableContrato.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -882,17 +909,22 @@ public class Menu extends javax.swing.JFrame {
         jInternalFrame3.setVisible(true);
 
         jPanel19.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel19MouseClicked(evt);
+            }
+        });
         jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel61.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(0, 0, 255));
         jLabel61.setText("Fecha");
-        jPanel19.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jPanel19.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jLabel62.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(0, 0, 255));
         jLabel62.setText("Valor");
-        jPanel19.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 163, -1, -1));
+        jPanel19.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         txtValor.setBackground(new java.awt.Color(204, 204, 204));
         txtValor.setBorder(null);
@@ -901,16 +933,16 @@ public class Menu extends javax.swing.JFrame {
                 txtValorActionPerformed(evt);
             }
         });
-        jPanel19.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 226, 30));
+        jPanel19.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 90, 20));
 
         jLabel63.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(0, 0, 255));
         jLabel63.setText("Monto");
-        jPanel19.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 219, -1, -1));
+        jPanel19.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
 
         txtMonto.setBackground(new java.awt.Color(204, 204, 204));
         txtMonto.setBorder(null);
-        jPanel19.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 243, 226, 30));
+        jPanel19.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 90, 20));
 
         jPanel42.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -925,22 +957,7 @@ public class Menu extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel19.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 226, 2));
-
-        jPanel43.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
-        jPanel43.setLayout(jPanel43Layout);
-        jPanel43Layout.setHorizontalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel43Layout.setVerticalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
+        jPanel19.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 226, 2));
 
         jPanel44.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -948,14 +965,14 @@ public class Menu extends javax.swing.JFrame {
         jPanel44.setLayout(jPanel44Layout);
         jPanel44Layout.setHorizontalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
+            .addGap(0, 70, Short.MAX_VALUE)
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel19.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 273, 226, 2));
+        jPanel19.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 70, 2));
 
         jPanel45.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -964,38 +981,35 @@ public class Menu extends javax.swing.JFrame {
         jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel65.setText("ABONOS");
 
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resources\\Imagenes\\contract_icon_194172.png")); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
         jPanel45.setLayout(jPanel45Layout);
         jPanel45Layout.setHorizontalGroup(
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel45Layout.createSequentialGroup()
-                .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(17, 17, 17)
+                .addComponent(jButton2)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         jPanel45Layout.setVerticalGroup(
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel45Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel65)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel65))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel19.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
-
-        jPanel46.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
-        jPanel46.setLayout(jPanel46Layout);
-        jPanel46Layout.setHorizontalGroup(
-            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel46Layout.setVerticalGroup(
-            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
 
         jPanel47.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -1010,10 +1024,10 @@ public class Menu extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel19.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
+        jPanel19.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 226, 2));
 
         FeachaAbono.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel19.add(FeachaAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
+        jPanel19.add(FeachaAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 210, 30));
 
         txtBanco.setBackground(new java.awt.Color(204, 204, 204));
         txtBanco.setBorder(null);
@@ -1022,7 +1036,7 @@ public class Menu extends javax.swing.JFrame {
                 txtBancoActionPerformed(evt);
             }
         });
-        jPanel19.add(txtBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
+        jPanel19.add(txtBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 226, 20));
 
         btnGuardarU4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sarita\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resources\\Imagenes\\Lupa.png")); // NOI18N
         btnGuardarU4.addActionListener(new java.awt.event.ActionListener() {
@@ -1057,30 +1071,35 @@ public class Menu extends javax.swing.JFrame {
         jPanel19.add(btnNuevoU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
 
         jLabel67.setText("Buscar");
-        jPanel19.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
+        jPanel19.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 40, -1));
 
         jLabel68.setText("Editar");
-        jPanel19.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
+        jPanel19.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 40, -1));
 
         jLabel69.setText("Nuevo");
-        jPanel19.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
+        jPanel19.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 40, -1));
 
         jLabel70.setText("Eliminar");
-        jPanel19.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+        jPanel19.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, -1, -1));
 
         jLabel71.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel71.setForeground(new java.awt.Color(0, 0, 255));
         jLabel71.setText("Banco");
-        jPanel19.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+        jPanel19.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 30));
 
         jLabel72.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel72.setForeground(new java.awt.Color(0, 0, 255));
         jLabel72.setText("Comprobante");
-        jPanel19.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
+        jPanel19.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
         txtComprobante.setBackground(new java.awt.Color(204, 204, 204));
         txtComprobante.setBorder(null);
-        jPanel19.add(txtComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 226, 30));
+        txtComprobante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtComprobanteActionPerformed(evt);
+            }
+        });
+        jPanel19.add(txtComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 226, 20));
 
         jPanel50.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -1095,23 +1114,91 @@ public class Menu extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel19.add(jPanel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 226, 2));
+        jPanel19.add(jPanel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 226, 2));
 
         jLabel73.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(0, 0, 255));
         jLabel73.setText("Estado");
-        jPanel19.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+        jPanel19.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
 
-        jCheckBoxLiquidado.setText("Liquidado");
-        jCheckBoxLiquidado.addActionListener(new java.awt.event.ActionListener() {
+        jcheckboxLiquidado.setText("Liquidado");
+        jcheckboxLiquidado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxLiquidadoActionPerformed(evt);
+                jcheckboxLiquidadoActionPerformed(evt);
             }
         });
-        jPanel19.add(jCheckBoxLiquidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
+        jPanel19.add(jcheckboxLiquidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
 
         jCheckBoxSinLiquidar.setText("Sin Liquidar");
-        jPanel19.add(jCheckBoxSinLiquidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, -1, -1));
+        jPanel19.add(jCheckBoxSinLiquidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, -1, -1));
+
+        jPanel58.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
+        jPanel58.setLayout(jPanel58Layout);
+        jPanel58Layout.setHorizontalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        jPanel58Layout.setVerticalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 153, 153), null));
+
+        jLabel12.setText("Conductor:");
+
+        jLabel2.setText("Cedula del Cliente:");
+
+        jLabel3.setText("Destino:");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCedulas, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblDestino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel12)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblConductor, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(lblCedula)
+                    .addComponent(lblCedulas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblConductor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel19.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 310, 100));
 
         jTableAbono.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1131,15 +1218,19 @@ public class Menu extends javax.swing.JFrame {
         jInternalFrame3Layout.setHorizontalGroup(
             jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 8, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jInternalFrame3Layout.setVerticalGroup(
             jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
-            .addComponent(jScrollPane8)
+            .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane8)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("3", jInternalFrame3);
@@ -1975,12 +2066,27 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbonoActionPerformed
         //TODO add your handling code here:
-        //LimpiarTable();
-        //ListarProveedor();
+        int filaSeleccionada = jTableContrato.getSelectedRow();
+    if (filaSeleccionada != -1) {
+        // Obtener los datos del contrato seleccionado
+        int idContrato = (int) jTableContrato.getValueAt(filaSeleccionada, 0);  
+        String conductor = (String) jTableContrato.getValueAt(filaSeleccionada, 5); 
+        String cedula = (String) jTableContrato.getValueAt(filaSeleccionada, 2);
+        String destino = (String) jTableContrato.getValueAt(filaSeleccionada, 3);
+
+        lblConductor.setText(conductor);
+        lblCedulas.setText(cedula);
+        lblDestino.setText(destino);
+        
+        AbonoControlador  ControladorAbono  = new AbonoControlador();
+        
+        String destinos = ControladorAbono.obtenerDestinoPorContrato(idContrato);
+        
         jTabbedPane1.setSelectedIndex(2);
-        //btnEditarProveedor.setEnabled(true);
-        //btnEliminarProveedor.setEnabled(true);
-        //LimpiarProveedor();     
+
+    } else {
+        JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
+    }     
     }//GEN-LAST:event_btnAbonoActionPerformed
 
     private void btnMantenimientosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientosMouseClicked
@@ -2180,40 +2286,28 @@ if (!placaBuscada.isEmpty()) {
 
 if (filaSeleccionada >= 0) {
     DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
-    String placaAntigua = modelo.getValueAt(filaSeleccionada, 1).toString();
-    String cambiosAceiteAntiguos = modelo.getValueAt(filaSeleccionada, 2).toString();
-    String cambiosFiltroAntiguos = modelo.getValueAt(filaSeleccionada, 3).toString();
-    Date fechaAntigua = (Date) modelo.getValueAt(filaSeleccionada, 4);
-    int kilometrajeAntiguo = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 5).toString());
 
-    
+    int mantenimientoId = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
+
     String nuevaPlaca = comboBoxPlacas.getSelectedItem().toString();
+
     String nuevosCambiosAceite = txtAreaAceite.getText();
     String nuevosCambiosFiltro = txtCambioFiltro.getText();
     Date nuevaFecha = FeachaMantenimiento.getDate();
     int nuevoKilometraje = Integer.parseInt(txtKilometraje.getText());
 
-    
-    if (nuevaPlaca.isEmpty() || nuevosCambiosAceite.isEmpty() || nuevosCambiosFiltro.isEmpty() || nuevaFecha == null) {
-        JOptionPane.showMessageDialog(null, "Ingrese valores para todos los campos.");
-    } else {
-        
-        Mantenimiento mantenimientoAntiguo = new Mantenimiento(placaAntigua, cambiosAceiteAntiguos, cambiosFiltroAntiguos, fechaAntigua, kilometrajeAntiguo);
-        Mantenimiento mantenimientoNuevo = new Mantenimiento(nuevaPlaca, nuevosCambiosAceite, nuevosCambiosFiltro, nuevaFecha, nuevoKilometraje);
+    Mantenimiento mantenimiento = new Mantenimiento(nuevaPlaca, nuevosCambiosAceite, nuevosCambiosFiltro, nuevaFecha, nuevoKilometraje);
 
-        
-        MantenimientoControlador controlador = new MantenimientoControlador();
-        controlador.editarMantenimiento(mantenimientoNuevo, placaAntigua);
+    MantenimientoControlador controlador = new MantenimientoControlador();
+    controlador.editarMantenimiento(mantenimiento, mantenimientoId);
 
-        
-        modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
-        modelo.setValueAt(nuevosCambiosAceite, filaSeleccionada, 2);
-        modelo.setValueAt(nuevosCambiosFiltro, filaSeleccionada, 3);
-        modelo.setValueAt(nuevaFecha, filaSeleccionada, 4);
-        modelo.setValueAt(nuevoKilometraje, filaSeleccionada, 5);
+    modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
+    modelo.setValueAt(nuevosCambiosAceite, filaSeleccionada, 2);
+    modelo.setValueAt(nuevosCambiosFiltro, filaSeleccionada, 3);
+    modelo.setValueAt(nuevaFecha, filaSeleccionada, 4);
+    modelo.setValueAt(nuevoKilometraje, filaSeleccionada, 5);
 
-        JOptionPane.showMessageDialog(null, "Mantenimiento editado con éxito.");
-    }
+    JOptionPane.showMessageDialog(null, "Mantenimiento editado con éxito.");
 } else {
     JOptionPane.showMessageDialog(null, "Seleccione una fila para editar.");
 }
@@ -2482,32 +2576,32 @@ if (filaSeleccionada >= 0) {
         // TODO add your handling code here:
         
        String placaVehiculo = cbbPlacas.getSelectedItem().toString();
-String cedulaCliente = cbbCliente.getSelectedItem().toString();
-String destinoContrato = txtDestino.getText();
-Date fechaContrato = FeachaContrato.getDate();
-String nomConductor = txtConductor.getText();
-int diasContrato;
-int asientosContrato;
-int vehiculoContrato;
+       String cedulaCliente = cbbCliente.getSelectedItem().toString();
+       String destinoContrato = txtDestino.getText();
+       Date fechaContrato = FeachaContrato.getDate();
+       String nomConductor = txtConductor.getText();
+       int diasContrato;
+       int asientosContrato;
+       int vehiculoContrato;
 
-try {
+    try {
     diasContrato = Integer.parseInt(txtDias.getText());
     asientosContrato = Integer.parseInt(txtAsientos.getText());
     vehiculoContrato = Integer.parseInt(txtNumV.getText());
 
-    if (diasContrato < 0 || asientosContrato < 0 || vehiculoContrato < 0) {
+        if (diasContrato < 0 || asientosContrato < 0 || vehiculoContrato < 0) {
         JOptionPane.showMessageDialog(this, "Los campos de días, asientos y vehículo deben ser números positivos.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
-    }
-} catch (NumberFormatException ex) {
+        }
+    } catch (NumberFormatException ex) {
     JOptionPane.showMessageDialog(this, "Los campos de días, asientos y vehículo deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
     return;
-}
+    }
 
-if (placaVehiculo.isEmpty() || cedulaCliente.isEmpty() || destinoContrato.isEmpty() || fechaContrato == null || nomConductor.isEmpty()) {
+    if (placaVehiculo.isEmpty() || cedulaCliente.isEmpty() || destinoContrato.isEmpty() || fechaContrato == null || nomConductor.isEmpty()) {
     JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
     return;
-}
+    }
 
 Contrato contrato = new Contrato(placaVehiculo, cedulaCliente, destinoContrato, fechaContrato, nomConductor, diasContrato, asientosContrato, vehiculoContrato);
 
@@ -2534,20 +2628,138 @@ JOptionPane.showMessageDialog(this, "Contrato creado con éxito.");
 
     private void btnGuardarU4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarU4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarU4ActionPerformed
+        // Obtener el ID del contrato seleccionado desde la tabla
+    int filaSeleccionada = jTableContrato.getSelectedRow();
+    if (filaSeleccionada != -1) {
+        int idContrato = (int) jTableContrato.getValueAt(filaSeleccionada, 0);
+        
+        AbonoControlador AbonoControlador = new AbonoControlador();
+        ArrayList<Object[]> abonos = AbonoControlador.buscarAbonosPorContrato(idContrato);
 
+        if (abonos != null) {
+            limpiarTablaAbonos();
+
+            for (Object[] abono : abonos) {
+                modeloAbonos.addRow(abono);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No se encontraron abonos para este contrato.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_btnGuardarU4ActionPerformed
+    
     private void btnEditarU4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarU4ActionPerformed
         // TODO add your handling code here:
+       int filaSeleccionadaContrato = jTableContrato.getSelectedRow();
+       int filaSeleccionadaAbono = jTableAbono.getSelectedRow();
+
+       if (filaSeleccionadaContrato == -1 || filaSeleccionadaAbono == -1) {
+       JOptionPane.showMessageDialog(this, "Debe seleccionar un contrato y un abono para editar.", "Error", JOptionPane.ERROR_MESSAGE);
+       } else {
+    AbonoControlador controladorAbono = new AbonoControlador();
+    int idAbono = (int) jTableAbono.getValueAt(filaSeleccionadaAbono, 0);
+    int idContrato = (int) jTableContrato.getValueAt(filaSeleccionadaContrato, 0);
+    String destinos = controladorAbono.obtenerDestinoPorContrato(idContrato);
+    
+    double nuevoValor = Double.parseDouble(txtValor.getText());
+    Date nuevaFecha = FeachaAbono.getDate();
+    String nuevosBancosComp = txtComprobante.getText();
+    double nuevoMonto = Double.parseDouble(txtMonto.getText());
+    String nuevoEstado;
+    if (jcheckboxLiquidado.isSelected()) {
+        nuevoEstado = "Liquidado";
+    } else if (jCheckBoxSinLiquidar.isSelected()) {
+        nuevoEstado = "Sin Liquidar";
+    } else {
+        nuevoEstado = ""; 
+    }
+    String nuevoBanco = txtBanco.getText();
+
+    controladorAbono.editarAbono(idAbono, destinos, nuevoValor, nuevaFecha, nuevosBancosComp, nuevoMonto, nuevoEstado, nuevoBanco);
+
+    limpiarTablaAbonos();
+    actualizarTablaAbonos();
+
+    JOptionPane.showMessageDialog(this, "Abono editado con éxito");
+}
     }//GEN-LAST:event_btnEditarU4ActionPerformed
 
     private void btnEliminarU4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarU4ActionPerformed
         // TODO add your handling code here:
+        int filaSeleccionada = jTableAbono.getSelectedRow();
+    if (filaSeleccionada != -1) {
+        int idAbono = (int) jTableAbono.getValueAt(filaSeleccionada, 0); 
+        
+        AbonoControlador AbonoControlador = new AbonoControlador();
+        AbonoControlador.eliminarAbono(idAbono);
+        
+        limpiarTablaAbonos();
+        actualizarTablaAbonos();
+        JOptionPane.showMessageDialog(this, "Abono eliminado con éxito");
+    } else {
+        JOptionPane.showMessageDialog(this, "Debes seleccionar un abono.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_btnEliminarU4ActionPerformed
 
     private void btnNuevoU4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoU4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNuevoU4ActionPerformed
+    
+       int filaSeleccionada = jTableContrato.getSelectedRow();
+    if (filaSeleccionada != -1) {
+        int idContrato = (int) jTableContrato.getValueAt(filaSeleccionada, 0);  
+        
+        AbonoControlador controladorAbono = new AbonoControlador();
+        String destinos = controladorAbono.obtenerDestinoPorContrato(idContrato);
+        
+        boolean liquidado = jcheckboxLiquidado.isSelected();
+        boolean sinLiquidar = jCheckBoxSinLiquidar.isSelected();
+        String estadoAbono;
 
+        if (jcheckboxLiquidado.isSelected()) {
+            estadoAbono = "Liquidado";
+        } else if (jCheckBoxSinLiquidar.isSelected()) {
+            estadoAbono = "Sin Liquidar";
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, seleccione el estado del abono.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String comprobante = txtComprobante.getText();
+        String banco = txtBanco.getText();
+        Date fechaAbono = FeachaAbono.getDate();
+        double valor;
+        double monto;
+
+        try {
+            valor = Double.parseDouble(txtValor.getText());
+            monto = Double.parseDouble(txtMonto.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Los campos de valor y monto deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        Abono abono = new Abono(destinos, valor, monto, fechaAbono, comprobante, estadoAbono, banco);
+        controladorAbono.agregarAbono(abono);
+
+        this.limpiarTablaAbonos();
+        this.actualizarTablaAbonos();
+
+        JOptionPane.showMessageDialog(this, "Abono creado con éxito");
+    } else {
+        JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    }//GEN-LAST:event_btnNuevoU4ActionPerformed
+    private String obtenerEstadoAbono(boolean liquidado, boolean sinLiquidar) {
+    if (liquidado) {
+        return "Liquidado";
+    } else if (sinLiquidar) {
+        return "Sin liquidar";
+    } else {
+        return ""; 
+    }
+}
     private void btnVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehiculosActionPerformed
 
       jTabbedPane1.setSelectedIndex(5);
@@ -2572,9 +2784,9 @@ JOptionPane.showMessageDialog(this, "Contrato creado con éxito.");
         txtDireccion.setText((String) modelo.getValueAt(jTableClientes.getSelectedRow(), 5));
     }//GEN-LAST:event_jTableClientesMouseClicked
 
-    private void jCheckBoxLiquidadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxLiquidadoActionPerformed
+    private void jcheckboxLiquidadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcheckboxLiquidadoActionPerformed
 
-    }//GEN-LAST:event_jCheckBoxLiquidadoActionPerformed
+    }//GEN-LAST:event_jcheckboxLiquidadoActionPerformed
 
     private void txtNombrePropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePropActionPerformed
     }//GEN-LAST:event_txtNombrePropActionPerformed
@@ -2714,14 +2926,8 @@ JOptionPane.showMessageDialog(this, "Contrato creado con éxito.");
     }//GEN-LAST:event_jTableVehiculoMouseClicked
 
     private void jTableMantenimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMantenimientoMouseClicked
-    ///////////////////////////
-    DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
-comboBoxPlacas.setSelectedItem((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 1));
-txtAreaAceite.setText((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 2));
-txtCambioFiltro.setText((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 3));
-Date fecha = (Date) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 4); 
-FeachaMantenimiento.setDate(fecha);
-txtKilometraje.setText(String.valueOf((int) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 5)));
+    /////////////////////////////////////////////////////////
+    
   
     }//GEN-LAST:event_jTableMantenimientoMouseClicked
 
@@ -2748,6 +2954,20 @@ txtKilometraje.setText(String.valueOf((int) modelo.getValueAt(jTableMantenimient
         // TODO add your handling code here:
       /////////////////////////////////////////////////////
     }//GEN-LAST:event_jTableContratoMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtComprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComprobanteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtComprobanteActionPerformed
+
+    private void jPanel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel19MouseClicked
+        // TODO add your handling code here:
+        actualizarTablaAbonos();
+    }//GEN-LAST:event_jPanel19MouseClicked
    
 
     /**
@@ -2757,7 +2977,7 @@ txtKilometraje.setText(String.valueOf((int) modelo.getValueAt(jTableMantenimient
   public static void main(String args[]) {
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
-            Menu menu = new Menu(/*VehiculoControlador*/);
+            Menu menu = new Menu();
             menu.setVisible(true);
         }  
     });
@@ -2918,38 +3138,38 @@ public void setModeloContratos() {
      
 }
  /////////////////////////////////////////////////////////////////////////////TABLA DE ABONOS///////////////////////////////////////////////////////////////////////
- public void mostrarDatosAbono(Abono abono) {
-    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
-    Object[] fila = new Object[8];  
+private ArrayList<Abono> listaAbonos = new ArrayList<>();
+private DefaultTableModel modeloAbonos = new DefaultTableModel();
 
-  //  Date fechaAbono = FeachaAbono.getDate();
-    //abono.setFecha(fechaAbono);
+public void setModeloAbonos() {
+    String[] cabecera = {"Nro", "Destino", "Valor", "Fecha", "Bancos Comp", "Monto", "Estado", "Banco"};
+    modeloAbonos.setColumnIdentifiers(cabecera);
+
+    AbonoControlador abonoControlador = new AbonoControlador(); 
+    ArrayList<Object[]> abonos = abonoControlador.datosAbonos(); 
+
+    if (abonos != null) {
+        for (Object[] abono : abonos) {
+            modeloAbonos.addRow(abono);  
+        }        
+    }
+
+    jTableAbono.setModel(modeloAbonos);
+}
+public void mostrarDatosAbono(Abono abono) {
+    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
+    Object[] fila = new Object[8];
 
     fila[0] = modelo.getRowCount() + 1;
-    fila[1] = abono.getFechaFormateada();
+    fila[1] = abono.getDestino();
     fila[2] = abono.getValor();
-    fila[3] = abono.getMonto();
-    fila[4] = abono.getBanco();
-    fila[5] = abono.getBancosComp();
-    fila[6] = abono.isLiquidado(); 
-    fila[7] = abono.isSinLiquidar();  
+    fila[3] = abono.getFecha();
+    fila[4] = abono.getBancosComp();
+    fila[5] = abono.getMonto();
+    fila[6] = abono.getEstado();
+    fila[7] = abono.getBanco();
     modelo.addRow(fila);
-    
 }
- //public void mostrarDatosAbono(Mantenimiento mantenimiento) {
-    // DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
-    //Object[] fila = new Object[4];  
-    
-//   Date fechaAbono = FeachaAbono.getDate();
-    // mantenimiento.setFecha(fechaAbono);
-     //fila[0] = modelo.getRowCount() + 1;
-     //fila[1] = mantenimiento.getFechaFormateada();
-     //fila[2] = mantenimiento.getKilometraje();
-     //fila[3] = mantenimiento.getCambiosDeAceite();
-     //fila[4] = mantenimiento.getCambiosDeFiltro();
-    //modelo.addRow(fila);
-    
- //}
  ////////////////////////////////////////////////////////////////////TABLA DE MANTENIMIENTO///////////////////////////////////////////////////////////////
  
  
@@ -3024,8 +3244,8 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JComboBox<String> cbbCliente;
     private javax.swing.JComboBox<String> cbbPlacas;
     private javax.swing.JComboBox<String> comboBoxPlacas;
+    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBoxContra;
-    private javax.swing.JCheckBox jCheckBoxLiquidado;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBox jCheckBoxSinLiquidar;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -3037,13 +3257,16 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JInternalFrame jInternalFrame6;
     private javax.swing.JInternalFrame jInternalFrame7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -3116,6 +3339,7 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
@@ -3125,13 +3349,12 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
-    private javax.swing.JPanel jPanel43;
     private javax.swing.JPanel jPanel44;
     private javax.swing.JPanel jPanel45;
-    private javax.swing.JPanel jPanel46;
     private javax.swing.JPanel jPanel47;
     private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel49;
@@ -3143,6 +3366,7 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JPanel jPanel55;
     private javax.swing.JPanel jPanel56;
     private javax.swing.JPanel jPanel57;
+    private javax.swing.JPanel jPanel58;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -3161,6 +3385,11 @@ public void mostrarDatosMantenimiento(Mantenimiento mantenimiento) {
     private javax.swing.JTable jTableMantenimiento;
     private javax.swing.JTable jTableUsuario;
     private javax.swing.JTable jTableVehiculo;
+    private javax.swing.JCheckBox jcheckboxLiquidado;
+    private javax.swing.JLabel lblCedula;
+    private javax.swing.JLabel lblCedulas;
+    private javax.swing.JLabel lblConductor;
+    private javax.swing.JLabel lblDestino;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel tipo;
     private javax.swing.JTextField txtApellidoC;
@@ -3349,23 +3578,35 @@ private void limpiarCamposMantenimiento() {
      
  ///////////////////////////////////////////////////////////////TABLA  ABONOS////////////////////////////////////////////////////////////////////////////////// 
  
-     
-//     public void limpiarTablaAbonos() {
-//        int a = modeloAbonos.getRowCount() - 1;  
-//        for (int i = a; i >= 0; i--) {
-//            modeloAbonos.removeRow(i);
-//        }
-//    }
-//
-//     public void modeloAbonos() {
-//        AbonosControlador abonosControlador = new AbonosControlador();
-//        ArrayList<Object[]> datos = abonosControlador.datosAbonos();
-//        if (datos != null) {
-//            for (Object[] fila : datos) {
-//                modeloAbonos.addRow(fila);
-//            }
-//        }
-//    }
+    public void limpiarTablaAbonos() {
+    int filas = modeloAbonos.getRowCount();
+    for (int i = filas - 1; i >= 0; i--) {
+        modeloAbonos.removeRow(i);
+    }
+}
+
+public void actualizarTablaAbonos() {
+    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
+    modelo.setRowCount(0); 
+    AbonoControlador controlador = new AbonoControlador();
+    ArrayList<Object[]> datos = controlador.datosAbonos();
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modelo.addRow(fila); 
+        }
+    }
+}
+
+public void modeloAbonos() {
+    AbonoControlador abonoControlador = new AbonoControlador();
+    ArrayList<Object[]> datos = abonoControlador.datosAbonos();
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modeloAbonos.addRow(fila); 
+        }
+    }
+}
+    
 
     
 

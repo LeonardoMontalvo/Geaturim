@@ -106,10 +106,10 @@ public class MantenimientoControlador {
 //////////////////////////////////////////////////////////////////ACTUALIZAR MANTENIMIENTO///////////////////////////////////////////////////////////////
 
 
-    public void editarMantenimiento(Mantenimiento mantenimiento, String MantenimientoAntiguo) {
-        String sql = "CALL EditarMantenimiento(?, ?, ?, ?, ?, ?)";
+    public void editarMantenimiento(Mantenimiento mantenimiento, int MantenimientoAntiguo) {
+        String sql = "{CALL EditarMantenimiento(?, ?, ?, ?, ?, ?)}";
         try (final Connection conectar = parametros.conectar();final PreparedStatement ps = conectar.prepareStatement(sql)) {
-            ps.setString(1, MantenimientoAntiguo);
+            ps.setInt(1, MantenimientoAntiguo);
             ps.setString(2, mantenimiento.getIdvehiculo());
             ps.setString(3, mantenimiento.getCambiosDeAceite());
             ps.setString(4, mantenimiento.getCambiosDeFiltro());
@@ -117,9 +117,11 @@ public class MantenimientoControlador {
             ps.setInt(6, mantenimiento.getKilometraje());
             int resultado = ps.executeUpdate();
             if (resultado > 0) {
-                JOptionPane.showMessageDialog(null, "Mantenimiento editado con éxito");
+                System.out.println("Mantenimiento editado con éxito");
+                //JOptionPane.showMessageDialog(null, "Mantenimiento editado con éxito");
             } else {
-                JOptionPane.showMessageDialog(null, "Error al editar mantenimiento");
+                System.out.println("Error al editar mantenimiento");
+                //JOptionPane.showMessageDialog(null, "Error al editar mantenimiento");
             }
         }catch (SQLException e) {
             System.out.println("Error al editar mantenimiento: " + e.getMessage());

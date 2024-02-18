@@ -38,6 +38,7 @@ public class ContratoControlador {
     ///////////////////////////////////////////////////////////////////OBTENER DATOS POR PLACA Y CLIENTE///////////////////////////////////////////////////////////////////////77
     
     
+    
     public ArrayList<Object[]> datosContratosPorPlacaYCliente() {
     ArrayList<Object[]> listaDatos = new ArrayList<>();
     String sql = "{CALL listarContratosPorPlacaYCliente()}"; 
@@ -130,7 +131,8 @@ public class ContratoControlador {
     
     String sql = "{CALL ModificarContrato(?, ?, ?, ?, ?, ?, ?, ?, ?)}"; 
 
-    try (final Connection conectar = parametros.conectar();final PreparedStatement ps = conectar.prepareStatement(sql)) {
+    try (final Connection conectar = parametros.conectar();final 
+            PreparedStatement ps = conectar.prepareStatement(sql)) {
         
             ps.setInt(1, ContratoAntiguo);
             ps.setString(2, contrato.getIdvehiculoc());

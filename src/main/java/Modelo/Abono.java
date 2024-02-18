@@ -9,25 +9,35 @@ import java.util.Date;
  * @author Leo
  */
 public class Abono {
-
+    private String destino;
     private double Valor, Monto;
     private Date fecha; 
     private String BancosComp, Banco;
-     private boolean liquidado, SinLiquidar;
+     private String Estado;
  
      public String getFechaFormateada() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(this.fecha);
     }
-    public Abono(double Valor, double Monto, Date fecha, String BancosComp, String Banco, boolean liquidado, boolean SinLiquidar) {
+
+    public Abono(String destino, double Valor, double Monto, Date fecha, String BancosComp, String Estado, String Banco) {
+        this.destino = destino;
         this.Valor = Valor;
         this.Monto = Monto;
         this.fecha = fecha;
         this.BancosComp = BancosComp;
         this.Banco = Banco;
-        this.liquidado = liquidado;
-        this.SinLiquidar = SinLiquidar;
+        this.Estado = Estado;
     }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
+    
 
     public double getValor() {
         return Valor;
@@ -69,20 +79,13 @@ public class Abono {
         this.Banco = Banco;
     }
 
-    public boolean isLiquidado() {
-        return liquidado;
+    public String getEstado() {
+        return Estado;
     }
 
-    public void setLiquidado(boolean liquidado) {
-        this.liquidado = liquidado;
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
     }
-
-    public boolean isSinLiquidar() {
-        return SinLiquidar;
-    }
-
-    public void setSinLiquidar(boolean SinLiquidar) {
-        this.SinLiquidar = SinLiquidar;
-    }
-
+    
 }
+    
