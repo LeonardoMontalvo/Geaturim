@@ -2938,78 +2938,105 @@ int filaSeleccionada = jTableMantenimiento.getSelectedRow();
 
     private void btnPDFMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFMantenimientoActionPerformed
 
-    String[] opciones = {"Crear PDF", "Abrir PDF"};
-    int opcionSeleccionada = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+        String[] opciones = {"Crear PDF", "Abrir PDF"};
+        int opcionSeleccionada = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
 
-    if (opcionSeleccionada == 0) {
+        if (opcionSeleccionada == 0) {
 
-        String fileName = "reporte Mantenimientos.pdf";
-        String titulo = "Reporte de Mantenimientos";
-        Pdfs.generarPDF(jTableMantenimiento, fileName, titulo);
-    } else if (opcionSeleccionada == 1) {
-        try {
             String fileName = "reporte Mantenimientos.pdf";
-            File file = new File(fileName);
+            String titulo = "Reporte de Mantenimientos";
+            Pdfs.generarPDF(jTableMantenimiento, fileName, titulo);
+        } else if (opcionSeleccionada == 1) {
+            try {
+                String fileName = "reporte Mantenimientos.pdf";
+                File file = new File(fileName);
 
-          
-            if (!Desktop.isDesktopSupported()) {
-                JOptionPane.showMessageDialog(null, "El sistema no soporta la apertura automática de archivos.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
+                if (!Desktop.isDesktopSupported()) {
+                    JOptionPane.showMessageDialog(null, "El sistema no soporta la apertura automática de archivos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                Desktop desktop = Desktop.getDesktop();
+
+                if (file.exists() && file.isFile()) {
+                    desktop.open(file);
+                } else {
+                    JOptionPane.showMessageDialog(null, "El archivo PDF no existe o no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al intentar abrir el archivo PDF: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
-
-            Desktop desktop = Desktop.getDesktop();
-
-            if (file.exists() && file.isFile()) {
-                desktop.open(file); 
-            } else {
-                JOptionPane.showMessageDialog(null, "El archivo PDF no existe o no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error al intentar abrir el archivo PDF: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }
 
     }//GEN-LAST:event_btnPDFMantenimientoActionPerformed
 
     private void btnPDFClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFClientesActionPerformed
-        
+
         String[] opciones = {"Crear PDF", "Abrir PDF"};
         int opcionSeleccionada = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
 
-    if (opcionSeleccionada == 0) {
+        if (opcionSeleccionada == 0) {
 
-        String fileName = "reporte Clientes.pdf";
-        String titulo = "Reporte de Clientes de Geaturim";
-        Pdfs.generarPDF(jTableClientes, fileName, titulo);
-    } else if (opcionSeleccionada == 1) {
-        try {
             String fileName = "reporte Clientes.pdf";
-            File file = new File(fileName);
+            String titulo = "Reporte de Clientes de Geaturim";
+            Pdfs.generarPDF(jTableClientes, fileName, titulo);
+        } else if (opcionSeleccionada == 1) {
+            try {
+                String fileName = "reporte Clientes.pdf";
+                File file = new File(fileName);
 
-          
-            if (!Desktop.isDesktopSupported()) {
-                JOptionPane.showMessageDialog(null, "El sistema no soporta la apertura automática de archivos.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
+                if (!Desktop.isDesktopSupported()) {
+                    JOptionPane.showMessageDialog(null, "El sistema no soporta la apertura automática de archivos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                Desktop desktop = Desktop.getDesktop();
+
+                if (file.exists() && file.isFile()) {
+                    desktop.open(file);
+                } else {
+                    JOptionPane.showMessageDialog(null, "El archivo PDF no existe o no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al intentar abrir el archivo PDF: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
-
-            Desktop desktop = Desktop.getDesktop();
-
-            if (file.exists() && file.isFile()) {
-                desktop.open(file); 
-            } else {
-                JOptionPane.showMessageDialog(null, "El archivo PDF no existe o no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error al intentar abrir el archivo PDF: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }
 
-        
+
     }//GEN-LAST:event_btnPDFClientesActionPerformed
 
     private void btnPDFVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFVehiculoActionPerformed
-     
-        
+        String[] opciones = {"Crear PDF", "Abrir PDF"};
+        int opcionSeleccionada = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+
+        if (opcionSeleccionada == 0) {
+
+            String fileName = "reporte Vehiculos.pdf";
+            String titulo = "Reporte de Vehiculos de Geaturim";
+            Pdfs.generarPDF(jTableVehiculo, fileName, titulo);
+        } else if (opcionSeleccionada == 1) {
+            try {
+                String fileName = "reporte Vehiculos.pdf";
+                File file = new File(fileName);
+
+                if (!Desktop.isDesktopSupported()) {
+                    JOptionPane.showMessageDialog(null, "El sistema no soporta la apertura automática de archivos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                Desktop desktop = Desktop.getDesktop();
+
+                if (file.exists() && file.isFile()) {
+                    desktop.open(file);
+                } else {
+                    JOptionPane.showMessageDialog(null, "El archivo PDF no existe o no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al intentar abrir el archivo PDF: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+
     }//GEN-LAST:event_btnPDFVehiculoActionPerformed
 
     /**
