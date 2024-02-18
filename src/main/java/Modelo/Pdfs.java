@@ -30,6 +30,9 @@ import javax.swing.JOptionPane;
 public class Pdfs {
 
 
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// PDF DE MANTENIMIENTOS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 public static void generarPDF(JTable table, String fileName, String titulo) {
     Document document = new Document(PageSize.A4);
     try {
@@ -62,11 +65,12 @@ public static void generarPDF(JTable table, String fileName, String titulo) {
         }
 
         document.add(pdfTable);
+        
 
         
    
         writer.setPageEvent(new PdfPageEventHelper() {
-            @Override
+
             public void onEndPage(PdfWriter writer, Document document) {
                 PdfContentByte cb = writer.getDirectContent();
                 Phrase footer = new Phrase("Fecha y Hora: " + new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date()));
@@ -90,6 +94,10 @@ public static void generarPDF(JTable table, String fileName, String titulo) {
         e.printStackTrace();
     }
 }
+
+
+
+
 
 
 }

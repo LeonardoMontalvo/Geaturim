@@ -165,6 +165,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
+        PDF1 = new javax.swing.JLabel();
+        btnPDFClientes = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableClientes = new javax.swing.JTable();
         jInternalFrame3 = new javax.swing.JInternalFrame();
@@ -228,7 +230,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel82 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        btnPDF = new javax.swing.JButton();
+        btnPDFMantenimiento = new javax.swing.JButton();
         jLabel55 = new javax.swing.JLabel();
         jInternalFrame4 = new javax.swing.JInternalFrame();
         jPanel13 = new javax.swing.JPanel();
@@ -248,10 +250,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         btnNuevoU = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        btnLimpriarTabla = new javax.swing.JButton();
-        btnListartablas = new javax.swing.JButton();
-        jLabel24 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         txtNombreU = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -284,6 +282,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel81 = new javax.swing.JLabel();
         txtKilometrajeTotal = new javax.swing.JTextField();
         jPanel55 = new javax.swing.JPanel();
+        PDF2 = new javax.swing.JLabel();
+        btnPDFVehiculo = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTableVehiculo = new javax.swing.JTable();
         jInternalFrame7 = new javax.swing.JInternalFrame();
@@ -855,6 +855,19 @@ public class Menu extends javax.swing.JFrame {
         jLabel34.setText("Eliminar");
         jPanel15.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, 60, -1));
 
+        PDF1.setForeground(new java.awt.Color(0, 0, 0));
+        PDF1.setText("PDF : ");
+        jPanel15.add(PDF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 60, -1));
+
+        btnPDFClientes.setBackground(new java.awt.Color(187, 187, 187));
+        btnPDFClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\PDF.png")); // NOI18N
+        btnPDFClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPDFClientesActionPerformed(evt);
+            }
+        });
+        jPanel15.add(btnPDFClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 540, 40, 40));
+
         jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1058,7 +1071,7 @@ public class Menu extends javax.swing.JFrame {
                 btnEliminarAbonoActionPerformed(evt);
             }
         });
-        jPanel19.add(btnEliminarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
+        jPanel19.add(btnEliminarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 440, 40, 35));
 
         btnNuevoAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoAbono.addActionListener(new java.awt.event.ActionListener() {
@@ -1082,7 +1095,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel70.setForeground(new java.awt.Color(0, 0, 0));
         jLabel70.setText("Eliminar");
-        jPanel19.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
+        jPanel19.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 60, -1));
 
         jLabel71.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel71.setForeground(new java.awt.Color(0, 0, 255));
@@ -1129,7 +1142,7 @@ public class Menu extends javax.swing.JFrame {
 
         jCheckBoxSinLiquidar.setForeground(new java.awt.Color(0, 0, 0));
         jCheckBoxSinLiquidar.setText("Sin Liquidar");
-        jPanel19.add(jCheckBoxSinLiquidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, -1, -1));
+        jPanel19.add(jCheckBoxSinLiquidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
 
         jTableAbono.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1342,14 +1355,14 @@ public class Menu extends javax.swing.JFrame {
         jLabel26.setText("Editar");
         jPanel14.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
 
-        btnPDF.setBackground(new java.awt.Color(187, 187, 187));
-        btnPDF.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\PDF.png")); // NOI18N
-        btnPDF.addActionListener(new java.awt.event.ActionListener() {
+        btnPDFMantenimiento.setBackground(new java.awt.Color(187, 187, 187));
+        btnPDFMantenimiento.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\PDF.png")); // NOI18N
+        btnPDFMantenimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPDFActionPerformed(evt);
+                btnPDFMantenimientoActionPerformed(evt);
             }
         });
-        jPanel14.add(btnPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 40, 40));
+        jPanel14.add(btnPDFMantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 40, 40));
 
         jLabel55.setForeground(new java.awt.Color(0, 0, 0));
         jLabel55.setText("Eliminar");
@@ -1506,30 +1519,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel23.setForeground(new java.awt.Color(0, 0, 0));
         jLabel23.setText("Agregar");
         jPanel13.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
-
-        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel21.setText("Limpiar Datos");
-        jPanel13.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 90, -1));
-
-        btnLimpriarTabla.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Limpiar.png")); // NOI18N
-        btnLimpriarTabla.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpriarTablaActionPerformed(evt);
-            }
-        });
-        jPanel13.add(btnLimpriarTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 40, 40));
-
-        btnListartablas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Listado.png")); // NOI18N
-        btnListartablas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListartablasActionPerformed(evt);
-            }
-        });
-        jPanel13.add(btnListartablas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 40, 40));
-
-        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel24.setText("Ver tabla");
-        jPanel13.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 60, -1));
 
         jPanel21.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -1811,6 +1800,19 @@ public class Menu extends javax.swing.JFrame {
         );
 
         jPanel20.add(jPanel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 226, 2));
+
+        PDF2.setForeground(new java.awt.Color(0, 0, 0));
+        PDF2.setText("PDF : ");
+        jPanel20.add(PDF2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, 60, -1));
+
+        btnPDFVehiculo.setBackground(new java.awt.Color(187, 187, 187));
+        btnPDFVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\PDF.png")); // NOI18N
+        btnPDFVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPDFVehiculoActionPerformed(evt);
+            }
+        });
+        jPanel20.add(btnPDFVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 40, 40));
 
         jTableVehiculo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2158,6 +2160,7 @@ public class Menu extends javax.swing.JFrame {
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
               
 
+        modeloClientes();
         jTabbedPane1.setSelectedIndex(1);       
     
     }//GEN-LAST:event_btnClientesActionPerformed
@@ -2642,16 +2645,6 @@ public class Menu extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btnNuevoUActionPerformed
 
-    private void btnLimpriarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpriarTablaActionPerformed
-    txtNombreU.setText("");
-    txtcontra.setText("");
-    }//GEN-LAST:event_btnLimpriarTablaActionPerformed
-
-    private void btnListartablasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListartablasActionPerformed
-      limpiarTablaUsuario();
-        modeloUsuario();
-    }//GEN-LAST:event_btnListartablasActionPerformed
-
     private void txtNombreUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreUActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreUActionPerformed
@@ -2943,7 +2936,7 @@ int filaSeleccionada = jTableMantenimiento.getSelectedRow();
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAsientosActionPerformed
 
-    private void btnPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFActionPerformed
+    private void btnPDFMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFMantenimientoActionPerformed
 
     String[] opciones = {"Crear PDF", "Abrir PDF"};
     int opcionSeleccionada = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
@@ -2976,7 +2969,48 @@ int filaSeleccionada = jTableMantenimiento.getSelectedRow();
         }
     }
 
-    }//GEN-LAST:event_btnPDFActionPerformed
+    }//GEN-LAST:event_btnPDFMantenimientoActionPerformed
+
+    private void btnPDFClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFClientesActionPerformed
+        
+        String[] opciones = {"Crear PDF", "Abrir PDF"};
+        int opcionSeleccionada = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+
+    if (opcionSeleccionada == 0) {
+
+        String fileName = "reporte Clientes.pdf";
+        String titulo = "Reporte de Clientes de Geaturim";
+        Pdfs.generarPDF(jTableClientes, fileName, titulo);
+    } else if (opcionSeleccionada == 1) {
+        try {
+            String fileName = "reporte Clientes.pdf";
+            File file = new File(fileName);
+
+          
+            if (!Desktop.isDesktopSupported()) {
+                JOptionPane.showMessageDialog(null, "El sistema no soporta la apertura automática de archivos.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            Desktop desktop = Desktop.getDesktop();
+
+            if (file.exists() && file.isFile()) {
+                desktop.open(file); 
+            } else {
+                JOptionPane.showMessageDialog(null, "El archivo PDF no existe o no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir el archivo PDF: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+        
+    }//GEN-LAST:event_btnPDFClientesActionPerformed
+
+    private void btnPDFVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFVehiculoActionPerformed
+     
+        
+    }//GEN-LAST:event_btnPDFVehiculoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3212,6 +3246,8 @@ public void mostrarDatosContrato(Contrato contrato) {
     private com.toedter.calendar.JDateChooser FeachaFabricacion;
     private com.toedter.calendar.JDateChooser FeachaMantenimiento;
     private javax.swing.JLabel PDF;
+    private javax.swing.JLabel PDF1;
+    private javax.swing.JLabel PDF2;
     private javax.swing.JButton btnAbono;
     private javax.swing.JButton btnAbonoH;
     private javax.swing.JButton btnBuscarClientes;
@@ -3236,8 +3272,6 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JButton btnGuardarAbono;
     private javax.swing.JButton btnGuardarU3;
     private javax.swing.JButton btnHistorial;
-    private javax.swing.JButton btnLimpriarTabla;
-    private javax.swing.JButton btnListartablas;
     private javax.swing.JButton btnMantenimientos;
     private javax.swing.JButton btnMantenimientosH;
     private javax.swing.JButton btnNuevoAbono;
@@ -3246,7 +3280,9 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JButton btnNuevoM;
     private javax.swing.JButton btnNuevoU;
     private javax.swing.JButton btnNuevoVehiculo;
-    private javax.swing.JButton btnPDF;
+    private javax.swing.JButton btnPDFClientes;
+    private javax.swing.JButton btnPDFMantenimiento;
+    private javax.swing.JButton btnPDFVehiculo;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JButton btnVehiculos;
     private javax.swing.JButton btnVehiculosH;
@@ -3267,10 +3303,8 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -3531,7 +3565,7 @@ private void limpiarCamposVehiculos() {
     
     if (datos != null) {
         for (Object[] fila : datos) {
-            modelo.addRow(fila); // Agregar cada fila de datos a la tabla
+            modelo.addRow(fila); 
         }
     }
 }
