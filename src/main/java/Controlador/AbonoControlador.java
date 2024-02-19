@@ -33,8 +33,10 @@ public class AbonoControlador {
     public void setConectar(Connection conectar) {
         this.conectar = conectar;
     }
-    /////////////////////////////////////////////////////////////OBTENER DATOS DE ABONO///////////////////////////////////////////////////////////////////////77
     
+    /////////////////////////////////////////////////////////////OBTENER DATOS DE ABONO///////////////////////////////////////////////////////////////////////77
+  
+       
     public ArrayList<Object[]> datosAbonos() {
     ArrayList<Object[]> listaDatos = new ArrayList<>();
     String sql = "{CALL ObtenerDatosAbonoS()}";
@@ -62,9 +64,10 @@ public class AbonoControlador {
 
     return listaDatos;
 }
-    //////////////////////////////////////////////OBTENER DESTINO ////////////////////////////////////////77
+ 
     
-    public String obtenerDestinoPorContrato(int contratoId) {
+    
+ public String obtenerDestinoPorContrato(int contratoId) {
     String destino = null;
     try {
         CallableStatement statement = conectar.prepareCall("{CALL ObtenerDestinoPorContrato(?)}");
@@ -78,9 +81,36 @@ public class AbonoControlador {
     }
     return destino;
 }
-    
-    //////////////////////////////////////////////////CREAR ABONO/////////////////////////////////////////////////
-    
+ 
+/////////////////////////////////////////////////////////////OBTENER DATOS DE ABONO DE UN CLIENTE///////////////////////////////////////////////////////////////////////
+     
+     public ArrayList<Object[]> obtenerAbonosPorCedula(String cedulaCliente) {
+    ArrayList<Object[]> listaDatos = new ArrayList<>();
+    String sql = "{CALL obtenerAbonosPorCedula(?)}";
+
+    try (CallableStatement statement = conectar.prepareCall(sql)) {
+        statement.setString(1, cedulaCliente);
+        ResultSet resultSet = statement.executeQuery();
+
+        while (resultSet.next()) {
+            Object[] fila = new Object[6]; 
+            fila[0] = resultSet.getDate("Fecha");
+            fila[1] = resultSet.getDouble("Valor");
+            fila[2] = resultSet.getBigDecimal("Monto");
+            fila[3] = resultSet.getString("Banco");
+            fila[4] = resultSet.getString("BancosComp");
+            fila[5] = resultSet.getString("Estado");
+            listaDatos.add(fila);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return listaDatos;
+}
+
+    //////////////////////////////////////////////////CREAR ABONO/////////////////////////////////////////////////  
+
    public void agregarAbono(Abono abono) {
     try {
         String sql = "{CALL InsertarAbono(?, ?, ?, ?, ?, ?, ?)}";
@@ -102,8 +132,10 @@ public class AbonoControlador {
         System.out.println("Error al insertar abono: " + e.getMessage());
     }
 } 
+
    ////////////////////////////////////////////////////////////BUSCAR ABONO//////////////////////////////////////////////////////////////////
    
+
    public ArrayList<Object[]> buscarAbonosPorContrato(int idContrato) {
     ArrayList<Object[]> listaAbonos = new ArrayList<>();
 
@@ -140,48 +172,38 @@ public class AbonoControlador {
 }
    /////////////////////////////////////////////////////////ELIMINAR ABONO/////////////////////////////////////////////////////////////77
    
-   public void eliminarAbono(int idAbono) {
+public void eliminarAbonoPorBancosComp(String bancosComp) {
     try {
-        String sql = "CALL EliminarAbono(?)";
-        CallableStatement cs = conectar.prepareCall(sql);
-        cs.setInt(1, idAbono);
-        cs.executeUpdate();
-        cs.close();
-        
-        System.out.println("Abono eliminado con éxito.");
+        String sql = "{CALL EliminarAbonoPorBancosComp(?)}";
+        CallableStatement statement = conectar.prepareCall(sql);
+        statement.setString(1, bancosComp);
+        statement.executeUpdate();
+        statement.close();
+        System.out.println("Abono eliminado con éxito");
     } catch (SQLException e) {
         System.out.println("Error al eliminar abono: " + e.getMessage());
     }
 }
+
    ///////////////////////////////////////////////EDITAR ABONO/////////////////////////////////////////////////////////////////////
-   
- public void editarAbono(int idAbono, String destino, double valor, Date fecha, String bancosComp, double monto, String estado, String banco) {
-    try {
-        String sql = "CALL EditarAbono(?, ?, ?, ?, ?, ?, ?, ?)";
-        CallableStatement cs = conectar.prepareCall(sql);
-
-        cs.setInt(1, idAbono);
-        cs.setString(2, destino);
-        cs.setDouble(3, valor);
-        cs.setDate(4, new java.sql.Date(fecha.getTime()));
-        cs.setString(5, bancosComp);
-        cs.setDouble(6, monto);
-        cs.setString(7, estado);
-        cs.setString(8, banco);
-
-        int resultado = cs.executeUpdate();
-
-        if (resultado > 0) {
-            JOptionPane.showMessageDialog(null, "Abono editado con éxito");
-        } else {
-            JOptionPane.showMessageDialog(null, "Error al editar abono");
+public void editarAbono(Abono abono) {
+        try {
+            String sql = "{CALL EditarAbono(?, ?, ?, ?, ?, ?, ?)}";
+            CallableStatement statement = conectar.prepareCall(sql);
+            statement.setString(1, abono.getDestino());
+            statement.setDouble(2, abono.getValor());
+            statement.setDouble(3, abono.getMonto());
+            statement.setDate(4, new java.sql.Date(abono.getFecha().getTime()));
+            statement.setString(5, abono.getBancosComp());
+            statement.setString(6, abono.getEstado());
+            statement.setString(7, abono.getBanco());
+            statement.executeUpdate();
+            statement.close();
+            System.out.println("Abono editado con éxito");
+        } catch (SQLException e) {
+            System.out.println("Error al editar abono: " + e.getMessage());
         }
-
-        cs.close();
-    } catch (SQLException e) {
-        System.out.println("Error al editar abono: " + e.getMessage());
     }
-}
    /////////////////////////////////////77OBTENER ID /////////////////////////////////////////////////////////////7777
    
    public Abono obtenerAbono(int abonoId) {

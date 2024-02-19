@@ -9,7 +9,7 @@ import java.util.Date;
  * @author Leo
  */
 public class Abono {
-    private String destino;
+     private String destino;
     private double Valor, Monto;
     private Date fecha; 
     private String BancosComp, Banco;
@@ -86,6 +86,5 @@ public class Abono {
     public void setEstado(String Estado) {
         this.Estado = Estado;
     }
-    
 }
     

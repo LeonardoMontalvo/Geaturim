@@ -36,7 +36,7 @@ public class ContratoControlador {
     
     ///////////////////////////////////////////////////////////////////OBTENER DATOS POR PLACA Y CLIENTE///////////////////////////////////////////////////////////////////////77
     
-    public ArrayList<Object[]> datosContratosPorPlacaYCliente() {
+public ArrayList<Object[]> datosContratosPorPlacaYCliente() {
     ArrayList<Object[]> listaDatos = new ArrayList<>();
     String sql = "{CALL listarContratosPorPlacaYCliente()}"; 
     
@@ -102,10 +102,10 @@ public class ContratoControlador {
     
     //////////////////////////////////////////////////////////////////CREAR CONTRATO/////////////////////////////////////////////////////////////////////////
     
-    public void agregarContrato(Contrato contrato) {
+public void agregarContrato(Contrato contrato) {
     try {
         String sql = "CALL CrearContrato(?, ?, ?, ?, ?, ?, ?)";
-
+        
         ejecutar = conectar.prepareStatement(sql);
         ejecutar.setString(1, contrato.getIdvehiculoc());
         ejecutar.setString(2, contrato.getIdcliente());
@@ -114,15 +114,17 @@ public class ContratoControlador {
         ejecutar.setString(5, contrato.getNombreConductor());
         ejecutar.setInt(6, contrato.getDias());
         ejecutar.setInt(7, contrato.getAsientos());
-
+        
         ejecutar.executeUpdate();
         ejecutar.close();
-        System.out.println("Contrato creado con éxito");
+        System.out.println("Contrato creado con éxito");              
     } catch (SQLException e) {
         System.out.println("Error al agregar contrato: " + e.getMessage());
     }
 }
 
+    
+   
     ///////////////////////////////////////////////////////////////MODIFICAR CONTRATO////////////////////////////////////////////////////////////////////////////////
 
       public boolean editarContrato(int contratoId, String nuevaPlaca, String nuevaCedulaCliente, String nuevoDestino, Date nuevaFecha, String nuevoConductor, int nuevosDias, int nuevosAsientos) {
