@@ -100,6 +100,8 @@ public void agregarMantenimiento(Mantenimiento mantenimiento, VehiculoControlado
             vehiculo.setKilometraje(mantenimiento.getKilometraje()); 
             vehiculoControlador.editarVehiculo(vehiculo, vehiculo.getNumPlaca());
         }
+        
+     
     } catch (SQLException e) {
         System.out.println("Error al agregar mantenimiento: " + e.getMessage());
     }

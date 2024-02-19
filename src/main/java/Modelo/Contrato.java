@@ -10,7 +10,7 @@ import java.util.Date;
  * @author Leo
  */
 public class Contrato {
-    private String idvehiculoc , idcliente;
+     private String idvehiculoc , idcliente;
     private String Destino, NombreConductor;
     private Date fecha; 
     private int Dias, Asientos; 
@@ -20,7 +20,7 @@ public class Contrato {
         return sdf.format(this.fecha);
     }
 
-    public Contrato(String idvehiculoc, String idcliente, String Destino, String NombreConductor, Date fecha, int Dias, int Asientos) {
+    public Contrato(String idvehiculoc, String idcliente, String Destino, Date fecha, String NombreConductor, int Dias, int Asientos) {
         this.idvehiculoc = idvehiculoc;
         this.idcliente = idcliente;
         this.Destino = Destino;
@@ -29,7 +29,6 @@ public class Contrato {
         this.Dias = Dias;
         this.Asientos = Asientos;
     }
-
 
     public String getIdvehiculoc() {
         return idvehiculoc;
@@ -64,6 +63,7 @@ public class Contrato {
     public void setNombreConductor(String NombreConductor) {
         this.NombreConductor = NombreConductor;
     }
+
 
 
     public Date getFecha() {

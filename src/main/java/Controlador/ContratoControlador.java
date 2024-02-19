@@ -14,7 +14,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -63,9 +62,6 @@ public class ContratoControlador {
     
     return listaDatos;
 }
-
-
-    
     //////////////////////////////////////////////////////////////////////OBTENER LISTA DE PLACAS///////////////////////////////////////////////////////////////////7
  
     public List<String> obtenerListaPlacasVehiculos() {
@@ -106,10 +102,10 @@ public class ContratoControlador {
     
     //////////////////////////////////////////////////////////////////CREAR CONTRATO/////////////////////////////////////////////////////////////////////////
     
-  public void agregarContrato(Contrato contrato) {
+    public void agregarContrato(Contrato contrato) {
     try {
         String sql = "CALL CrearContrato(?, ?, ?, ?, ?, ?, ?)";
-        
+
         ejecutar = conectar.prepareStatement(sql);
         ejecutar.setString(1, contrato.getIdvehiculoc());
         ejecutar.setString(2, contrato.getIdcliente());
@@ -118,47 +114,42 @@ public class ContratoControlador {
         ejecutar.setString(5, contrato.getNombreConductor());
         ejecutar.setInt(6, contrato.getDias());
         ejecutar.setInt(7, contrato.getAsientos());
-        
+
         ejecutar.executeUpdate();
         ejecutar.close();
-        System.out.println("Contrato creado con éxito");              
+        System.out.println("Contrato creado con éxito");
     } catch (SQLException e) {
         System.out.println("Error al agregar contrato: " + e.getMessage());
     }
 }
 
     ///////////////////////////////////////////////////////////////MODIFICAR CONTRATO////////////////////////////////////////////////////////////////////////////////
-  
-public void actualizarContrato(Contrato contrato, int ContratoAntiguo) {
-   
-    String sql = "CALL ModificarContrato(?, ?, ?, ?, ?, ?, ?, ?)"; 
 
-    try (final Connection conectar = parametros.conectar(); final PreparedStatement ps = conectar.prepareStatement(sql)) {
-        
-        ps.setInt(1, ContratoAntiguo);
-        ps.setString(2, contrato.getIdvehiculoc());
-        ps.setString(3, contrato.getIdcliente());
-        ps.setString(4, contrato.getDestino());
-        ps.setDate(5, new java.sql.Date(contrato.getFecha().getTime()));
-        ps.setString(6, contrato.getNombreConductor());
-        ps.setInt(7, contrato.getDias());
-        ps.setInt(8, contrato.getAsientos());
-        
-        int resultado = ps.executeUpdate();
-        if (resultado > 0) {
-            System.out.println("Contrato editado con éxito");
-        } else {
-            System.out.println("Error al editar contrato");
+      public boolean editarContrato(int contratoId, String nuevaPlaca, String nuevaCedulaCliente, String nuevoDestino, Date nuevaFecha, String nuevoConductor, int nuevosDias, int nuevosAsientos) {
+        try {
+            String sql = "CALL editarContrato(?, ?, ?, ?, ?, ?, ?)";
+            CallableStatement cs = conectar.prepareCall(sql);
+            cs.setString(1, nuevaPlaca);
+            cs.setString(2, nuevaCedulaCliente);
+            cs.setString(3, nuevoDestino);
+            java.sql.Date sqlNuevaFecha = new java.sql.Date(nuevaFecha.getTime());
+            cs.setDate(4, sqlNuevaFecha); 
+            cs.setString(5, nuevoConductor);
+            cs.setInt(6, nuevosDias);
+            cs.setInt(7, nuevosAsientos);
+            cs.executeUpdate();
+            cs.close();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Error al editar contrato: " + e.getMessage());
+            return false;
         }
-    } catch (SQLException e) {
-         System.out.println("Error al editar contrato: " + e.getMessage());
     }
-}
 
     /////////////////////////////////////////////////////////////////////BUSCAR CONTRATO POR CEDULA/////////////////////////////////////////////////////////////
 
     
-    public ArrayList<Object[]> buscarContratosPorCedula(String cedulaCliente) {
+   public ArrayList<Object[]> buscarContratosPorCedula(String cedulaCliente) {
     ArrayList<Object[]> listaContratos = new ArrayList<>();
 
     try {
@@ -171,7 +162,7 @@ public void actualizarContrato(Contrato contrato, int ContratoAntiguo) {
         int cont = 1; 
 
         while (rs.next()) {
-            Object[] obContrato = new Object[9]; 
+            Object[] obContrato = new Object[8]; 
             obContrato[0] = cont;
             obContrato[1] = rs.getObject("NUMPLACA");
             obContrato[2] = rs.getObject("CEDULA");
@@ -180,7 +171,6 @@ public void actualizarContrato(Contrato contrato, int ContratoAntiguo) {
             obContrato[5] = rs.getObject("NOMCONDUCTOR");
             obContrato[6] = rs.getObject("DIAS");
             obContrato[7] = rs.getObject("ASIENTOS");
-            obContrato[8] = rs.getObject("VEHICULO");
 
             listaContratos.add(obContrato);
 
@@ -195,19 +185,27 @@ public void actualizarContrato(Contrato contrato, int ContratoAntiguo) {
 
     return null;
 }
+
     ////////////////////////////////////////////////////////////////////ELIMINAR CONTRATO/////////////////////////////////////////////////////////////////77
 
-     public void eliminarContrato(int idContrato) {
+public void eliminarContrato(Date fecha, String numeroPlaca, String cedulaCliente) {
     try {
-        String sql = "CALL EliminarContrato(?)";
+        String sql = "CALL EliminarContrato(?, ?, ?)";
+
         PreparedStatement ps = conectar.prepareStatement(sql);
-        ps.setInt(1, idContrato);
+        ps.setDate(1, new java.sql.Date(fecha.getTime()));
+        ps.setString(2, numeroPlaca);
+        ps.setString(3, cedulaCliente);
         ps.executeUpdate();
         ps.close();
-        
+
         System.out.println("Contrato eliminado con éxito.");
     } catch (SQLException e) {
         System.out.println("Error al eliminar contrato: " + e.getMessage());
     }
 }
+
+
+
+ 
 }

@@ -15,6 +15,7 @@ import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import Controlador.VehiculoControlador;
+import Modelo.HistorialM;
 import Modelo.Pdfs;
 import java.awt.Desktop;
 import java.io.File;
@@ -39,8 +40,11 @@ public class Menu extends javax.swing.JFrame {
         mostrarListaPlacas();
         setModeloMantenimientos();
         setModeloContratos();
+        setModeloAbonos();
         mostrarListaPlacasVehiculo();
         mostrarListaClientesCedula();
+        setModeloHistorialMantenimientos();
+        
     }    
     private static final int MAX_LENGTH = 50;
         private static final int MAX_PLACA_LENGTH = 12;
@@ -107,19 +111,16 @@ public class Menu extends javax.swing.JFrame {
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
-        txtAsientos = new javax.swing.JTextField();
-        jPanel35 = new javax.swing.JPanel();
-        jPanel36 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
         jLabel56 = new javax.swing.JLabel();
-        jPanel40 = new javax.swing.JPanel();
         FeachaContrato = new com.toedter.calendar.JDateChooser();
+        txtAsientos = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         txtDestino = new javax.swing.JTextArea();
-        btnGuardarU3 = new javax.swing.JButton();
+        btnBuscarContrato = new javax.swing.JButton();
         btnEditarContrato = new javax.swing.JButton();
-        btnEliminarU3 = new javax.swing.JButton();
+        btnEliminarContrato = new javax.swing.JButton();
         btnNuevoContrato = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
@@ -133,10 +134,12 @@ public class Menu extends javax.swing.JFrame {
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
         jPanel37 = new javax.swing.JPanel();
-        txtDias = new javax.swing.JTextField();
         jPanel39 = new javax.swing.JPanel();
+        txtDias = new javax.swing.JTextField();
         jPanel60 = new javax.swing.JPanel();
-        txtConductor = new javax.swing.JTextField();
+        txtConductor1 = new javax.swing.JTextField();
+        PDF3 = new javax.swing.JLabel();
+        btnPDFContrato = new javax.swing.JButton();
         jInternalFrame2 = new javax.swing.JInternalFrame();
         jPanel15 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
@@ -170,6 +173,8 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableClientes = new javax.swing.JTable();
         jInternalFrame3 = new javax.swing.JInternalFrame();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTableAbono = new javax.swing.JTable();
         jPanel19 = new javax.swing.JPanel();
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
@@ -177,15 +182,12 @@ public class Menu extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         txtMonto = new javax.swing.JTextField();
         jPanel42 = new javax.swing.JPanel();
-        jPanel43 = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
         jPanel45 = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
-        jPanel46 = new javax.swing.JPanel();
-        jPanel47 = new javax.swing.JPanel();
         FeachaAbono = new com.toedter.calendar.JDateChooser();
         txtBanco = new javax.swing.JTextField();
-        btnGuardarAbono = new javax.swing.JButton();
+        btnBuscarAbono = new javax.swing.JButton();
         btnEditarAbono = new javax.swing.JButton();
         btnEliminarAbono = new javax.swing.JButton();
         btnNuevoAbono = new javax.swing.JButton();
@@ -198,10 +200,17 @@ public class Menu extends javax.swing.JFrame {
         txtComprobante = new javax.swing.JTextField();
         jPanel50 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
-        jCheckBoxLiquidado = new javax.swing.JCheckBox();
+        jcheckboxLiquidado = new javax.swing.JCheckBox();
         jCheckBoxSinLiquidar = new javax.swing.JCheckBox();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jTableAbono = new javax.swing.JTable();
+        jPanel58 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        lblConductor = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblCedula = new javax.swing.JLabel();
+        lblCedulas = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblDestino = new javax.swing.JLabel();
         jInternalFrame5 = new javax.swing.JInternalFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableMantenimiento = new javax.swing.JTable();
@@ -293,7 +302,8 @@ public class Menu extends javax.swing.JFrame {
         btnContratoH = new javax.swing.JButton();
         btnAbonoH = new javax.swing.JButton();
         btnMantenimientosH = new javax.swing.JButton();
-        btnVehiculosH = new javax.swing.JButton();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTableHistorialM = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnContrato = new javax.swing.JButton();
@@ -328,6 +338,11 @@ public class Menu extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTableContrato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableContratoMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(jTableContrato);
 
         jPanel16.setBackground(new java.awt.Color(204, 204, 204));
@@ -346,46 +361,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel54.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel54.setForeground(new java.awt.Color(0, 0, 255));
         jLabel54.setText("Asientos");
-        jPanel16.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
-
-        txtAsientos.setBackground(new java.awt.Color(204, 204, 204));
-        txtAsientos.setBorder(null);
-        txtAsientos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAsientosActionPerformed(evt);
-            }
-        });
-        jPanel16.add(txtAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 60, 20));
-
-        jPanel35.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
-        jPanel35.setLayout(jPanel35Layout);
-        jPanel35Layout.setHorizontalGroup(
-            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel35Layout.setVerticalGroup(
-            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel16.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 226, -1));
-
-        jPanel36.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
-        jPanel36.setLayout(jPanel36Layout);
-        jPanel36Layout.setHorizontalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
-        );
-        jPanel36Layout.setVerticalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel16.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 60, 2));
+        jPanel16.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
         jPanel38.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -399,40 +375,35 @@ public class Menu extends javax.swing.JFrame {
         jPanel38Layout.setHorizontalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel38Layout.createSequentialGroup()
-                .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(89, 89, 89)
+                .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel38Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel56)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(0, 21, Short.MAX_VALUE))
         );
 
         jPanel16.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
 
-        jPanel40.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
-        jPanel40.setLayout(jPanel40Layout);
-        jPanel40Layout.setHorizontalGroup(
-            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel40Layout.setVerticalGroup(
-            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel16.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 226, -1));
-
         FeachaContrato.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel16.add(FeachaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 220, 30));
+        jPanel16.add(FeachaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 210, 30));
+
+        txtAsientos.setBackground(new java.awt.Color(204, 204, 204));
+        txtAsientos.setBorder(null);
+        txtAsientos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAsientosActionPerformed(evt);
+            }
+        });
+        jPanel16.add(txtAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 70, 20));
 
         jLabel57.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel57.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel57.setText("Destino:");
+        jLabel57.setText("Destino");
         jPanel16.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
 
         txtDestino.setBackground(new java.awt.Color(204, 204, 204));
@@ -441,15 +412,15 @@ public class Menu extends javax.swing.JFrame {
         txtDestino.setBorder(null);
         jScrollPane4.setViewportView(txtDestino);
 
-        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 230, 90));
+        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 230, 60));
 
-        btnGuardarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
-        btnGuardarU3.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
+        btnBuscarContrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarU3ActionPerformed(evt);
+                btnBuscarContratoActionPerformed(evt);
             }
         });
-        jPanel16.add(btnGuardarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+        jPanel16.add(btnBuscarContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
         btnEditarContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarContrato.addActionListener(new java.awt.event.ActionListener() {
@@ -459,13 +430,13 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(btnEditarContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
-        btnEliminarU3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
-        btnEliminarU3.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarContrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarU3ActionPerformed(evt);
+                btnEliminarContratoActionPerformed(evt);
             }
         });
-        jPanel16.add(btnEliminarU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
+        jPanel16.add(btnEliminarContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
         btnNuevoContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoContrato.addActionListener(new java.awt.event.ActionListener() {
@@ -477,15 +448,15 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel35.setForeground(new java.awt.Color(0, 0, 0));
         jLabel35.setText("Buscar");
-        jPanel16.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
+        jPanel16.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 70, -1));
 
         jLabel37.setForeground(new java.awt.Color(0, 0, 0));
         jLabel37.setText("Editar");
         jPanel16.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
 
         jLabel58.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel58.setText("Agregar");
-        jPanel16.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
+        jLabel58.setText("Nuevo");
+        jPanel16.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 60, -1));
 
         jLabel59.setForeground(new java.awt.Color(0, 0, 0));
         jLabel59.setText("Eliminar");
@@ -517,14 +488,14 @@ public class Menu extends javax.swing.JFrame {
         jPanel56.setLayout(jPanel56Layout);
         jPanel56Layout.setHorizontalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
+            .addGap(0, 220, Short.MAX_VALUE)
         );
         jPanel56Layout.setVerticalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jPanel16.add(jPanel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 226, -1));
+        jPanel16.add(jPanel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 312, 220, 0));
 
         cbbCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -533,7 +504,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(cbbCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 220, 30));
 
-        jPanel16.add(cbbPlacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 220, 30));
+        jPanel16.add(cbbPlacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 222, 220, 30));
 
         jLabel83.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(0, 0, 255));
@@ -543,7 +514,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel84.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel84.setForeground(new java.awt.Color(0, 0, 255));
         jLabel84.setText("Dias");
-        jPanel16.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        jPanel16.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
 
         jPanel37.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -555,14 +526,10 @@ public class Menu extends javax.swing.JFrame {
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 2, Short.MAX_VALUE)
         );
 
         jPanel16.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 226, -1));
-
-        txtDias.setBackground(new java.awt.Color(204, 204, 204));
-        txtDias.setBorder(null);
-        jPanel16.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 530, 60, 20));
 
         jPanel39.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -570,14 +537,23 @@ public class Menu extends javax.swing.JFrame {
         jPanel39.setLayout(jPanel39Layout);
         jPanel39Layout.setHorizontalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 70, Short.MAX_VALUE)
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel16.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 550, 60, 2));
+        jPanel16.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 70, -1));
+
+        txtDias.setBackground(new java.awt.Color(204, 204, 204));
+        txtDias.setBorder(null);
+        txtDias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDiasActionPerformed(evt);
+            }
+        });
+        jPanel16.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 70, 20));
 
         jPanel60.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -585,23 +561,36 @@ public class Menu extends javax.swing.JFrame {
         jPanel60.setLayout(jPanel60Layout);
         jPanel60Layout.setHorizontalGroup(
             jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
+            .addGap(0, 70, Short.MAX_VALUE)
         );
         jPanel60Layout.setVerticalGroup(
             jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel16.add(jPanel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 226, 2));
+        jPanel16.add(jPanel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, -1, -1));
 
-        txtConductor.setBackground(new java.awt.Color(204, 204, 204));
-        txtConductor.setBorder(null);
-        txtConductor.addActionListener(new java.awt.event.ActionListener() {
+        txtConductor1.setBackground(new java.awt.Color(204, 204, 204));
+        txtConductor1.setBorder(null);
+        txtConductor1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConductorActionPerformed(evt);
+                txtConductor1ActionPerformed(evt);
             }
         });
-        jPanel16.add(txtConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 226, 30));
+        jPanel16.add(txtConductor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 226, 30));
+
+        PDF3.setForeground(new java.awt.Color(0, 0, 0));
+        PDF3.setText("PDF : ");
+        jPanel16.add(PDF3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, 60, -1));
+
+        btnPDFContrato.setBackground(new java.awt.Color(187, 187, 187));
+        btnPDFContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\PDF.png")); // NOI18N
+        btnPDFContrato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPDFContratoActionPerformed(evt);
+            }
+        });
+        jPanel16.add(btnPDFContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 530, 40, 40));
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
@@ -610,13 +599,12 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
-            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("1", jInternalFrame1);
@@ -906,244 +894,6 @@ public class Menu extends javax.swing.JFrame {
 
         jInternalFrame3.setVisible(true);
 
-        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel61.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel61.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel61.setText("Fecha");
-        jPanel19.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-
-        jLabel62.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel62.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel62.setText("Valor");
-        jPanel19.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 163, -1, -1));
-
-        txtValor.setBackground(new java.awt.Color(204, 204, 204));
-        txtValor.setBorder(null);
-        txtValor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtValorActionPerformed(evt);
-            }
-        });
-        jPanel19.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 226, 30));
-
-        jLabel63.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel63.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel63.setText("Monto");
-        jPanel19.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 219, -1, -1));
-
-        txtMonto.setBackground(new java.awt.Color(204, 204, 204));
-        txtMonto.setBorder(null);
-        jPanel19.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 243, 226, 30));
-
-        jPanel42.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
-        jPanel42.setLayout(jPanel42Layout);
-        jPanel42Layout.setHorizontalGroup(
-            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel42Layout.setVerticalGroup(
-            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 226, 2));
-
-        jPanel43.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
-        jPanel43.setLayout(jPanel43Layout);
-        jPanel43Layout.setHorizontalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel43Layout.setVerticalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
-
-        jPanel44.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
-        jPanel44.setLayout(jPanel44Layout);
-        jPanel44Layout.setHorizontalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel44Layout.setVerticalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 273, 226, 2));
-
-        jPanel45.setBackground(new java.awt.Color(0, 110, 255));
-
-        jLabel65.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel65.setText("ABONOS");
-
-        javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
-        jPanel45.setLayout(jPanel45Layout);
-        jPanel45Layout.setHorizontalGroup(
-            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel45Layout.createSequentialGroup()
-                .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel45Layout.setVerticalGroup(
-            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel45Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel65)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        jPanel19.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
-
-        jPanel46.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
-        jPanel46.setLayout(jPanel46Layout);
-        jPanel46Layout.setHorizontalGroup(
-            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel46Layout.setVerticalGroup(
-            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
-
-        jPanel47.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
-        jPanel47.setLayout(jPanel47Layout);
-        jPanel47Layout.setHorizontalGroup(
-            jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel47Layout.setVerticalGroup(
-            jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
-
-        FeachaAbono.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel19.add(FeachaAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
-
-        txtBanco.setBackground(new java.awt.Color(204, 204, 204));
-        txtBanco.setBorder(null);
-        txtBanco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBancoActionPerformed(evt);
-            }
-        });
-        jPanel19.add(txtBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
-
-        btnGuardarAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\GuardarTodo.png")); // NOI18N
-        btnGuardarAbono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarAbonoActionPerformed(evt);
-            }
-        });
-        jPanel19.add(btnGuardarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
-
-        btnEditarAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
-        btnEditarAbono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarAbonoActionPerformed(evt);
-            }
-        });
-        jPanel19.add(btnEditarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
-
-        btnEliminarAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
-        btnEliminarAbono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarAbonoActionPerformed(evt);
-            }
-        });
-        jPanel19.add(btnEliminarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 440, 40, 35));
-
-        btnNuevoAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
-        btnNuevoAbono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoAbonoActionPerformed(evt);
-            }
-        });
-        jPanel19.add(btnNuevoAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
-
-        jLabel67.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel67.setText("Guardar");
-        jPanel19.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 70, -1));
-
-        jLabel68.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel68.setText("Editar");
-        jPanel19.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, -1));
-
-        jLabel69.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel69.setText("Nuevo");
-        jPanel19.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
-
-        jLabel70.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel70.setText("Eliminar");
-        jPanel19.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 60, -1));
-
-        jLabel71.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel71.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel71.setText("Banco");
-        jPanel19.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
-
-        jLabel72.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel72.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel72.setText("Comprobante");
-        jPanel19.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
-
-        txtComprobante.setBackground(new java.awt.Color(204, 204, 204));
-        txtComprobante.setBorder(null);
-        jPanel19.add(txtComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 226, 30));
-
-        jPanel50.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
-        jPanel50.setLayout(jPanel50Layout);
-        jPanel50Layout.setHorizontalGroup(
-            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel50Layout.setVerticalGroup(
-            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel19.add(jPanel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 226, 2));
-
-        jLabel73.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel73.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel73.setText("Estado");
-        jPanel19.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
-
-        jCheckBoxLiquidado.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBoxLiquidado.setText("Liquidado");
-        jCheckBoxLiquidado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxLiquidadoActionPerformed(evt);
-            }
-        });
-        jPanel19.add(jCheckBoxLiquidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
-
-        jCheckBoxSinLiquidar.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBoxSinLiquidar.setText("Sin Liquidar");
-        jPanel19.add(jCheckBoxSinLiquidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
-
         jTableAbono.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1162,6 +912,277 @@ public class Menu extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(jTableAbono);
 
+        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel19MouseClicked(evt);
+            }
+        });
+        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel61.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel61.setText("Fecha");
+        jPanel19.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+
+        jLabel62.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel62.setText("Valor");
+        jPanel19.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+
+        txtValor.setBackground(new java.awt.Color(204, 204, 204));
+        txtValor.setBorder(null);
+        txtValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtValorActionPerformed(evt);
+            }
+        });
+        jPanel19.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 80, 20));
+
+        jLabel63.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel63.setText("Monto");
+        jPanel19.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
+
+        txtMonto.setBackground(new java.awt.Color(204, 204, 204));
+        txtMonto.setBorder(null);
+        jPanel19.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 90, 20));
+
+        jPanel42.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
+        jPanel42.setLayout(jPanel42Layout);
+        jPanel42Layout.setHorizontalGroup(
+            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel42Layout.setVerticalGroup(
+            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 226, 2));
+
+        jPanel44.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
+        jPanel44.setLayout(jPanel44Layout);
+        jPanel44Layout.setHorizontalGroup(
+            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        jPanel44Layout.setVerticalGroup(
+            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 70, 2));
+
+        jPanel45.setBackground(new java.awt.Color(0, 110, 255));
+
+        jLabel65.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel65.setText("ABONOS");
+
+        javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
+        jPanel45.setLayout(jPanel45Layout);
+        jPanel45Layout.setHorizontalGroup(
+            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
+                .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel45Layout.setVerticalGroup(
+            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel45Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel65)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel19.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 60));
+
+        FeachaAbono.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.add(FeachaAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 210, 30));
+
+        txtBanco.setBackground(new java.awt.Color(204, 204, 204));
+        txtBanco.setBorder(null);
+        txtBanco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBancoActionPerformed(evt);
+            }
+        });
+        jPanel19.add(txtBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 226, 20));
+
+        btnBuscarAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
+        btnBuscarAbono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarAbonoActionPerformed(evt);
+            }
+        });
+        jPanel19.add(btnBuscarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
+
+        btnEditarAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
+        btnEditarAbono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarAbonoActionPerformed(evt);
+            }
+        });
+        jPanel19.add(btnEditarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
+
+        btnEliminarAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
+        btnEliminarAbono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarAbonoActionPerformed(evt);
+            }
+        });
+        jPanel19.add(btnEliminarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
+
+        btnNuevoAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
+        btnNuevoAbono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoAbonoActionPerformed(evt);
+            }
+        });
+        jPanel19.add(btnNuevoAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 40, 35));
+
+        jLabel67.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel67.setText("Buscar");
+        jPanel19.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 40, -1));
+
+        jLabel68.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel68.setText("Editar");
+        jPanel19.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 40, -1));
+
+        jLabel69.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel69.setText("Nuevo");
+        jPanel19.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 40, -1));
+
+        jLabel70.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel70.setText("Eliminar");
+        jPanel19.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, -1, -1));
+
+        jLabel71.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel71.setText("Banco");
+        jPanel19.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 30));
+
+        jLabel72.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel72.setText("Comprobante");
+        jPanel19.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+
+        txtComprobante.setBackground(new java.awt.Color(204, 204, 204));
+        txtComprobante.setBorder(null);
+        txtComprobante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtComprobanteActionPerformed(evt);
+            }
+        });
+        jPanel19.add(txtComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 226, 20));
+
+        jPanel50.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
+        jPanel50.setLayout(jPanel50Layout);
+        jPanel50Layout.setHorizontalGroup(
+            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+        );
+        jPanel50Layout.setVerticalGroup(
+            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 226, 2));
+
+        jLabel73.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel73.setText("Estado");
+        jPanel19.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+
+        jcheckboxLiquidado.setForeground(new java.awt.Color(0, 0, 0));
+        jcheckboxLiquidado.setText("Liquidado");
+        jcheckboxLiquidado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcheckboxLiquidadoActionPerformed(evt);
+            }
+        });
+        jPanel19.add(jcheckboxLiquidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
+
+        jCheckBoxSinLiquidar.setForeground(new java.awt.Color(0, 0, 0));
+        jCheckBoxSinLiquidar.setText("Sin Liquidar");
+        jPanel19.add(jCheckBoxSinLiquidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, -1, -1));
+
+        jPanel58.setBackground(new java.awt.Color(0, 110, 255));
+
+        javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
+        jPanel58.setLayout(jPanel58Layout);
+        jPanel58Layout.setHorizontalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        jPanel58Layout.setVerticalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jPanel19.add(jPanel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 153, 153), null));
+
+        jLabel12.setText("Conductor:");
+
+        jLabel2.setText("Cedula del Cliente:");
+
+        jLabel3.setText("Destino:");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCedulas, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblDestino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel12)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblConductor, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(lblCedula)
+                    .addComponent(lblCedulas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblConductor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel19.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 310, 100));
+
         javax.swing.GroupLayout jInternalFrame3Layout = new javax.swing.GroupLayout(jInternalFrame3.getContentPane());
         jInternalFrame3.getContentPane().setLayout(jInternalFrame3Layout);
         jInternalFrame3Layout.setHorizontalGroup(
@@ -1169,13 +1190,15 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jInternalFrame3Layout.createSequentialGroup()
                 .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jInternalFrame3Layout.setVerticalGroup(
             jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
-            .addComponent(jScrollPane8)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame3Layout.createSequentialGroup()
+                .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("3", jInternalFrame3);
@@ -1375,7 +1398,8 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jInternalFrame5Layout.createSequentialGroup()
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jInternalFrame5Layout.setVerticalGroup(
             jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1921,18 +1945,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btnVehiculosH.setBackground(new java.awt.Color(153, 153, 153));
-        btnVehiculosH.setForeground(new java.awt.Color(255, 255, 255));
-        btnVehiculosH.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\bus.png")); // NOI18N
-        btnVehiculosH.setText("Vehiculos");
-        btnVehiculosH.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnVehiculosH.setFocusable(false);
-        btnVehiculosH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVehiculosHActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
@@ -1940,7 +1952,6 @@ public class Menu extends javax.swing.JFrame {
             .addComponent(btnContratoH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnAbonoH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnMantenimientosH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnVehiculosH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel23Layout.setVerticalGroup(
@@ -1949,13 +1960,25 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
                 .addComponent(btnContratoH)
-                .addGap(70, 70, 70)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addComponent(btnAbonoH)
-                .addGap(70, 70, 70)
+                .addGap(123, 123, 123)
                 .addComponent(btnMantenimientosH)
-                .addGap(70, 70, 70)
-                .addComponent(btnVehiculosH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(98, 98, 98))
         );
+
+        jTableHistorialM.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane10.setViewportView(jTableHistorialM);
 
         javax.swing.GroupLayout jInternalFrame7Layout = new javax.swing.GroupLayout(jInternalFrame7.getContentPane());
         jInternalFrame7.getContentPane().setLayout(jInternalFrame7Layout);
@@ -1963,11 +1986,14 @@ public class Menu extends javax.swing.JFrame {
             jInternalFrame7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame7Layout.createSequentialGroup()
                 .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 895, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 883, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jInternalFrame7Layout.setVerticalGroup(
             jInternalFrame7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane10)
         );
 
         jTabbedPane1.addTab("7", jInternalFrame7);
@@ -2153,22 +2179,48 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratoActionPerformed
-        // TODO add your handling code here:
+        limpiarTablaContrato();
+        modeloContrato();
         jTabbedPane1.setSelectedIndex(0);
+        limpiarTablaContrato();
+        modeloContrato();
+
     }//GEN-LAST:event_btnContratoActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-              
-
+        limpiarTablaContrato();
         modeloClientes();
         jTabbedPane1.setSelectedIndex(1);       
-    
+       limpiarTablaContrato();
+       modeloClientes();
+
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbonoActionPerformed
 
+//        jTabbedPane1.setSelectedIndex(2);
+   //TODO add your handling code here:
+        int filaSeleccionada = jTableContrato.getSelectedRow();
+    if (filaSeleccionada != -1) {
+        // Obtener los datos del contrato seleccionado
+        int idContrato = (int) jTableContrato.getValueAt(filaSeleccionada, 0);  
+        String conductor = (String) jTableContrato.getValueAt(filaSeleccionada, 5); 
+        String cedula = (String) jTableContrato.getValueAt(filaSeleccionada, 2);
+        String destino = (String) jTableContrato.getValueAt(filaSeleccionada, 3);
+
+        lblConductor.setText(conductor);
+        lblCedulas.setText(cedula);
+        lblDestino.setText(destino);
+        
+        AbonoControlador  ControladorAbono  = new AbonoControlador();
+        
+        String destinos = ControladorAbono.obtenerDestinoPorContrato(idContrato);
+        
         jTabbedPane1.setSelectedIndex(2);
 
+    } else {
+        JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
+    }     
     }//GEN-LAST:event_btnAbonoActionPerformed
 
     private void btnMantenimientosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientosMouseClicked
@@ -2407,37 +2459,11 @@ public class Menu extends javax.swing.JFrame {
                 clienteControlador.insertarClientes(nuevoCliente);
                 listaClientes.add(nuevoCliente);
                 mostrarDatosClientes(nuevoCliente);
-
-                // Actualizar el JComboBox de clientes
                 mostrarListaClientesCedula();
             }
         }
     }
     }//GEN-LAST:event_btnNuevoClienteActionPerformed
-
-    private void txtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtValorActionPerformed
-
-    private void txtBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBancoActionPerformed
-
-    private void btnGuardarAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAbonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarAbonoActionPerformed
-
-    private void btnEditarAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAbonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarAbonoActionPerformed
-
-    private void btnEliminarAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarAbonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarAbonoActionPerformed
-
-    private void btnNuevoAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoAbonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNuevoAbonoActionPerformed
 
     private void btnVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehiculosActionPerformed
         
@@ -2464,10 +2490,6 @@ public class Menu extends javax.swing.JFrame {
         txtCedula.setText((String) modelo.getValueAt(jTableClientes.getSelectedRow(), 4));
         txtDireccion.setText((String) modelo.getValueAt(jTableClientes.getSelectedRow(), 5));
     }//GEN-LAST:event_jTableClientesMouseClicked
-
-    private void jCheckBoxLiquidadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxLiquidadoActionPerformed
-
-    }//GEN-LAST:event_jCheckBoxLiquidadoActionPerformed
 
     private void txtNombrePropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePropActionPerformed
     }//GEN-LAST:event_txtNombrePropActionPerformed
@@ -2666,10 +2688,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMantenimientosHMouseClicked
 
     private void btnMantenimientosHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantenimientosHActionPerformed
+    setModeloHistorialMantenimientos();
     }//GEN-LAST:event_btnMantenimientosHActionPerformed
-
-    private void btnVehiculosHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehiculosHActionPerformed
-    }//GEN-LAST:event_btnVehiculosHActionPerformed
 
     private void txtKilometrajeMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKilometrajeMActionPerformed
     }//GEN-LAST:event_txtKilometrajeMActionPerformed
@@ -2799,142 +2819,9 @@ int filaSeleccionada = jTableMantenimiento.getSelectedRow();
 
     }//GEN-LAST:event_comboBoxPlacasActionPerformed
 
-    private void btnGuardarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarU3ActionPerformed
-        // TODO add your handling code here:
-        String cedulaCliente = cbbCliente.getSelectedItem().toString();
-
-        if (!cedulaCliente.isEmpty()) {
-            ContratoControlador contratoControlador = new ContratoControlador();
-            ArrayList<Object[]> resultados = contratoControlador.buscarContratosPorCedula(cedulaCliente);
-
-            DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
-            modelo.setRowCount(0);
-
-            if (resultados != null) {
-                for (Object[] fila : resultados) {
-                    modelo.addRow(fila);
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Error al buscar contratos por la cédula del cliente");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Seleccione o ingrese la cédula del cliente para buscar");
-        }
-    }//GEN-LAST:event_btnGuardarU3ActionPerformed
-
-    private void btnEditarContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarContratoActionPerformed
- 
-        int filaSeleccionada = jTableContrato.getSelectedRow();
-
-    if (filaSeleccionada >= 0) {
-        DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
-
-        int contratoId = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
-
-        String nuevaPlaca = cbbPlacas.getSelectedItem().toString();
-        String nuevaCedulaCliente = cbbCliente.getSelectedItem().toString();
-
-        String nuevoDestino = txtDestino.getText();
-        Date nuevaFecha = FeachaContrato.getDate();
-        String nuevoConductor = txtConductor.getText();
-        int nuevosDias = Integer.parseInt(txtDias.getText());
-        int nuevosAsientos = Integer.parseInt(txtAsientos.getText());
-
-        Contrato contrato = new Contrato(nuevaPlaca, nuevaCedulaCliente, nuevoDestino, nuevoConductor, nuevaFecha, nuevosDias, nuevosAsientos);
-
-        ContratoControlador controlador = new ContratoControlador();
-        controlador.actualizarContrato(contrato, contratoId);
-
-        modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
-        modelo.setValueAt(nuevaCedulaCliente, filaSeleccionada, 2);
-        modelo.setValueAt(nuevoDestino, filaSeleccionada, 3);
-        modelo.setValueAt(nuevaFecha, filaSeleccionada, 4);
-        modelo.setValueAt(nuevoConductor, filaSeleccionada, 5);
-        modelo.setValueAt(nuevosDias, filaSeleccionada, 6);
-        modelo.setValueAt(nuevosAsientos, filaSeleccionada, 7);
-
-        JOptionPane.showMessageDialog(null, "Contrato editado con éxito.");
-    } else {
-        JOptionPane.showMessageDialog(null, "Seleccione una fila para editar.");
-    }   
-    }//GEN-LAST:event_btnEditarContratoActionPerformed
-
-    private void btnEliminarU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarU3ActionPerformed
-        // TODO add your handling code here:
-        int filaSeleccionada = jTableContrato.getSelectedRow();
-
-        if (filaSeleccionada >= 0) {
-            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este contrato?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
-
-            if (confirmacion == JOptionPane.YES_OPTION) {
-                DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
-                int idContrato = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
-
-                ContratoControlador contratoControlador = new ContratoControlador();
-                contratoControlador.eliminarContrato(idContrato);
-
-                modelo.removeRow(filaSeleccionada);
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
-        }
-    }//GEN-LAST:event_btnEliminarU3ActionPerformed
-
-    private void btnNuevoContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoContratoActionPerformed
-
-        String placaVehiculo = cbbPlacas.getSelectedItem().toString();
-        String cedulaCliente = cbbCliente.getSelectedItem().toString();
-        String destinoContrato = txtDestino.getText();
-        Date fechaContrato = FeachaContrato.getDate();
-        String nomConductor = txtConductor.getText();
-        int diasContrato;
-        int asientosContrato;
-
-        try {
-            diasContrato = Integer.parseInt(txtDias.getText());
-            asientosContrato = Integer.parseInt(txtAsientos.getText());
-
-            if (diasContrato < 0 || asientosContrato < 0) {
-                JOptionPane.showMessageDialog(this, "Los campos de días y asientos deben ser números positivos.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Los campos de días y asientos deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        if (placaVehiculo.isEmpty() || cedulaCliente.isEmpty() || destinoContrato.isEmpty() || fechaContrato == null || nomConductor.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        Contrato contrato = new Contrato(placaVehiculo, cedulaCliente, destinoContrato, nomConductor, fechaContrato, diasContrato, asientosContrato);
-
-        ContratoControlador controladorContrato = new ContratoControlador();
-        controladorContrato.agregarContrato(contrato);
-
-        this.limpiarTablaContrato();
-        this.actualizarTablaContratos();
-
-        JOptionPane.showMessageDialog(this, "Contrato creado con éxito.");
-    }//GEN-LAST:event_btnNuevoContratoActionPerformed
-
-    private void cbbClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbClienteActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_cbbClienteActionPerformed
-
-    private void txtConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConductorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConductorActionPerformed
-
     private void jTableAbonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableAbonoMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTableAbonoMouseClicked
-
-    private void txtAsientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAsientosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAsientosActionPerformed
 
     private void btnPDFMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFMantenimientoActionPerformed
 
@@ -3038,6 +2925,341 @@ int filaSeleccionada = jTableMantenimiento.getSelectedRow();
 
 
     }//GEN-LAST:event_btnPDFVehiculoActionPerformed
+
+    private void txtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValorActionPerformed
+
+    private void txtBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBancoActionPerformed
+
+    private void btnBuscarAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAbonoActionPerformed
+        // TODO add your handling code here:
+        // Obtener el ID del contrato seleccionado desde la tabla
+        int filaSeleccionada = jTableContrato.getSelectedRow();
+        if (filaSeleccionada != -1) {
+            int idContrato = (int) jTableContrato.getValueAt(filaSeleccionada, 0);
+
+            AbonoControlador AbonoControlador = new AbonoControlador();
+            ArrayList<Object[]> abonos = AbonoControlador.buscarAbonosPorContrato(idContrato);
+
+            if (abonos != null) {
+                limpiarTablaAbonos();
+
+                for (Object[] abono : abonos) {
+                    modeloAbonos.addRow(abono);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "No se encontraron abonos para este contrato.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnBuscarAbonoActionPerformed
+
+    private void btnEditarAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAbonoActionPerformed
+        // TODO add your handling code here:
+        int filaSeleccionadaContrato = jTableContrato.getSelectedRow();
+        int filaSeleccionadaAbono = jTableAbono.getSelectedRow();
+
+        if (filaSeleccionadaContrato == -1 || filaSeleccionadaAbono == -1) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un contrato y un abono para editar.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            AbonoControlador controladorAbono = new AbonoControlador();
+            int idAbono = (int) jTableAbono.getValueAt(filaSeleccionadaAbono, 0);
+            int idContrato = (int) jTableContrato.getValueAt(filaSeleccionadaContrato, 0);
+            String destinos = controladorAbono.obtenerDestinoPorContrato(idContrato);
+
+            double nuevoValor = Double.parseDouble(txtValor.getText());
+            Date nuevaFecha = FeachaAbono.getDate();
+            String nuevosBancosComp = txtComprobante.getText();
+            double nuevoMonto = Double.parseDouble(txtMonto.getText());
+            String nuevoEstado;
+            if (jcheckboxLiquidado.isSelected()) {
+                nuevoEstado = "Liquidado";
+            } else if (jCheckBoxSinLiquidar.isSelected()) {
+                nuevoEstado = "Sin Liquidar";
+            } else {
+                nuevoEstado = "";
+            }
+            String nuevoBanco = txtBanco.getText();
+
+            controladorAbono.editarAbono(idAbono, destinos, nuevoValor, nuevaFecha, nuevosBancosComp, nuevoMonto, nuevoEstado, nuevoBanco);
+
+            limpiarTablaAbonos();
+            actualizarTablaAbonos();
+
+            JOptionPane.showMessageDialog(this, "Abono editado con éxito");
+        }
+    }//GEN-LAST:event_btnEditarAbonoActionPerformed
+
+    private void btnEliminarAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarAbonoActionPerformed
+        // TODO add your handling code here:
+        int filaSeleccionada = jTableAbono.getSelectedRow();
+        if (filaSeleccionada != -1) {
+            int idAbono = (int) jTableAbono.getValueAt(filaSeleccionada, 0);
+
+            AbonoControlador AbonoControlador = new AbonoControlador();
+            AbonoControlador.eliminarAbono(idAbono);
+
+            limpiarTablaAbonos();
+            actualizarTablaAbonos();
+            JOptionPane.showMessageDialog(this, "Abono eliminado con éxito");
+        } else {
+            JOptionPane.showMessageDialog(this, "Debes seleccionar un abono.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnEliminarAbonoActionPerformed
+
+    private void btnNuevoAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoAbonoActionPerformed
+
+        int filaSeleccionada = jTableContrato.getSelectedRow();
+        if (filaSeleccionada != -1) {
+            int idContrato = (int) jTableContrato.getValueAt(filaSeleccionada, 0);
+
+            AbonoControlador controladorAbono = new AbonoControlador();
+            String destinos = controladorAbono.obtenerDestinoPorContrato(idContrato);
+
+            boolean liquidado = jcheckboxLiquidado.isSelected();
+            boolean sinLiquidar = jCheckBoxSinLiquidar.isSelected();
+            String estadoAbono;
+
+            if (jcheckboxLiquidado.isSelected()) {
+                estadoAbono = "Liquidado";
+            } else if (jCheckBoxSinLiquidar.isSelected()) {
+                estadoAbono = "Sin Liquidar";
+            } else {
+                JOptionPane.showMessageDialog(this, "Por favor, seleccione el estado del abono.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            String comprobante = txtComprobante.getText();
+            String banco = txtBanco.getText();
+            Date fechaAbono = FeachaAbono.getDate();
+            double valor;
+            double monto;
+
+            try {
+                valor = Double.parseDouble(txtValor.getText());
+                monto = Double.parseDouble(txtMonto.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Los campos de valor y monto deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            Abono abono = new Abono(destinos, valor, monto, fechaAbono, comprobante, estadoAbono, banco);
+            controladorAbono.agregarAbono(abono);
+
+            this.limpiarTablaAbonos();
+            this.actualizarTablaAbonos();
+
+            JOptionPane.showMessageDialog(this, "Abono creado con éxito");
+        } else {
+            JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnNuevoAbonoActionPerformed
+
+    private void txtComprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComprobanteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtComprobanteActionPerformed
+
+    private void jcheckboxLiquidadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcheckboxLiquidadoActionPerformed
+
+    }//GEN-LAST:event_jcheckboxLiquidadoActionPerformed
+
+    private void jPanel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel19MouseClicked
+
+        actualizarTablaAbonos();
+    }//GEN-LAST:event_jPanel19MouseClicked
+
+    private void txtDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDiasActionPerformed
+
+    private void cbbClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbbClienteActionPerformed
+
+    private void btnNuevoContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoContratoActionPerformed
+  String placaVehiculo = cbbPlacas.getSelectedItem().toString();
+    String cedulaCliente = cbbCliente.getSelectedItem().toString();
+    String destinoContrato = txtDestino.getText();
+    Date fechaContrato = FeachaContrato.getDate();
+    String nomConductor = txtAsientos.getText();
+    int diasContrato;
+    int asientosContrato;
+
+    try {
+        diasContrato = Integer.parseInt(txtDias.getText());
+        asientosContrato = Integer.parseInt(txtAsientos.getText());
+
+        if (diasContrato < 0 || asientosContrato < 0) {
+            JOptionPane.showMessageDialog(this, "Los campos de días y asientos deben ser números positivos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Los campos de días y asientos deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    if (placaVehiculo.isEmpty() || cedulaCliente.isEmpty() || destinoContrato.isEmpty() || fechaContrato == null || nomConductor.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    Contrato contrato = new Contrato(placaVehiculo, cedulaCliente, destinoContrato, fechaContrato, nomConductor, diasContrato, asientosContrato);
+
+    ContratoControlador controladorContrato = new ContratoControlador();
+    controladorContrato.agregarContrato(contrato);
+
+        limpiarTablaContrato();
+        actualizarTablaContratos();
+
+    JOptionPane.showMessageDialog(this, "Contrato creado con éxito.");
+    }//GEN-LAST:event_btnNuevoContratoActionPerformed
+
+    private void btnEliminarContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarContratoActionPerformed
+  int filaSeleccionada = jTableContrato.getSelectedRow();
+
+    if (filaSeleccionada >= 0) {
+        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este contrato?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel(); 
+            Date fecha = (Date) modelo.getValueAt(filaSeleccionada, 4); 
+
+            String numeroPlaca = (String) modelo.getValueAt(filaSeleccionada, 1);
+            String cedulaCliente = (String) modelo.getValueAt(filaSeleccionada, 2);
+
+            ContratoControlador contratoControlador = new ContratoControlador();
+            contratoControlador.eliminarContrato((java.sql.Date) fecha, numeroPlaca, cedulaCliente);
+
+            modelo.removeRow(filaSeleccionada);
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");
+    }
+    }//GEN-LAST:event_btnEliminarContratoActionPerformed
+
+    private void btnEditarContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarContratoActionPerformed
+  int filaSeleccionada = jTableContrato.getSelectedRow();
+
+    if (filaSeleccionada >= 0) {
+        try {
+            DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+
+            int contratoId = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
+
+            String nuevaPlaca = cbbPlacas.getSelectedItem().toString();
+            String nuevaCedulaCliente = cbbCliente.getSelectedItem().toString();
+            String nuevoDestino = txtDestino.getText();
+            Date nuevaFecha = FeachaContrato.getDate();
+            String nuevoConductor = txtConductor1.getText();
+            int nuevosDias = Integer.parseInt(txtDias.getText());
+            int nuevosAsientos = Integer.parseInt(txtAsientos.getText());
+
+ java.sql.Date sqlNuevaFecha = new java.sql.Date(nuevaFecha.getTime());
+
+            ContratoControlador controlador = new ContratoControlador();
+boolean exito = controlador.editarContrato(contratoId, nuevaPlaca, nuevaCedulaCliente, nuevoDestino, sqlNuevaFecha, nuevoConductor, nuevosDias, nuevosAsientos);
+
+            if (exito) {
+                modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
+                modelo.setValueAt(nuevaCedulaCliente, filaSeleccionada, 2);
+                modelo.setValueAt(nuevoDestino, filaSeleccionada, 3);
+                modelo.setValueAt(nuevaFecha, filaSeleccionada, 4);
+                modelo.setValueAt(nuevoConductor, filaSeleccionada, 5);
+                modelo.setValueAt(nuevosDias, filaSeleccionada, 6);
+                modelo.setValueAt(nuevosAsientos, filaSeleccionada, 7);
+
+                JOptionPane.showMessageDialog(null, "Contrato editado con éxito.");
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al editar el contrato.");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese valores numéricos válidos para días y asientos.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al editar el contrato: " + e.getMessage());
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Seleccione una fila para editar.");
+    }
+    }//GEN-LAST:event_btnEditarContratoActionPerformed
+
+    private void btnBuscarContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarContratoActionPerformed
+        String cedulaCliente = cbbCliente.getSelectedItem().toString();
+
+        if (!cedulaCliente.isEmpty()) {
+            ContratoControlador contratoControlador = new ContratoControlador();
+            ArrayList<Object[]> resultados = contratoControlador.buscarContratosPorCedula(cedulaCliente);
+
+            DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+            modelo.setRowCount(0);
+
+            if (resultados != null) {
+                for (Object[] fila : resultados) {
+                    modelo.addRow(fila);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null,     "Error al buscar contratos por la cédula del cliente");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione o ingrese la cédula del cliente para buscar");
+        }
+    }//GEN-LAST:event_btnBuscarContratoActionPerformed
+
+    private void txtAsientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAsientosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAsientosActionPerformed
+
+    private void txtConductor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConductor1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConductor1ActionPerformed
+
+    private void jTableContratoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableContratoMouseClicked
+        DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+        comboBoxPlacas.setSelectedItem((String) modelo.getValueAt(jTableContrato.getSelectedRow(), 1));
+        cbbCliente.setSelectedItem((String) modelo.getValueAt(jTableContrato.getSelectedRow(), 2));
+        txtDestino.setText((String) modelo.getValueAt(jTableContrato.getSelectedRow(), 3));
+        Date fecha = (Date) modelo.getValueAt(jTableContrato.getSelectedRow(), 4);
+        FeachaContrato.setDate(fecha);
+        txtConductor1.setText((String) modelo.getValueAt(jTableContrato.getSelectedRow(), 5));
+        txtDias.setText(String.valueOf((int) modelo.getValueAt(jTableContrato.getSelectedRow(), 6)));
+        txtAsientos.setText(String.valueOf((int) modelo.getValueAt(jTableContrato.getSelectedRow(), 7)));
+    }//GEN-LAST:event_jTableContratoMouseClicked
+
+    private void btnPDFContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFContratoActionPerformed
+
+        String[] opciones = {"Crear PDF", "Abrir PDF"};
+        int opcionSeleccionada = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+
+        if (opcionSeleccionada == 0) {
+
+            String fileName = "reporte Contratos.pdf";
+            String titulo = "Reporte de Contratos de Geaturim";
+            Pdfs.generarPDF(jTableContrato, fileName, titulo);
+        } else if (opcionSeleccionada == 1) {
+            try {
+                String fileName = "reporte Contratos.pdf";
+                File file = new File(fileName);
+
+                if (!Desktop.isDesktopSupported()) {
+                    JOptionPane.showMessageDialog(null, "El sistema no soporta la apertura automática de archivos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                Desktop desktop = Desktop.getDesktop();
+
+                if (file.exists() && file.isFile()) {
+                    desktop.open(file);
+                } else {
+                    JOptionPane.showMessageDialog(null, "El archivo PDF no existe o no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al intentar abrir el archivo PDF: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnPDFContratoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3194,30 +3416,30 @@ public void setDatos(Usuario usuario) {
         modelo.addRow(fila);
     }
     
- /////////////////////////////////////////////////////////////////////////////////////// TABLA de CONTRATOS //////////////////////////////////////////////////////////////////////////////////////
-
-private ArrayList<Contrato> listaContratos = new ArrayList<>();
-private DefaultTableModel modeloContratos = new DefaultTableModel();
+/////////////////////////////////////////////////////////////////////////////////////// TABLA de CONTRATOS //////////////////////////////////////////////////////////////////////////////////////
+    
+    private ArrayList<Contrato> listaContratos = new ArrayList<>();
+    private DefaultTableModel modeloContrato = new DefaultTableModel();
+   
 
 public void setModeloContratos() {
     String[] cabecera = {"Nro", "Placa Vehiculo", "Cedula", "Destino", "Fecha", "Conductor", "Dias", "Nro°Asientos"};
-    modeloContratos.setColumnIdentifiers(cabecera);
-
+    modeloContrato.setColumnIdentifiers(cabecera);
     ContratoControlador contratoControlador = new ContratoControlador();
-    ArrayList<Object[]> datos = contratoControlador.datosContratosPorPlacaYCliente();
+        ArrayList<Object[]> datos = contratoControlador.datosContratosPorPlacaYCliente();
 
-    if (datos != null) {
-        for (Object[] fila : datos) {
-            modeloContratos.addRow(fila);
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloContrato.addRow(fila);
+            }
         }
+
+        jTableContrato.setModel(modeloContrato);
     }
 
-    jTableContrato.setModel(modeloContratos);
-}
-
 public void mostrarDatosContrato(Contrato contrato) {
-    DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
-    Object[] fila = new Object[8]; // Reducimos el tamaño del arreglo
+    DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel(); 
+    Object[] fila = new Object[8];
 
     fila[0] = modelo.getRowCount() + 1;
     fila[1] = contrato.getIdvehiculoc();
@@ -3228,44 +3450,81 @@ public void mostrarDatosContrato(Contrato contrato) {
     fila[6] = contrato.getDias();
     fila[7] = contrato.getAsientos();
     modelo.addRow(fila);
-    
 }
 
 
+
+
+
  /////////////////////////////////////////////////////////////////////////////TABLA DE ABONOS///////////////////////////////////////////////////////////////////////
-//    
-// public void mostrarDatosAbono(Abono abono) {
-//    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
-//    Object[] fila = new Object[8];  
-//
-//  //  Date fechaAbono = FeachaAbono.getDate();
-//    //abono.setFecha(fechaAbono);
-//
-//    fila[0] = modelo.getRowCount() + 1;
-//    fila[1] = abono.getFechaFormateada();
-//    fila[2] = abono.getValor();
-//    fila[3] = abono.getMonto();
-//    fila[4] = abono.getBanco();
-//    fila[5] = abono.getBancosComp();
-//    fila[6] = abono.isLiquidado(); 
-//    fila[7] = abono.isSinLiquidar();  
-//    modelo.addRow(fila);
-//    
-//}
-// //public void mostrarDatosAbono(Mantenimiento mantenimiento) {
-//    // DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
-//    //Object[] fila = new Object[4];  
-//    
-////   Date fechaAbono = FeachaAbono.getDate();
-//    // mantenimiento.setFecha(fechaAbono);
-//     //fila[0] = modelo.getRowCount() + 1;
-//     //fila[1] = mantenimiento.getFechaFormateada();
-//     //fila[2] = mantenimiento.getKilometraje();
-//     //fila[3] = mantenimiento.getCambiosDeAceite();
-//     //fila[4] = mantenimiento.getCambiosDeFiltro();
-//    //modelo.addRow(fila);
-//    
-// //}
+private ArrayList<Abono> listaAbonos = new ArrayList<>();
+private DefaultTableModel modeloAbonos = new DefaultTableModel();
+
+public void setModeloAbonos() {
+    String[] cabecera = {"Nro", "Destino", "Valor", "Fecha", "Bancos Comp", "Monto", "Estado", "Banco"};
+    modeloAbonos.setColumnIdentifiers(cabecera);
+
+    AbonoControlador abonoControlador = new AbonoControlador(); 
+    ArrayList<Object[]> abonos = abonoControlador.datosAbonos(); 
+
+    if (abonos != null) {
+        for (Object[] abono : abonos) {
+            modeloAbonos.addRow(abono);  
+        }        
+    }
+
+    jTableAbono.setModel(modeloAbonos);
+}
+public void mostrarDatosAbono(Abono abono) {
+    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
+    Object[] fila = new Object[8];
+
+    fila[0] = modelo.getRowCount() + 1;
+    fila[1] = abono.getDestino();
+    fila[2] = abono.getValor();
+    fila[3] = abono.getFecha();
+    fila[4] = abono.getBancosComp();
+    fila[5] = abono.getMonto();
+    fila[6] = abono.getEstado();
+    fila[7] = abono.getBanco();
+    modelo.addRow(fila);
+}
+
+
+
+ ////////////////////////////////////////////////////////////////////TABLA DE HISTORIAL MANTENIMIENTO///////////////////////////////////////////////////////////////
+
+ 
+     private ArrayList<HistorialM> listaHistorialM = new ArrayList<>();
+    private DefaultTableModel modeloHistorialM = new DefaultTableModel();
+
+    public void setModeloHistorialMantenimientos() {
+        String[] cabecera = {"Nro", " Usuario" , " Accion",  "nro. Placa", "Fecha y Hora"};
+        modeloHistorialM.setColumnIdentifiers(cabecera);
+
+        HistorialControlador historialControlador = new HistorialControlador();
+        ArrayList<Object[]> datos = historialControlador.listarHistorialMantenimiento();
+
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloHistorialM.addRow(fila);
+            }
+        }
+
+        jTableHistorialM.setModel(modeloHistorialM);
+    }
+
+    public void mostrarDatosHistorialMantenimiento(HistorialM historialM) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableHistorialM.getModel();
+        Object[] fila = new Object[5];
+
+        fila[0] = modelo.getRowCount() + 1;
+        fila[1] = historialM.getIdUsuario();
+        fila[2] = historialM.getAccion();
+        fila[3] = historialM.getIdMantenimiento();
+        fila[4] = historialM.getFechaHora();
+        modelo.addRow(fila);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser FeachaAbono;
@@ -3275,9 +3534,12 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JLabel PDF;
     private javax.swing.JLabel PDF1;
     private javax.swing.JLabel PDF2;
+    private javax.swing.JLabel PDF3;
     private javax.swing.JButton btnAbono;
     private javax.swing.JButton btnAbonoH;
+    private javax.swing.JButton btnBuscarAbono;
     private javax.swing.JButton btnBuscarClientes;
+    private javax.swing.JButton btnBuscarContrato;
     private javax.swing.JButton btnBuscarM;
     private javax.swing.JButton btnBuscarU;
     private javax.swing.JButton btnBuscarVehiculo;
@@ -3292,12 +3554,10 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JButton btnEditarVehiculo;
     private javax.swing.JButton btnEliminarAbono;
     private javax.swing.JButton btnEliminarCli;
+    private javax.swing.JButton btnEliminarContrato;
     private javax.swing.JButton btnEliminarM;
     private javax.swing.JButton btnEliminarU;
-    private javax.swing.JButton btnEliminarU3;
     private javax.swing.JButton btnEliminarVehiculo;
-    private javax.swing.JButton btnGuardarAbono;
-    private javax.swing.JButton btnGuardarU3;
     private javax.swing.JButton btnHistorial;
     private javax.swing.JButton btnMantenimientos;
     private javax.swing.JButton btnMantenimientosH;
@@ -3308,16 +3568,15 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JButton btnNuevoU;
     private javax.swing.JButton btnNuevoVehiculo;
     private javax.swing.JButton btnPDFClientes;
+    private javax.swing.JButton btnPDFContrato;
     private javax.swing.JButton btnPDFMantenimiento;
     private javax.swing.JButton btnPDFVehiculo;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JButton btnVehiculos;
-    private javax.swing.JButton btnVehiculosH;
     private javax.swing.JComboBox<String> cbbCliente;
     private javax.swing.JComboBox<String> cbbPlacas;
     private javax.swing.JComboBox<String> comboBoxPlacas;
     private javax.swing.JCheckBox jCheckBoxContra;
-    private javax.swing.JCheckBox jCheckBoxLiquidado;
     private javax.swing.JCheckBox jCheckBoxSinLiquidar;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jInternalFrame1;
@@ -3328,7 +3587,9 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JInternalFrame jInternalFrame6;
     private javax.swing.JInternalFrame jInternalFrame7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -3336,6 +3597,7 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -3408,24 +3670,19 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
-    private javax.swing.JPanel jPanel35;
-    private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel39;
-    private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
-    private javax.swing.JPanel jPanel43;
     private javax.swing.JPanel jPanel44;
     private javax.swing.JPanel jPanel45;
-    private javax.swing.JPanel jPanel46;
-    private javax.swing.JPanel jPanel47;
     private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel49;
     private javax.swing.JPanel jPanel50;
@@ -3435,9 +3692,11 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JPanel jPanel54;
     private javax.swing.JPanel jPanel55;
     private javax.swing.JPanel jPanel56;
+    private javax.swing.JPanel jPanel58;
     private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel60;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -3450,9 +3709,15 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JTable jTableAbono;
     private javax.swing.JTable jTableClientes;
     private javax.swing.JTable jTableContrato;
+    private javax.swing.JTable jTableHistorialM;
     private javax.swing.JTable jTableMantenimiento;
     private javax.swing.JTable jTableUsuario;
     private javax.swing.JTable jTableVehiculo;
+    private javax.swing.JCheckBox jcheckboxLiquidado;
+    private javax.swing.JLabel lblCedula;
+    private javax.swing.JLabel lblCedulas;
+    private javax.swing.JLabel lblConductor;
+    private javax.swing.JLabel lblDestino;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel tipo;
     private javax.swing.JTextField txtApellidoC;
@@ -3462,7 +3727,7 @@ public void mostrarDatosContrato(Contrato contrato) {
     private javax.swing.JTextArea txtCambioFiltro;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtComprobante;
-    private javax.swing.JTextField txtConductor;
+    private javax.swing.JTextField txtConductor1;
     private javax.swing.JTextArea txtDestino;
     private javax.swing.JTextField txtDias;
     private javax.swing.JTextField txtDireccion;
@@ -3504,7 +3769,7 @@ public void mostrarDatosContrato(Contrato contrato) {
  ///////////////////////////////////////////////////////////////TABLA CLIENTE//////////////////////////////////////////////////////////////////////////////////
 
     public void limpiarTablaClientes() {
-        int a = modeloUsuario.getRowCount() - 1;  
+        int a = modeloClientes.getRowCount() - 1;  
         for (int i = a; i >= 0; i--) {
             modeloClientes.removeRow(i);
         }
@@ -3601,14 +3866,14 @@ private void limpiarCamposMantenimiento() {
     txtAreaAceite.setText("");
     txtCambioFiltro.setText("");
     FeachaMantenimiento.setDate(null);
-    txtKilometrajeM.setText(""); // Asegúrate de tener un campo de texto para el kilometraje
+    txtKilometrajeM.setText(""); 
 }
 ///////////////////////////////////////////////////////////////TABLA CONTRATOS////////////////////////////////////////////////////////////////////////////////// 
      
      public void limpiarTablaContrato() {
-        int a = modeloContratos.getRowCount() - 1;  
+        int a = modeloContrato.getRowCount() - 1;  
        for (int i = a; i >= 0; i--) {
-            modeloContratos.removeRow(i);
+            modeloContrato.removeRow(i);
         }
     }
      
@@ -3630,32 +3895,44 @@ private void limpiarCamposMantenimiento() {
         ArrayList<Object[]> datos = contratoControlador.datosContratosPorPlacaYCliente();
         if (datos != null) {
             for (Object[] fila : datos) {
-                modeloContratos.addRow(fila);
+                modeloContrato.addRow(fila);
             }
         }
     }
      
+     
  ///////////////////////////////////////////////////////////////TABLA  ABONOS////////////////////////////////////////////////////////////////////////////////// 
  
-     
-//     public void limpiarTablaAbonos() {
-//        int a = modeloAbonos.getRowCount() - 1;  
-//        for (int i = a; i >= 0; i--) {
-//            modeloAbonos.removeRow(i);
-//        }
-//    }
-//
-//     public void modeloAbonos() {
-//        AbonosControlador abonosControlador = new AbonosControlador();
-//        ArrayList<Object[]> datos = abonosControlador.datosAbonos();
-//        if (datos != null) {
-//            for (Object[] fila : datos) {
-//                modeloAbonos.addRow(fila);
-//            }
-//        }
-//    }
+    public void limpiarTablaAbonos() {
+    int filas = modeloAbonos.getRowCount();
+    for (int i = filas - 1; i >= 0; i--) {
+        modeloAbonos.removeRow(i);
+    }
+}
 
+public void actualizarTablaAbonos() {
+    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
+    modelo.setRowCount(0); 
+    AbonoControlador controlador = new AbonoControlador();
+    ArrayList<Object[]> datos = controlador.datosAbonos();
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modelo.addRow(fila); 
+        }
+    }
+}
+
+public void modeloAbonos() {
+    AbonoControlador abonoControlador = new AbonoControlador();
+    ArrayList<Object[]> datos = abonoControlador.datosAbonos();
+    if (datos != null) {
+        for (Object[] fila : datos) {
+            modeloAbonos.addRow(fila); 
+        }
+    }
+}
     
+
     
 
 }
