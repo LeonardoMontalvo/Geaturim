@@ -21,18 +21,12 @@ import java.awt.Desktop;
 import java.io.File;
 import java.math.BigDecimal;
 
-
-
-
-
-
 /**
  *
  * @author Leo
  */
-
 public class Menu extends javax.swing.JFrame {
-    
+
     public Menu() {
         initComponents();
         setModelo();
@@ -45,61 +39,54 @@ public class Menu extends javax.swing.JFrame {
         mostrarListaPlacasVehiculo();
         mostrarListaClientesCedula();
         setModeloHistorialMantenimientos();
-        
-    }    
+
+    }
     private static final int MAX_LENGTH = 50;
-        private static final int MAX_PLACA_LENGTH = 12;
+    private static final int MAX_PLACA_LENGTH = 12;
 
+    public void mostrarListaPlacas() {
 
-    
-        public void mostrarListaPlacas() {
+        VehiculoControlador controlador = new VehiculoControlador();
+        java.util.List<String> listaPlacas = controlador.obtenerListaPlacasVehiculos();
+        comboBoxPlacas.removeAllItems();
+        for (String placa : listaPlacas) {
+            comboBoxPlacas.addItem(placa);
 
-            VehiculoControlador controlador = new VehiculoControlador();
-            java.util.List<String> listaPlacas = controlador.obtenerListaPlacasVehiculos();
-            comboBoxPlacas.removeAllItems();
-            for (String placa : listaPlacas) {
-                comboBoxPlacas.addItem(placa);
+            comboBoxPlacas.setEditable(true);
 
-                comboBoxPlacas.setEditable(true);
-
-        JComboBox<String> combo = (JComboBox<String>) comboBoxPlacas;
-        JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
-            }
+            JComboBox<String> combo = (JComboBox<String>) comboBoxPlacas;
+            JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
         }
+    }
 
+    public void mostrarListaPlacasVehiculo() {
+        VehiculoControlador controlador = new VehiculoControlador();
+        java.util.List<String> listaPlacas = controlador.obtenerListaPlacasVehiculos();
+        cbbPlacas.removeAllItems();
+        for (String placa : listaPlacas) {
+            cbbPlacas.addItem(placa);
 
-        public void mostrarListaPlacasVehiculo() {
-            VehiculoControlador controlador = new VehiculoControlador();
-            java.util.List<String> listaPlacas = controlador.obtenerListaPlacasVehiculos();
-            cbbPlacas.removeAllItems();
-            for (String placa : listaPlacas) {
-                cbbPlacas.addItem(placa);
+            cbbPlacas.setEditable(true);
 
-                cbbPlacas.setEditable(true);
-
-        JComboBox<String> combo = (JComboBox<String>) cbbPlacas;
-        JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
-            }
+            JComboBox<String> combo = (JComboBox<String>) cbbPlacas;
+            JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
         }
-    
-    
+    }
+
     public void mostrarListaClientesCedula() {
         ContratoControlador controladorr = new ContratoControlador();
         java.util.List<String> listaClinetes = controladorr.obtenerListaClientesCedula();
         cbbCliente.removeAllItems();
         for (String listaClinete : listaClinetes) {
             cbbCliente.addItem(listaClinete);
-            
+
             cbbCliente.setEditable(true);
-    
-    JComboBox<String> combo = (JComboBox<String>) cbbCliente;
-    JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
+
+            JComboBox<String> combo = (JComboBox<String>) cbbCliente;
+            JTextField editor = (JTextField) combo.getEditor().getEditorComponent();
         }
     }
 
-    
-
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -418,6 +405,7 @@ public class Menu extends javax.swing.JFrame {
 
         jPanelContratos.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 230, 60));
 
+        btnBuscarContrato.setBackground(new java.awt.Color(204, 204, 204));
         btnBuscarContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
         btnBuscarContrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -426,6 +414,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanelContratos.add(btnBuscarContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
+        btnEditarContrato.setBackground(new java.awt.Color(204, 204, 204));
         btnEditarContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarContrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -434,6 +423,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanelContratos.add(btnEditarContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
+        btnEliminarContrato.setBackground(new java.awt.Color(204, 204, 204));
         btnEliminarContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarContrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -442,6 +432,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanelContratos.add(btnEliminarContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
+        btnNuevoContrato.setBackground(new java.awt.Color(204, 204, 204));
         btnNuevoContrato.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoContrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -607,8 +598,8 @@ public class Menu extends javax.swing.JFrame {
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
-            .addComponent(jPanelContratos, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
+            .addComponent(jPanelContratos, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("1", jInternalFrame1);
@@ -799,6 +790,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel15.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 226, 30));
 
+        btnBuscarClientes.setBackground(new java.awt.Color(204, 204, 204));
         btnBuscarClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
         btnBuscarClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -807,6 +799,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel15.add(btnBuscarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 40, 35));
 
+        btnEditarCli.setBackground(new java.awt.Color(204, 204, 204));
         btnEditarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -815,6 +808,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel15.add(btnEditarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 40, 40));
 
+        btnEliminarCli.setBackground(new java.awt.Color(204, 204, 204));
         btnEliminarCli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -823,6 +817,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel15.add(btnEliminarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 40, 35));
 
+        btnNuevoCliente.setBackground(new java.awt.Color(204, 204, 204));
         btnNuevoCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -890,7 +885,7 @@ public class Menu extends javax.swing.JFrame {
         );
         jInternalFrame2Layout.setVerticalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
             .addComponent(jScrollPane3)
         );
 
@@ -1019,6 +1014,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(txtBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 226, 20));
 
+        btnBuscarAbono.setBackground(new java.awt.Color(204, 204, 204));
         btnBuscarAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
         btnBuscarAbono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1027,6 +1023,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(btnBuscarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
+        btnEditarAbono.setBackground(new java.awt.Color(204, 204, 204));
         btnEditarAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarAbono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1035,6 +1032,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(btnEditarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
+        btnEliminarAbono.setBackground(new java.awt.Color(204, 204, 204));
         btnEliminarAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarAbono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1043,6 +1041,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel19.add(btnEliminarAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
+        btnNuevoAbono.setBackground(new java.awt.Color(204, 204, 204));
         btnNuevoAbono.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoAbono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1212,7 +1211,7 @@ public class Menu extends javax.swing.JFrame {
         );
         jInternalFrame3Layout.setVerticalGroup(
             jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame3Layout.createSequentialGroup()
                 .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1270,7 +1269,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel43.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(0, 0, 255));
         jLabel43.setText("Cambios de filtro:");
-        jPanel14.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, -1));
+        jPanel14.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
 
         jPanel24.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -1313,6 +1312,7 @@ public class Menu extends javax.swing.JFrame {
         FeachaMantenimiento.setBackground(new java.awt.Color(204, 204, 204));
         jPanel14.add(FeachaMantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 30));
 
+        btnBuscarM.setBackground(new java.awt.Color(204, 204, 204));
         btnBuscarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
         btnBuscarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1321,6 +1321,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel14.add(btnBuscarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
+        btnEditarM.setBackground(new java.awt.Color(204, 204, 204));
         btnEditarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1329,6 +1330,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel14.add(btnEditarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
+        btnEliminarM.setBackground(new java.awt.Color(204, 204, 204));
         btnEliminarM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1337,6 +1339,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel14.add(btnEliminarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
+        btnNuevoM.setBackground(new java.awt.Color(204, 204, 204));
         btnNuevoM.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1357,23 +1360,21 @@ public class Menu extends javax.swing.JFrame {
         PDF.setText("PDF : ");
         jPanel14.add(PDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, 60, -1));
 
-        txtCambioFiltro.setBackground(new java.awt.Color(187, 187, 187));
         txtCambioFiltro.setColumns(20);
         txtCambioFiltro.setRows(5);
         txtCambioFiltro.setBorder(null);
         jScrollPane6.setViewportView(txtCambioFiltro);
 
-        jPanel14.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 432, 230, 70));
+        jPanel14.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 230, 110));
 
-        jScrollPane7.setBackground(new java.awt.Color(187, 187, 187));
+        jScrollPane7.setBackground(new java.awt.Color(70, 73, 75));
 
-        txtAreaAceite.setBackground(new java.awt.Color(187, 187, 187));
         txtAreaAceite.setColumns(20);
         txtAreaAceite.setRows(5);
         txtAreaAceite.setBorder(null);
         jScrollPane7.setViewportView(txtAreaAceite);
 
-        jPanel14.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, 70));
+        jPanel14.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, 100));
 
         comboBoxPlacas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1420,7 +1421,7 @@ public class Menu extends javax.swing.JFrame {
         );
         jInternalFrame5Layout.setVerticalGroup(
             jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
             .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -1513,6 +1514,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel13.add(jCheckBoxContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
+        btnBuscarU.setBackground(new java.awt.Color(204, 204, 204));
         btnBuscarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
         btnBuscarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1521,6 +1523,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel13.add(btnBuscarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
+        btnEditarU.setBackground(new java.awt.Color(204, 204, 204));
         btnEditarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1529,6 +1532,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel13.add(btnEditarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 40, 40));
 
+        btnEliminarU.setBackground(new java.awt.Color(204, 204, 204));
         btnEliminarU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1549,6 +1553,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel22.setText("Eliminar");
         jPanel13.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 60, -1));
 
+        btnNuevoU.setBackground(new java.awt.Color(204, 204, 204));
         btnNuevoU.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1614,7 +1619,7 @@ public class Menu extends javax.swing.JFrame {
         );
         jInternalFrame4Layout.setVerticalGroup(
             jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
@@ -1765,6 +1770,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel20.add(txtNumAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 226, 30));
 
+        btnBuscarVehiculo.setBackground(new java.awt.Color(204, 204, 204));
         btnBuscarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Lupa.png")); // NOI18N
         btnBuscarVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1773,6 +1779,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel20.add(btnBuscarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 40, 35));
 
+        btnEditarVehiculo.setBackground(new java.awt.Color(204, 204, 204));
         btnEditarVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\Modificar.png")); // NOI18N
         btnEditarVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1789,6 +1796,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel20.add(btnEliminarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 40, 35));
 
+        btnNuevoVehiculo.setBackground(new java.awt.Color(204, 204, 204));
         btnNuevoVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leo\\Documents\\NetBeansProjects\\Geaturim\\src\\main\\resource\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1886,7 +1894,7 @@ public class Menu extends javax.swing.JFrame {
             jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame6Layout.createSequentialGroup()
                 .addGroup(jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
                     .addComponent(jScrollPane9))
                 .addContainerGap())
         );
@@ -1977,7 +1985,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
                 .addComponent(btnContratoH)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
                 .addComponent(btnAbonoH)
                 .addGap(123, 123, 123)
                 .addComponent(btnMantenimientosH)
@@ -2015,7 +2023,7 @@ public class Menu extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("7", jInternalFrame7);
 
-        jDesktopPane1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 670));
+        jDesktopPane1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1110, 700));
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 1110, -1));
 
@@ -2171,23 +2179,23 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel38.setFont(new java.awt.Font("Yu Gothic Light", 3, 36)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel38.setText("Sistema de parque Automotor ");
+        jLabel38.setText("GEATURIM");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(325, Short.MAX_VALUE)
-                .addComponent(jLabel38)
-                .addGap(289, 289, 289))
+                .addContainerGap(488, Short.MAX_VALUE)
+                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(404, 404, 404))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addComponent(jLabel38)
-                .addGap(20, 20, 20))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 1110, 100));
@@ -2206,68 +2214,69 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
         limpiarTablaClientes();
-        jTabbedPane1.setSelectedIndex(1);       
-       modeloClientes();
+        jTabbedPane1.setSelectedIndex(1);
+        modeloClientes();
 
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbonoActionPerformed
-     String[] opciones = {"Todos los abonos", "Abonos por cliente"};
-    int opcionSeleccionada = JOptionPane.showOptionDialog(this, "Seleccione una opción", "Selección de Abonos", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+        String[] opciones = {"Todos los abonos", "Abonos por cliente"};
+        int opcionSeleccionada = JOptionPane.showOptionDialog(this, "Seleccione una opción", "Selección de Abonos", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
 
-    if (opcionSeleccionada == 0) {
-        jTabbedPane1.setSelectedIndex(2);
-        
-        AbonoControlador controladorAbono = new AbonoControlador();
-        ArrayList<Object[]> abonos = controladorAbono.datosAbonos();
-        mostrarAbonosEnTabla(abonos);
-    } else if (opcionSeleccionada == 1) {
-        int filaSeleccionada = jTableContrato.getSelectedRow();
-        if (filaSeleccionada != -1) {
-            String cedula = (String) jTableContrato.getValueAt(filaSeleccionada, 2);
-            String conductor = (String) jTableContrato.getValueAt(filaSeleccionada, 5); 
-            String destino = (String) jTableContrato.getValueAt(filaSeleccionada, 3);
-            
-            if (cedula.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Por favor, seleccione un cliente para ver sus abonos.", "Error", JOptionPane.ERROR_MESSAGE);
+        if (opcionSeleccionada == 0) {
+            jTabbedPane1.setSelectedIndex(2);
+
+            AbonoControlador controladorAbono = new AbonoControlador();
+            ArrayList<Object[]> abonos = controladorAbono.datosAbonos();
+            mostrarAbonosEnTabla(abonos);
+        } else if (opcionSeleccionada == 1) {
+            int filaSeleccionada = jTableContrato.getSelectedRow();
+            if (filaSeleccionada != -1) {
+                String cedula = (String) jTableContrato.getValueAt(filaSeleccionada, 2);
+                String conductor = (String) jTableContrato.getValueAt(filaSeleccionada, 5);
+                String destino = (String) jTableContrato.getValueAt(filaSeleccionada, 3);
+
+                if (cedula.isEmpty()) {
+                    JOptionPane.showMessageDialog(this, "Por favor, seleccione un cliente para ver sus abonos.", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    lblConductor.setText(conductor);
+                    lblCedulas.setText(cedula);
+                    lblDestino.setText(destino);
+
+                    jTabbedPane1.setSelectedIndex(2);
+                    AbonoControlador controladorAbono = new AbonoControlador();
+                    ArrayList<Object[]> abonosCliente = controladorAbono.obtenerAbonosPorCedula(cedula);
+                    mostrarAbonosClienteEnTabla(abonosCliente);
+                }
             } else {
-                lblConductor.setText(conductor);
-                lblCedulas.setText(cedula);
-                lblDestino.setText(destino);
-                
-                jTabbedPane1.setSelectedIndex(2);
-                AbonoControlador controladorAbono = new AbonoControlador();
-                ArrayList<Object[]> abonosCliente = controladorAbono.obtenerAbonosPorCedula(cedula);
-                mostrarAbonosClienteEnTabla(abonosCliente);
+                JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAbonoActionPerformed
+    private void mostrarAbonosEnTabla(ArrayList<Object[]> abonos) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
+        modelo.setRowCount(0);
+
+        for (Object[] abono : abonos) {
+            modelo.addRow(abono);
         }
     }
-    }//GEN-LAST:event_btnAbonoActionPerformed
-private void mostrarAbonosEnTabla(ArrayList<Object[]> abonos) {
-    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
-    modelo.setRowCount(0);
 
-    for (Object[] abono : abonos) {
-        modelo.addRow(abono);
+    private void mostrarAbonosClienteEnTabla(ArrayList<Object[]> abonos) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
+        modelo.setRowCount(0);
+
+        for (Object[] abono : abonos) {
+            modelo.addRow(abono);
+        }
     }
-}
 
-private void mostrarAbonosClienteEnTabla(ArrayList<Object[]> abonos) {
-    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
-    modelo.setRowCount(0);
-
-    for (Object[] abono : abonos) {
-        modelo.addRow(abono);
-    }
-}
     private void btnMantenimientosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientosMouseClicked
 
     }//GEN-LAST:event_btnMantenimientosMouseClicked
 
     private void btnMantenimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantenimientosActionPerformed
-       
+
         limpiarTablaMantenimiento();
         modeloMantenimiento();
         jTabbedPane1.setSelectedIndex(3);
@@ -2277,87 +2286,87 @@ private void mostrarAbonosClienteEnTabla(ArrayList<Object[]> abonos) {
     }//GEN-LAST:event_btnMantenimientosActionPerformed
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
-       
+
         limpiarTablaUsuario();
         modeloUsuario();
         jTabbedPane1.setSelectedIndex(4);
         limpiarTablaUsuario();
         modeloUsuario();
-        
+
     }//GEN-LAST:event_btnUsuariosActionPerformed
 
     private void btnEliminarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUActionPerformed
-       int filaSeleccionada = jTableUsuario.getSelectedRow();
+        int filaSeleccionada = jTableUsuario.getSelectedRow();
 
-    if (filaSeleccionada >= 0) {
-        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este usuario?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+        if (filaSeleccionada >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este usuario?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
 
-        if (confirmacion == JOptionPane.YES_OPTION) {
-            DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
-            String nombre = modelo.getValueAt(filaSeleccionada, 1).toString();
-            String contrasenia = modelo.getValueAt(filaSeleccionada, 2).toString();
-            
-            UsuarioControlador usuarioControlador = new UsuarioControlador();
-            usuarioControlador.eliminarUsuario(nombre, contrasenia);
-            
-            modelo.removeRow(filaSeleccionada);
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+                String nombre = modelo.getValueAt(filaSeleccionada, 1).toString();
+                String contrasenia = modelo.getValueAt(filaSeleccionada, 2).toString();
+
+                UsuarioControlador usuarioControlador = new UsuarioControlador();
+                usuarioControlador.eliminarUsuario(nombre, contrasenia);
+
+                modelo.removeRow(filaSeleccionada);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
-    }
 
     }//GEN-LAST:event_btnEliminarUActionPerformed
 
     private void btnEditarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUActionPerformed
         int filaSeleccionada = jTableUsuario.getSelectedRow();
 
-    if (filaSeleccionada >= 0) {
-        DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
-        String nombreAntiguo = modelo.getValueAt(filaSeleccionada, 1).toString();
-        String contraseniaAntigua = modelo.getValueAt(filaSeleccionada, 2).toString();
+        if (filaSeleccionada >= 0) {
+            DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+            String nombreAntiguo = modelo.getValueAt(filaSeleccionada, 1).toString();
+            String contraseniaAntigua = modelo.getValueAt(filaSeleccionada, 2).toString();
 
-        String nuevoNombre = txtNombreU.getText();
-        String nuevaContrasenia = txtcontra.getText();
+            String nuevoNombre = txtNombreU.getText();
+            String nuevaContrasenia = txtcontra.getText();
 
-        if (nuevoNombre.isEmpty() || nuevaContrasenia.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Ingrese un nuevo nombre y contraseña");
+            if (nuevoNombre.isEmpty() || nuevaContrasenia.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Ingrese un nuevo nombre y contraseña");
+            } else {
+                UsuarioControlador usuarioControlador = new UsuarioControlador();
+                usuarioControlador.editarUsuario(nombreAntiguo, contraseniaAntigua, nuevoNombre, nuevaContrasenia);
+
+                modelo.setValueAt(nuevoNombre, filaSeleccionada, 1);
+                modelo.setValueAt(nuevaContrasenia, filaSeleccionada, 2);
+            }
         } else {
-            UsuarioControlador usuarioControlador = new UsuarioControlador();
-            usuarioControlador.editarUsuario(nombreAntiguo, contraseniaAntigua, nuevoNombre, nuevaContrasenia);
-
-            modelo.setValueAt(nuevoNombre, filaSeleccionada, 1);
-            modelo.setValueAt(nuevaContrasenia, filaSeleccionada, 2);
+            JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
-    }
     }//GEN-LAST:event_btnEditarUActionPerformed
 
     private void btnBuscarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUActionPerformed
-  String nombreBuscado = txtNombreU.getText();
+        String nombreBuscado = txtNombreU.getText();
 
-    if (!nombreBuscado.isEmpty()) {
-        UsuarioControlador usuarioControlador = new UsuarioControlador();
-        ArrayList<Object[]> resultados = usuarioControlador.buscarUsuarios(nombreBuscado);
+        if (!nombreBuscado.isEmpty()) {
+            UsuarioControlador usuarioControlador = new UsuarioControlador();
+            ArrayList<Object[]> resultados = usuarioControlador.buscarUsuarios(nombreBuscado);
 
-        DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
-        modelo.setRowCount(0);
+            DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+            modelo.setRowCount(0);
 
-        if (resultados != null) {
-            for (Object[] fila : resultados) {
-                modelo.addRow(fila);
+            if (resultados != null) {
+                for (Object[] fila : resultados) {
+                    modelo.addRow(fila);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al buscar usuarios por nombre");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Error al buscar usuarios por nombre");
+            JOptionPane.showMessageDialog(null, "Ingrese un nombre para buscar");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Ingrese un nombre para buscar");
-    }
     }//GEN-LAST:event_btnBuscarUActionPerformed
 
     private void jCheckBoxContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxContraActionPerformed
 
-        if ( jCheckBoxContra.isSelected()) {
+        if (jCheckBoxContra.isSelected()) {
 
             txtcontra.setEchoChar((char) 0);
         } else {
@@ -2387,125 +2396,125 @@ private void mostrarAbonosClienteEnTabla(ArrayList<Object[]> abonos) {
     }//GEN-LAST:event_txtCedulaActionPerformed
 
     private void btnBuscarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClientesActionPerformed
-      String CedulaBuscada = txtCedula.getText();
+        String CedulaBuscada = txtCedula.getText();
 
-    if (!CedulaBuscada.isEmpty()) {
-        ClienteControlador clienteControlador = new ClienteControlador();
-        ArrayList<Object[]> resultados = clienteControlador.buscarClientePorCedula(CedulaBuscada);
+        if (!CedulaBuscada.isEmpty()) {
+            ClienteControlador clienteControlador = new ClienteControlador();
+            ArrayList<Object[]> resultados = clienteControlador.buscarClientePorCedula(CedulaBuscada);
 
-        DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
-        modelo.setRowCount(0);
+            DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
+            modelo.setRowCount(0);
 
-        if (resultados != null) {
-            for (Object[] fila : resultados) {
-                modelo.addRow(fila);
+            if (resultados != null) {
+                for (Object[] fila : resultados) {
+                    modelo.addRow(fila);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al buscar el Cliente por su Cedula");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Error al buscar el Cliente por su Cedula");
+            JOptionPane.showMessageDialog(null, "Ingrese la Cedula para buscar");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Ingrese la Cedula para buscar");
-    }  
-    
+
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
 
     private void btnEditarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCliActionPerformed
-  int filaSeleccionada = jTableClientes.getSelectedRow();
+        int filaSeleccionada = jTableClientes.getSelectedRow();
 
-    if (filaSeleccionada >= 0) {
-        DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
-        String cedulaAntigua = modelo.getValueAt(filaSeleccionada, 4).toString();
-        String nombreAntiguo = modelo.getValueAt(filaSeleccionada, 1).toString();
-        String apellidoAntiguo = modelo.getValueAt(filaSeleccionada, 2).toString();
-        String telefonoAntiguo = modelo.getValueAt(filaSeleccionada, 3).toString();
-        String direccionAntigua = modelo.getValueAt(filaSeleccionada, 5).toString();
+        if (filaSeleccionada >= 0) {
+            DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
+            String cedulaAntigua = modelo.getValueAt(filaSeleccionada, 4).toString();
+            String nombreAntiguo = modelo.getValueAt(filaSeleccionada, 1).toString();
+            String apellidoAntiguo = modelo.getValueAt(filaSeleccionada, 2).toString();
+            String telefonoAntiguo = modelo.getValueAt(filaSeleccionada, 3).toString();
+            String direccionAntigua = modelo.getValueAt(filaSeleccionada, 5).toString();
 
-        String nuevoNombre = txtNombreC.getText(); 
-        String nuevoApellido = txtApellidoC.getText(); 
-        String nuevoTelefono = txtTelefono.getText(); 
-        String nuevaCedula = txtCedula.getText(); 
-        String nuevaDireccion = txtDireccion.getText();
+            String nuevoNombre = txtNombreC.getText();
+            String nuevoApellido = txtApellidoC.getText();
+            String nuevoTelefono = txtTelefono.getText();
+            String nuevaCedula = txtCedula.getText();
+            String nuevaDireccion = txtDireccion.getText();
 
-        if (nuevoNombre.isEmpty() || nuevoApellido.isEmpty() || nuevoTelefono.isEmpty() || nuevaCedula.isEmpty() || nuevaDireccion.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Ingrese nuevos valores para todos los campos");
+            if (nuevoNombre.isEmpty() || nuevoApellido.isEmpty() || nuevoTelefono.isEmpty() || nuevaCedula.isEmpty() || nuevaDireccion.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Ingrese nuevos valores para todos los campos");
+            } else {
+                ClienteControlador clienteControlador = new ClienteControlador();
+                clienteControlador.editarCliente(cedulaAntigua, nuevoNombre, nuevoApellido, nuevoTelefono, nuevaCedula, nuevaDireccion);
+
+                // Actualizar la tabla de clientes
+                modelo.setValueAt(nuevoNombre, filaSeleccionada, 1);
+                modelo.setValueAt(nuevoApellido, filaSeleccionada, 2);
+                modelo.setValueAt(nuevoTelefono, filaSeleccionada, 3);
+                modelo.setValueAt(nuevaCedula, filaSeleccionada, 4);
+                modelo.setValueAt(nuevaDireccion, filaSeleccionada, 5);
+
+                // Actualizar el JComboBox de clientes
+                mostrarListaClientesCedula();
+            }
         } else {
-            ClienteControlador clienteControlador = new ClienteControlador();
-            clienteControlador.editarCliente(cedulaAntigua, nuevoNombre, nuevoApellido, nuevoTelefono, nuevaCedula, nuevaDireccion);
-
-            // Actualizar la tabla de clientes
-            modelo.setValueAt(nuevoNombre, filaSeleccionada, 1);
-            modelo.setValueAt(nuevoApellido, filaSeleccionada, 2);
-            modelo.setValueAt(nuevoTelefono, filaSeleccionada, 3);
-            modelo.setValueAt(nuevaCedula, filaSeleccionada, 4);
-            modelo.setValueAt(nuevaDireccion, filaSeleccionada, 5);
-
-            // Actualizar el JComboBox de clientes
-            mostrarListaClientesCedula();
+            JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
-    }
     }//GEN-LAST:event_btnEditarCliActionPerformed
 
     private void btnEliminarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCliActionPerformed
-                                   
-  int filaSeleccionada = jTableClientes.getSelectedRow();
 
-    if (filaSeleccionada >= 0) {
-        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este cliente?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+        int filaSeleccionada = jTableClientes.getSelectedRow();
 
-        if (confirmacion == JOptionPane.YES_OPTION) {
-            DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
-            String nombre = modelo.getValueAt(filaSeleccionada, 1).toString();
-            String apellido = modelo.getValueAt(filaSeleccionada, 2).toString();
-            String telefono = modelo.getValueAt(filaSeleccionada, 3).toString();
-            String cedula = modelo.getValueAt(filaSeleccionada, 4).toString();
-            String direccion = modelo.getValueAt(filaSeleccionada, 5).toString();
-            
-            ClienteControlador clienteControlador = new ClienteControlador();
-            clienteControlador.eliminarCliente(nombre, apellido, telefono, cedula, direccion);
-            
-            modelo.removeRow(filaSeleccionada);
+        if (filaSeleccionada >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este cliente?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
 
-            // Actualizar el JComboBox de clientes
-            mostrarListaClientesCedula();
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
+                String nombre = modelo.getValueAt(filaSeleccionada, 1).toString();
+                String apellido = modelo.getValueAt(filaSeleccionada, 2).toString();
+                String telefono = modelo.getValueAt(filaSeleccionada, 3).toString();
+                String cedula = modelo.getValueAt(filaSeleccionada, 4).toString();
+                String direccion = modelo.getValueAt(filaSeleccionada, 5).toString();
+
+                ClienteControlador clienteControlador = new ClienteControlador();
+                clienteControlador.eliminarCliente(nombre, apellido, telefono, cedula, direccion);
+
+                modelo.removeRow(filaSeleccionada);
+
+                // Actualizar el JComboBox de clientes
+                mostrarListaClientesCedula();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
-    }
     }//GEN-LAST:event_btnEliminarCliActionPerformed
 
     private void btnNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoClienteActionPerformed
-       
-    String nombre = txtNombreC.getText();
-    String apellido = txtApellidoC.getText();
-    String telefono = txtTelefono.getText();
-    String cedula = txtCedula.getText();
-    String direccion = txtDireccion.getText();
 
-    if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || cedula.isEmpty() || direccion.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
-    } else {
-        if (nombre.length() > MAX_LENGTH || apellido.length() > MAX_LENGTH || telefono.length() > MAX_LENGTH || cedula.length() > MAX_LENGTH || direccion.length() > MAX_LENGTH) {
-            JOptionPane.showMessageDialog(null, "Alguno de los campos es demasiado largo");
+        String nombre = txtNombreC.getText();
+        String apellido = txtApellidoC.getText();
+        String telefono = txtTelefono.getText();
+        String cedula = txtCedula.getText();
+        String direccion = txtDireccion.getText();
+
+        if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || cedula.isEmpty() || direccion.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
         } else {
-            if (nombre.matches("^\\s*$") || apellido.matches("^\\s*$") || telefono.matches("^\\s*$") || cedula.matches("^\\s*$") || direccion.matches("^\\s*$")) {
-                JOptionPane.showMessageDialog(null, "Alguno de los campos es inválido");
+            if (nombre.length() > MAX_LENGTH || apellido.length() > MAX_LENGTH || telefono.length() > MAX_LENGTH || cedula.length() > MAX_LENGTH || direccion.length() > MAX_LENGTH) {
+                JOptionPane.showMessageDialog(null, "Alguno de los campos es demasiado largo");
             } else {
-                Cliente nuevoCliente = new Cliente(nombre, apellido, telefono, cedula, direccion);
-                ClienteControlador clienteControlador = new ClienteControlador();
-                    
-                clienteControlador.insertarClientes(nuevoCliente);
-                listaClientes.add(nuevoCliente);
-                mostrarDatosClientes(nuevoCliente);
-                mostrarListaClientesCedula();
+                if (nombre.matches("^\\s*$") || apellido.matches("^\\s*$") || telefono.matches("^\\s*$") || cedula.matches("^\\s*$") || direccion.matches("^\\s*$")) {
+                    JOptionPane.showMessageDialog(null, "Alguno de los campos es inválido");
+                } else {
+                    Cliente nuevoCliente = new Cliente(nombre, apellido, telefono, cedula, direccion);
+                    ClienteControlador clienteControlador = new ClienteControlador();
+
+                    clienteControlador.insertarClientes(nuevoCliente);
+                    listaClientes.add(nuevoCliente);
+                    mostrarDatosClientes(nuevoCliente);
+                    mostrarListaClientesCedula();
+                }
             }
         }
-    }
     }//GEN-LAST:event_btnNuevoClienteActionPerformed
 
     private void btnVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehiculosActionPerformed
-        
+
         limpiarTablaVehiculo();
         modeloVehiculo();
         jTabbedPane1.setSelectedIndex(5);
@@ -2513,16 +2522,16 @@ private void mostrarAbonosClienteEnTabla(ArrayList<Object[]> abonos) {
         modeloVehiculo();
     }//GEN-LAST:event_btnVehiculosActionPerformed
 
-    
+
     private void jTableUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsuarioMouseClicked
-     DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
-     txtNombreU.setText((String )modelo.getValueAt(jTableUsuario.getSelectedRow(), 1));
-     txtcontra.setText((String )modelo.getValueAt(jTableUsuario.getSelectedRow(), 2));
+        DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+        txtNombreU.setText((String) modelo.getValueAt(jTableUsuario.getSelectedRow(), 1));
+        txtcontra.setText((String) modelo.getValueAt(jTableUsuario.getSelectedRow(), 2));
 
     }//GEN-LAST:event_jTableUsuarioMouseClicked
 
     private void jTableClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableClientesMouseClicked
-     DefaultTableModel modelo = (DefaultTableModel)  jTableClientes.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
         txtNombreC.setText((String) modelo.getValueAt(jTableClientes.getSelectedRow(), 1));
         txtApellidoC.setText((String) modelo.getValueAt(jTableClientes.getSelectedRow(), 2));
         txtTelefono.setText((String) modelo.getValueAt(jTableClientes.getSelectedRow(), 3));
@@ -2537,26 +2546,26 @@ private void mostrarAbonosClienteEnTabla(ArrayList<Object[]> abonos) {
     }//GEN-LAST:event_txtNumAsientosActionPerformed
 
     private void btnBuscarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarVehiculoActionPerformed
-   String PlacaBuscada = txtNumPlaca.getText();
+        String PlacaBuscada = txtNumPlaca.getText();
 
-    if (!PlacaBuscada.isEmpty()) {
-        VehiculoControlador vehiculoControlador = new VehiculoControlador();
-        ArrayList<Object[]> resultados = vehiculoControlador.buscarVehiculos(PlacaBuscada);
+        if (!PlacaBuscada.isEmpty()) {
+            VehiculoControlador vehiculoControlador = new VehiculoControlador();
+            ArrayList<Object[]> resultados = vehiculoControlador.buscarVehiculos(PlacaBuscada);
 
-        DefaultTableModel modelo = (DefaultTableModel) jTableVehiculo.getModel();
-        modelo.setRowCount(0);
+            DefaultTableModel modelo = (DefaultTableModel) jTableVehiculo.getModel();
+            modelo.setRowCount(0);
 
-        if (resultados != null) {
-            for (Object[] fila : resultados) {
-                modelo.addRow(fila);
+            if (resultados != null) {
+                for (Object[] fila : resultados) {
+                    modelo.addRow(fila);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al buscar el Vehiculo por su Placa");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Error al buscar el Vehiculo por su Placa");
+            JOptionPane.showMessageDialog(null, "Ingrese la placa  para buscar");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Ingrese la placa  para buscar");
-    }  
-    
+
     }//GEN-LAST:event_btnBuscarVehiculoActionPerformed
 
     private void btnEditarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarVehiculoActionPerformed
@@ -2611,8 +2620,8 @@ private void mostrarAbonosClienteEnTabla(ArrayList<Object[]> abonos) {
                 vehiculoControlador.eliminarVehiculo(numPlaca);
 
                 modelo.removeRow(filaSeleccionada);
-                 mostrarListaPlacasVehiculo();
-                 mostrarListaPlacas();
+                mostrarListaPlacasVehiculo();
+                mostrarListaPlacas();
 
             }
         } else {
@@ -2622,39 +2631,39 @@ private void mostrarAbonosClienteEnTabla(ArrayList<Object[]> abonos) {
     }//GEN-LAST:event_btnEliminarVehiculoActionPerformed
 
     private void btnNuevoVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoVehiculoActionPerformed
-          String numPlaca = txtNumPlaca.getText();
-    String nombrePropietario = txtNombreProp.getText();
-    String strNumAsientos = txtNumAsientos.getText();
-    String strKilometraje = txtKilometrajeTotal.getText();
-    Date fechaFabricacion = FeachaFabricacion.getDate();
+        String numPlaca = txtNumPlaca.getText();
+        String nombrePropietario = txtNombreProp.getText();
+        String strNumAsientos = txtNumAsientos.getText();
+        String strKilometraje = txtKilometrajeTotal.getText();
+        Date fechaFabricacion = FeachaFabricacion.getDate();
 
-    if (numPlaca.isEmpty() || nombrePropietario.isEmpty() || fechaFabricacion == null) {
-        JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-    int numAsientos, kilometraje;
-    try {
-        numAsientos = Integer.parseInt(strNumAsientos);
-        kilometraje = Integer.parseInt(strKilometraje);
-    } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "Los campos de número de asientos y kilometraje deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-    if (numAsientos <= 0 || kilometraje < 0) {
-        JOptionPane.showMessageDialog(this, "El número de asientos debe ser mayor que cero y el kilometraje debe ser un número positivo.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-    
-    Vehiculo vehiculo = new Vehiculo(numPlaca, nombrePropietario, numAsientos, kilometraje, fechaFabricacion);
-    VehiculoControlador controlador = new VehiculoControlador();
-    
-    controlador.agregarVehiculo(vehiculo);
-    limpiarCamposVehiculos();
-    actualizarTablaVehiculos();
-    mostrarListaPlacasVehiculo();
-    mostrarListaPlacas();
+        if (numPlaca.isEmpty() || nombrePropietario.isEmpty() || fechaFabricacion == null) {
+            JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        int numAsientos, kilometraje;
+        try {
+            numAsientos = Integer.parseInt(strNumAsientos);
+            kilometraje = Integer.parseInt(strKilometraje);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Los campos de número de asientos y kilometraje deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (numAsientos <= 0 || kilometraje < 0) {
+            JOptionPane.showMessageDialog(this, "El número de asientos debe ser mayor que cero y el kilometraje debe ser un número positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        Vehiculo vehiculo = new Vehiculo(numPlaca, nombrePropietario, numAsientos, kilometraje, fechaFabricacion);
+        VehiculoControlador controlador = new VehiculoControlador();
+
+        controlador.agregarVehiculo(vehiculo);
+        limpiarCamposVehiculos();
+        actualizarTablaVehiculos();
+        mostrarListaPlacasVehiculo();
+        mostrarListaPlacas();
     }//GEN-LAST:event_btnNuevoVehiculoActionPerformed
-        
+
     private void jTableVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableVehiculoMouseClicked
         DefaultTableModel modelo = (DefaultTableModel) jTableVehiculo.getModel();
         txtNumPlaca.setText((String) modelo.getValueAt(jTableVehiculo.getSelectedRow(), 1));
@@ -2683,84 +2692,126 @@ private void mostrarAbonosClienteEnTabla(ArrayList<Object[]> abonos) {
     }//GEN-LAST:event_jTableMantenimientoMouseClicked
 
     private void btnNuevoUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoUActionPerformed
-         String nombre = txtNombreU.getText();
-    String contrasenia = txtcontra.getText();
+        String nombre = txtNombreU.getText();
+        String contrasenia = txtcontra.getText();
 
-    if (nombre.isEmpty() || contrasenia.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
-    } else {
-        if (nombre.length() > MAX_LENGTH || contrasenia.length() > MAX_LENGTH) {
-            JOptionPane.showMessageDialog(null, "Nombre o contraseña demasiado largos");
+        if (nombre.isEmpty() || contrasenia.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
         } else {
-   
-            if (nombre.matches("^\\s*$") || contrasenia.matches("^\\s*$")) {
-                JOptionPane.showMessageDialog(null, "Nombre o contraseña inválidos");
+            if (nombre.length() > MAX_LENGTH || contrasenia.length() > MAX_LENGTH) {
+                JOptionPane.showMessageDialog(null, "Nombre o contraseña demasiado largos");
             } else {
-                Usuario uM = new Usuario(nombre, contrasenia);
-                UsuarioControlador uC = new UsuarioControlador();
-                uC.insertarUsuario(uM);
-                listaPersonas.add(uM);
-                setDatos(uM);
+
+                if (nombre.matches("^\\s*$") || contrasenia.matches("^\\s*$")) {
+                    JOptionPane.showMessageDialog(null, "Nombre o contraseña inválidos");
+                } else {
+                    Usuario uM = new Usuario(nombre, contrasenia);
+                    UsuarioControlador uC = new UsuarioControlador();
+                    uC.insertarUsuario(uM);
+                    listaPersonas.add(uM);
+                    setDatos(uM);
+                }
             }
         }
-    }
     }//GEN-LAST:event_btnNuevoUActionPerformed
 
     private void txtNombreUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreUActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreUActionPerformed
 
-    private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
-        
-        jTabbedPane1.setSelectedIndex(6);
-
-    }//GEN-LAST:event_btnHistorialActionPerformed
-
-    private void btnContratoHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratoHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnContratoHActionPerformed
-
-    private void btnAbonoHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbonoHActionPerformed
-    }//GEN-LAST:event_btnAbonoHActionPerformed
-
-    private void btnMantenimientosHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientosHMouseClicked
-    }//GEN-LAST:event_btnMantenimientosHMouseClicked
-
-    private void btnMantenimientosHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantenimientosHActionPerformed
-    setModeloHistorialMantenimientos();
-    }//GEN-LAST:event_btnMantenimientosHActionPerformed
-
     private void txtKilometrajeMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKilometrajeMActionPerformed
     }//GEN-LAST:event_txtKilometrajeMActionPerformed
 
     private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
- String placaBuscada = comboBoxPlacas.getSelectedItem().toString();
+        String placaBuscada = comboBoxPlacas.getSelectedItem().toString();
 
-    if (!placaBuscada.isEmpty()) {
-        MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
-        ArrayList<Object[]> resultados = mantenimientoControlador.buscarMantenimientosPorPlaca(placaBuscada);
+        if (!placaBuscada.isEmpty()) {
+            MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
+            ArrayList<Object[]> resultados = mantenimientoControlador.buscarMantenimientosPorPlaca(placaBuscada);
 
-        DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
-        modelo.setRowCount(0);
+            DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
+            modelo.setRowCount(0);
 
-        if (resultados != null) {
-            for (Object[] fila : resultados) {
-                modelo.addRow(fila);
+            if (resultados != null) {
+                for (Object[] fila : resultados) {
+                    modelo.addRow(fila);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al buscar los mantenimientos por placa");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Error al buscar los mantenimientos por placa");
+            JOptionPane.showMessageDialog(null, "Seleccione una placa para buscar los mantenimientos");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Seleccione una placa para buscar los mantenimientos");
-    }
     }//GEN-LAST:event_btnBuscarMActionPerformed
 
     private void btnEditarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarMActionPerformed
-   int filaSeleccionada = jTableMantenimiento.getSelectedRow();
+        int filaSeleccionada = jTableMantenimiento.getSelectedRow();
 
-if (filaSeleccionada >= 0) {
-    int confirmacion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de editar este mantenimiento?", "Confirmar Edición", JOptionPane.YES_NO_OPTION);
-    if (confirmacion == JOptionPane.YES_OPTION) {
+        if (filaSeleccionada >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de editar este mantenimiento?", "Confirmar Edición", JOptionPane.YES_NO_OPTION);
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                String cambiosAceite = txtAreaAceite.getText();
+                String cambiosFiltro = txtCambioFiltro.getText();
+                Date fecha = FeachaMantenimiento.getDate();
+
+                if (cambiosAceite.isEmpty() || cambiosFiltro.isEmpty() || fecha == null) {
+                    JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                try {
+                    int kilometrajeM = Integer.parseInt(txtKilometrajeM.getText());
+                    if (kilometrajeM < 0) {
+                        JOptionPane.showMessageDialog(this, "El kilometraje debe ser un número positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+
+                    // Obtener el ID del mantenimiento seleccionado en la tabla
+                    DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
+                    int idMantenimiento = (int) modelo.getValueAt(filaSeleccionada, 0);
+                    String placaVehiculo = comboBoxPlacas.getSelectedItem().toString();
+
+                    // Llamar al controlador para ejecutar el procedimiento almacenado
+                    MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
+
+                    // Crear un objeto Mantenimiento con los datos actualizados
+                    Mantenimiento mantenimiento = new Mantenimiento(placaVehiculo, idMantenimiento, cambiosAceite, cambiosFiltro, fecha, kilometrajeM);
+
+                    mantenimientoControlador.editarMantenimiento(mantenimiento);
+                    limpiarTablaMantenimiento();
+                    actualizarTablaMantenimientos();
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(this, "El campo de kilometraje debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
+        }
+
+    }//GEN-LAST:event_btnEditarMActionPerformed
+
+    private void btnEliminarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMActionPerformed
+        int filaSeleccionada = jTableMantenimiento.getSelectedRow();
+
+        if (filaSeleccionada >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este mantenimiento?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
+                String placa = modelo.getValueAt(filaSeleccionada, 1).toString();
+                Date fecha = (Date) modelo.getValueAt(filaSeleccionada, 4);
+
+                MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
+                mantenimientoControlador.eliminarMantenimiento(placa, fecha);
+
+                modelo.removeRow(filaSeleccionada);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
+        }
+    }//GEN-LAST:event_btnEliminarMActionPerformed
+
+    private void btnNuevoMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoMActionPerformed
         String cambiosAceite = txtAreaAceite.getText();
         String cambiosFiltro = txtCambioFiltro.getText();
         Date fecha = FeachaMantenimiento.getDate();
@@ -2776,82 +2827,20 @@ if (filaSeleccionada >= 0) {
                 JOptionPane.showMessageDialog(this, "El kilometraje debe ser un número positivo.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-
-            // Obtener el ID del mantenimiento seleccionado en la tabla
-            DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
-            int idMantenimiento = (int) modelo.getValueAt(filaSeleccionada, 0);
             String placaVehiculo = comboBoxPlacas.getSelectedItem().toString();
 
-            // Llamar al controlador para ejecutar el procedimiento almacenado
+            Mantenimiento mantenimiento = new Mantenimiento(placaVehiculo, 0, cambiosAceite, cambiosFiltro, fecha, kilometrajeM);
+            VehiculoControlador vehiculoControlador = new VehiculoControlador();
             MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
-
-            // Crear un objeto Mantenimiento con los datos actualizados
-            Mantenimiento mantenimiento = new Mantenimiento(placaVehiculo, idMantenimiento, cambiosAceite, cambiosFiltro, fecha, kilometrajeM);
-
-            mantenimientoControlador.editarMantenimiento(mantenimiento);
+            mantenimientoControlador.agregarMantenimiento(mantenimiento, vehiculoControlador);
             limpiarTablaMantenimiento();
             actualizarTablaMantenimientos();
+
+            JOptionPane.showMessageDialog(this, "Mantenimiento agregado con éxito.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "El campo de kilometraje debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }
-} else {
-    JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
-}
-
-    }//GEN-LAST:event_btnEditarMActionPerformed
-
-    private void btnEliminarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMActionPerformed
-int filaSeleccionada = jTableMantenimiento.getSelectedRow();
-
-    if (filaSeleccionada >= 0) {
-        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este mantenimiento?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
-
-        if (confirmacion == JOptionPane.YES_OPTION) {
-            DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
-            String placa = modelo.getValueAt(filaSeleccionada, 1).toString();
-            Date fecha = (Date) modelo.getValueAt(filaSeleccionada, 4);
-
-            MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
-            mantenimientoControlador.eliminarMantenimiento(placa, fecha);
-
-            modelo.removeRow(filaSeleccionada);
-        }
-    } else {
-        JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
-    }
-    }//GEN-LAST:event_btnEliminarMActionPerformed
-
-    private void btnNuevoMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoMActionPerformed
-  String cambiosAceite = txtAreaAceite.getText();
-    String cambiosFiltro = txtCambioFiltro.getText();
-    Date fecha = FeachaMantenimiento.getDate();
-
-    if (cambiosAceite.isEmpty() || cambiosFiltro.isEmpty() || fecha == null) {
-        JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-
-    try {
-        int kilometrajeM = Integer.parseInt(txtKilometrajeM.getText());
-        if (kilometrajeM < 0) {
-            JOptionPane.showMessageDialog(this, "El kilometraje debe ser un número positivo.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        String placaVehiculo = comboBoxPlacas.getSelectedItem().toString();
-
-        Mantenimiento mantenimiento = new Mantenimiento(placaVehiculo, 0, cambiosAceite, cambiosFiltro, fecha, kilometrajeM);
-        VehiculoControlador vehiculoControlador = new VehiculoControlador();
-        MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
-        mantenimientoControlador.agregarMantenimiento(mantenimiento, vehiculoControlador);
-        limpiarTablaMantenimiento();
-        actualizarTablaMantenimientos();
-
-        JOptionPane.showMessageDialog(this, "Mantenimiento agregado con éxito.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-
-    } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "El campo de kilometraje debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
     }//GEN-LAST:event_btnNuevoMActionPerformed
 
     private void comboBoxPlacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPlacasActionPerformed
@@ -2859,17 +2848,13 @@ int filaSeleccionada = jTableMantenimiento.getSelectedRow();
     }//GEN-LAST:event_comboBoxPlacasActionPerformed
 
     private void jTableAbonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableAbonoMouseClicked
-//   DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
-//
-//
-//     int filaSeleccionada = jTableAbono.getSelectedRow();
-//        String destino = (String) modelo.getValueAt(filaSeleccionada, 1);
-//        double valor = Double.parseDouble( modelo.getValueAt(filaSeleccionada, 2).toString());
-//        Date fecha = (Date) modelo.getValueAt(filaSeleccionada, 3);
-//        String bancosComp = (String) modelo.getValueAt(filaSeleccionada, 4).toString();
-//        double monto = Double.parseDouble(modelo.getValueAt(filaSeleccionada, 6).toString());
-//        String estadoAbono = (String) modelo.getValueAt(filaSeleccionada, 7);
-//        String banco = (String) modelo.getValueAt(filaSeleccionada, 5);
+        DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
+        comboBoxPlacas.setSelectedItem((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 1));
+        txtAreaAceite.setText((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 2));
+        txtValor.setText((String) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 2));
+        Date fecha = (Date) modelo.getValueAt(jTableAbono.getSelectedRow(), 1);
+        FeachaAbono.setDate(fecha);
+        txtKilometrajeM.setText(String.valueOf((int) modelo.getValueAt(jTableMantenimiento.getSelectedRow(), 5)));
     }//GEN-LAST:event_jTableAbonoMouseClicked
 
     private void btnPDFMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFMantenimientoActionPerformed
@@ -2984,111 +2969,111 @@ int filaSeleccionada = jTableMantenimiento.getSelectedRow();
     }//GEN-LAST:event_txtBancoActionPerformed
 
     private void btnBuscarAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAbonoActionPerformed
-  // TODO add your handling code here:
+        // TODO add your handling code here:
         // Obtener el ID del contrato seleccionado desde la tabla
-    int filaSeleccionada = jTableContrato.getSelectedRow();
-    if (filaSeleccionada != -1) {
-        int idContrato = (int) jTableContrato.getValueAt(filaSeleccionada, 0);
-        
-        AbonoControlador AbonoControlador = new AbonoControlador();
-        ArrayList<Object[]> abonos = AbonoControlador.buscarAbonosPorContrato(idContrato);
+        int filaSeleccionada = jTableContrato.getSelectedRow();
+        if (filaSeleccionada != -1) {
+            int idContrato = (int) jTableContrato.getValueAt(filaSeleccionada, 0);
 
-        if (abonos != null) {
-            limpiarTablaAbonos();
+            AbonoControlador AbonoControlador = new AbonoControlador();
+            ArrayList<Object[]> abonos = AbonoControlador.buscarAbonosPorContrato(idContrato);
 
-            for (Object[] abono : abonos) {
-                modeloAbonos.addRow(abono);
+            if (abonos != null) {
+                limpiarTablaAbonos();
+
+                for (Object[] abono : abonos) {
+                    modeloAbonos.addRow(abono);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "No se encontraron abonos para este contrato.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "No se encontraron abonos para este contrato.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    } else {
-        JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
     }//GEN-LAST:event_btnBuscarAbonoActionPerformed
 
     private void btnEditarAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAbonoActionPerformed
-int filaSeleccionada = jTableAbono.getSelectedRow();
+        int filaSeleccionada = jTableAbono.getSelectedRow();
 
-    if (filaSeleccionada != -1) {
-        String comprobanteActual = (String) jTableAbono.getValueAt(filaSeleccionada, 4);
+        if (filaSeleccionada != -1) {
+            String comprobanteActual = (String) jTableAbono.getValueAt(filaSeleccionada, 4);
 
-        String nuevoComprobante = JOptionPane.showInputDialog(this, "Ingrese el nuevo comprobante:", comprobanteActual);
+            String nuevoComprobante = JOptionPane.showInputDialog(this, "Ingrese el nuevo comprobante:", comprobanteActual);
 
-        if (nuevoComprobante != null && !nuevoComprobante.isEmpty()) {
+            if (nuevoComprobante != null && !nuevoComprobante.isEmpty()) {
 
-            String destino = (String) jTableAbono.getValueAt(filaSeleccionada, 0);
-            double valor = (double) jTableAbono.getValueAt(filaSeleccionada, 1);
-            double monto = (double) jTableAbono.getValueAt(filaSeleccionada, 2);
-            Date fechaAbono = (Date) jTableAbono.getValueAt(filaSeleccionada, 3);
-            String estadoAbono = (String) jTableAbono.getValueAt(filaSeleccionada, 5);
-            String banco = (String) jTableAbono.getValueAt(filaSeleccionada, 6);
-            Abono abonoModificado = new Abono(destino, valor, monto, fechaAbono, nuevoComprobante, estadoAbono, banco);
+                String destino = (String) jTableAbono.getValueAt(filaSeleccionada, 0);
+                double valor = (double) jTableAbono.getValueAt(filaSeleccionada, 1);
+                double monto = (double) jTableAbono.getValueAt(filaSeleccionada, 2);
+                Date fechaAbono = (Date) jTableAbono.getValueAt(filaSeleccionada, 3);
+                String estadoAbono = (String) jTableAbono.getValueAt(filaSeleccionada, 5);
+                String banco = (String) jTableAbono.getValueAt(filaSeleccionada, 6);
+                Abono abonoModificado = new Abono(destino, valor, monto, fechaAbono, nuevoComprobante, estadoAbono, banco);
 
-            AbonoControlador controladorAbono = new AbonoControlador();
+                AbonoControlador controladorAbono = new AbonoControlador();
 
-            controladorAbono.editarAbono(abonoModificado);
+                controladorAbono.editarAbono(abonoModificado);
+            } else {
+                JOptionPane.showMessageDialog(null, "Se requiere un comprobante válido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
         } else {
-            JOptionPane.showMessageDialog(null, "Se requiere un comprobante válido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Debes seleccionar un abono para editar.");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Debes seleccionar un abono para editar.");
-    }
     }//GEN-LAST:event_btnEditarAbonoActionPerformed
 
     private void btnEliminarAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarAbonoActionPerformed
-String comprobante = txtComprobante.getText();
-    
-    AbonoControlador controladorAbono = new AbonoControlador(); 
-    controladorAbono.eliminarAbonoPorBancosComp(comprobante);
-    JOptionPane.showMessageDialog(this, "Abono eliminado con éxito");
-    this.limpiarTablaAbonos();
-    this.actualizarTablaAbonos();
+        String comprobante = txtComprobante.getText();
+
+        AbonoControlador controladorAbono = new AbonoControlador();
+        controladorAbono.eliminarAbonoPorBancosComp(comprobante);
+        JOptionPane.showMessageDialog(this, "Abono eliminado con éxito");
+        this.limpiarTablaAbonos();
+        this.actualizarTablaAbonos();
     }//GEN-LAST:event_btnEliminarAbonoActionPerformed
 
     private void btnNuevoAbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoAbonoActionPerformed
-    int filaSeleccionada = jTableContrato.getSelectedRow();
+        int filaSeleccionada = jTableContrato.getSelectedRow();
 
-  if (filaSeleccionada != -1) {
-        String destino = (String) jTableContrato.getValueAt(filaSeleccionada, 3);
-        boolean liquidado = jcheckboxLiquidado.isSelected();
-        boolean sinLiquidar = jCheckBoxSinLiquidar.isSelected();
-        String estadoAbono;
+        if (filaSeleccionada != -1) {
+            String destino = (String) jTableContrato.getValueAt(filaSeleccionada, 3);
+            boolean liquidado = jcheckboxLiquidado.isSelected();
+            boolean sinLiquidar = jCheckBoxSinLiquidar.isSelected();
+            String estadoAbono;
 
-        if (jcheckboxLiquidado.isSelected()) {
-            estadoAbono = "Liquidado";
-        } else if (jCheckBoxSinLiquidar.isSelected()) {
-            estadoAbono = "Sin Liquidar";
+            if (jcheckboxLiquidado.isSelected()) {
+                estadoAbono = "Liquidado";
+            } else if (jCheckBoxSinLiquidar.isSelected()) {
+                estadoAbono = "Sin Liquidar";
+            } else {
+                JOptionPane.showMessageDialog(this, "Por favor, seleccione el estado del abono.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            String comprobante = txtComprobante.getText();
+            String banco = txtBanco.getText();
+            Date fechaAbono = FeachaAbono.getDate();
+            double valor;
+            double monto;
+
+            try {
+                valor = Double.parseDouble(txtValor.getText());
+                monto = Double.parseDouble(txtMonto.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Los campos de valor y monto deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            Abono abono = new Abono(destino, valor, monto, fechaAbono, comprobante, estadoAbono, banco);
+            AbonoControlador controladorAbono = new AbonoControlador();
+            controladorAbono.agregarAbono(abono);
+
+            limpiarTablaAbonos();
+            actualizarTablaAbonos();
+
+            JOptionPane.showMessageDialog(this, "Abono creado con éxito");
         } else {
-            JOptionPane.showMessageDialog(this, "Por favor, seleccione el estado del abono.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
+            JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-        String comprobante = txtComprobante.getText();
-        String banco = txtBanco.getText();
-        Date fechaAbono = FeachaAbono.getDate();
-        double valor;
-        double monto;
-
-        try {
-            valor = Double.parseDouble(txtValor.getText());
-            monto = Double.parseDouble(txtMonto.getText());
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Los campos de valor y monto deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        Abono abono = new Abono(destino, valor, monto, fechaAbono, comprobante, estadoAbono, banco);
-        AbonoControlador controladorAbono = new AbonoControlador();
-        controladorAbono.agregarAbono(abono);
-
-        limpiarTablaAbonos();
-        actualizarTablaAbonos();
-
-        JOptionPane.showMessageDialog(this, "Abono creado con éxito");
-    } else {
-        JOptionPane.showMessageDialog(this, "Debes seleccionar un contrato.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
     }//GEN-LAST:event_btnNuevoAbonoActionPerformed
 
     private void txtComprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComprobanteActionPerformed
@@ -3101,7 +3086,7 @@ String comprobante = txtComprobante.getText();
 
     private void jPanel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel19MouseClicked
 
-      
+
     }//GEN-LAST:event_jPanel19MouseClicked
 
     private void txtDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiasActionPerformed
@@ -3113,110 +3098,110 @@ String comprobante = txtComprobante.getText();
     }//GEN-LAST:event_cbbClienteActionPerformed
 
     private void btnNuevoContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoContratoActionPerformed
-     String placaVehiculo = cbbPlacas.getSelectedItem().toString();
-    String cedulaCliente = cbbCliente.getSelectedItem().toString();
-    String destinoContrato = txtDestino.getText();
-    Date fechaContrato = FeachaContrato.getDate();
-String nomConductor = txtConductor1.getText();
-    int diasContrato;
-    int asientosContrato;
+        String placaVehiculo = cbbPlacas.getSelectedItem().toString();
+        String cedulaCliente = cbbCliente.getSelectedItem().toString();
+        String destinoContrato = txtDestino.getText();
+        Date fechaContrato = FeachaContrato.getDate();
+        String nomConductor = txtConductor1.getText();
+        int diasContrato;
+        int asientosContrato;
 
-    try {
-        diasContrato = Integer.parseInt(txtDias.getText());
-        asientosContrato = Integer.parseInt(txtAsientos.getText());
+        try {
+            diasContrato = Integer.parseInt(txtDias.getText());
+            asientosContrato = Integer.parseInt(txtAsientos.getText());
 
-        if (diasContrato < 0 || asientosContrato < 0) {
-            JOptionPane.showMessageDialog(this, "Los campos de días y asientos deben ser números positivos.", "Error", JOptionPane.ERROR_MESSAGE);
+            if (diasContrato < 0 || asientosContrato < 0) {
+                JOptionPane.showMessageDialog(this, "Los campos de días y asientos deben ser números positivos.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Los campos de días y asientos deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-    } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "Los campos de días y asientos deben ser números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
 
-    if (placaVehiculo.isEmpty() || cedulaCliente.isEmpty() || destinoContrato.isEmpty() || fechaContrato == null || nomConductor.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+        if (placaVehiculo.isEmpty() || cedulaCliente.isEmpty() || destinoContrato.isEmpty() || fechaContrato == null || nomConductor.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Todos los campos obligatorios deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    Contrato contrato = new Contrato(placaVehiculo, cedulaCliente, destinoContrato, fechaContrato, nomConductor, diasContrato, asientosContrato);
+        Contrato contrato = new Contrato(placaVehiculo, cedulaCliente, destinoContrato, fechaContrato, nomConductor, diasContrato, asientosContrato);
 
-    ContratoControlador controladorContrato = new ContratoControlador();
-    controladorContrato.agregarContrato(contrato);
+        ContratoControlador controladorContrato = new ContratoControlador();
+        controladorContrato.agregarContrato(contrato);
 
-    limpiarTablaContrato();
-    actualizarTablaContratos();
+        limpiarTablaContrato();
+        actualizarTablaContratos();
 
-    JOptionPane.showMessageDialog(this, "Contrato creado con éxito.");
-    
+        JOptionPane.showMessageDialog(this, "Contrato creado con éxito.");
+
     }//GEN-LAST:event_btnNuevoContratoActionPerformed
 
     private void btnEliminarContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarContratoActionPerformed
-  int filaSeleccionada = jTableContrato.getSelectedRow();
+        int filaSeleccionada = jTableContrato.getSelectedRow();
 
-    if (filaSeleccionada >= 0) {
-        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este contrato?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+        if (filaSeleccionada >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este contrato?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
 
-        if (confirmacion == JOptionPane.YES_OPTION) {
-            DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel(); 
-            Date fecha = (Date) modelo.getValueAt(filaSeleccionada, 4); 
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+                Date fecha = (Date) modelo.getValueAt(filaSeleccionada, 4);
 
-            String numeroPlaca = (String) modelo.getValueAt(filaSeleccionada, 1);
-            String cedulaCliente = (String) modelo.getValueAt(filaSeleccionada, 2);
+                String numeroPlaca = (String) modelo.getValueAt(filaSeleccionada, 1);
+                String cedulaCliente = (String) modelo.getValueAt(filaSeleccionada, 2);
 
-            ContratoControlador contratoControlador = new ContratoControlador();
-            contratoControlador.eliminarContrato((java.sql.Date) fecha, numeroPlaca, cedulaCliente);
+                ContratoControlador contratoControlador = new ContratoControlador();
+                contratoControlador.eliminarContrato((java.sql.Date) fecha, numeroPlaca, cedulaCliente);
 
-            modelo.removeRow(filaSeleccionada);
+                modelo.removeRow(filaSeleccionada);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");
-    }
     }//GEN-LAST:event_btnEliminarContratoActionPerformed
 
     private void btnEditarContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarContratoActionPerformed
-  int filaSeleccionada = jTableContrato.getSelectedRow();
+        int filaSeleccionada = jTableContrato.getSelectedRow();
 
-    if (filaSeleccionada >= 0) {
-        try {
-            DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+        if (filaSeleccionada >= 0) {
+            try {
+                DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
 
-            int contratoId = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
+                int contratoId = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
 
-            String nuevaPlaca = cbbPlacas.getSelectedItem().toString();
-            String nuevaCedulaCliente = cbbCliente.getSelectedItem().toString();
-            String nuevoDestino = txtDestino.getText();
-            Date nuevaFecha = FeachaContrato.getDate();
-            String nuevoConductor = txtConductor1.getText();
-            int nuevosDias = Integer.parseInt(txtDias.getText());
-            int nuevosAsientos = Integer.parseInt(txtAsientos.getText());
+                String nuevaPlaca = cbbPlacas.getSelectedItem().toString();
+                String nuevaCedulaCliente = cbbCliente.getSelectedItem().toString();
+                String nuevoDestino = txtDestino.getText();
+                Date nuevaFecha = FeachaContrato.getDate();
+                String nuevoConductor = txtConductor1.getText();
+                int nuevosDias = Integer.parseInt(txtDias.getText());
+                int nuevosAsientos = Integer.parseInt(txtAsientos.getText());
 
- java.sql.Date sqlNuevaFecha = new java.sql.Date(nuevaFecha.getTime());
+                java.sql.Date sqlNuevaFecha = new java.sql.Date(nuevaFecha.getTime());
 
-            ContratoControlador controlador = new ContratoControlador();
-boolean exito = controlador.editarContrato(contratoId, nuevaPlaca, nuevaCedulaCliente, nuevoDestino, sqlNuevaFecha, nuevoConductor, nuevosDias, nuevosAsientos);
+                ContratoControlador controlador = new ContratoControlador();
+                boolean exito = controlador.editarContrato(contratoId, nuevaPlaca, nuevaCedulaCliente, nuevoDestino, sqlNuevaFecha, nuevoConductor, nuevosDias, nuevosAsientos);
 
-            if (exito) {
-                modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
-                modelo.setValueAt(nuevaCedulaCliente, filaSeleccionada, 2);
-                modelo.setValueAt(nuevoDestino, filaSeleccionada, 3);
-                modelo.setValueAt(nuevaFecha, filaSeleccionada, 4);
-                modelo.setValueAt(nuevoConductor, filaSeleccionada, 5);
-                modelo.setValueAt(nuevosDias, filaSeleccionada, 6);
-                modelo.setValueAt(nuevosAsientos, filaSeleccionada, 7);
+                if (exito) {
+                    modelo.setValueAt(nuevaPlaca, filaSeleccionada, 1);
+                    modelo.setValueAt(nuevaCedulaCliente, filaSeleccionada, 2);
+                    modelo.setValueAt(nuevoDestino, filaSeleccionada, 3);
+                    modelo.setValueAt(nuevaFecha, filaSeleccionada, 4);
+                    modelo.setValueAt(nuevoConductor, filaSeleccionada, 5);
+                    modelo.setValueAt(nuevosDias, filaSeleccionada, 6);
+                    modelo.setValueAt(nuevosAsientos, filaSeleccionada, 7);
 
-                JOptionPane.showMessageDialog(null, "Contrato editado con éxito.");
-            } else {
-                JOptionPane.showMessageDialog(null, "Error al editar el contrato.");
+                    JOptionPane.showMessageDialog(null, "Contrato editado con éxito.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al editar el contrato.");
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese valores numéricos válidos para días y asientos.");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al editar el contrato: " + e.getMessage());
             }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Por favor, ingrese valores numéricos válidos para días y asientos.");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al editar el contrato: " + e.getMessage());
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila para editar.");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Seleccione una fila para editar.");
-    }
     }//GEN-LAST:event_btnEditarContratoActionPerformed
 
     private void btnBuscarContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarContratoActionPerformed
@@ -3234,7 +3219,7 @@ boolean exito = controlador.editarContrato(contratoId, nuevaPlaca, nuevaCedulaCl
                     modelo.addRow(fila);
                 }
             } else {
-                JOptionPane.showMessageDialog(null,     "Error al buscar contratos por la cédula del cliente");
+                JOptionPane.showMessageDialog(null, "Error al buscar contratos por la cédula del cliente");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Seleccione o ingrese la cédula del cliente para buscar");
@@ -3267,7 +3252,7 @@ boolean exito = controlador.editarContrato(contratoId, nuevaPlaca, nuevaCedulaCl
         int opcionSeleccionada = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
 
         if (opcionSeleccionada == 0) {
- 
+
             String fileName = "reporte Contratos.pdf";
             String titulo = "Reporte de Contratos de Geaturim";
             Pdfs.generarPDF(jTableContrato, fileName, titulo);
@@ -3295,11 +3280,11 @@ boolean exito = controlador.editarContrato(contratoId, nuevaPlaca, nuevaCedulaCl
     }//GEN-LAST:event_btnPDFContratoActionPerformed
 
     private void btnPDFAbonosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFAbonosActionPerformed
-         String[] opciones = {"Crear PDF", "Abrir PDF"};
+        String[] opciones = {"Crear PDF", "Abrir PDF"};
         int opcionSeleccionada = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
 
         if (opcionSeleccionada == 0) {
- 
+
             String fileName = "reporte Abonos.pdf";
             String titulo = "Reporte de Abonos de Geaturim";
             Pdfs.generarPDF(jTableAbono, fileName, titulo);
@@ -3326,59 +3311,73 @@ boolean exito = controlador.editarContrato(contratoId, nuevaPlaca, nuevaCedulaCl
         }
     }//GEN-LAST:event_btnPDFAbonosActionPerformed
 
+    private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
+
+        jTabbedPane1.setSelectedIndex(6);
+    }//GEN-LAST:event_btnHistorialActionPerformed
+
+    private void btnMantenimientosHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantenimientosHActionPerformed
+        setModeloHistorialMantenimientos();
+    }//GEN-LAST:event_btnMantenimientosHActionPerformed
+
+    private void btnMantenimientosHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientosHMouseClicked
+
+    }//GEN-LAST:event_btnMantenimientosHMouseClicked
+
+    private void btnContratoHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratoHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnContratoHActionPerformed
+
+    private void btnAbonoHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbonoHActionPerformed
+
+    }//GEN-LAST:event_btnAbonoHActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
-  public static void main(String args[]) {
-    java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
-            Menu menu = new Menu();
-            menu.setVisible(true);
-        }  
-    });
-}
-
-/////////////////////////////////////////////////////////////////////////////////////// TABLA de USUARIOS //////////////////////////////////////////////////////////////////////////////////////
-  
-  
-    private ArrayList<Usuario> listaPersonas = new ArrayList<>();
-    private DefaultTableModel modeloUsuario = new DefaultTableModel();
-    
-              
-public void setModelo() {
-    String[] cabecera = {"Nro.", "Nombres", "Contraseñas"};
-    modeloUsuario.setColumnIdentifiers(cabecera);
-
-    UsuarioControlador usuarioControlador = new UsuarioControlador();
-    ArrayList<Object[]> datos = usuarioControlador.datosUsuarios();
-
-    if (datos != null) {
-        for (Object[] fila : datos) {
-            modeloUsuario.addRow(fila);
-        }
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                Menu menu = new Menu();
+                menu.setVisible(true);
+            }
+        });
     }
 
-    jTableUsuario.setModel(modeloUsuario);
-}
+/////////////////////////////////////////////////////////////////////////////////////// TABLA de USUARIOS //////////////////////////////////////////////////////////////////////////////////////
+    private ArrayList<Usuario> listaPersonas = new ArrayList<>();
+    private DefaultTableModel modeloUsuario = new DefaultTableModel();
 
-   
-public void setDatos(Usuario usuario) {
-    DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
-    Object[] fila = new Object[3];
+    public void setModelo() {
+        String[] cabecera = {"Nro.", "Nombres", "Contraseñas"};
+        modeloUsuario.setColumnIdentifiers(cabecera);
 
-    fila[0] = modelo.getRowCount() + 1;
-    fila[1] = usuario.getNombre();
-    fila[2] = usuario.getContrasenia();
+        UsuarioControlador usuarioControlador = new UsuarioControlador();
+        ArrayList<Object[]> datos = usuarioControlador.datosUsuarios();
 
-    modelo.addRow(fila);
-    jTableUsuario.setModel(modelo); 
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloUsuario.addRow(fila);
+            }
+        }
 
+        jTableUsuario.setModel(modeloUsuario);
+    }
 
-    txtNombreU.setText("");
-    txtcontra.setText("");
-}
+    public void setDatos(Usuario usuario) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableUsuario.getModel();
+        Object[] fila = new Object[3];
 
+        fila[0] = modelo.getRowCount() + 1;
+        fila[1] = usuario.getNombre();
+        fila[2] = usuario.getContrasenia();
+
+        modelo.addRow(fila);
+        jTableUsuario.setModel(modelo);
+
+        txtNombreU.setText("");
+        txtcontra.setText("");
+    }
 
 /////////////////////////////////////////////////////////////////////////////////////// TABLA de Clientes //////////////////////////////////////////////////////////////////////////////////////
     private ArrayList<Cliente> listaClientes = new ArrayList<>();
@@ -3414,24 +3413,23 @@ public void setDatos(Usuario usuario) {
     }
 
 /////////////////////////////////////////////////////////////////////////////////////// TABLA de VEHICULOS //////////////////////////////////////////////////////////////////////////////////////
-   
     private ArrayList<Vehiculo> ListarVehiculos = new ArrayList<>();
     private DefaultTableModel modeloVehiculos = new DefaultTableModel();
 
     public void setModeloVehiculos() {
         String[] cabecera = {"Nro.", "Nro. Placa", "Nro. Asientos", "Kilometraje", "Propietario", "Año de Fabricacion"};
-    modeloVehiculos.setColumnIdentifiers(cabecera);
+        modeloVehiculos.setColumnIdentifiers(cabecera);
 
-    VehiculoControlador vehiculoControlador = new VehiculoControlador();
-    ArrayList<Object[]> datos = vehiculoControlador.datosVehiculo();
+        VehiculoControlador vehiculoControlador = new VehiculoControlador();
+        ArrayList<Object[]> datos = vehiculoControlador.datosVehiculo();
 
-    if (datos != null) {
-        for (Object[] fila : datos) {
-            modeloVehiculos.addRow(fila);
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloVehiculos.addRow(fila);
+            }
         }
-    }
 
-    jTableVehiculo.setModel(modeloVehiculos);
+        jTableVehiculo.setModel(modeloVehiculos);
     }
 
     public void mostrarDatosVehiculos(Vehiculo vehiculo) {
@@ -3447,9 +3445,8 @@ public void setDatos(Usuario usuario) {
         modelo.addRow(fila);
     }
 
- ////////////////////////////////////////////////////////////////////TABLA DE MANTENIMIENTO///////////////////////////////////////////////////////////////
- 
-     private ArrayList<Mantenimiento> listaMantenimientos = new ArrayList<>();
+    ////////////////////////////////////////////////////////////////////TABLA DE MANTENIMIENTO///////////////////////////////////////////////////////////////
+    private ArrayList<Mantenimiento> listaMantenimientos = new ArrayList<>();
     private DefaultTableModel modeloMantenimientos = new DefaultTableModel();
 
     public void setModeloMantenimientos() {
@@ -3480,133 +3477,120 @@ public void setDatos(Usuario usuario) {
         fila[5] = mantenimiento.getKilometraje();
         modelo.addRow(fila);
     }
-    
+
 /////////////////////////////////////////////////////////////////////////////////////// TABLA de CONTRATOS //////////////////////////////////////////////////////////////////////////////////////
-    
-private ArrayList<Contrato> listaContratos = new ArrayList<>();
-private DefaultTableModel modeloContratos = new DefaultTableModel();
+    private ArrayList<Contrato> listaContratos = new ArrayList<>();
+    private DefaultTableModel modeloContratos = new DefaultTableModel();
 
-public void setModeloContratos() {
-    String[] cabecera = {"Nro", "Placa Vehiculo", "Cedula", "Destino", "Fecha", "Conductor", "Dias", "Nro°Asientos"};
-    modeloContratos.setColumnIdentifiers(cabecera);
+    public void setModeloContratos() {
+        String[] cabecera = {"Nro", "Placa Vehiculo", "Cedula", "Destino", "Fecha", "Conductor", "Dias", "Nro°Asientos"};
+        modeloContratos.setColumnIdentifiers(cabecera);
 
-    ContratoControlador contratoControlador = new ContratoControlador();
-    ArrayList<Object[]> datos = contratoControlador.datosContratosPorPlacaYCliente();
+        ContratoControlador contratoControlador = new ContratoControlador();
+        ArrayList<Object[]> datos = contratoControlador.datosContratosPorPlacaYCliente();
 
-    if (datos != null) {
-        for (Object[] fila : datos) {
-            modeloContratos.addRow(fila);
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloContratos.addRow(fila);
+            }
         }
+
+        jTableContrato.setModel(modeloContratos);
     }
 
-    jTableContrato.setModel(modeloContratos);
-}
+    public void mostrarDatosContrato(Contrato contrato) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+        Object[] fila = new Object[8];
 
-public void mostrarDatosContrato(Contrato contrato) {
-    DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
-    Object[] fila = new Object[8]; 
-
-    fila[0] = modelo.getRowCount() + 1;
-    fila[1] = contrato.getIdvehiculoc();
-    fila[2] = contrato.getIdcliente();
-    fila[3] = contrato.getDestino();
-    fila[4] = contrato.getFecha();
-    fila[5] = contrato.getAsientos(); // Aquí asignamos el número de asientos al nombre del conductor
-    fila[6] = contrato.getDias();
-    fila[7] = contrato.getNombreConductor();
-    modelo.addRow(fila);
-}
-
-
-
-
-
-
- /////////////////////////////////////////////////////////////////////////////TABLA DE ABONOS///////////////////////////////////////////////////////////////////////
-
-private ArrayList<Abono> listaAbonos = new ArrayList<>();
-private DefaultTableModel modeloAbonos = new DefaultTableModel();
-
-public void setModeloAbonos() {
-    String[] cabecera = {"Nro", "Destino", "Valor", "Fecha", "Banco Comp","Banco", "Monto", "Estado"};
-    modeloAbonos.setColumnIdentifiers(cabecera);
-
-
-    AbonoControlador abonoControlador = new AbonoControlador(); 
-    ArrayList<Object[]> abonos = abonoControlador.datosAbonos(); 
-
-    if (abonos != null) {
-        for (Object[] abono : abonos) {
-            modeloAbonos.addRow(abono);  
-        }        
+        fila[0] = modelo.getRowCount() + 1;
+        fila[1] = contrato.getIdvehiculoc();
+        fila[2] = contrato.getIdcliente();
+        fila[3] = contrato.getDestino();
+        fila[4] = contrato.getFecha();
+        fila[5] = contrato.getAsientos(); // Aquí asignamos el número de asientos al nombre del conductor
+        fila[6] = contrato.getDias();
+        fila[7] = contrato.getNombreConductor();
+        modelo.addRow(fila);
     }
 
-    jTableAbono.setModel(modeloAbonos);
-}
+    /////////////////////////////////////////////////////////////////////////////TABLA DE ABONOS///////////////////////////////////////////////////////////////////////
+    private ArrayList<Abono> listaAbonos = new ArrayList<>();
+    private DefaultTableModel modeloAbonos = new DefaultTableModel();
 
-public void mostrarDatosAbono(Abono abono) {
-    
-    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
-    Object[] fila = new Object[7]; 
+    public void setModeloAbonos() {
+        String[] cabecera = {"Nro", "Destino", "Valor", "Fecha", "Banco Comp", "Banco", "Estado", "Monto"};
+        modeloAbonos.setColumnIdentifiers(cabecera);
 
-    fila[0] = modelo.getRowCount() + 1;
-    fila[1] = abono.getDestino();
-    fila[2] = abono.getValor();
-    fila[3] = abono.getFecha();
-    fila[4] = abono.getBancosComp();
-    fila[5] = abono.getBanco();
-    fila[6] = abono.getEstado(); 
-    modelo.addRow(fila);
-}
+        AbonoControlador abonoControlador = new AbonoControlador();
+        ArrayList<Object[]> abonos = abonoControlador.datosAbonos();
 
+        if (abonos != null) {
+            for (Object[] abono : abonos) {
+                modeloAbonos.addRow(abono);
+            }
+        }
 
- /////////////////////////////////////////////////////////////////////////////TABLA DE ABONOSPOR CEDULA///////////////////////////////////////////////////////////////////////
-
-private ArrayList<Abono> listarAbonos = new ArrayList<>();
-private DefaultTableModel modeloAbonosC = new DefaultTableModel();
-
-public void setModeloAbonosC() {
-    String[] cabecera = {"Nro", "Fecha", "Valor", "Monto", "Banco", "Bancos Comp", "Estado"};
-    modeloAbonosC.setColumnIdentifiers(cabecera); 
-
-    AbonoControlador abonoControlador = new AbonoControlador(); 
-    String cedula = cbbCliente.getSelectedItem().toString();
-
-    ArrayList<Object[]> abonos = abonoControlador.obtenerAbonosPorCedula(cedula); 
-
-    if (abonos != null) {
-        for (Object[] abono : abonos) {
-            modeloAbonosC.addRow(abono); 
-        }        
+        jTableAbono.setModel(modeloAbonos);
     }
 
-    jTableAbono.setModel(modeloAbonosC); 
-}
+    public void mostrarDatosAbono(Abono abono) {
 
+        DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
+        Object[] fila = new Object[7];
 
-public void mostrarDatosAbonoC(Abono abono) {
-    
-    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
-    Object[] fila = new Object[7]; 
+        fila[0] = modelo.getRowCount() + 1;
+        fila[1] = abono.getDestino();
+        fila[2] = abono.getValor();
+        fila[3] = abono.getFecha();
+        fila[4] = abono.getBancosComp();
+        fila[5] = abono.getBanco();
+        fila[6] = abono.getEstado();
+        modelo.addRow(fila);
+    }
 
-    fila[0] = modelo.getRowCount() + 1;
-    fila[1] = abono.getFecha(); 
-    fila[2] = abono.getValor();
-    fila[3] = abono.getMonto();
-    fila[4] = abono.getBanco();
-    fila[5] = abono.getBancosComp(); 
-    fila[6] = abono.getEstado(); 
-    modelo.addRow(fila);
-}
+    /////////////////////////////////////////////////////////////////////////////TABLA DE ABONOSPOR CEDULA///////////////////////////////////////////////////////////////////////
+    private ArrayList<Abono> listarAbonos = new ArrayList<>();
+    private DefaultTableModel modeloAbonosC = new DefaultTableModel();
 
- ////////////////////////////////////////////////////////////////////TABLA DE HISTORIAL MANTENIMIENTO///////////////////////////////////////////////////////////////
+    public void setModeloAbonosC() {
+        String[] cabecera = {"Nro", "Fecha", "Valor", "Monto", "Banco", "Bancos Comp", "Estado"};
+        modeloAbonosC.setColumnIdentifiers(cabecera);
 
- 
-     private ArrayList<HistorialM> listaHistorialM = new ArrayList<>();
+        AbonoControlador abonoControlador = new AbonoControlador();
+        String cedula = cbbCliente.getSelectedItem().toString();
+
+        ArrayList<Object[]> abonos = abonoControlador.obtenerAbonosPorCedula(cedula);
+
+        if (abonos != null) {
+            for (Object[] abono : abonos) {
+                modeloAbonosC.addRow(abono);
+            }
+        }
+
+        jTableAbono.setModel(modeloAbonosC);
+    }
+
+    public void mostrarDatosAbonoC(Abono abono) {
+
+        DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
+        Object[] fila = new Object[7];
+
+        fila[0] = modelo.getRowCount() + 1;
+        fila[1] = abono.getFecha();
+        fila[2] = abono.getValor();
+        fila[3] = abono.getMonto();
+        fila[4] = abono.getBanco();
+        fila[5] = abono.getBancosComp();
+        fila[6] = abono.getEstado();
+        modelo.addRow(fila);
+    }
+
+    ////////////////////////////////////////////////////////////////////TABLA DE HISTORIAL MANTENIMIENTO///////////////////////////////////////////////////////////////
+    private ArrayList<HistorialM> listaHistorialM = new ArrayList<>();
     private DefaultTableModel modeloHistorialM = new DefaultTableModel();
 
     public void setModeloHistorialMantenimientos() {
-        String[] cabecera = {"Nro", " Usuario" , " Accion",  "nro. Placa", "Fecha y Hora"};
+        String[] cabecera = {"Nro", " Usuario", " Accion", "nro. Placa", "Fecha y Hora"};
         modeloHistorialM.setColumnIdentifiers(cabecera);
 
         HistorialControlador historialControlador = new HistorialControlador();
@@ -3631,6 +3615,204 @@ public void mostrarDatosAbonoC(Abono abono) {
         fila[3] = historialM.getIdMantenimiento();
         fila[4] = historialM.getFechaHora();
         modelo.addRow(fila);
+    }
+
+                                             /////////////////////////////////////////////////////////////////////////////////////// METODOS DE TABLAS //////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    
+    ///////////////////////////////////////////////////////////////TABLA USUARIO//////////////////////////////////////////////////////////////////////////////////
+    
+    
+    public void limpiarTablaUsuario() {
+        int a = modeloUsuario.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            modeloUsuario.removeRow(i);
+        }
+    }
+
+    public void modeloUsuario() {
+        UsuarioControlador usuarioControlador = new UsuarioControlador();
+        ArrayList<Object[]> datos = usuarioControlador.datosUsuarios();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloUsuario.addRow(fila);
+            }
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////TABLA CLIENTE//////////////////////////////////////////////////////////////////////////////////
+    
+    
+    public void limpiarTablaClientes() {
+        int a = modeloClientes.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            modeloClientes.removeRow(i);
+        }
+    }
+
+    public void modeloClientes() {
+        ClienteControlador clienteControlador = new ClienteControlador();
+        ArrayList<Object[]> datos = clienteControlador.datosCliente();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloClientes.addRow(fila);
+            }
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////TABLA VEHICULO////////////////////////////////////////////////////////////////////////////////// 
+    
+    
+    public void limpiarTablaVehiculo() {
+        int a = modeloVehiculos.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            modeloVehiculos.removeRow(i);
+        }
+    }
+
+    public void modeloVehiculo() {
+        VehiculoControlador vehiculoControlador = new VehiculoControlador();
+        ArrayList<Object[]> datos = vehiculoControlador.datosVehiculo();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloVehiculos.addRow(fila);
+            }
+        }
+    }
+
+    private void actualizarTablaVehiculos() {
+        DefaultTableModel modelo = (DefaultTableModel) jTableVehiculo.getModel();
+        modelo.setRowCount(0);
+        VehiculoControlador controlador = new VehiculoControlador();
+        ArrayList<Object[]> datos = controlador.datosVehiculo();
+
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modelo.addRow(fila);
+            }
+        }
+    }
+
+    private void limpiarCamposVehiculos() {
+        txtNumPlaca.setText("");
+        txtNombreProp.setText("");
+        txtNumAsientos.setText("");
+        txtKilometrajeTotal.setText("");
+        FeachaFabricacion.setDate(null);
+    }
+
+    ///////////////////////////////////////////////////////////////TABLA MANTENIMIENTO////////////////////////////////////////////////////////////////////////////////// 
+    
+    
+    public void limpiarTablaMantenimiento() {
+        int a = modeloMantenimientos.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            modeloMantenimientos.removeRow(i);
+        }
+    }
+
+    public void modeloMantenimiento() {
+        MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
+        ArrayList<Object[]> datos = mantenimientoControlador.datosMantenimiento();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloMantenimientos.addRow(fila);
+            }
+        }
+    }
+
+    private void actualizarTablaMantenimientos() {
+        DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
+        modelo.setRowCount(0); // Limpiar la tabla antes de agregar nuevos datos
+        MantenimientoControlador controlador = new MantenimientoControlador();
+        ArrayList<Object[]> datos = controlador.datosMantenimiento();
+
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modelo.addRow(fila);
+            }
+        }
+    }
+
+    private void limpiarCamposMantenimiento() {
+        txtAreaAceite.setText("");
+        txtCambioFiltro.setText("");
+        FeachaMantenimiento.setDate(null);
+        txtKilometrajeM.setText("");
+    }
+///////////////////////////////////////////////////////////////TABLA CONTRATOS////////////////////////////////////////////////////////////////////////////////// 
+
+    public void limpiarTablaContrato() {
+        int a = modeloContratos.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            modeloContratos.removeRow(i);
+        }
+    }
+
+    private void actualizarTablaContratos() {
+        DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
+        modelo.setRowCount(0);
+        ContratoControlador controlador = new ContratoControlador();
+        ArrayList<Object[]> datos = controlador.datosContratosPorPlacaYCliente();
+
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modelo.addRow(fila);
+            }
+        }
+    }
+
+    public void modeloContrato() {
+        ContratoControlador contratoControlador = new ContratoControlador();
+        ArrayList<Object[]> datos = contratoControlador.datosContratosPorPlacaYCliente();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloContratos.addRow(fila);
+            }
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////TABLA  ABONOS////////////////////////////////////////////////////////////////////////////////// 
+    
+    
+    public void limpiarTablaAbonos() {
+        int filas = modeloAbonos.getRowCount();
+        for (int i = filas - 1; i >= 0; i--) {
+            modeloAbonos.removeRow(i);
+        }
+    }
+
+    public void actualizarTablaAbonos() {
+        DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
+        modelo.setRowCount(0);
+        AbonoControlador controlador = new AbonoControlador();
+        ArrayList<Object[]> datos = controlador.datosAbonos();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modelo.addRow(fila);
+            }
+        }
+    }
+
+    public void modeloAbonos() {
+        AbonoControlador abonoControlador = new AbonoControlador();
+        ArrayList<Object[]> datos = abonoControlador.datosAbonos();
+        if (datos != null) {
+            for (Object[] fila : datos) {
+                modeloAbonos.addRow(fila);
+            }
+        }
+    }
+
+    private void limpiarCamposAbono() {
+        txtComprobante.setText("");
+        txtBanco.setText("");
+        FeachaAbono.setDate(null);
+        txtValor.setText("");
+        txtMonto.setText("");
+        jcheckboxLiquidado.setSelected(false);
+        jCheckBoxSinLiquidar.setSelected(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -3852,207 +4034,4 @@ public void mostrarDatosAbonoC(Abono abono) {
     private javax.swing.JTextField txtValor;
     private javax.swing.JPasswordField txtcontra;
     // End of variables declaration//GEN-END:variables
-
-                            /////////////////////////////////////////////////////////////////////////////////////// METODOS DE TABLAS //////////////////////////////////////////////////////////////////////////////////////
-    
-    
-     ///////////////////////////////////////////////////////////////TABLA USUARIO//////////////////////////////////////////////////////////////////////////////////
-    
-    public void limpiarTablaUsuario() {
-        int a = modeloUsuario.getRowCount() - 1;  
-        for (int i = a; i >= 0; i--) {
-            modeloUsuario.removeRow(i);
-        }
-    }
-
-     public void modeloUsuario() {
-        UsuarioControlador usuarioControlador = new UsuarioControlador();
-        ArrayList<Object[]> datos = usuarioControlador.datosUsuarios();
-        if (datos != null) {
-            for (Object[] fila : datos) {
-                modeloUsuario.addRow(fila);
-            }
-        }
-    }
-     
- ///////////////////////////////////////////////////////////////TABLA CLIENTE//////////////////////////////////////////////////////////////////////////////////
-
-    public void limpiarTablaClientes() {
-        int a = modeloClientes.getRowCount() - 1;  
-        for (int i = a; i >= 0; i--) {
-            modeloClientes.removeRow(i);
-        }
-    }
-
-     public void modeloClientes() {
-        ClienteControlador clienteControlador = new ClienteControlador();
-        ArrayList<Object[]> datos = clienteControlador.datosCliente();
-        if (datos != null) {
-            for (Object[] fila : datos) {
-                modeloClientes.addRow(fila);
-            }
-        }
-    }
-
- ///////////////////////////////////////////////////////////////TABLA VEHICULO////////////////////////////////////////////////////////////////////////////////// 
-   
-      public void limpiarTablaVehiculo() {
-        int a = modeloVehiculos.getRowCount() - 1;  
-        for (int i = a; i >= 0; i--) {
-            modeloVehiculos.removeRow(i);
-        }
-    }
-
-     public void modeloVehiculo() {
-        VehiculoControlador vehiculoControlador = new VehiculoControlador();
-        ArrayList<Object[]> datos = vehiculoControlador.datosVehiculo();
-        if (datos != null) {
-            for (Object[] fila : datos) {
-                modeloVehiculos.addRow(fila);
-            }
-        }
-    }
-     
-     
-     
-     private void actualizarTablaVehiculos() {
-    DefaultTableModel modelo = (DefaultTableModel) jTableVehiculo.getModel();
-    modelo.setRowCount(0); 
-    VehiculoControlador controlador = new VehiculoControlador();
-    ArrayList<Object[]> datos = controlador.datosVehiculo();
-    
-    if (datos != null) {
-        for (Object[] fila : datos) {
-            modelo.addRow(fila); 
-        }
-    }
 }
-
-private void limpiarCamposVehiculos() {
-    txtNumPlaca.setText("");
-    txtNombreProp.setText("");
-    txtNumAsientos.setText("");
-    txtKilometrajeTotal.setText("");
-    FeachaFabricacion.setDate(null);
-}
-
-
-     
- ///////////////////////////////////////////////////////////////TABLA MANTENIMIENTO////////////////////////////////////////////////////////////////////////////////// 
-
-  
-      public void limpiarTablaMantenimiento() {
-        int a = modeloMantenimientos.getRowCount() - 1;  
-        for (int i = a; i >= 0; i--) {
-            modeloMantenimientos.removeRow(i);
-        }
-    }
-
-     public void modeloMantenimiento() {
-        MantenimientoControlador mantenimientoControlador = new MantenimientoControlador();
-        ArrayList<Object[]> datos = mantenimientoControlador.datosMantenimiento();
-        if (datos != null) {
-            for (Object[] fila : datos) {
-                modeloMantenimientos.addRow(fila);
-            }
-        }
-    }
-     
-     private void actualizarTablaMantenimientos() {
-    DefaultTableModel modelo = (DefaultTableModel) jTableMantenimiento.getModel();
-    modelo.setRowCount(0); // Limpiar la tabla antes de agregar nuevos datos
-    MantenimientoControlador controlador = new MantenimientoControlador();
-    ArrayList<Object[]> datos = controlador.datosMantenimiento();
-    
-    if (datos != null) {
-        for (Object[] fila : datos) {
-            modelo.addRow(fila); 
-        }
-    }
-}
-
-private void limpiarCamposMantenimiento() {
-    txtAreaAceite.setText("");
-    txtCambioFiltro.setText("");
-    FeachaMantenimiento.setDate(null);
-    txtKilometrajeM.setText(""); 
-}
-///////////////////////////////////////////////////////////////TABLA CONTRATOS////////////////////////////////////////////////////////////////////////////////// 
-     
-     public void limpiarTablaContrato() {
-        int a = modeloContratos.getRowCount() - 1;  
-       for (int i = a; i >= 0; i--) {
-            modeloContratos.removeRow(i);
-        }
-    }
-     
-      private void actualizarTablaContratos() {
-    DefaultTableModel modelo = (DefaultTableModel) jTableContrato.getModel();
-    modelo.setRowCount(0); 
-    ContratoControlador controlador = new ContratoControlador();
-    ArrayList<Object[]> datos = controlador.datosContratosPorPlacaYCliente();
-    
-    if (datos != null) {
-        for (Object[] fila : datos) {
-            modelo.addRow(fila); 
-        }
-    }
-}
-
-     public void modeloContrato() {
-        ContratoControlador contratoControlador = new ContratoControlador();
-        ArrayList<Object[]> datos = contratoControlador.datosContratosPorPlacaYCliente();
-        if (datos != null) {
-            for (Object[] fila : datos) {
-                modeloContratos.addRow(fila);
-            }
-        }
-    }
-     
-     
- ///////////////////////////////////////////////////////////////TABLA  ABONOS////////////////////////////////////////////////////////////////////////////////// 
- 
-    public void limpiarTablaAbonos() {
-    int filas = modeloAbonos.getRowCount();
-    for (int i = filas - 1; i >= 0; i--) {
-        modeloAbonos.removeRow(i);
-    }
-}
-
-public void actualizarTablaAbonos() {
-    DefaultTableModel modelo = (DefaultTableModel) jTableAbono.getModel();
-    modelo.setRowCount(0); 
-    AbonoControlador controlador = new AbonoControlador();
-    ArrayList<Object[]> datos = controlador.datosAbonos();
-    if (datos != null) {
-        for (Object[] fila : datos) {
-            modelo.addRow(fila); 
-        }
-    }
-}
-
-public void modeloAbonos() {
-    AbonoControlador abonoControlador = new AbonoControlador();
-    ArrayList<Object[]> datos = abonoControlador.datosAbonos();
-    if (datos != null) {
-        for (Object[] fila : datos) {
-            modeloAbonos.addRow(fila); 
-        }
-    }
-}
-    
-private void limpiarCamposAbono() {
-    txtComprobante.setText("");
-    txtBanco.setText(""); 
-    FeachaAbono.setDate(null);
-    txtValor.setText("");
-    txtMonto.setText(""); 
-    jcheckboxLiquidado.setSelected(false);
-    jCheckBoxSinLiquidar.setSelected(false);
-}
-
-
-    
-
-}
-

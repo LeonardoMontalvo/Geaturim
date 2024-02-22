@@ -44,7 +44,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="1110" height="670"/>
+              <AbsoluteConstraints x="0" y="-30" width="1110" height="700"/>
             </Constraint>
           </Constraints>
 
@@ -74,8 +74,8 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane5" pref="603" max="32767" attributes="0"/>
-                      <Component id="jPanelContratos" pref="603" max="32767" attributes="0"/>
+                      <Component id="jScrollPane5" pref="633" max="32767" attributes="0"/>
+                      <Component id="jPanelContratos" pref="633" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -284,6 +284,9 @@
                     </Container>
                     <Component class="javax.swing.JButton" name="btnBuscarContrato">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Lupa.png"/>
                         </Property>
@@ -299,6 +302,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEditarContrato">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Modificar.png"/>
                         </Property>
@@ -314,6 +320,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEliminarContrato">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\eliminar.png"/>
                         </Property>
@@ -329,6 +338,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnNuevoContrato">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\nuevo.png"/>
                         </Property>
@@ -699,7 +711,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel15" pref="603" max="32767" attributes="0"/>
+                      <Component id="jPanel15" pref="633" max="32767" attributes="0"/>
                       <Component id="jScrollPane3" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
@@ -1081,6 +1093,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnBuscarClientes">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Lupa.png"/>
                         </Property>
@@ -1096,6 +1111,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEditarCli">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Modificar.png"/>
                         </Property>
@@ -1111,6 +1129,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEliminarCli">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\eliminar.png"/>
                         </Property>
@@ -1126,6 +1147,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnNuevoCliente">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\nuevo.png"/>
                         </Property>
@@ -1275,7 +1299,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane8" pref="603" max="32767" attributes="0"/>
+                      <Component id="jScrollPane8" pref="633" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jPanel19" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1531,6 +1555,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnBuscarAbono">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Lupa.png"/>
                         </Property>
@@ -1546,6 +1573,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEditarAbono">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Modificar.png"/>
                         </Property>
@@ -1561,6 +1591,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEliminarAbono">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\eliminar.png"/>
                         </Property>
@@ -1576,6 +1609,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnNuevoAbono">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\nuevo.png"/>
                         </Property>
@@ -1942,7 +1978,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" pref="603" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="633" max="32767" attributes="0"/>
                       <Component id="jPanel14" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
@@ -2088,7 +2124,7 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="30" y="410" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="30" y="440" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2174,6 +2210,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnBuscarM">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Lupa.png"/>
                         </Property>
@@ -2189,6 +2228,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEditarM">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Modificar.png"/>
                         </Property>
@@ -2204,6 +2246,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEliminarM">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\eliminar.png"/>
                         </Property>
@@ -2219,6 +2264,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnNuevoM">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\nuevo.png"/>
                         </Property>
@@ -2277,7 +2325,7 @@
                       </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="30" y="432" width="230" height="70"/>
+                          <AbsoluteConstraints x="30" y="470" width="230" height="110"/>
                         </Constraint>
                       </Constraints>
 
@@ -2285,9 +2333,6 @@
                       <SubComponents>
                         <Component class="javax.swing.JTextArea" name="txtCambioFiltro">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="bb" green="bb" red="bb" type="rgb"/>
-                            </Property>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -2300,7 +2345,7 @@
                     <Container class="javax.swing.JScrollPane" name="jScrollPane7">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                          <Color blue="4b" green="49" red="46" type="rgb"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -2308,7 +2353,7 @@
                       </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="30" y="330" width="230" height="70"/>
+                          <AbsoluteConstraints x="30" y="330" width="230" height="100"/>
                         </Constraint>
                       </Constraints>
 
@@ -2316,9 +2361,6 @@
                       <SubComponents>
                         <Component class="javax.swing.JTextArea" name="txtAreaAceite">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="bb" green="bb" red="bb" type="rgb"/>
-                            </Property>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -2447,7 +2489,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel13" pref="603" max="32767" attributes="0"/>
+                      <Component id="jPanel13" pref="633" max="32767" attributes="0"/>
                       <Component id="jScrollPane2" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
@@ -2630,6 +2672,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnBuscarU">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Lupa.png"/>
                         </Property>
@@ -2645,6 +2690,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEditarU">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Modificar.png"/>
                         </Property>
@@ -2660,6 +2708,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEliminarU">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\eliminar.png"/>
                         </Property>
@@ -2714,6 +2765,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnNuevoU">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\nuevo.png"/>
                         </Property>
@@ -2838,7 +2892,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanel20" pref="597" max="32767" attributes="0"/>
+                              <Component id="jPanel20" pref="627" max="32767" attributes="0"/>
                               <Component id="jScrollPane9" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -3142,6 +3196,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnBuscarVehiculo">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Lupa.png"/>
                         </Property>
@@ -3157,6 +3214,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnEditarVehiculo">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\Modificar.png"/>
                         </Property>
@@ -3187,6 +3247,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnNuevoVehiculo">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="C:\Users\Leo\Documents\NetBeansProjects\Geaturim\src\main\resource\Imagenes\nuevo.png"/>
                         </Property>
@@ -3436,7 +3499,7 @@
                               <Component id="jPanel59" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                               <Component id="btnContratoH" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="141" max="32767" attributes="0"/>
+                              <EmptySpace pref="171" max="32767" attributes="0"/>
                               <Component id="btnAbonoH" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
                               <Component id="btnMantenimientosH" min="-2" max="-2" attributes="0"/>
@@ -3838,18 +3901,18 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="325" max="32767" attributes="0"/>
-                  <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
+                  <EmptySpace pref="488" max="32767" attributes="0"/>
+                  <Component id="jLabel38" min="-2" pref="218" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="404" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -3863,7 +3926,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Sistema de parque Automotor "/>
+            <Property name="text" type="java.lang.String" value="GEATURIM"/>
           </Properties>
         </Component>
       </SubComponents>
